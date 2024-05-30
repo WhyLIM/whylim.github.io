@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Being on sea, sail; being on land, settle. • Posts by &#34;ubuntu&#34; tag</title>
+        <link>https://whylim.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 10 Mar 2021 17:15:14 +0800</pubDate>
+        <lastBuildDate>Wed, 10 Mar 2021 17:15:14 +0800</lastBuildDate>
+        <category>生信</category>
+        <category>软件安装</category>
+        <category>Ubuntu</category>
+        <category>Java</category>
+        <category>建站</category>
+        <category>Python</category>
+        <category>Hexo</category>
+        <category>ShokaX</category>
+        <category>踩坑</category>
+        <category>Web</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
+        <category>MySQL</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <category>R</category>
+        <category>RNA-Seq</category>
+        <category>统计学</category>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</guid>
+            <title>Ubuntu 开机光标闪烁进不了系统</title>
+            <link>https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</link>
+            <category>Ubuntu</category>
+            <pubDate>Wed, 10 Mar 2021 17:15:14 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;前几天把同一块硬盘上的黑苹果删掉装了 deepin 20 然后再进 Ubuntu 就进不去了，左上角有个光标一直在闪 尝试了修复引导，但是没有用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h2&gt;
+&lt;p&gt;暂不清楚，根据结果来看是显卡驱动不兼容，但是就算是引导损坏应该也不会影响显卡驱动啊？&lt;/p&gt;
+&lt;h2 id=&#34;解决方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方法&#34;&gt;#&lt;/a&gt; 解决方法&lt;/h2&gt;
+&lt;p&gt;在光标闪烁的界面按  &lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;F2&lt;/code&gt; / &lt;code&gt;F3&lt;/code&gt; / &lt;code&gt;F4&lt;/code&gt; / &lt;code&gt;F5&lt;/code&gt; / &lt;code&gt;F6&lt;/code&gt; / &lt;code&gt;F7&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在命令行界面输入账号密码登陆&lt;/p&gt;
+&lt;p&gt;登陆成功再按  &lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;Alt&lt;/code&gt; + &lt;code&gt;F1&lt;/code&gt;  返回到图形界面&lt;/p&gt;
+&lt;p&gt;发现现在已经可以进系统了&lt;/p&gt;
+&lt;p&gt;进入系统打开终端卸载显卡驱动&lt;/p&gt;
+&lt;p&gt;命令&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 卸载显卡驱动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; remove &lt;span class=&#34;token parameter variable&#34;&gt;--purge&lt;/span&gt; nvidia*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 重启&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</guid>
+            <title>制作移动硬盘启动盘（Ubuntu）</title>
+            <link>https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</link>
+            <category>Ubuntu</category>
+            <pubDate>Sun, 21 Feb 2021 20:30:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;很久很久以前装的 Ubuntu 的 WiFi 一直有问题，今天问了 tb 说这个太费时间了。。。&lt;br /&gt;
+想到之前那个用来做启动盘的 U 盘好像不太行，想想还是重装下系统吧&lt;br /&gt;
+但是我已经没有空 U 盘了，不想买也不想格式化，那就用移动硬盘吧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;工具依旧是 Rufus，官方的不用白不用&lt;/li&gt;
+&lt;li&gt;系统镜像 唔，都 20.04 了啊。。。&lt;/li&gt;
+&lt;li&gt;我的 hxd gl 赞助的移动硬盘（纽曼 清风 3.0）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;一点小问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一点小问题&#34;&gt;#&lt;/a&gt; 一点小问题&lt;/h3&gt;
+&lt;p&gt;没有移动硬盘可以选&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202734647.png&#34; alt=&#34;没有移动硬盘选&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;没事 点高级选项&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202801284.png&#34; alt=&#34;高级选项&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;显示 USB 外置硬盘&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202833750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;显示USB外置硬盘&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;老电脑用 MBR，新电脑用 GPT&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202914407.png&#34; alt=&#34;GPT&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;开始&lt;/p&gt;
+&lt;p&gt;完成后有一个禁用安全启动的提示&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202935770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;禁用安全启动提示&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</guid>
+            <title>Ubuntu 开机慢</title>
+            <link>https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</link>
+            <category>Ubuntu</category>
+            <pubDate>Mon, 21 Dec 2020 14:50:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;安装完开机需要大约 2 分钟（SSD）&lt;/p&gt;
+&lt;p&gt;按方向键上键到代码页面&lt;/p&gt;
+&lt;p&gt;看到有一行  &lt;code&gt;A start job is running for dev-disk-by...&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后会计时 1 分 30 秒&lt;/p&gt;
+&lt;h2 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h2&gt;
+&lt;p&gt;系统启动时 swap 分区挂载失败&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方案&#34;&gt;#&lt;/a&gt; 解决方案&lt;/h2&gt;
+&lt;p&gt;使用 blkid 命令来查询 swap 的 UUID&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; blkid&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201221144520190.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;查看 /etc/fstab 文件中 swap 分区的 UUID&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;gedit /etc/fstab&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201221144734296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以看到两者不一致&lt;/p&gt;
+&lt;p&gt;用 blkid 查看到的 UUID 去替换 fstab 文件中的 UUID&lt;/p&gt;
+&lt;p&gt;重启&lt;/p&gt;
+&lt;p&gt;五秒开机，丝般顺滑～&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</guid>
+            <title>Ubuntu 下两种软件的全局使用</title>
+            <link>https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</link>
+            <category>Ubuntu</category>
+            <pubDate>Tue, 24 Nov 2020 08:33:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;Ubuntu 下安装的软件有几种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;软件商店安装的&lt;/li&gt;
+&lt;li&gt;sudo 在线安装的&lt;/li&gt;
+&lt;li&gt;用 deb 包安装的&lt;/li&gt;
+&lt;li&gt;源码编译安装的&lt;/li&gt;
+&lt;li&gt;直接解压使用的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;用 Ubuntu 以来一直苦于第 5 类要带路径运行写一长串代码，丑且烦&lt;br /&gt;
+最近找到方法了，记录一下，顺便也记录一下第 4 类&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;源码编译安装的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#源码编译安装的&#34;&gt;#&lt;/a&gt; 源码编译安装的&lt;/h2&gt;
+&lt;p&gt;可以用如下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;export PATH=&#34;软件路径&#34;:$PATH&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;添加环境变量&lt;/p&gt;
+&lt;h2 id=&#34;直接解压使用的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#直接解压使用的&#34;&gt;#&lt;/a&gt; 直接解压使用的&lt;/h2&gt;
+&lt;p&gt;这个其实相当于 windows 下的 exe&lt;/p&gt;
+&lt;p&gt;把程序的可执行文件添加到  &lt;code&gt;/usr/bin&lt;/code&gt;  目录即可&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; 软件路径 /usr/bin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</guid>
+            <title>Ubuntu 下批量转 pdf</title>
+            <link>https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</link>
+            <category>Ubuntu</category>
+            <pubDate>Wed, 18 Nov 2020 17:29:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;软件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件&#34;&gt;#&lt;/a&gt; 软件&lt;/h2&gt;
+&lt;p&gt;LibreOffice&lt;/p&gt;
+&lt;p&gt;系统一般都自带了&lt;/p&gt;
+&lt;h2 id=&#34;命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#命令&#34;&gt;#&lt;/a&gt; 命令&lt;/h2&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;libreoffice &lt;span class=&#34;token parameter variable&#34;&gt;--headless&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--invisible&lt;/span&gt; --convert-to pdf *.ppt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;word excel 应该也是一样的&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</guid>
+            <title>Ubuntu wine QQ 卡死</title>
+            <link>https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</link>
+            <category>Ubuntu</category>
+            <pubDate>Mon, 16 Nov 2020 11:06:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;前几天在 Ubuntu 下写基因组信息学实验报告&lt;br /&gt;
+用 wps-linux 转 pdf 遇到了字体问题，就把 windows 字体拷过来安装了&lt;br /&gt;
+然后再用 QQ 就出现一堆口口口口。但是这个不影响使用&lt;br /&gt;
+影响使用的是他会卡死。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h2&gt;
+&lt;p&gt;字体缓存没更新&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方案&#34;&gt;#&lt;/a&gt; 解决方案&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;删除 windows 字体&lt;/p&gt;
+&lt;p&gt;嫌麻烦我就没删。&lt;/p&gt;
+&lt;p&gt;或者可以：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重建缓存&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /usr/share/fonts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; fc-cache &lt;span class=&#34;token parameter variable&#34;&gt;-fv&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;应该解决了。&lt;/p&gt;
+&lt;h2 id=&#34;后续&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#后续&#34;&gt;#&lt;/a&gt; 后续&lt;/h2&gt;
+&lt;p&gt;好像还是会卡&lt;/p&gt;
+&lt;p&gt;想到上次安装字体的时候有一堆报错&lt;/p&gt;
+&lt;p&gt;部分截图&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201116110350510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;查了一下， &lt;code&gt;.fon&lt;/code&gt;  是 Windows 系统字体的一类&lt;/p&gt;
+&lt;p&gt;我推测 Ubuntu 不兼容此格式&lt;/p&gt;
+&lt;p&gt;那就删了吧&lt;/p&gt;
+&lt;p&gt;把错误复制到 excel 简单处理一下只留下字体文件名（也可以写脚本）&lt;/p&gt;
+&lt;p&gt;再复制到 txt&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201116110410257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;好家伙 189 个&lt;/p&gt;
+&lt;p&gt;写了个 py 脚本删除  &lt;code&gt;/usr/share/fonts&lt;/code&gt;  目录下的这些字体文件&lt;/p&gt;
+&lt;p&gt;脚本代码：&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; os&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/home/limin/桌面/font&#34;&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;# 这个 font 是我的 txt 文件&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; f&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    l &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; f&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;readlines&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;path &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/usr/share/fonts/&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; l&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    os&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;remove&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;path &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;strip&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34; removed!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;处理&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201116110429969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;流程再走一遍&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /usr/share/fonts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mkfontscale&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; mkfontdir&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; fc-cache &lt;span class=&#34;token parameter variable&#34;&gt;-fv&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;应该没有问题了&lt;/p&gt;
+&lt;p&gt;有问题下次再更&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</guid>
+            <title>如何在 Ubuntu 下使用 QQ</title>
+            <link>https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</link>
+            <category>Ubuntu</category>
+            <pubDate>Mon, 16 Nov 2020 09:39:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;目前最简单的方法&lt;br /&gt;
+这里写的很清楚：&lt;a href=&#34;https://github.com/zq1997/deepin-wine&#34;&gt;https://github.com/zq1997/deepin-wine&lt;/a&gt;&lt;br /&gt;
+ 不想跳转 Github 或者进不去的也可以直接看我的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用的是 deepin-wine 应用在 Ubuntu 上的移植仓库&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;顺便一提&lt;br /&gt;
+ deepin 是个很好的国产 linux 系统，很漂亮（尤其 v20 大更后）&lt;br /&gt;
+软件也比 Ubuntu 全（比如今天讲的 QQ，直接能在软件商店装了）&lt;br /&gt;
+建议使用（我是自来水）&lt;br /&gt;
+网址：&lt;a href=&#34;https://www.deepin.org/zh/&#34;&gt;https://www.deepin.org/zh/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我是因为之前 Web 课 xampp 的一些问题被迫转了 Ubuntu。&lt;br /&gt;
+不过好在今年的 20.04 终于™变好看了，颜控福音&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;唔好像偏题了&lt;/p&gt;
+&lt;h2 id=&#34;添加仓库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加仓库&#34;&gt;#&lt;/a&gt; 添加仓库&lt;/h2&gt;
+&lt;p&gt;首次使用时需要将移植仓库添加到系统中（没有 wget 的先 sudo 安装 wget）&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wget&lt;/span&gt; -O- https://deepin-wine.i-m.dev/setup.sh &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;应用安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用安装&#34;&gt;#&lt;/a&gt; 应用安装&lt;/h2&gt;
+&lt;p&gt;也是用  &lt;code&gt;sudo apt-get install&lt;/code&gt;  安装的&lt;/p&gt;
+&lt;p&gt;常用软件包的包名：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;应用&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;包名&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;QQ&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;com.qq.im.deepin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;微信&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;com.qq.weixin.deepin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;钉钉&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;com.dingtalk.deepin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;QQ 音乐&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;com.qq.music.deepin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;…&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;…&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;比如我要安装 QQ：&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; com.qq.im.deepin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;注意：2020 年 11 月 14 日更新以后需要注销 / 重启后才能看见启动台图标&lt;/p&gt;
+&lt;h2 id=&#34;其他可能的问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他可能的问题&#34;&gt;#&lt;/a&gt; 其他可能的问题&lt;/h2&gt;
+&lt;p&gt;比如 QQ 头像无法加载、QQ 截图无法使用等&lt;/p&gt;
+&lt;p&gt;我没遇到&lt;/p&gt;
+&lt;p&gt;遇到再写&lt;/p&gt;
+&lt;p&gt;Wine 不是 Windows&lt;/p&gt;
+&lt;p&gt;我们只能尽可能的模拟&lt;/p&gt;
+&lt;p&gt;“又不是不能用～”&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+            <title>fluff(biofluff) 装不上的问题</title>
+            <link>https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+            <category>生信</category>
+            <category>软件安装</category>
+            <category>Ubuntu</category>
+            <pubDate>Sun, 01 Nov 2020 09:53:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
+官网：&lt;a href=&#34;https://fluff.readthedocs.io/en/latest/introduction.html&#34;&gt;https://fluff.readthedocs.io/en/latest/introduction.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;环境：Ubuntu 20.04 LTS，这个软件好像不支持 win？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个安装好无语。大家的 PC 都装不上，部分机房电脑是可以装上的&lt;/p&gt;
+&lt;p&gt;但是既然决定 PC 上用 Ubuntu 了，那就要贯彻到底了&lt;/p&gt;
+&lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
+&lt;h3 id=&#34;官方最简安装方法用-conda-安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#官方最简安装方法用-conda-安装&#34;&gt;#&lt;/a&gt; 官方最简安装方法：用 conda 安装&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda config &lt;span class=&#34;token parameter variable&#34;&gt;--add&lt;/span&gt; channels defaults&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda config &lt;span class=&#34;token parameter variable&#34;&gt;--add&lt;/span&gt; channels conda-forge&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda config &lt;span class=&#34;token parameter variable&#34;&gt;--add&lt;/span&gt; channels bioconda&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; biofluff &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; bioconda&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;但是这个方法。得安一小时，还报错。一开始以为是机房网不好，后来网好了发现也那么慢，唔，那没事了，可能是因为直接从外国服务器上下载的吧&lt;/p&gt;
+&lt;h3 id=&#34;第二种方法用-pip&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二种方法用-pip&#34;&gt;#&lt;/a&gt; 第二种方法：用 pip&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pip &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; biofluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这个还挺快的，但有报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Building wheel &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; pyBigWig &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;setup.py&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. error&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Running setup.py &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; pyBigWig &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;. error&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;少 pyBigWig 这个包&lt;/p&gt;
+&lt;h3 id=&#34;比较麻烦的方法源码安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#比较麻烦的方法源码安装&#34;&gt;#&lt;/a&gt; 比较麻烦的方法：源码安装&lt;/h3&gt;
+&lt;p&gt;可以全部用命令行，用 git&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; clone https://github.com/simonvh/fluff.git&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;也可以图形界面浏览器直接到 &lt;a href=&#34;https://github.com/simonvh/fluff/releases&#34;&gt;https://github.com/simonvh/fluff/releases&lt;/a&gt; 下载压缩包&lt;/p&gt;
+&lt;p&gt;最新的版本是 3.0.3&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /opt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 去 /opt 目录下创建 fluff 的文件夹&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; xvzf fluff-3.0.3.tar.gz &lt;span class=&#34;token parameter variable&#34;&gt;-C&lt;/span&gt; /opt/fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 解压到 /opt/fluff 目录下&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; /opt/fluff/fluff-3.0.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;编译&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; python setup.py build&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sudo: python：找不到命令&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这个可能是 anaconda 和自带 python 冲突了？反正是没有在 bin 里关联全局指令&lt;/p&gt;
+&lt;p&gt;用 which 命令看 python 的位置&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;which&lt;/span&gt; python&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 返回 /home/limin/anaconda3/bin/python&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 那就这么写&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; /home/limin/anaconda3/bin/python setup.py build&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; /home/limin/anaconda3/bin/python setup.py &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Either libcurl isn&lt;span class=&#34;token string&#34;&gt;&#39;t installed, it didn&#39;&lt;/span&gt;t come with curl-config, or curl-config isn&lt;span class=&#34;token string&#34;&gt;&#39;t in your $PATH. pyBigWig will be installed without support for remote files.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;......&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No eggs found in /tmp/easy_install-b42ki6n5/pyBigWig-0.3.17/egg-dist-tmp-syp78d48 (setup script problem?)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;error: The &#39;&lt;/span&gt;pyBigWig&#39; distribution was not found and is required by biofluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;大概还是少 pyBigWig 这个包，而且这个包依赖&lt;/p&gt;
+&lt;p&gt;再来一遍 还是报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Installed /home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Processing dependencies &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;biofluff&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3.0&lt;/span&gt;.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Searching &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; pyBigWig&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Reading https://pypi.org/simple/pyBigWig/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Download error on https://pypi.org/simple/pyBigWig/: &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;Errno -3&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; Temporary failure &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; name resolution -- Some packages may not be found&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Couldn&lt;span class=&#34;token string&#34;&gt;&#39;t find index page for &#39;&lt;/span&gt;pyBigWig&lt;span class=&#34;token string&#34;&gt;&#39; (maybe misspelled?)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Scanning index of all packages (this may take a while)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Reading https://pypi.org/simple/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Download error on https://pypi.org/simple/: [Errno -3] Temporary failure in name resolution -- Some packages may not be found!&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No local packages or working download links found for pyBigWig&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;error: Could not find suitable distribution for Requirement.parse(&#39;&lt;/span&gt;pyBigWig&#39;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;解决&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决&#34;&gt;#&lt;/a&gt; 解决&lt;/h2&gt;
+&lt;p&gt;第一种方法不要了&lt;/p&gt;
+&lt;p&gt;从后两种方法的报错来看，主要问题：缺少 pyBigWig&lt;/p&gt;
+&lt;p&gt;装就完了&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; pip &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;pyBigWig&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0.2&lt;/span&gt;.5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;sudo: pip：找不到命令&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;真烦人。去 conda 里装&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda activate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pip &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;pyBigWig&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0.2&lt;/span&gt;.5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;报错&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;In &lt;span class=&#34;token function&#34;&gt;file&lt;/span&gt; included from libBigWig/bigWig.h:1,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;from libBigWig/bwStats.c:1:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;libBigWig/io.h:1:10: fatal error: curl/curl.h: 没有那个文件或目录&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#include &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                ^~~~~~~~~~~~~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;compilation terminated.&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;error: &lt;span class=&#34;token builtin class-name&#34;&gt;command&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;gcc&#39;&lt;/span&gt; failed with &lt;span class=&#34;token builtin class-name&#34;&gt;exit&lt;/span&gt; status &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;----------------------------------------&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ERROR: Failed building wheel &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; pyBigWig&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;少 curl 依赖，装&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;curl&lt;/span&gt; libcurl4 libcurl4-openssl-dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;再装 pyBigWig 就可以了&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pip &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token assign-left variable&#34;&gt;pyBigWig&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0.2&lt;/span&gt;.5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;成功后再装 biofluff&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pip &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; biofluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;成功了！运行 fluff&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; limin@limin-Lenovo-XiaoXin-Air-15IKBR:~$ fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;usage: fluff &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-h&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;options&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    fluff v3.0.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;positional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;heatmap,bandplot,profile&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;optional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  -h, &lt;span class=&#34;token parameter variable&#34;&gt;--help&lt;/span&gt;            show this &lt;span class=&#34;token builtin class-name&#34;&gt;help&lt;/span&gt; message and &lt;span class=&#34;token builtin class-name&#34;&gt;exit&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    commands:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        heatmap      Produce a heatmap&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        bandplot     Show the profiles as bandplots&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        profile      Genome Browser screenshot&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;fluff &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;command&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; -h&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token variable&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;more&lt;/span&gt; details&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;有一点报错，但是不影响使用。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</guid>
+            <title>Ubuntu 安装 art_illumina</title>
+            <link>https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
+            <category>生信</category>
+            <category>软件安装</category>
+            <category>Ubuntu</category>
+            <pubDate>Sun, 01 Nov 2020 09:39:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;
+往下翻找下载链接，结果发现他这二进制包不显示。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092610777.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;审查元素&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092636854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这不就找到了&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 浏览器下载在下载目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; 下载&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 解压到安装位置（Ubuntu 的软件一般安装在 /home/ 用户名 /opt, 我这里直接解压到主目录了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;tar&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-zxvf&lt;/span&gt; artbinmountrainier2016.06.05linux64.tgz &lt;span class=&#34;token parameter variable&#34;&gt;-C&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 进入主目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 进入解压出来的文件夹&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; art_bin_MountRainier/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 运行&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;./art_illumina&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;可用&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092831442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;添加到环境变量&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;export PATH=\&lt;span class=&#34;token environment constant&#34;&gt;$PATH&lt;/span&gt;:/home/limin/art_bin_MountRainier&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;source&lt;/span&gt; ~/.bashrc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;可用&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101093627733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</guid>
+            <title>Ubuntu 更新时 boot 空间不足</title>
+            <link>https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
+            <category>Ubuntu</category>
+            <pubDate>Sat, 31 Oct 2020 23:58:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;这是之前写的，后来重装系统图片没了。有机会补图&lt;br /&gt;
+参考：&lt;a href=&#34;https://blog.csdn.net/qq%5C_27818541/article/details/72675954&#34;&gt;https://blog.csdn.net/qq\_27818541/article/details/72675954&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;更新问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更新问题&#34;&gt;#&lt;/a&gt; 更新问题&lt;/h2&gt;
+&lt;p&gt;之前装系统时分给 /boot 了 210MB&lt;/p&gt;
+&lt;p&gt;当 linux 系统升级的时候，旧的内核版本并不会被清理，升级几次就提示 /boot 内存不足了&lt;/p&gt;
+&lt;p&gt;所以要卸载旧的版本内核&lt;/p&gt;
+&lt;h2 id=&#34;步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#步骤&#34;&gt;#&lt;/a&gt; 步骤&lt;/h2&gt;
+&lt;h3 id=&#34;查看已安装的内核版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看已安装的内核版本&#34;&gt;#&lt;/a&gt; 查看已安装的内核版本&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg --get-selectionsgrep linux-image&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;已安装了两个版本：5.3.0-28 和 5.3.0-40&lt;/p&gt;
+&lt;h3 id=&#34;查看正在使用的内核版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看正在使用的内核版本&#34;&gt;#&lt;/a&gt; 查看正在使用的内核版本&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;uname&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-a&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;正在使用的是 5.3.0-40&lt;/p&gt;
+&lt;h3 id=&#34;删除旧的内核&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除旧的内核&#34;&gt;#&lt;/a&gt; 删除旧的内核&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; purge linux-image-5.3.0-28-generic&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;然后发现多了一个 unsigned&lt;/p&gt;
+&lt;p&gt;然后我就把他删了。&lt;/p&gt;
+&lt;p&gt;df 一下&lt;/p&gt;
+&lt;p&gt;有空间了&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</guid>
+            <title>Ubuntu 硬盘安装</title>
+            <link>https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</link>
+            <category>Ubuntu</category>
+            <pubDate>Sat, 31 Oct 2020 21:52:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一个 4GB 或更大的 U 盘&lt;/li&gt;
+&lt;li&gt;Ubuntu ISO 镜像文件&lt;/li&gt;
+&lt;li&gt;Microsoft Windows XP 或更高的系统版本&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rufus.ie/&#34;&gt;&lt;strong&gt;&lt;em&gt;Rufus&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt; ：Ubuntu 官方推荐的免费开源 USB 启动盘制作工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;说明&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;U 盘不要是_扩容 U 盘_&lt;/li&gt;
+&lt;li&gt;Ubuntu 粗分几种版本
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;桌面版&lt;/code&gt; （图形界面）与  &lt;code&gt;服务器版&lt;/code&gt; （无图形界面）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;长期支持版&lt;/code&gt; （LTS，5 年）和  &lt;code&gt;普通版&lt;/code&gt; （9 个月）&lt;/li&gt;
+&lt;li&gt;我们一般选 **&lt;em&gt; 长期支持的桌面版&lt;/em&gt; **&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;官方网站&lt;/a&gt; 下载镜像 因为服务器在国外所以速度极慢， 推荐 &lt;a href=&#34;http://mirrors.163.com/ubuntu-releases/&#34;&gt;网易的镜像链接&lt;/a&gt; 快到飞起&lt;/li&gt;
+&lt;li&gt;（新版本界面不太一样） &lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201031212121773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;
+&lt;ul&gt;
+&lt;li&gt;设备选 U 盘别选错了&lt;/li&gt;
+&lt;li&gt;选择下载好的镜像文件&lt;/li&gt;
+&lt;li&gt;分区类型：安装在固态硬盘选 MBR，机械硬盘选 GPT&lt;/li&gt;
+&lt;li&gt;默认 FAT32 格式就行（我试过格成 NTFS，我的主板不识别。）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;进-bios-调启动顺序-不写了&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进-bios-调启动顺序-不写了&#34;&gt;#&lt;/a&gt; 进 BIOS 调启动顺序。不写了&lt;/h2&gt;
+&lt;h2 id=&#34;进入安装界面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进入安装界面&#34;&gt;#&lt;/a&gt; 进入安装界面&lt;/h2&gt;
+&lt;p&gt;试用 Ubuntu / 安装 Ubuntu 都可以选（在试用里也可以安装）&lt;/p&gt;
+&lt;p&gt;然后到这里&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201031212809648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;选项的意思：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 Ubuntu，与其它系统共存：这个选项只有在你的电脑的硬盘上已经有至少一个操作系统（例如 Window 或 macOS）的情况下，才会显示。如果你的电脑硬盘上还没有任何操作系统，那么这条选项就不会存在。如果勾选了这个选项，接下去安装程序就会为你自动设置分区。&lt;/li&gt;
+&lt;li&gt;清除整个磁盘并安装 Ubuntu：谨慎选择。因为它会把硬盘上所有的操作系统都抹除，因此一般我们不选这个选项，除非你的电脑硬盘上还没有任何操作系统。如果勾选了这个选项，安装程序会首先删除你的硬盘上的几乎所有东西，接下去安装程序就会为你自动设置分区。&lt;/li&gt;
+&lt;li&gt;其它选项：如果勾选了这个选项，接下去你就得手动进行分区。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果是单系统就选  &lt;code&gt;清除整个磁盘并安装 Ubuntu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果是装双系统选  &lt;code&gt;其他选项&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;反正选第一个我没试过。&lt;/p&gt;
+&lt;p&gt;先把要安装的硬盘（分区）右键  &lt;code&gt;删除&lt;/code&gt;  可以看到它变成了  &lt;code&gt;空闲&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后双机或者点左下的  &lt;code&gt;+加号&lt;/code&gt;  依次创建以下分区&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;大小（建议）&lt;/th&gt;
+&lt;th&gt;新分区的类型&lt;/th&gt;
+&lt;th&gt;新分区的位置&lt;/th&gt;
+&lt;th&gt;用于&lt;/th&gt;
+&lt;th&gt;挂载点&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;500MB&lt;/td&gt;
+&lt;td&gt;逻辑分区&lt;/td&gt;
+&lt;td&gt;空间起始位置&lt;/td&gt;
+&lt;td&gt;Ext4 日志文件系统&lt;/td&gt;
+&lt;td&gt;/boot&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10GB&lt;/td&gt;
+&lt;td&gt;逻辑分区&lt;/td&gt;
+&lt;td&gt;空间起始位置&lt;/td&gt;
+&lt;td&gt;交换空间&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;100GB&lt;/td&gt;
+&lt;td&gt;主分区&lt;/td&gt;
+&lt;td&gt;空间起始位置&lt;/td&gt;
+&lt;td&gt;Ext4 日志文件系统&lt;/td&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;剩下的&lt;/td&gt;
+&lt;td&gt;逻辑分区&lt;/td&gt;
+&lt;td&gt;空间起始位置&lt;/td&gt;
+&lt;td&gt;Ext4 日志文件系统&lt;/td&gt;
+&lt;td&gt;/home&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;linux 内核在更新时并不会自动删除老内核，会使  &lt;code&gt;/boot&lt;/code&gt;  空间不足，这个问题的解决方案详见 &lt;a href=&#34;https://blog.limina.top/?p=80&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这里要说一下，其实只分一个  &lt;code&gt;/&lt;/code&gt;  也可以，上述的分法是方便以后重装系统，只需要格式化  &lt;code&gt;/&lt;/code&gt;  和  &lt;code&gt;boot&lt;/code&gt;  就行了，保留数据。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;安装启动引导器的设备&lt;/code&gt;  选刚刚的  &lt;code&gt;/boot&lt;/code&gt; ，然后  &lt;code&gt;现在安装&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就好了。&lt;/p&gt;
+&lt;h2 id=&#34;安装完成后的一些问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装完成后的一些问题&#34;&gt;#&lt;/a&gt; 安装完成后的一些问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;没有网络：主流笔记本一般不会有，但是因为我之前装黑苹果换了博通的网卡，驱动有点难搞 &lt;a href=&#34;https://blog.csdn.net/love_fdu_llp/article/details/20866323&#34;&gt;https://blog.csdn.net/love_fdu_llp/article/details/20866323&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个问题已经解决：今年更新的 20.04 LTS 安装时有选项自动安装驱动&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

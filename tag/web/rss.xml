@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Being on sea, sail; being on land, settle. • Posts by &#34;web&#34; tag</title>
+        <link>https://whylim.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 21 Feb 2021 20:23:00 +0800</pubDate>
+        <lastBuildDate>Sun, 21 Feb 2021 20:23:00 +0800</lastBuildDate>
+        <category>生信</category>
+        <category>软件安装</category>
+        <category>Ubuntu</category>
+        <category>Java</category>
+        <category>建站</category>
+        <category>Python</category>
+        <category>Hexo</category>
+        <category>ShokaX</category>
+        <category>踩坑</category>
+        <category>Web</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
+        <category>MySQL</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <category>R</category>
+        <category>RNA-Seq</category>
+        <category>统计学</category>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+            <title>Xampp 的 Apache 服务打不开的问题</title>
+            <link>https://whylim.github.io/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+            <category>Web</category>
+            <pubDate>Sun, 21 Feb 2021 20:23:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;2020.8.7 立秋 打算开始搭网站了&lt;br /&gt;
+下载 Xampp 下载了几天都没下下来&lt;br /&gt;
+外国服务器真的是程序员一大痛点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;好不容易刚装上 Xampp，Apache 服务就打不开&lt;/p&gt;
+&lt;p&gt;错误日志显示  &lt;code&gt;due to a block port&lt;/code&gt; ，端口被占用&lt;/p&gt;
+&lt;p&gt;解决方法如下&lt;/p&gt;
+&lt;p&gt;先点右边的 Netstat&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201910432.png&#34; alt=&#34;Netstat&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;80 端口被 System 占用了&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201935427.png&#34; alt=&#34;端口占用&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开任务管理器 -&amp;gt; 服务 -&amp;gt; 找到 Web 部署代理服务 -&amp;gt; 停止进程&lt;/li&gt;
+&lt;li&gt;没有 Web 部署代理服务 -&amp;gt; 点 Apache 后面的 config -&amp;gt; 选择 apache (httpd.conf) -&amp;gt; 搜索 80 -&amp;gt; 修改 Listen 80 为 Listen 8080&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221202003162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;正常启动&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;正常启动。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+            <title>Win10 如何搭建 FTP 服务器</title>
+            <link>https://whylim.github.io/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+            <category>Web</category>
+            <pubDate>Sun, 21 Feb 2021 20:17:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;安卓传照片给 iPad 也太蛋疼了&lt;br /&gt;
+百度网盘太慢，坚果云免费版上传下载流量太少，OneDrive。不想用&lt;br /&gt;
+最后用了 Documents+FTP（但是后面下载视频的时候也很慢。可能是我的网络问题。不过搭都搭了记录一下吧）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;适用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#适用场景&#34;&gt;#&lt;/a&gt; 适用场景&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在局域网中传输文件但是某些软件传输文件时有大小限制（比如 QQ）、速度限制（百度网盘）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;搭建步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搭建步骤&#34;&gt;#&lt;/a&gt; 搭建步骤&lt;/h2&gt;
+&lt;p&gt;FTP (File Transfer Protocol) 是 TCP/IP 网络上两台计算机传送文件的协议，使得主机间可以共享文件&lt;/p&gt;
+&lt;p&gt;可以通过某些软件实现（但是我懒得下，自带的他不香吗）&lt;/p&gt;
+&lt;p&gt;小娜直接搜  &lt;code&gt;功能&lt;/code&gt; 打开  &lt;code&gt;启用或关闭 Window 功能&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221200442250.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;小娜搜启用或关闭 Windows 功能&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;打开 IIS (Internet Information Services)&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/202102212005171.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;打开 IIS&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;小娜搜  &lt;code&gt;IIS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221200541968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;小娜搜 IIS&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;左侧  &lt;code&gt;网站&lt;/code&gt; 右键  &lt;code&gt;添加 FTP 站点&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/2021022120084872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;添加 FTP 站点&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;填写站点信息&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221200903361.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;填写站点信息&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;然后绑定 IP 地址，cmd 中输入  &lt;code&gt;ipconfig&lt;/code&gt;  查看 IP&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221200953865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;查看 IP&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;回到 FTP 站点添加向导，设置绑定和 SSL&lt;/p&gt;
+&lt;p&gt;IP 地址栏输入刚刚查到的 IP 地址，端口保持为 21 不变，启用虚拟主机名项可以不选，&lt;/p&gt;
+&lt;p&gt;自动启动 FTP 站点可以选，SSL 可以选无 SSL&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201204406.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;绑定 IP&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;填写身份验证和授权信息，勾选身份验证下的匿名和基本两项前的复选框&lt;/p&gt;
+&lt;p&gt;允许访问项设置，勾选读取和写入权限，大家可以按需设置&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201217252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;身份验证&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;接下来要允许 FTP 服务器通过防火墙，小娜搜防火墙，点击进入  &lt;code&gt;允许应用通过 Windows 防火墙&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201246389.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;防火墙允许&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;允许 FTP 服务器通过&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201315928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;允许通过&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;浏览器中输  &lt;code&gt;ftp://我的 IP&lt;/code&gt;  就行了 或者在资源管理器中输（这个可以复制文件夹）&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201353749.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;浏览器访问&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20210221201447742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70&#34; alt=&#34;资源管理器访问&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://whylim.github.io</id>
+    <title>Being on sea, sail; being on land, settle. • Posts by &#34;建站&#34; tag</title>
+    <link href="https://whylim.github.io" />
+    <updated>2021-02-07T17:55:34.000Z</updated>
+    <category term="生信" />
+    <category term="软件安装" />
+    <category term="Ubuntu" />
+    <category term="Java" />
+    <category term="建站" />
+    <category term="Python" />
+    <category term="Hexo" />
+    <category term="ShokaX" />
+    <category term="踩坑" />
+    <category term="Web" />
+    <category term="Windows" />
+    <category term="虚拟机" />
+    <category term="MySQL" />
+    <category term="WordPress" />
+    <category term="宝塔" />
+    <category term="R" />
+    <category term="RNA-Seq" />
+    <category term="统计学" />
+    <entry>
+        <id>https://whylim.github.io/2021/02/08/%E4%BB%8E%E6%9C%AC%E5%9C%B0%E8%BF%81%E7%A7%BB%E7%BD%91%E7%AB%99%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+        <title>从本地迁移网站到服务器</title>
+        <link rel="alternate" href="https://whylim.github.io/2021/02/08/%E4%BB%8E%E6%9C%AC%E5%9C%B0%E8%BF%81%E7%A7%BB%E7%BD%91%E7%AB%99%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;本教程仅针对 Hostinger&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;进入数据库管理页面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#进入数据库管理页面&#34;&gt;#&lt;/a&gt; 进入数据库管理页面&lt;/h2&gt;
+&lt;p&gt;在宝塔面板数据库标签页面点击 phpMyAdmin&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E8%BF%9B%E5%85%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E9%A1%B5%E9%9D%A2-2021-08-21.png&#34; alt=&#34;进入数据库管理页面-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;导出数据库文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#导出数据库文件&#34;&gt;#&lt;/a&gt; 导出数据库文件&lt;/h2&gt;
+&lt;p&gt;在页面左侧找到要导出数据的本地数据库，然后全选导出&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6-2021-08-21.png&#34; alt=&#34;导出数据库文件-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;为了避免服务器 myphp 版本跟本机的不一致而导致的问题，在导出方式选择  &lt;code&gt;自定义 - 显示所有可用的选项&lt;/code&gt; ，然后下拉，在【格式特定选项】中的  &lt;code&gt;最大程度兼容数据库系统或旧版本的MySQL服务器&lt;/code&gt; 选项中，选择  &lt;code&gt;MYSQL40&lt;/code&gt; （在服务器中还原数据库的时也要选择该选项）&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%A0%BC%E5%BC%8F%E7%89%B9%E5%AE%9A%E9%80%89%E9%A1%B9-2021-08-21.png&#34; alt=&#34;格式特定选项-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;然后点击  &lt;code&gt;执行&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改数据库&#34;&gt;#&lt;/a&gt; 修改数据库&lt;/h2&gt;
+&lt;p&gt;数据库中记录的是本地 localhost 信息，要上线到服务器就要改成我的域名才能访问。我们可以直接改文件。复制一份 sql 文件，把 localhost 替换成我的域名，全部替换完毕就保存。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B61-2021-08-21.png&#34; alt=&#34;修改数据库文件1-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;创建好后点击  &lt;code&gt;Enter phpMyAdmin&lt;/code&gt;  进入数据库管理面板&lt;/p&gt;
+&lt;p&gt;导入成功后回到 Hostinger 面板在左侧找到  &lt;code&gt;Files -&amp;gt; File Manager&lt;/code&gt; ，将所有网站文件打包上传&lt;/p&gt;
+&lt;p&gt;修改 WordPress 配置文件并保存&lt;/p&gt;
+&lt;h2 id=&#34;还原数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#还原数据库&#34;&gt;#&lt;/a&gt; 还原数据库&lt;/h2&gt;
+&lt;p&gt;新建一个新的数据库&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%96%B0%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93-2021-08-21.png&#34; alt=&#34;新建数据库-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;还原数据库&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E8%BF%98%E5%8E%9F%E6%95%B0%E6%8D%AE%E5%BA%93-2021-08-21.png&#34; alt=&#34;还原数据库-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;修改 WordPress 的配置文件&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%BF%AE%E6%94%B9WordPress%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-2021-08-21.png&#34; alt=&#34;修改WordPress配置文件-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;修改数据库文件，将所有测试域名换成新的域名&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B62-2021-08-21.png&#34; alt=&#34;修改数据库文件2-2021-08-21&#34; /&gt; &lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B63-2021-08-21.png&#34; alt=&#34;修改数据库文件3-2021-08-21&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="建站" />
+        <category term="MySQL" />
+        <updated>2021-02-07T17:55:34.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://whylim.github.io/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/</id>
+        <title>Hostinger 建站流程</title>
+        <link rel="alternate" href="https://whylim.github.io/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/"/>
+        <content type="html">&lt;h2 id=&#34;购买&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#购买&#34;&gt;#&lt;/a&gt; 购买&lt;/h2&gt;
+&lt;h2 id=&#34;添加域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加域名&#34;&gt;#&lt;/a&gt; 添加域名&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D-2021-08-21.png&#34; alt=&#34;添加域名-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这里我选择在 Namesilo 上买好的域名&lt;/p&gt;
+&lt;h2 id=&#34;创建迁移网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建迁移网站&#34;&gt;#&lt;/a&gt; 创建 / 迁移网站&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%88%9B%E5%BB%BA%E6%88%96%E8%BF%81%E7%A7%BB%E7%BD%91%E7%AB%99-2021-08-21.png&#34; alt=&#34;创建或迁移网站-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;点创建新网站&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E9%82%A3%E6%88%91%E8%82%AF%E5%AE%9A%E9%80%89no-2021-08-21.png&#34; alt=&#34;那我肯定选 no-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;那我肯定选 no&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E9%80%89WordPress-2021-08-21.png&#34; alt=&#34;选 WordPress-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;选右边的 WordPress&lt;/p&gt;
+&lt;p&gt;填好密码，选一个主题即可开始安装&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85WordPress-2021-08-21.png&#34; alt=&#34;服务器安装 WordPress-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改-dns-服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改-dns-服务器&#34;&gt;#&lt;/a&gt; 修改 DNS 服务器&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%BF%AE%E6%94%B9%E5%9F%9F%E5%90%8D%E7%9A%84DNS%E6%9C%8D%E5%8A%A1%E5%99%A8-2021-08-21.png&#34; alt=&#34;修改域名的 DNS 服务器-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将所给的两个 DNS 地址复制粘贴到 Namesilo（我买域名的地方）对应处&lt;/p&gt;
+&lt;p&gt;生效时间 emmm，等等。&lt;/p&gt;
+</content>
+        <category term="建站" />
+        <updated>2021-02-07T17:11:02.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://whylim.github.io/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/</id>
+        <title>宝塔+WordPress建站</title>
+        <link rel="alternate" href="https://whylim.github.io/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/"/>
+        <content type="html">&lt;h1 id=&#34;宝塔wordpress建站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#宝塔wordpress建站&#34;&gt;#&lt;/a&gt; 宝塔 + WordPress 建站&lt;/h1&gt;
+&lt;h2 id=&#34;下载宝塔面板&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载宝塔面板&#34;&gt;#&lt;/a&gt; 下载宝塔面板&lt;/h2&gt;
+&lt;p&gt;网址：&lt;a href=&#34;https://www.bt.cn/&#34;&gt;https://www.bt.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置&#34;&gt;#&lt;/a&gt; 配置&lt;/h2&gt;
+&lt;p&gt;安装完成打开，删除安全入口，填写用户名和密码然后保存&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE-2021-08-21.png&#34; alt=&#34;面板配置-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;登录面板&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#登录面板&#34;&gt;#&lt;/a&gt; 登录面板&lt;/h2&gt;
+&lt;p&gt;直接点击上面的面板地址，输入用户名和密码登录&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E7%99%BB%E5%BD%95%E9%9D%A2%E6%9D%BF-2021-08-21.png&#34; alt=&#34;登录面板-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装套件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装套件&#34;&gt;#&lt;/a&gt; 安装套件&lt;/h2&gt;
+&lt;p&gt;安装套件选择安装 Nginx 套件，选择版本 PHP 选最新版 7.3，其他随便&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%AE%89%E8%A3%85%E5%A5%97%E4%BB%B6-2021-08-21.png&#34; alt=&#34;安装套件-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;安装完的界面&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E7%95%8C%E9%9D%A2-2021-08-21.png&#34; alt=&#34;界面-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加站点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加站点&#34;&gt;#&lt;/a&gt; 添加站点&lt;/h2&gt;
+&lt;p&gt;点击左侧网站→添加站点&lt;/p&gt;
+&lt;p&gt;因为是本地测试，随便写一个域名&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9-2021-08-21.png&#34; alt=&#34;添加站点-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;先不创建 FTP，数据库使用 MySQL，提交&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%AE%8C%E6%88%90-2021-08-21.png&#34; alt=&#34;添加站点完成-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改hosts文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改hosts文件&#34;&gt;#&lt;/a&gt; 修改 hosts 文件&lt;/h2&gt;
+&lt;p&gt;因为是别人的域名，要访问本地虚拟出来的网站，就要修改 hosts 文件&lt;/p&gt;
+&lt;p&gt;文件位置  &lt;code&gt;C:\WINDOWS\system32\drivers\etc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/hosts%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE-2021-08-21.png&#34; alt=&#34;hosts文件位置-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;在此目录下没有权限修改 hosts 文件，所以我们把 hosts 文件移动到桌面再修改&lt;/p&gt;
+&lt;p&gt;在文档最后添加  &lt;code&gt;127.0.0.1 刚刚的站点&lt;/code&gt; ，保存后再放回原目录&lt;/p&gt;
+&lt;p&gt;再回到浏览器输入网址，就可以访问了&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%8F%AF%E8%AE%BF%E9%97%AE-2021-08-21.png&#34; alt=&#34;可访问-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;搭建wordpress程序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搭建wordpress程序&#34;&gt;#&lt;/a&gt; 搭建 WordPress 程序&lt;/h2&gt;
+&lt;p&gt;WordPress 是一款建立网站、博客或应用的开源软件。&lt;/p&gt;
+&lt;p&gt;网址：&lt;a href=&#34;https://cn.wordpress.org/&#34;&gt;https://cn.wordpress.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击右上角  &lt;code&gt;获取WordPress&lt;/code&gt; ，下滑下载压缩包&lt;/p&gt;
+&lt;p&gt;回到宝塔面板网站标签页，点击添加的站点根目录&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E7%82%B9%E5%87%BB%E6%A0%B9%E7%9B%AE%E5%BD%95-2021-08-21.png&#34; alt=&#34;点击根目录-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;删除原网页文件，保留配置文件&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%88%A0%E9%99%A4%E5%8E%9F%E7%BD%91%E9%A1%B5%E6%96%87%E4%BB%B6-2021-08-21.png&#34; alt=&#34;删除原网页文件-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;点击左上角  &lt;code&gt;上传&lt;/code&gt; 上传刚才下载的 WordPress 压缩包&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E4%B8%8A%E4%BC%A0WordPress%E5%8E%8B%E7%BC%A9%E5%8C%85-2021-08-21.png&#34; alt=&#34;上传WordPress压缩包-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;点击右侧解压解压压缩包，将解压出来文件夹  &lt;code&gt;wordpress&lt;/code&gt;  下所有文件剪切到根目录（刚刚上传压缩包的目录），然后删除压缩包和空文件夹  &lt;code&gt;wordpress&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;返回刷新网站页面，出现安装 WordPress 向导，点击  &lt;code&gt;现在就开始！&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%AE%89%E8%A3%85WordPress-2021-08-21.png&#34; alt=&#34;安装WordPress-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;返回宝塔面板，点击数据库标签查看添加网站时创建的数据库&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%88%9B%E5%BB%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93-2021-08-21.png&#34; alt=&#34;创建的数据库-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将信息填入页面&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%A1%AB%E5%86%99%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%A1%E6%81%AF-2021-08-21.png&#34; alt=&#34;填写数据库信息-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;提交后点击  &lt;code&gt;开始安装&lt;/code&gt; ，然后配置站点信息&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF-2021-08-21.png&#34; alt=&#34;配置站点信息-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后登录&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/WordPress%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90-2021-08-21.png&#34; alt=&#34;WordPress安装完成-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;就能进入 WordPress 后台界面了&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/WordPress%E5%90%8E%E5%8F%B0%E7%95%8C%E9%9D%A2-2021-08-21.png&#34; alt=&#34;WordPress后台界面-2021-08-21&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;前台，好丑。。。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E5%89%8D%E5%8F%B0-2021-08-21.png&#34; alt=&#34;前台-2021-08-21&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="建站" />
+        <category term="WordPress" />
+        <category term="宝塔" />
+        <updated>2021-02-04T14:12:15.000Z</updated>
+    </entry>
+</feed>

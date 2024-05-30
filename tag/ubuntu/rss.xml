@@ -7,10 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Wed, 10 Mar 2021 17:15:14 +0800</pubDate>
         <lastBuildDate>Wed, 10 Mar 2021 17:15:14 +0800</lastBuildDate>
-        <category>Ubuntu</category>
         <category>生信</category>
         <category>软件安装</category>
         <category>建站</category>
+        <category>Ubuntu</category>
         <category>Java</category>
         <category>Python</category>
         <category>Hexo</category>
@@ -19,10 +19,10 @@
         <category>虚拟机</category>
         <category>Web</category>
         <category>MySQL</category>
-        <category>R</category>
-        <category>RNA-Seq</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>R</category>
+        <category>RNA-Seq</category>
         <category>统计学</category>
         <item>
             <guid isPermalink="true">https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</guid>
@@ -256,9 +256,9 @@
             <guid isPermalink="true">https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
             <title>fluff(biofluff) 装不上的问题</title>
             <link>https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-            <category>Ubuntu</category>
             <category>生信</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:53:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
@@ -304,9 +304,9 @@
             <guid isPermalink="true">https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</guid>
             <title>Ubuntu 安装 art_illumina</title>
             <link>https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
-            <category>Ubuntu</category>
             <category>生信</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:39:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;

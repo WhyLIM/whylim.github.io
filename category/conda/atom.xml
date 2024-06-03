@@ -7,20 +7,20 @@
     <category term="生信" />
     <category term="软件安装" />
     <category term="建站" />
-    <category term="Ubuntu" />
     <category term="Java" />
-    <category term="Python" />
+    <category term="Ubuntu" />
     <category term="Hexo" />
     <category term="ShokaX" />
+    <category term="Python" />
+    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Web" />
     <category term="MySQL" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <category term="R" />
     <category term="RNA-Seq" />
-    <category term="统计学" />
     <entry>
         <id>https://whylim.github.io/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</id>
         <title>jupyter notebook 包导入路径问题</title>

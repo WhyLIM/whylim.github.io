@@ -10,20 +10,20 @@
         <category>生信</category>
         <category>软件安装</category>
         <category>建站</category>
-        <category>Ubuntu</category>
         <category>Java</category>
-        <category>Python</category>
+        <category>Ubuntu</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Python</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
         <category>MySQL</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>统计学</category>
         <category>R</category>
         <category>RNA-Seq</category>
-        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://whylim.github.io/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</guid>
             <title>jupyter notebook 包导入路径问题</title>

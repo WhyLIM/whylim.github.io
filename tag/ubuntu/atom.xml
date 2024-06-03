@@ -3,24 +3,106 @@
     <id>https://whylim.github.io</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;ubuntu&#34; tag</title>
     <link href="https://whylim.github.io" />
-    <updated>2021-03-10T09:15:14.000Z</updated>
+    <updated>2024-06-03T08:59:53.000Z</updated>
     <category term="生信" />
     <category term="软件安装" />
     <category term="建站" />
-    <category term="Ubuntu" />
     <category term="Java" />
-    <category term="Python" />
+    <category term="Ubuntu" />
     <category term="Hexo" />
     <category term="ShokaX" />
+    <category term="Python" />
+    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Web" />
     <category term="MySQL" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <category term="R" />
     <category term="RNA-Seq" />
-    <category term="统计学" />
+    <entry>
+        <id>https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</id>
+        <title>在 Ubuntu 中安装、更新和移除 deb 包</title>
+        <link rel="alternate" href="https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/"/>
+        <content type="html">&lt;h1 id=&#34;在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;#&lt;/a&gt; 在 Ubuntu 中安装、更新和移除 deb 包&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;deb 包（.deb 文件）是 Debian 软件包，用于在 Debian 及其衍生发行版（如 Ubuntu）中安装软件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;安装-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-deb-包&#34;&gt;#&lt;/a&gt; 安装 deb 包&lt;/h2&gt;
+&lt;p&gt;安装 deb 包可以使用 dpkg 命令或 apt 命令。&lt;/p&gt;
+&lt;h3 id=&#34;使用-dpkg-命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-dpkg-命令&#34;&gt;#&lt;/a&gt; 使用 dpkg 命令&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开终端（快捷键  &lt;code&gt;Ctrl&lt;/code&gt;  +  &lt;code&gt;Alt&lt;/code&gt;  +  &lt;code&gt;T&lt;/code&gt; ）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导航到存放 deb 包的目录。例如，如果 deb 包位于  &lt;code&gt;Downloads&lt;/code&gt;  文件夹中：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ~/Downloads&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 dpkg 命令安装 deb 包：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-i&lt;/span&gt; example.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果在安装过程中遇到依赖问题，可以运行以下命令来修复：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-f&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用-apt-命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-apt-命令&#34;&gt;#&lt;/a&gt; 使用 apt 命令&lt;/h3&gt;
+&lt;p&gt;apt 命令可以自动处理依赖关系：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开终端并导航到 deb 包所在的目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用以下命令安装 deb 包：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; ./example.deb&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;更新-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更新-deb-包&#34;&gt;#&lt;/a&gt; 更新 deb 包&lt;/h2&gt;
+&lt;p&gt;当需要更新已经安装的 deb 包时，可以下载新版本的 deb 包，然后重复上述的安装过程。系统会自动处理包的更新。&lt;/p&gt;
+&lt;h2 id=&#34;移除-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移除-deb-包&#34;&gt;#&lt;/a&gt; 移除 deb 包&lt;/h2&gt;
+&lt;p&gt;如果需要移除已经安装的 deb 包，可以使用以下命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用 dpkg 命令移除：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-r&lt;/span&gt; example&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 apt 命令移除：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; remove example&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;检查已安装的-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#检查已安装的-deb-包&#34;&gt;#&lt;/a&gt; 检查已安装的 deb 包&lt;/h2&gt;
+&lt;p&gt;可以使用以下命令列出系统中所有已安装的 deb 包：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;要查找特定的软件包是否安装，可以使用 grep 命令，例如检查是否安装了  &lt;code&gt;example&lt;/code&gt;  包：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; example&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;案例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#案例&#34;&gt;#&lt;/a&gt; 案例&lt;/h2&gt;
+&lt;p&gt;要移除一个 deb 包，但不知道包名怎么办？&lt;/p&gt;
+&lt;h3 id=&#34;查找安装的-deb-包文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查找安装的-deb-包文件&#34;&gt;#&lt;/a&gt; 查找安装的 deb 包文件&lt;/h3&gt;
+&lt;p&gt;首先，可以使用  &lt;code&gt;dpkg&lt;/code&gt;  命令列出所有已安装的包，结合  &lt;code&gt;grep&lt;/code&gt;  命令查找相关信息：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;关键字&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;例如，如果你想移除的是  &lt;code&gt;linuxqq&lt;/code&gt;  相关的包，可以使用以下命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;确定包名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#确定包名&#34;&gt;#&lt;/a&gt; 确定包名&lt;/h3&gt;
+&lt;p&gt;上述命令会输出包含关键字的已安装包的信息，从中找到你要移除的包名。例如，输出可能是：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ii  linuxqq     3.2.8-23873     amd64        Tencent QQ for Linux&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在这个例子中，包名就是  &lt;code&gt;linuxqq&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;移除-deb-包-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移除-deb-包-2&#34;&gt;#&lt;/a&gt; 移除 deb 包&lt;/h3&gt;
+&lt;p&gt;使用  &lt;code&gt;apt&lt;/code&gt;  或  &lt;code&gt;dpkg&lt;/code&gt;  命令移除包：&lt;/p&gt;
+&lt;h4 id=&#34;使用-apt-命令-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-apt-命令-2&#34;&gt;#&lt;/a&gt; 使用 apt 命令：&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; remove linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;或者，如果你想彻底移除包括配置文件，可以使用：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; purge linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;使用-dpkg-命令-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-dpkg-命令-2&#34;&gt;#&lt;/a&gt; 使用 dpkg 命令：&lt;/h4&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-r&lt;/span&gt; linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;清理系统可选&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#清理系统可选&#34;&gt;#&lt;/a&gt; 清理系统（可选）&lt;/h3&gt;
+&lt;p&gt;在移除包后，可以使用以下命令清理系统中不再需要的依赖和文件：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; clean&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;完整流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#完整流程&#34;&gt;#&lt;/a&gt; 完整流程&lt;/h3&gt;
+&lt;p&gt;假设你要移除名为  &lt;code&gt;linuxqq&lt;/code&gt;  的软件包，完整流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查找包名：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;dpkg &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移除包：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; remove linuxqq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;清理系统：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; clean&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="Ubuntu" />
+        <updated>2024-06-03T08:59:53.000Z</updated>
+    </entry>
     <entry>
         <id>https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</id>
         <title>Ubuntu 开机光标闪烁进不了系统</title>

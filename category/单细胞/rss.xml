@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Being on sea, sail; being on land, settle. • Posts by &#34;单细胞&#34; category</title>
+        <link>https://whylim.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 27 Jun 2024 11:46:08 +0800</pubDate>
+        <lastBuildDate>Thu, 27 Jun 2024 11:46:08 +0800</lastBuildDate>
+        <category>R</category>
+        <category>生信</category>
+        <category>单细胞</category>
+        <category>软件安装</category>
+        <category>生信，WES</category>
+        <category>WGS</category>
+        <category>Java</category>
+        <category>Ubuntu</category>
+        <category>Python</category>
+        <category>建站</category>
+        <category>Hexo</category>
+        <category>ShokaX</category>
+        <category>Web</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
+        <category>MySQL</category>
+        <category>统计学</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <item>
+            <guid isPermalink="true">https://whylim.github.io/2024/06/27/Aging%20Biomarker%E5%9C%A8%E5%8D%95%E7%BB%86%E8%83%9E%E6%95%B0%E6%8D%AE%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+            <title>Aging Biomarker 在单细胞数据上的应用</title>
+            <link>https://whylim.github.io/2024/06/27/Aging%20Biomarker%E5%9C%A8%E5%8D%95%E7%BB%86%E8%83%9E%E6%95%B0%E6%8D%AE%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+            <category>R</category>
+            <category>生信</category>
+            <category>单细胞</category>
+            <pubDate>Thu, 27 Jun 2024 11:46:08 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;aging-biomarker-在单细胞数据上的应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aging-biomarker-在单细胞数据上的应用&#34;&gt;#&lt;/a&gt; Aging Biomarker 在单细胞数据上的应用&lt;/h1&gt;
+&lt;h2 id=&#34;单细胞数据集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单细胞数据集&#34;&gt;#&lt;/a&gt; 单细胞数据集&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;GSE213516&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;研究标题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#研究标题&#34;&gt;#&lt;/a&gt; 研究标题：&lt;/h3&gt;
+&lt;p&gt;单细胞水平外周血单个核细胞（PBMCs）基因表达谱&lt;/p&gt;
+&lt;h3 id=&#34;研究目的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#研究目的&#34;&gt;#&lt;/a&gt; 研究目的：&lt;/h3&gt;
+&lt;p&gt;量化衰老速度以评估与年龄相关的衰退和死亡率，建立单细胞水平的衰老时钟。&lt;/p&gt;
+&lt;h3 id=&#34;实验类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验类型&#34;&gt;#&lt;/a&gt; 实验类型：&lt;/h3&gt;
+&lt;p&gt;高通量测序表达谱分析&lt;/p&gt;
+&lt;h3 id=&#34;实验设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验设计&#34;&gt;#&lt;/a&gt; 实验设计：&lt;/h3&gt;
+&lt;p&gt;研究纳入了 17 名健康志愿者，所有志愿者在采血时被评估为一般健康状态。&lt;/p&gt;
+&lt;h3 id=&#34;供体信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#供体信息&#34;&gt;#&lt;/a&gt; 供体信息：&lt;/h3&gt;
+&lt;p&gt;17 名健康志愿者&lt;/p&gt;
+&lt;h3 id=&#34;数据概览&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据概览&#34;&gt;#&lt;/a&gt; 数据概览：&lt;/h3&gt;
+&lt;p&gt;由于患者隐私问题，原始数据不可公开，但提供了处理后的数据和细胞类型注释。&lt;/p&gt;
+&lt;h3 id=&#34;主要发现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#主要发现&#34;&gt;#&lt;/a&gt; 主要发现：&lt;/h3&gt;
+&lt;p&gt;研究发现通过单细胞 RNA 测序，PBMC 中的核糖体与炎症平衡是单细胞衰老的标志。&lt;/p&gt;
+&lt;h3 id=&#34;提交与更新&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#提交与更新&#34;&gt;#&lt;/a&gt; 提交与更新：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;提交日期：2022 年 9 月 16 日&lt;/li&gt;
+&lt;li&gt;最后更新：2023 年 7 月 27 日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;研究总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#研究总结&#34;&gt;#&lt;/a&gt; 研究总结：&lt;/h3&gt;
+&lt;p&gt;该研究通过对 17 名健康供体 PBMCs 的单细胞 RNA 测序数据，建立了一个参考衰老队列，旨在计算单细胞水平的衰老时钟，并揭示了与衰老相关的重要基因表达特征。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

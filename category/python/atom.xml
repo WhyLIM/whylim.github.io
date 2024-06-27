@@ -4,23 +4,27 @@
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;python&#34; category</title>
     <link href="https://whylim.github.io" />
     <updated>2020-11-01T02:04:00.000Z</updated>
-    <category term="Ubuntu" />
+    <category term="R" />
     <category term="生信" />
+    <category term="单细胞" />
     <category term="软件安装" />
-    <category term="建站" />
-    <category term="Python" />
+    <category term="生信，WES" />
+    <category term="WGS" />
     <category term="Java" />
+    <category term="Ubuntu" />
+    <category term="Python" />
+    <category term="建站" />
     <category term="Hexo" />
     <category term="ShokaX" />
+    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Web" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
     <category term="MySQL" />
+    <category term="统计学" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="统计学" />
-    <category term="R" />
-    <category term="RNA-Seq" />
     <entry>
         <id>https://whylim.github.io/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</id>
         <title>jupyter notebook 包导入路径问题</title>

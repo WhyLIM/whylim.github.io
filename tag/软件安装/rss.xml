@@ -13,23 +13,23 @@
         <category>WES</category>
         <category>WGS</category>
         <category>软件安装</category>
-        <category>Ubuntu</category>
-        <category>Java</category>
         <category>建站</category>
+        <category>Java</category>
+        <category>Python</category>
+        <category>Ubuntu</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Python</category>
         <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>MySQL</category>
+        <category>统计学</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://whylim.github.io/2021/03/03/arraytools%E7%9A%84excel%E6%8F%92%E4%BB%B6%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
             <title>ArrayTools 的 Excel 插件不自动安装的问题</title>

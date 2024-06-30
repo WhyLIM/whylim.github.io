@@ -13,23 +13,23 @@
         <category>WES</category>
         <category>WGS</category>
         <category>软件安装</category>
-        <category>Ubuntu</category>
-        <category>Java</category>
         <category>建站</category>
+        <category>Java</category>
+        <category>Python</category>
+        <category>Ubuntu</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Python</category>
         <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>MySQL</category>
+        <category>统计学</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</guid>
             <title>在 Ubuntu 中安装、更新和移除 deb 包</title>

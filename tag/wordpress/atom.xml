@@ -10,23 +10,23 @@
     <category term="WES" />
     <category term="WGS" />
     <category term="软件安装" />
-    <category term="Ubuntu" />
-    <category term="Java" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
+    <category term="Ubuntu" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Python" />
     <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="MySQL" />
+    <category term="统计学" />
     <category term="Entrez API" />
     <category term="NCBI" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="统计学" />
     <entry>
         <id>https://whylim.github.io/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/</id>
         <title>宝塔+WordPress建站</title>

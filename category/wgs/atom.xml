@@ -6,14 +6,14 @@
     <updated>2024-06-26T09:26:55.000Z</updated>
     <category term="R" />
     <category term="生信" />
-    <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
+    <category term="单细胞" />
     <category term="软件安装" />
+    <category term="Ubuntu" />
     <category term="建站" />
     <category term="Java" />
     <category term="Python" />
-    <category term="Ubuntu" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Web" />
@@ -22,11 +22,11 @@
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="MySQL" />
-    <category term="统计学" />
     <category term="Entrez API" />
     <category term="NCBI" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
         <id>https://whylim.github.io/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/</id>
         <title>使用 Annovar 注释 VCF 文件</title>

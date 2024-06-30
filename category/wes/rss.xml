@@ -12,23 +12,23 @@
         <category>单细胞</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
-        <category>建站</category>
-        <category>Python</category>
+        <category>Ubuntu</category>
         <category>Java</category>
+        <category>建站</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Python</category>
         <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>统计学</category>
         <item>
             <guid isPermalink="true">https://whylim.github.io/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/</guid>

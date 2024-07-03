@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://whylim.github.io</id>
+    <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;wgs&#34; tag</title>
-    <link href="https://whylim.github.io" />
+    <link href="https://new.limina.top" />
     <updated>2024-06-26T09:26:55.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Ubuntu" />
     <category term="软件安装" />
-    <category term="Python" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="MySQL" />
     <category term="RNA-Seq" />
     <category term="可视化" />
-    <category term="network" />
-    <category term="interactome" />
+    <category term="MySQL" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="统计学" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
-        <id>https://whylim.github.io/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/</id>
+        <id>https://new.limina.top/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/</id>
         <title>使用 Annovar 注释 VCF 文件</title>
-        <link rel="alternate" href="https://whylim.github.io/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/"/>
+        <link rel="alternate" href="https://new.limina.top/2024/06/26/Annovar%E6%B3%A8%E9%87%8AVCF%E6%96%87%E4%BB%B6/"/>
         <content type="html">&lt;h1 id=&#34;使用-annovar-注释-vcf-文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-annovar-注释-vcf-文件&#34;&gt;#&lt;/a&gt; 使用 Annovar 注释 VCF 文件&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;变异注释是基因组学研究中的关键步骤，帮助研究人员理解变异的功能意义。Annovar (ANNOtate VARiation) 是一个广泛使用的工具，用于对变异进行功能注释。&lt;/p&gt;

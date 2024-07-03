@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://whylim.github.io</id>
+    <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;conda&#34; category</title>
-    <link href="https://whylim.github.io" />
+    <link href="https://new.limina.top" />
     <updated>2020-11-01T02:04:00.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Ubuntu" />
     <category term="软件安装" />
-    <category term="Python" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="MySQL" />
     <category term="RNA-Seq" />
     <category term="可视化" />
-    <category term="network" />
-    <category term="interactome" />
+    <category term="MySQL" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="统计学" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
-        <id>https://whylim.github.io/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</id>
+        <id>https://new.limina.top/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/</id>
         <title>jupyter notebook 包导入路径问题</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/01/jupyternotebook%E5%8C%85%E5%AF%BC%E5%85%A5%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;之前在 windows 下自己写的 python 包只要放到  &lt;code&gt;.../anaconda3/lib/pythonx.x/site-packages&lt;/code&gt;  下就能导入了，到 ubuntu 里发现不行，因为由于各种奇奇怪怪的原因电脑上装了两个 jupyter notebook… 而且路径都不对&lt;/p&gt;
 &lt;p&gt;感谢 CSDN 的大哥，让我用上了更简单的 Ubuntu&lt;/p&gt;

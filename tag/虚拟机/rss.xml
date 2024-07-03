@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Being on sea, sail; being on land, settle. • Posts by &#34;虚拟机&#34; tag</title>
-        <link>https://whylim.github.io</link>
+        <link>https://new.limina.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Wed, 08 May 2019 19:06:16 +0800</pubDate>
@@ -12,30 +12,30 @@
         <category>单细胞</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
-        <category>Python</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
         <category>建站</category>
+        <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>MySQL</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
-        <category>network</category>
-        <category>interactome</category>
+        <category>MySQL</category>
         <category>Entrez API</category>
         <category>NCBI</category>
-        <category>统计学</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>统计学</category>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+            <guid isPermalink="true">https://new.limina.top/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
             <title>Win10 内置 Hyper-V 虚拟机使用教程</title>
-            <link>https://whylim.github.io/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+            <link>https://new.limina.top/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
             <category>Windows</category>
             <category>虚拟机</category>
             <pubDate>Wed, 08 May 2019 19:06:16 +0800</pubDate>

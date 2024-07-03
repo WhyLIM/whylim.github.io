@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Being on sea, sail; being on land, settle. • Posts by &#34;linux 折腾记录&#34; category</title>
-        <link>https://whylim.github.io</link>
+        <link>https://new.limina.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 03 Jun 2024 16:59:53 +0800</pubDate>
@@ -12,30 +12,30 @@
         <category>单细胞</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
-        <category>Python</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
         <category>建站</category>
+        <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>MySQL</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
-        <category>network</category>
-        <category>interactome</category>
+        <category>MySQL</category>
         <category>Entrez API</category>
         <category>NCBI</category>
-        <category>统计学</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>统计学</category>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</guid>
+            <guid isPermalink="true">https://new.limina.top/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</guid>
             <title>在 Ubuntu 中安装、更新和移除 deb 包</title>
-            <link>https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</link>
+            <link>https://new.limina.top/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</link>
             <category>Ubuntu</category>
             <pubDate>Mon, 03 Jun 2024 16:59:53 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;#&lt;/a&gt; 在 Ubuntu 中安装、更新和移除 deb 包&lt;/h1&gt;
@@ -115,9 +115,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</guid>
+            <guid isPermalink="true">https://new.limina.top/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</guid>
             <title>Ubuntu 开机光标闪烁进不了系统</title>
-            <link>https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</link>
+            <link>https://new.limina.top/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</link>
             <category>Ubuntu</category>
             <pubDate>Wed, 10 Mar 2021 17:15:14 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -135,9 +135,9 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 卸载显卡驱动&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt-get&lt;/span&gt; remove &lt;span class=&#34;token parameter variable&#34;&gt;--purge&lt;/span&gt; nvidia*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; update&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; upgrade&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;apt&lt;/span&gt; autoremove&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 重启&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;reboot&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</guid>
+            <guid isPermalink="true">https://new.limina.top/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</guid>
             <title>制作移动硬盘启动盘（Ubuntu）</title>
-            <link>https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</link>
+            <link>https://new.limina.top/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</link>
             <category>Ubuntu</category>
             <pubDate>Sun, 21 Feb 2021 20:30:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -166,9 +166,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</guid>
             <title>Ubuntu 开机慢</title>
-            <link>https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</link>
+            <link>https://new.limina.top/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</link>
             <category>Ubuntu</category>
             <pubDate>Mon, 21 Dec 2020 14:50:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;安装完开机需要大约 2 分钟（SSD）&lt;/p&gt;
@@ -189,9 +189,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</guid>
             <title>Ubuntu 下两种软件的全局使用</title>
-            <link>https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</link>
+            <link>https://new.limina.top/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</link>
             <category>Ubuntu</category>
             <pubDate>Tue, 24 Nov 2020 08:33:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -215,9 +215,9 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;sudo&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cp&lt;/span&gt; 软件路径 /usr/bin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</guid>
             <title>Ubuntu 下批量转 pdf</title>
-            <link>https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</link>
+            <link>https://new.limina.top/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</link>
             <category>Ubuntu</category>
             <pubDate>Wed, 18 Nov 2020 17:29:00 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;软件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件&#34;&gt;#&lt;/a&gt; 软件&lt;/h2&gt;
@@ -228,9 +228,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</guid>
             <title>Ubuntu wine QQ 卡死</title>
-            <link>https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</link>
+            <link>https://new.limina.top/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</link>
             <category>Ubuntu</category>
             <pubDate>Mon, 16 Nov 2020 11:06:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -275,9 +275,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</guid>
             <title>如何在 Ubuntu 下使用 QQ</title>
-            <link>https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</link>
+            <link>https://new.limina.top/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</link>
             <category>Ubuntu</category>
             <pubDate>Mon, 16 Nov 2020 09:39:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -343,12 +343,12 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
             <title>fluff(biofluff) 装不上的问题</title>
-            <link>https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+            <link>https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
             <category>生信</category>
-            <category>Ubuntu</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:53:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
@@ -391,12 +391,12 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</guid>
             <title>Ubuntu 安装 art_illumina</title>
-            <link>https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
+            <link>https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
             <category>生信</category>
-            <category>Ubuntu</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:39:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;
@@ -413,9 +413,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</guid>
             <title>Ubuntu 更新时 boot 空间不足</title>
-            <link>https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
+            <link>https://new.limina.top/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</link>
             <category>Ubuntu</category>
             <pubDate>Sat, 31 Oct 2020 23:58:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
@@ -439,9 +439,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</guid>
+            <guid isPermalink="true">https://new.limina.top/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</guid>
             <title>Ubuntu 硬盘安装</title>
-            <link>https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</link>
+            <link>https://new.limina.top/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</link>
             <category>Ubuntu</category>
             <pubDate>Sat, 31 Oct 2020 21:52:00 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作：&lt;/h3&gt;

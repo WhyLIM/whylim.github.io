@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://whylim.github.io</id>
+    <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;web&#34; category</title>
-    <link href="https://whylim.github.io" />
+    <link href="https://new.limina.top" />
     <updated>2021-02-21T12:23:00.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Ubuntu" />
     <category term="软件安装" />
-    <category term="Python" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="MySQL" />
     <category term="RNA-Seq" />
     <category term="可视化" />
-    <category term="network" />
-    <category term="interactome" />
+    <category term="MySQL" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="统计学" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
-        <id>https://whylim.github.io/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+        <id>https://new.limina.top/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/</id>
         <title>Xampp 的 Apache 服务打不开的问题</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/02/21/xampp%E7%9A%84apache%E6%9C%8D%E5%8A%A1%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;2020.8.7 立秋 打算开始搭网站了&lt;br /&gt;
 下载 Xampp 下载了几天都没下下来&lt;br /&gt;
@@ -56,9 +56,9 @@
         <updated>2021-02-21T12:23:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+        <id>https://new.limina.top/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
         <title>Win10 如何搭建 FTP 服务器</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/02/21/win10%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAftp%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;安卓传照片给 iPad 也太蛋疼了&lt;br /&gt;
 百度网盘太慢，坚果云免费版上传下载流量太少，OneDrive。不想用&lt;br /&gt;
@@ -102,9 +102,9 @@
         <updated>2021-02-21T12:17:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/</id>
+        <id>https://new.limina.top/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/</id>
         <title>Hostinger 建站流程</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/02/08/hostinger%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B/"/>
         <content type="html">&lt;h2 id=&#34;购买&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#购买&#34;&gt;#&lt;/a&gt; 购买&lt;/h2&gt;
 &lt;h2 id=&#34;添加域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#添加域名&#34;&gt;#&lt;/a&gt; 添加域名&lt;/h2&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img.limina.top/blog/%E6%B7%BB%E5%8A%A0%E5%9F%9F%E5%90%8D-2021-08-21.png&#34; alt=&#34;添加域名-2021-08-21&#34; /&gt;&lt;/p&gt;
@@ -127,9 +127,9 @@
         <updated>2021-02-07T17:11:02.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/</id>
+        <id>https://new.limina.top/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/</id>
         <title>宝塔+WordPress建站</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/02/04/%E5%AE%9D%E5%A1%94wordpress%E5%BB%BA%E7%AB%99%EF%BC%88%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95%EF%BC%89/"/>
         <content type="html">&lt;h1 id=&#34;宝塔wordpress建站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#宝塔wordpress建站&#34;&gt;#&lt;/a&gt; 宝塔 + WordPress 建站&lt;/h1&gt;
 &lt;h2 id=&#34;下载宝塔面板&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载宝塔面板&#34;&gt;#&lt;/a&gt; 下载宝塔面板&lt;/h2&gt;
 &lt;p&gt;网址：&lt;a href=&#34;https://www.bt.cn/&#34;&gt;https://www.bt.cn/&lt;/a&gt;&lt;/p&gt;

@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://whylim.github.io</id>
+    <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;linux 折腾记录&#34; category</title>
-    <link href="https://whylim.github.io" />
+    <link href="https://new.limina.top" />
     <updated>2024-06-03T08:59:53.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Ubuntu" />
     <category term="软件安装" />
-    <category term="Python" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="MySQL" />
     <category term="RNA-Seq" />
     <category term="可视化" />
-    <category term="network" />
-    <category term="interactome" />
+    <category term="MySQL" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="统计学" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
-        <id>https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</id>
+        <id>https://new.limina.top/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/</id>
         <title>在 Ubuntu 中安装、更新和移除 deb 包</title>
-        <link rel="alternate" href="https://whylim.github.io/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/"/>
+        <link rel="alternate" href="https://new.limina.top/2024/06/03/%E5%AE%89%E8%A3%85%E5%92%8C%E6%9B%B4%E6%96%B0deb%E5%8C%85/"/>
         <content type="html">&lt;h1 id=&#34;在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-ubuntu-中安装-更新和移除-deb-包&#34;&gt;#&lt;/a&gt; 在 Ubuntu 中安装、更新和移除 deb 包&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;deb 包（.deb 文件）是 Debian 软件包，用于在 Debian 及其衍生发行版（如 Ubuntu）中安装软件。&lt;/p&gt;
@@ -112,9 +112,9 @@
         <updated>2024-06-03T08:59:53.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</id>
+        <id>https://new.limina.top/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/</id>
         <title>Ubuntu 开机光标闪烁进不了系统</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/03/10/ubuntu%E5%BC%80%E6%9C%BA%E5%85%89%E6%A0%87%E9%97%AA%E7%83%81%E8%BF%9B%E4%B8%8D%E4%BA%86%E7%B3%BB%E7%BB%9F/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;前几天把同一块硬盘上的黑苹果删掉装了 deepin 20 然后再进 Ubuntu 就进不去了，左上角有个光标一直在闪 尝试了修复引导，但是没有用&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -132,9 +132,9 @@
         <updated>2021-03-10T09:15:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</id>
+        <id>https://new.limina.top/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/</id>
         <title>制作移动硬盘启动盘（Ubuntu）</title>
-        <link rel="alternate" href="https://whylim.github.io/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/"/>
+        <link rel="alternate" href="https://new.limina.top/2021/02/21/%E5%88%B6%E4%BD%9C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88ubuntu%EF%BC%89/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;很久很久以前装的 Ubuntu 的 WiFi 一直有问题，今天问了 tb 说这个太费时间了。。。&lt;br /&gt;
 想到之前那个用来做启动盘的 U 盘好像不太行，想想还是重装下系统吧&lt;br /&gt;
@@ -163,9 +163,9 @@
         <updated>2021-02-21T12:30:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</id>
+        <id>https://new.limina.top/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/</id>
         <title>Ubuntu 开机慢</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/12/21/ubuntu%E5%BC%80%E6%9C%BA%E6%85%A2/"/>
         <content type="html">&lt;p&gt;安装完开机需要大约 2 分钟（SSD）&lt;/p&gt;
 &lt;p&gt;按方向键上键到代码页面&lt;/p&gt;
 &lt;p&gt;看到有一行  &lt;code&gt;A start job is running for dev-disk-by...&lt;/code&gt;&lt;/p&gt;
@@ -186,9 +186,9 @@
         <updated>2020-12-21T06:50:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</id>
+        <id>https://new.limina.top/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/</id>
         <title>Ubuntu 下两种软件的全局使用</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/24/ubuntu%E4%B8%8B%E4%B8%A4%E7%A7%8D%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Ubuntu 下安装的软件有几种：&lt;/p&gt;
 &lt;ol&gt;
@@ -212,9 +212,9 @@
         <updated>2020-11-24T00:33:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</id>
+        <id>https://new.limina.top/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/</id>
         <title>Ubuntu 下批量转 pdf</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/18/ubuntu%E4%B8%8B%E6%89%B9%E9%87%8F%E8%BD%ACpdf/"/>
         <content type="html">&lt;h2 id=&#34;软件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件&#34;&gt;#&lt;/a&gt; 软件&lt;/h2&gt;
 &lt;p&gt;LibreOffice&lt;/p&gt;
 &lt;p&gt;系统一般都自带了&lt;/p&gt;
@@ -225,9 +225,9 @@
         <updated>2020-11-18T09:29:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</id>
+        <id>https://new.limina.top/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/</id>
         <title>Ubuntu wine QQ 卡死</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/16/ubuntuwineqq%E5%8D%A1%E6%AD%BB/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;前几天在 Ubuntu 下写基因组信息学实验报告&lt;br /&gt;
 用 wps-linux 转 pdf 遇到了字体问题，就把 windows 字体拷过来安装了&lt;br /&gt;
@@ -272,9 +272,9 @@
         <updated>2020-11-16T03:06:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</id>
+        <id>https://new.limina.top/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/</id>
         <title>如何在 Ubuntu 下使用 QQ</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/16/%E5%A6%82%E4%BD%95%E5%9C%A8ubuntu%E4%B8%8B%E4%BD%BF%E7%94%A8qq/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;目前最简单的方法&lt;br /&gt;
 这里写的很清楚：&lt;a href=&#34;https://github.com/zq1997/deepin-wine&#34;&gt;https://github.com/zq1997/deepin-wine&lt;/a&gt;&lt;br /&gt;
@@ -340,9 +340,9 @@
         <updated>2020-11-16T01:39:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+        <id>https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</id>
         <title>fluff(biofluff) 装不上的问题</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
 官网：&lt;a href=&#34;https://fluff.readthedocs.io/en/latest/introduction.html&#34;&gt;https://fluff.readthedocs.io/en/latest/introduction.html&lt;/a&gt;&lt;/p&gt;
@@ -383,14 +383,14 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; limin@limin-Lenovo-XiaoXin-Air-15IKBR:~$ fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;usage: fluff &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-h&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;options&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    fluff v3.0.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;positional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;heatmap,bandplot,profile&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;optional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  -h, &lt;span class=&#34;token parameter variable&#34;&gt;--help&lt;/span&gt;            show this &lt;span class=&#34;token builtin class-name&#34;&gt;help&lt;/span&gt; message and &lt;span class=&#34;token builtin class-name&#34;&gt;exit&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    commands:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        heatmap      Produce a heatmap&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        bandplot     Show the profiles as bandplots&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        profile      Genome Browser screenshot&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;fluff &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;command&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; -h&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token variable&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;more&lt;/span&gt; details&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;有一点报错，但是不影响使用。&lt;/p&gt;
 </content>
         <category term="生信" />
-        <category term="Ubuntu" />
         <category term="软件安装" />
+        <category term="Ubuntu" />
         <updated>2020-11-01T01:53:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</id>
+        <id>https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</id>
         <title>Ubuntu 安装 art_illumina</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/"/>
         <content type="html">&lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;
 往下翻找下载链接，结果发现他这二进制包不显示。&lt;/p&gt;
@@ -405,14 +405,14 @@
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101093627733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="生信" />
-        <category term="Ubuntu" />
         <category term="软件安装" />
+        <category term="Ubuntu" />
         <updated>2020-11-01T01:39:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</id>
+        <id>https://new.limina.top/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/</id>
         <title>Ubuntu 更新时 boot 空间不足</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/10/31/ubuntu%E6%9B%B4%E6%96%B0%E6%97%B6boot%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;这是之前写的，后来重装系统图片没了。有机会补图&lt;br /&gt;
 参考：&lt;a href=&#34;https://blog.csdn.net/qq%5C_27818541/article/details/72675954&#34;&gt;https://blog.csdn.net/qq\_27818541/article/details/72675954&lt;/a&gt;&lt;/p&gt;
@@ -436,9 +436,9 @@
         <updated>2020-10-31T15:58:00.000Z</updated>
     </entry>
     <entry>
-        <id>https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</id>
+        <id>https://new.limina.top/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/</id>
         <title>Ubuntu 硬盘安装</title>
-        <link rel="alternate" href="https://whylim.github.io/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/"/>
+        <link rel="alternate" href="https://new.limina.top/2020/10/31/ubuntu%E7%A1%AC%E7%9B%98%E5%AE%89%E8%A3%85/"/>
         <content type="html">&lt;h3 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;一个 4GB 或更大的 U 盘&lt;/li&gt;

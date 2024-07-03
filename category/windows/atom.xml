@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://whylim.github.io</id>
+    <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;windows&#34; category</title>
-    <link href="https://whylim.github.io" />
+    <link href="https://new.limina.top" />
     <updated>2019-05-08T11:06:16.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Ubuntu" />
     <category term="软件安装" />
-    <category term="Python" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="MySQL" />
     <category term="RNA-Seq" />
     <category term="可视化" />
-    <category term="network" />
-    <category term="interactome" />
+    <category term="MySQL" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="统计学" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <entry>
-        <id>https://whylim.github.io/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
+        <id>https://new.limina.top/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</id>
         <title>Win10 内置 Hyper-V 虚拟机使用教程</title>
-        <link rel="alternate" href="https://whylim.github.io/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+        <link rel="alternate" href="https://new.limina.top/2019/05/08/win10%E5%86%85%E7%BD%AEhyper-v%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;** 专业版 Windows10 ** 系统中内置了 Hyper-V 虚拟机，但是内置的 Hyper-V 虚拟机默认是不开启的，那么下面来详细说明如何开启和使用 Hyper-V 虚拟机。&lt;/p&gt;
 &lt;/blockquote&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>Being on sea, sail; being on land, settle. • Posts by &#34;shokax&#34; tag</title>
-        <link>https://whylim.github.io</link>
+        <link>https://new.limina.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Mon, 27 May 2024 00:00:00 +0800</pubDate>
@@ -12,30 +12,30 @@
         <category>单细胞</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
-        <category>Python</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
         <category>建站</category>
+        <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>MySQL</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
-        <category>network</category>
-        <category>interactome</category>
+        <category>MySQL</category>
         <category>Entrez API</category>
         <category>NCBI</category>
-        <category>统计学</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>统计学</category>
         <item>
-            <guid isPermalink="true">https://whylim.github.io/2024/05/27/shokax%E9%85%8D%E7%BD%AE/</guid>
+            <guid isPermalink="true">https://new.limina.top/2024/05/27/shokax%E9%85%8D%E7%BD%AE/</guid>
             <title>Hexo + ShokaX 博客搭建</title>
-            <link>https://whylim.github.io/2024/05/27/shokax%E9%85%8D%E7%BD%AE/</link>
+            <link>https://new.limina.top/2024/05/27/shokax%E9%85%8D%E7%BD%AE/</link>
             <category>Hexo</category>
             <category>ShokaX</category>
             <pubDate>Mon, 27 May 2024 00:00:00 +0800</pubDate>

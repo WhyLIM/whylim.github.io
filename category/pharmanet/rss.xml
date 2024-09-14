@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Being on sea, sail; being on land, settle. • Posts by &#34;pharmanet&#34; category</title>
+        <link>https://new.limina.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 14 Sep 2024 14:59:14 +0800</pubDate>
+        <lastBuildDate>Sat, 14 Sep 2024 14:59:14 +0800</lastBuildDate>
+        <category>R</category>
+        <category>生信</category>
+        <category>单细胞</category>
+        <category>WES</category>
+        <category>WGS</category>
+        <category>API</category>
+        <category>GraphQL API</category>
+        <category>Open Targets Platform</category>
+        <category>REST API</category>
+        <category>软件安装</category>
+        <category>Ubuntu</category>
+        <category>建站</category>
+        <category>Hexo</category>
+        <category>ShokaX</category>
+        <category>Python</category>
+        <category>Java</category>
+        <category>Web</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
+        <category>MySQL</category>
+        <category>BioOS</category>
+        <category>PharmaNet</category>
+        <category>Project</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>network</category>
+        <category>interactome</category>
+        <category>scRNA-seq</category>
+        <category>Seurat</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <category>统计学</category>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</guid>
+            <title>任务挑战-PharmaNet 项目报告</title>
+            <link>https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</link>
+            <category>BioOS</category>
+            <category>PharmaNet</category>
+            <category>Project</category>
+            <pubDate>Sat, 14 Sep 2024 14:59:14 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;任务挑战-pharmanet-项目报告&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#任务挑战-pharmanet-项目报告&#34;&gt;#&lt;/a&gt; 任务挑战 - PharmaNet 项目报告&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CCF 开源创新大赛暨第二届 Bio-OS 开源开放大赛&lt;br /&gt;
+参赛团队：BPG&lt;br /&gt;
+2024 年 9 月 12 日&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-项目简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-项目简介&#34;&gt;#&lt;/a&gt; 1. 项目简介&lt;/h2&gt;
+&lt;h3 id=&#34;11-项目背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-项目背景&#34;&gt;#&lt;/a&gt; 1.1. 项目背景&lt;/h3&gt;
+&lt;p&gt;近年来，随着生物医学研究的飞速发展以及基因组学、系统生物学等学科的突破，药物、疾病和基因之间复杂的相互作用逐渐成为研究的重点。传统的生物医学研究往往集中在某一特定维度上，例如研究蛋白质 - 蛋白质相互作用（Protein-Protein Interaction, PPI）或药物与靶标相互作用（Drug-Target Interaction，DTI）关系，然而，随着越来越多的数据被积累，研究者们意识到单一维度的研究难以充分揭示疾病的复杂性，也无法有效支持新药物的发现与精准医疗的实施。&lt;/p&gt;
+&lt;p&gt;在这一背景下，基于网络的生物系统分析方法逐渐成为研究热点。这种方法通过构建多维度的相互作用网络，整合药物、基因和疾病之间的关联信息，能够从整体上分析不同生物实体之间的关联性和相互作用。例如，(Menche et al., Science 2015) 等人提出的网络邻近度算法通过计算不同疾病相关基因集在基因 - 基因相互作用网络中的距离，揭示疾病之间的关联性。这类算法证明了生物网络分析在揭示复杂生物学问题上的潜力，尤其是疾病共病性和药物靶标发现领域。&lt;/p&gt;
+&lt;p&gt;然而，基因 - 基因相互作用的研究只是生物系统复杂性的一部分。现代药物研发和精准医疗的需求要求研究者进一步探索药物、疾病和基因之间更复杂的网络关系。药物不仅通过靶标基因作用于疾病，基因突变也可能影响药物的疗效和副作用，疾病之间也往往通过共同的分子机制相互关联。因此，扩展现有的网络模型，整合药物、疾病与基因之间的交互信息，成为了解决复杂疾病机制和发现新治疗方案的关键步骤。&lt;/p&gt;
+&lt;p&gt;为应对这一挑战，本项目基于 &lt;a href=&#34;https://platform.opentargets.org/&#34;&gt;Open Targets Platform&lt;/a&gt; 提供的 API，开发了一个整合药物、靶标和疾病信息的系统，并通过 Coze 平台构建插件和 Bot 实现了相关工作流的自动化。在此基础上，项目的设计还支持在 Bio-OS Workspace 中通过 Coze 平台的 API 调用，提供了高效的工作流，帮助用户快速获取药物、靶标和疾病间的相互作用数据，进一步引入扩展的网络算法，通过计算药物、疾病和基因的网络距离和分离度，分析这些实体在相互作用网络中的联系性。这一框架不仅能够揭示药物与疾病之间的潜在关联，也有助于发现新的治疗靶点，推动药物的重定位和精准医疗的发展。这种集成式平台为跨学科的合作提供了便利，能帮助药物研发人员、临床医生和生物信息学家从不同维度对复杂生物问题进行探讨和解决。&lt;br /&gt;
+通过将药物、疾病和基因的复杂关系网络化，本项目旨在推动现代生物医学研究向系统性和精准性的方向发展，帮助研究人员揭示潜在的生物学规律，为药物开发、疾病理解和临床治疗提供新的理论依据和技术手段。&lt;/p&gt;
+&lt;h3 id=&#34;12-团队介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-团队介绍&#34;&gt;#&lt;/a&gt; 1.2. 团队介绍&lt;/h3&gt;
+&lt;h4 id=&#34;121-团队成员及分工&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#121-团队成员及分工&#34;&gt;#&lt;/a&gt; 1.2.1. 团队成员及分工&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;李旻：就职于广东省人民医院（广东省医学科学院）。&lt;br /&gt;
+主要负责 Coze 插件的编写、工作流搭建、Bot 的构建及发布、 Coze API 的封装优化和报告撰写。&lt;/li&gt;
+&lt;li&gt;卢明媚：华南理工大学硕士研究生在读。&lt;br /&gt;
+主要负责项目流程设计、Coze 工作流设计和报告撰写。&lt;/li&gt;
+&lt;li&gt;王怡欣：香港中文大学（深圳）硕士研究生在读。&lt;br /&gt;
+主要负责项目流程设计、文献阅读、网络分析算法的复现与优化和报告撰写。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;122-实施周期&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#122-实施周期&#34;&gt;#&lt;/a&gt; 1.2.2. 实施周期&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;时间&lt;/th&gt;
+&lt;th&gt;工作内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2024.06.14 - 2024.06.30&lt;/td&gt;
+&lt;td&gt;成立团队，讨论选题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2024.07.01 - 2024.08.31&lt;/td&gt;
+&lt;td&gt;编写代码，测试应用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2024.09.01 - 2024.09.12&lt;/td&gt;
+&lt;td&gt;总结讨论，撰写报告&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;13-功能介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-功能介绍&#34;&gt;#&lt;/a&gt; 1.3. 功能介绍&lt;/h3&gt;
+&lt;p&gt;本项目通过整合药物、疾病和基因相互作用的数据和网络分析算法，旨在帮助研究人员和临床医生揭示药物、靶标（基因）和疾病之间的复杂关系，进而支持药物开发和精准医疗的决策。以下是项目的核心功能：1) 基于 Coze Bot 的数据获取；2) 基于 Bio-OS Workspace 的网络分析流程。&lt;/p&gt;
+&lt;h4 id=&#34;131-基于-coze-bot-的数据获取&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#131-基于-coze-bot-的数据获取&#34;&gt;#&lt;/a&gt; 1.3.1. 基于 Coze Bot 的数据获取&lt;/h4&gt;
+&lt;p&gt;基于 Open Targets Platform 提供的 API，编写了查询插件并构建了数据获取和处理工作流，用户可以通过关键词或 ID 获取药物、靶标和疾病之间的相互作用。Bot 会返回相互作用文件（.csv）供用户下载。&lt;/p&gt;
+&lt;h4 id=&#34;132-基于-bio-os-workspace-的网络分析流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#132-基于-bio-os-workspace-的网络分析流程&#34;&gt;#&lt;/a&gt; 1.3.2. 基于 Bio-OS Workspace 的网络分析流程&lt;/h4&gt;
+&lt;p&gt;基于 Coze API，可以在 Bio-OS Workspace 中调用第一步中构建的 Coze Bot，获取查询的药物、靶标和疾病之间的相互作用 CSV 文件。使用这些相互作用文件构建网络。&lt;/p&gt;
+&lt;p&gt;扩展了 Menche 等人提出的网络邻近度算法 (Menche et al., 2015)，通过计算网络中任意两个实体（药物、疾病或基因）之间的网络距离和分离度，量化它们的联系强度。该功能能够帮助用户快速分析药物与疾病或基因之间的潜在关系，从而为药物重新定位、靶标发现和疾病机制研究提供数据支持。&lt;/p&gt;
+&lt;h3 id=&#34;14-核心亮点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#14-核心亮点&#34;&gt;#&lt;/a&gt; 1.4. 核心亮点&lt;/h3&gt;
+&lt;h4 id=&#34;141-coze-bot-的亮点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#141-coze-bot-的亮点&#34;&gt;#&lt;/a&gt; 1.4.1. Coze Bot 的亮点&lt;/h4&gt;
+&lt;h5 id=&#34;1411-基于大语言模型的查询解析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1411-基于大语言模型的查询解析&#34;&gt;#&lt;/a&gt; 1.4.1.1. 基于大语言模型的查询解析&lt;/h5&gt;
+&lt;p&gt;通常人们使用自然语言与 Bot 进行对话，而非单个的需要查询的字符串（尽管我们在 Bot 的开场词中会引导用户进行特定的输入）。用户的输入会例如 “我想知道阿尔兹海默症用什么药”，“阿司匹林有哪些靶标”，“ENSG00000169083 是哪些疾病的靶标” 等，在这种情况下，无法通过普适的正则表达式来获取 API 的输入参数。&lt;/p&gt;
+&lt;p&gt;通过引入大语言模型（Large Language Model，LLM），并给予适当的角色和提示词，我们可以很容易且精确地获知用户意图，提取输入参数。例如：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;自然语言&lt;/th&gt;
+&lt;th&gt;LLM 处理后的参数（示例）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;我想知道阿尔兹海默症用什么药&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;#123;&amp;quot;keyword&amp;quot;: &amp;quot;Alzheimer&#39;s disease&amp;quot;, &amp;quot;keytype&amp;quot;: &amp;quot;disease&amp;quot;&amp;#125;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;阿司匹林有哪些靶标&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;#123;&amp;quot;keyword&amp;quot;: &amp;quot;Aspirin&amp;quot;, &amp;quot;keytype&amp;quot;: &amp;quot;drug&amp;quot;&amp;#125;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENSG00000169083 是哪些疾病的靶标&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;#123;&amp;quot;keyid&amp;quot;: &amp;quot;ENSG00000169083&amp;quot;, &amp;quot;keytype&amp;quot;: &amp;quot;target&amp;quot;&amp;#125;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;1412-查询策略&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1412-查询策略&#34;&gt;#&lt;/a&gt; 1.4.1.2. 查询策略&lt;/h5&gt;
+&lt;p&gt;针对实际研究中的情况，我们提供了两种策略来帮助用户获取药物、靶标和疾病相关相互作用：1) 基于 ID 的直接查询 2) 基于关键词的模糊查询。考虑到并不是所有用户都明确知道某些药物、靶标或疾病的 ID，我们也可以根据用户输入的关键词来在 Open Targets Platform 中搜索所有的相关的信息并反馈给用户，最终帮助用户选择精确的 ID 进行进一步查询。&lt;/p&gt;
+&lt;h5 id=&#34;1413-文件下载和独立分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1413-文件下载和独立分析&#34;&gt;#&lt;/a&gt; 1.4.1.3. 文件下载和独立分析&lt;/h5&gt;
+&lt;p&gt;我们发布在 Coze 商店中的 Bot 是可以独立使用的，如果用户并不需要我们第二部分提供的网络分析功能，也可以下载提供的相互作用 CSV 文件自行分析。&lt;/p&gt;
+&lt;h4 id=&#34;142-bio-os-workspace-的亮点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#142-bio-os-workspace-的亮点&#34;&gt;#&lt;/a&gt; 1.4.2. Bio-OS Workspace 的亮点&lt;/h4&gt;
+&lt;h5 id=&#34;1421-人类相互作用组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1421-人类相互作用组&#34;&gt;#&lt;/a&gt; 1.4.2.1. 人类相互作用组&lt;/h5&gt;
+&lt;p&gt;我们在 Bio-OS Workspace 中提供了一个人类相互作用组文件（interactome.tsv），最初由 Rolland 构建的人类相互作用组包含 人类细胞中实验记录的 13,460 种蛋白质之间的 141,296 种物理相互作用 (Rolland et al., 2014)。但是该文件使用 Entrez ID 来表示基因，通过 ID 映射，我们最终留下了已知 SYMBOL 的 13,351 种蛋白的 6068 对相互作用。在获得查询的药物、靶标和疾病相互作用列表后，该文件将被扩展，然后作为分析算法的输入。&lt;/p&gt;
+&lt;h5 id=&#34;1422-coze-api-的封装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1422-coze-api-的封装&#34;&gt;#&lt;/a&gt; 1.4.2.2. Coze API 的封装&lt;/h5&gt;
+&lt;p&gt;尽管 Coze 提供了&lt;a href=&#34;https://www.coze.cn/docs/developer_guides/coze_api_overview&#34;&gt;较为清晰的 API 文档&lt;/a&gt;，但是原始的 API 接口示例是使用 bash curl 命令调用的。我们参考 &lt;a href=&#34;https://github.com/lyhue1991/coze/tree/main&#34;&gt;Github 仓库 lyhue1991/coze&lt;/a&gt; 封装了名为 Coze 的类，以便分析时的调用。&lt;/p&gt;
+&lt;h5 id=&#34;1423-网络分析算法的复现与优化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1423-网络分析算法的复现与优化&#34;&gt;#&lt;/a&gt; 1.4.2.3. 网络分析算法的复现与优化&lt;/h5&gt;
+&lt;p&gt;Menche 等人在论文中提出的网络算法是基于 Python 2.x 实现的 (Menche et al., 2015)。我们使用更流行的 Python 3.x 复现了该算法。&lt;/p&gt;
+&lt;h5 id=&#34;1424-简易的使用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1424-简易的使用方法&#34;&gt;#&lt;/a&gt; 1.4.2.4. 简易的使用方法&lt;/h5&gt;
+&lt;p&gt;用户仅需修改 notebook 中第一个单元格中的 queryIDs 列表即可直接运行整个 notebook 获得最后的输出。&lt;/p&gt;
+&lt;p&gt;综上所述，我们的项目旨在解决药物、靶标和疾病相互作用分析中的多重关键问题。首先，针对用户自然语言查询解析的复杂性，我们引入了大语言模型（LLM），能够精确理解用户意图，提取正确的 API 参数，从而简化查询过程。其次，考虑到用户可能不熟悉药物、靶标或疾病的精确 ID，我们提供了基于 ID 的直接查询和基于关键词的模糊查询两种策略，确保查询灵活且精确。此外，项目还支持用户下载相互作用数据文件，进行独立分析，满足自定义研究需求。我们进一步整合了经过标准化处理的人类蛋白质相互作用组数据，提供精准的数据资源供用户在 Bio-OS Workspace 中使用。为了简化 API 调用流程，我们封装了 Coze API，使得用户无需编写复杂的代码即可调用分析功能。同时，针对 Menche 等人提出的网络算法，我们复现并升级到 Python 3.x 版本，优化了性能，确保算法在现代数据分析环境中的高效应用。通过这些改进，我们为药物研发、精准医疗和复杂疾病研究提供了一个强大、灵活且易用的流程。&lt;/p&gt;
+&lt;h2 id=&#34;2-项目中的-workspace-信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-项目中的-workspace-信息&#34;&gt;#&lt;/a&gt; 2. 项目中的 Workspace 信息&lt;/h2&gt;
+&lt;h3 id=&#34;21-workspace-介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-workspace-介绍&#34;&gt;#&lt;/a&gt; 2.1. Workspace 介绍&lt;/h3&gt;
+&lt;p&gt;本项目在 Bio-OS Workspace 中基于在 Coze 平台上自建的 Bot，帮助用户快速获取药物、靶标和疾病间的相互作用数据。进而通过复现和优化 Menche 等人提出的网络算法，计算药物、疾病和基因的网络距离和分离度，分析这些实体在相互作用网络中的联系性。&lt;/p&gt;
+&lt;p&gt;通过将药物、疾病和基因的复杂关系网络化，本项目旨在推动现代生物医学研究向系统性和精准性的方向发展，帮助研究人员揭示潜在的生物学规律，为药物开发、疾病理解和临床治疗提供新的理论依据和技术手段。&lt;/p&gt;
+&lt;h3 id=&#34;22-数据组织与管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-数据组织与管理&#34;&gt;#&lt;/a&gt; 2.2. 数据组织与管理&lt;/h3&gt;
+&lt;p&gt;本 Workspace 的分析流程中内置了一个人类相互作用组文件（interactome.tsv），位于 Notebook 文件夹中，由于最终并不生成文件，且中间文件在分析过后会被删除，因此不涉及数据的组织与管理。&lt;/p&gt;
+&lt;h3 id=&#34;23-工作流组织与管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#23-工作流组织与管理&#34;&gt;#&lt;/a&gt; 2.3. 工作流组织与管理&lt;/h3&gt;
+&lt;p&gt;本项目包含的 Notebook 已经可以通过极简输入实现结果分析，不使用工作流。&lt;/p&gt;
+&lt;h3 id=&#34;24-notebook-组织与管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#24-notebook-组织与管理&#34;&gt;#&lt;/a&gt; 2.4. Notebook 组织与管理&lt;/h3&gt;
+&lt;p&gt;本项目只包含一个 Notebook 文件（PharmaNet.ipynb）。该文件完成了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Coze 类的封装&lt;/li&gt;
+&lt;li&gt;查询和下载实体相互作用关系&lt;/li&gt;
+&lt;li&gt;扩展相互作用组&lt;/li&gt;
+&lt;li&gt;实体间的距离与分离度计算&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;3-大模型应用的搭建方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-大模型应用的搭建方式&#34;&gt;#&lt;/a&gt; 3. 大模型应用的搭建方式&lt;/h2&gt;
+&lt;p&gt;本项目使用 Coze 平台创建单 Agent（工作流模式）的 Bot，绑定了自主编写的工作流。在 Bio-OS Workspace 中，通过 Coze 平 台提供的 API 来访问此 Bot。&lt;/p&gt;
+&lt;h3 id=&#34;31-主要流程及步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-主要流程及步骤&#34;&gt;#&lt;/a&gt; 3.1. 主要流程及步骤&lt;/h3&gt;
+&lt;p&gt;Coze Bot 的原理流程图如上图所示，用户可以通过关键词或实体 ID 快速检索实体信息，获得药物 - 靶标 - 疾病的相互作用。流程步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用户输入：用户输入信息，可能是关键词（keywords）或 ID（keyid），以及实体类型（keytype：drug/target/disease）。&lt;/li&gt;
+&lt;li&gt;大语言模型推测提取：模型根据用户的输入进行实体推测，提取相应的关键词或 ID，同时判断实体类型。如果模型够识别出明确的 ID 和类型，流程将继续至下一步。如果未能识别出明确的 ID 或类型，系统会要求用户进行确认，若出现输入错误或信息不明确，系统会提示用户重新输入，以便重新进行搜索；若用户确认，则根据更新后的 ID 和类型继续搜索相关实体信息。如果搜索结果过多，系统会生成一个 CSV 文件供用户下载，并要求用户提供明确的 keyid 和 keytype 来精确搜索信息。&lt;/li&gt;
+&lt;li&gt;精确搜索：根据 keyid 和 keytype 搜索对应的实体信息。&lt;/li&gt;
+&lt;li&gt;输出：模型根据 keyid 和 keytype，输出总结的实体基础信息，以及搜索的实体对应的药物 - 靶标 - 疾病相互作用关系 CSV 文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;32-技术框架选型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-技术框架选型&#34;&gt;#&lt;/a&gt; 3.2. 技术框架选型&lt;/h3&gt;
+&lt;p&gt;使用低代码开发平台 Coze。&lt;/p&gt;
+&lt;h3 id=&#34;33-开发流程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-开发流程&#34;&gt;#&lt;/a&gt; 3.3. 开发流程&lt;/h3&gt;
+&lt;p&gt;使用低代码开发平台 Coze。&lt;/p&gt;
+&lt;h4 id=&#34;331-插件编写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#331-插件编写&#34;&gt;#&lt;/a&gt; 3.3.1. 插件编写&lt;/h4&gt;
+&lt;p&gt;我们自定义了一个名为 PharmaNet 的插件，用于对接 Open Targets Platform 的 API。Coze 平台支持两种插件工具创建方式：1) 云侧插件 - 基于已有服务创建 2) 云侧插件 - 在 Coze IDE 中创建。&lt;/p&gt;
+&lt;p&gt;虽然第一种方式的描述中说明支持直接将自己开发或公开的 API 配置为插件，但在实际测试中似乎只支持 REST API。由于 Open Targets Platform 由 GraphQL API 提供支持，因此选择第二种方式，自主编写代码来创建插件。&lt;/p&gt;
+&lt;p&gt;PharmaNet 包含 4 个工具：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;searchByKeywords：通过关键词在 Open Targets Platform 中搜索所有的相关的信息 JSON；&lt;/li&gt;
+&lt;li&gt;search2csvtext：将搜索到的信息 JSON 转为 CSV 格式的文本；&lt;/li&gt;
+&lt;li&gt;interactionQuery：通过 ID 直接获取 Open Targets Platform 中的药物 - 靶标 - 疾病相互作用信息 JSON；&lt;/li&gt;
+&lt;li&gt;interaction2csvtext：将相互作用信息 JSON 转为 CSV 格式的文本。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中，工具 1 和工具 3 会利用输入的关键词（keywords）或 ID（keyid），以及实体类型（keytype：drug/target/disease）自动创建 GraphQL 查询字符串，然后向 Open Targets Platform 的 API 发送 POST 请求。工具 2 和工具 4 则是将工具 1 和工具 3 的输出 JSON 转为 CSV 格式的文本以便后续生成 CSV 文件。&lt;/p&gt;
+&lt;h4 id=&#34;332-工作流构建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#332-工作流构建&#34;&gt;#&lt;/a&gt; 3.3.2. 工作流构建&lt;/h4&gt;
+&lt;p&gt;我们构建了名为 getInteraction 的工作流，其原理如前文流程图所示。其中有 7 处引入了大语言模型。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用户首次输入之后。该 LLM 用于根据用户的输入进行实体推测，提取相应的关键词或 ID，同时判断实体类型。提示词为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请你从用户输入中提取以下三项信息，并返回 json：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;关键词（keywords）：应是药物、靶点或者是疾病的名称（统一译为英文）&lt;/li&gt;
+&lt;li&gt;ID (keyid)：应是药物、靶点或者是疾病的 ID&lt;/li&gt;
+&lt;li&gt;关键词的类型（keytype）：为 drug | target | disease 这三者之一&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有两种情况：&lt;/p&gt;
+&lt;h2 id=&#34;用户输入了明确-id&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户输入了明确-id&#34;&gt;#&lt;/a&gt; 用户输入了明确 ID&lt;/h2&gt;
+&lt;p&gt;例如，用户的输入可能包括且不限于：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ENSG00000169083&lt;/li&gt;
+&lt;li&gt;CHEMBL25 的相关信息&lt;/li&gt;
+&lt;li&gt;EFO_0000222 是什么&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以获取 id 为 &amp;quot;ENSG00000169083&amp;quot;，推断 keytype 为 &amp;quot;target&amp;quot;&lt;/li&gt;
+&lt;li&gt;可以获取 id 为 &amp;quot;CHEMBL25&amp;quot;，推断 keytype 为 &amp;quot;drug&amp;quot;&lt;/li&gt;
+&lt;li&gt;可以获取 id 为 &amp;quot;EFO_0000222&amp;quot;，推断 keytype 为 &amp;quot;disease&amp;quot;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最终你返回的内容应为以下格式的 json ：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keywords&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keyid&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ENSG00000169083&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keytype&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;target&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;用户输入了模糊的信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户输入了模糊的信息&#34;&gt;#&lt;/a&gt; 用户输入了模糊的信息&lt;/h2&gt;
+&lt;p&gt;例如，用户的输入可能包括且不限于：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;阿兹海默&lt;/li&gt;
+&lt;li&gt;我想知道阿兹海默病的相关药物&lt;/li&gt;
+&lt;li&gt;Alzheimer&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;则可以获取 keywords 为 &amp;quot;(a) Alzheimer (&#39;s disease)&amp;quot;，并且可以推断 keytype 为 &amp;quot;disease&amp;quot;。&lt;/p&gt;
+&lt;p&gt;最终你返回的内容应为以下格式的 json ：&lt;/p&gt;
+&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keywords&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;alzheimer&#39;s disease&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keyid&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keytype&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;disease&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;当前用户的输入为：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;提取到非明确的 ID 或实体类型时。如果根据用户输入提取到不明确的 ID 或实体类型，会调用 LLM 对用户进行询问。询问内容为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;您想要查询的似乎是 ，这似乎是一种 。信息是否正确？确认将继续查询，如果有误，请尽量提供更明确的关键词和类型（最好为英文）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;获得用户反馈后。根据用户输入，将意图分为肯定和否定，从而进入不同的后续流程。该部分的提示词为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果用户输入例如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;是的&lt;/li&gt;
+&lt;li&gt;确认&lt;/li&gt;
+&lt;li&gt;对的&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;之类的肯定回复，则认为查询词正确&lt;/p&gt;
+&lt;p&gt;如果用户输入例如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不对&lt;/li&gt;
+&lt;li&gt;不，我想搜索...&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;之类的否定回复，则认为其他意图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;用户否定并输入新的查询后。与第 1 处的提示词相同。&lt;/li&gt;
+&lt;li&gt;根据关键词（keywords）查询到相关实体信息后。返回内容为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;搜索到  个相关结果，CSV 下载链接为 ，请下载后选择其中一个，提供 ID 和 entity 类型进行查询。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;根据 ID （keyid）获取到实体的基本信息后。使用 LLM 将实体的基本信息规范输出，此处的提示词为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据用户提供的信息获得了以下结果：&lt;/p&gt;
+
+&lt;p&gt;请结合结果，概括用户的查询对象的基本信息，使用如下格式的中文输出：&lt;/p&gt;
+&lt;p&gt;&amp;quot; 您查询的对象是...，这是一种....&lt;br /&gt;
+...&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;未查询到相关信息时。调用 LLM 告知用户：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;您查询的 :  目前没有已知的相关相互作用信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;333-bot-创建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#333-bot-创建&#34;&gt;#&lt;/a&gt; 3.3.3. Bot 创建&lt;/h4&gt;
+&lt;p&gt;我们创建了名为 DrugSeek 的 Bot。&lt;/p&gt;
+&lt;p&gt;由于逻辑相对并不是特别麻烦，且需要精确的数据信息，采用了单 Agent（工作流模式）来创建 Bot。&lt;br /&gt;
+在开场白信息中，予以用户一定的引导：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;你好，我是 DrugSeek。您可以直接向我查询任何药物、靶标或疾病，以及它们的相互作用关系。
+精确的相互作用关系需要提供 ID。目前接受：
+1. 药物接受 ChEMBL ID，例如：CHEMBL118
+2. 靶标接受 Ensembl ID，例如：ENSG00000169083
+3. 疾病接受
+    EFO ID，例如：EFO_0000349
+    MONDO ID，例如：MONDO_0004992
+    HP ID，例如：HP_0000964
+    OBI ID，例如：OBI_1110021
+    Orphanet ID，例如：Orphanet_324718
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同时，预置了 4 个示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. 阿尔兹海默症应该用什么药？
+2. Aspirin
+3. 提供一些有关青霉素的信息
+4. disease:EFO_0000266
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;34-代码结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#34-代码结构&#34;&gt;#&lt;/a&gt; 3.4. 代码结构&lt;/h3&gt;
+&lt;p&gt;使用低代码开发平台 Coze。&lt;/p&gt;
+&lt;h4 id=&#34;341-使用插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#341-使用插件&#34;&gt;#&lt;/a&gt; 3.4.1. 使用插件&lt;/h4&gt;
+&lt;p&gt;共使用了 2 个插件中的 5 个工具，包括来自于自定义插件 PharmaNet 的 4 个工具和来自插件商店中扣子官方发布的 Doc Maker 插件中的 1 个工具。&lt;/p&gt;
+&lt;h5 id=&#34;3411-自定义插件-pharmanet-的-4-个工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3411-自定义插件-pharmanet-的-4-个工具&#34;&gt;#&lt;/a&gt; 3.4.1.1. 自定义插件 PharmaNet 的 4 个工具&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;searchByKeywords：通过关键词在 Open Targets Platform 中搜索所有的相关的信息 JSON；&lt;/li&gt;
+&lt;li&gt;search2csvtext：将搜索到的信息 JSON 转为 CSV 格式的文本；&lt;/li&gt;
+&lt;li&gt;interactionQuery：通过 ID 直接获取 Open Targets Platform 中的药物 - 靶标 - 疾病相互作用信息 JSON；&lt;/li&gt;
+&lt;li&gt;interaction2csvtext：将相互作用信息 JSON 转为 CSV 格式的文本。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;3412-插件-doc-maker-的-1-个工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3412-插件-doc-maker-的-1-个工具&#34;&gt;#&lt;/a&gt; 3.4.1.2. 插件 Doc Maker 的 1 个工具&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;create_spreadsheet：使用 CSV 格式的文本生成 CSV 或 XLSX 的电子表格。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;342-工作流构建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#342-工作流构建&#34;&gt;#&lt;/a&gt; 3.4.2. 工作流构建&lt;/h4&gt;
+&lt;p&gt;工作流名称：getInteraction&lt;/p&gt;
+&lt;p&gt;结构概览：&lt;/p&gt;
+&lt;h2 id=&#34;4-展现效果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-展现效果&#34;&gt;#&lt;/a&gt; 4. 展现效果&lt;/h2&gt;
+&lt;p&gt;视频说明及代码文件地址：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;链接：&lt;a href=&#34;https://pan.baidu.com/s/1al-jI3MgayHBBCMxh95cMg?pwd=BPG1&#34;&gt;https://pan.baidu.com/s/1al-jI3MgayHBBCMxh95cMg?pwd=BPG1&lt;/a&gt;&lt;br /&gt;
+ 提取码：BPG1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Coze Bot（名称 DrugSeek）目前已经发布在扣子商店中，在线体验链接：&lt;a href=&#34;https://www.coze.cn/s/ikd1Ta3b/&#34;&gt;https://www.coze.cn/s/ikd1Ta3b/&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;5-遇到的困难和解决方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-遇到的困难和解决方案&#34;&gt;#&lt;/a&gt; 5. 遇到的困难和解决方案&lt;/h2&gt;
+&lt;h3 id=&#34;51-基于-api-的插件创建问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-基于-api-的插件创建问题&#34;&gt;#&lt;/a&gt; 5.1. 基于 API 的插件创建问题&lt;/h3&gt;
+&lt;p&gt;Coze 平台支持两种插件工具创建方式：1) 云侧插件 - 基于已有服务创建 2) 云侧插件 - 在 Coze IDE 中创建。&lt;/p&gt;
+&lt;p&gt;虽然第一种方式的描述中说明支持直接将自己开发或公开的 API 配置为插件，但在实际测试中似乎只支持 REST API。由于 Open Targets Platform 由 GraphQL API 提供支持，因此选择第二种方式，自主编写代码来创建插件。&lt;/p&gt;
+&lt;h3 id=&#34;52-工作流的使用问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#52-工作流的使用问题&#34;&gt;#&lt;/a&gt; 5.2. 工作流的使用问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;工作流构建服务优化不佳。当工作流节点数量增多时会占用较大内存，明显卡顿，甚至由于内存不足使网页崩溃（本人的机器内存为 32G）。解决方法为多次重试。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;某些节点的使用方法比较晦涩和不便。例如：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;循环节点有时需要内外包含重复节点才能实现循环；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/p&gt;
+&lt;p&gt;暂无解决方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;53-bot-的创建问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#53-bot-的创建问题&#34;&gt;#&lt;/a&gt; 5.3. Bot 的创建问题&lt;/h3&gt;
+&lt;p&gt;在单 Agent（LLM 模式）中，如果调用工作流，Bot 仍然会输出不调用工作流时模型自身的回答，无法用工作流的输出替换模型自身的回答。&lt;/p&gt;
+&lt;p&gt;解决方法为使用单 Agent（工作流模式）来创建 Bot。&lt;/p&gt;
+&lt;h2 id=&#34;6-bio-os-workspace-在过程中的应用体验&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-bio-os-workspace-在过程中的应用体验&#34;&gt;#&lt;/a&gt; 6. Bio-OS Workspace 在过程中的应用体验&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;初始化比较慢&lt;/li&gt;
+&lt;li&gt;对网络要求较高&lt;/li&gt;
+&lt;li&gt;有多个文件存储区域，管理和调用上有一点混乱&lt;/li&gt;
+&lt;li&gt;Notebook 不可进行更名操作，只能新建。第 4 部分中视频中为旧版 Notebook 演示（代码基本相同，不影响结果演示）&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

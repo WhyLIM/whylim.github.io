@@ -12,30 +12,27 @@
         <category>单细胞</category>
         <category>WES</category>
         <category>WGS</category>
+        <category>软件安装</category>
+        <category>Ubuntu</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>REST API</category>
-        <category>软件安装</category>
-        <category>Ubuntu</category>
         <category>建站</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Python</category>
         <category>Java</category>
-        <category>Web</category>
-        <category>Windows</category>
-        <category>虚拟机</category>
-        <category>MySQL</category>
-        <category>BioOS</category>
-        <category>PharmaNet</category>
-        <category>Project</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
+        <category>Web</category>
+        <category>MySQL</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
         <category>network</category>
         <category>interactome</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>scRNA-seq</category>
         <category>Seurat</category>
         <category>WordPress</category>

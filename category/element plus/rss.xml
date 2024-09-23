@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Being on sea, sail; being on land, settle. • Posts by &#34;element plus&#34; category</title>
+        <link>https://new.limina.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 22 Sep 2024 15:33:06 +0800</pubDate>
+        <lastBuildDate>Sun, 22 Sep 2024 15:33:06 +0800</lastBuildDate>
+        <category>API</category>
+        <category>GraphQL API</category>
+        <category>Open Targets Platform</category>
+        <category>R</category>
+        <category>生信</category>
+        <category>单细胞</category>
+        <category>WES</category>
+        <category>WGS</category>
+        <category>软件安装</category>
+        <category>REST API</category>
+        <category>建站</category>
+        <category>Ubuntu</category>
+        <category>Python</category>
+        <category>Java</category>
+        <category>Hexo</category>
+        <category>ShokaX</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
+        <category>Web</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
+        <category>Vue 3</category>
+        <category>Element Plus</category>
+        <category>MySQL</category>
+        <category>scRNA-seq</category>
+        <category>Seurat</category>
+        <category>network</category>
+        <category>interactome</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <category>统计学</category>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-03/</guid>
+            <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-03</title>
+            <link>https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-03/</link>
+            <category>Vue 3</category>
+            <category>Element Plus</category>
+            <pubDate>Sun, 22 Sep 2024 15:33:06 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;使用-vue-3-element-plus-从头开始写一个数据库网站-03&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-vue-3-element-plus-从头开始写一个数据库网站-03&#34;&gt;#&lt;/a&gt; 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 03&lt;/h1&gt;
+&lt;p&gt;由于大家可能初学 Vue 3，为了先熟悉 Vue 3 和前端开发的流程，我们先来编写一些基本的前端页面。&lt;/p&gt;
+&lt;p&gt;在之前的教程中，我们已经了解了目录结构：&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ADDB/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .vscode/                # 存放 VS Code 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── node_modules/           # 存放项目依赖包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── public/                 # 存放静态资源，如 HTML、favicon&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── src/                    # 源代码目录&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── assets/             # 存放静态资源，如图片、字体&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── components/         # 存放可复用的 Vue 组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── router/             # 存放 Vue Router 配置&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── stores/             # 存放状态管理配置（Pinia）&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── views/              # 存放不同页面的 Vue 组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── App.vue             # 根组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── main.js             # 应用入口文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .eslintrc.cjs           # ESLint 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .gitignore              # Git 忽略文件列表&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .prettierrc.json        # Prettier 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── index.html              # 主 HTML 模板文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── jsconfig.json           # JavaScript 项目配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── package.json            # 项目配置文件，记录依赖及脚本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── pnpm-lock.yaml          # pnpm 锁定文件，确保依赖版本一致&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── README.md               # 项目的自述文档&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── vite.config.js          # Vite 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在  &lt;code&gt;assets/&lt;/code&gt;  目录下有一个  &lt;code&gt;base.css&lt;/code&gt;  文件和一个  &lt;code&gt;main.css&lt;/code&gt;  文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;base.css&lt;/code&gt; ：这是一个基础样式文件，通常用于定义一些基础样式（重置样式）。这些基础样式可以帮助开发者消除不同浏览器之间的默认样式差异，确保应用在不同的浏览器中外观一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;main.css&lt;/code&gt; ：这是一个全局样式文件，它在  &lt;code&gt;src/main.js&lt;/code&gt;  文件中被引入，作为全局样式，我们可以先把它清空。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;认识-vue-文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#认识-vue-文件&#34;&gt;#&lt;/a&gt; 认识  &lt;code&gt;.vue&lt;/code&gt;  文件&lt;/h2&gt;
+&lt;p&gt;在 Vue 3 中，一个  &lt;code&gt;.vue&lt;/code&gt;  文件是 Vue 组件的单文件组件（SFC，Single File Component），这种文件结构能够将模板、逻辑和样式集中在一个文件中，便于维护和组织。典型的  &lt;code&gt;.vue&lt;/code&gt;  文件由三个核心部分组成，分别是  &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  和  &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; 。&lt;/p&gt;
+&lt;h3 id=&#34;vue-文件的基本结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vue-文件的基本结构&#34;&gt;#&lt;/a&gt; Vue 文件的基本结构&lt;/h3&gt;
+&lt;p&gt;一个最简单的 Vue 组件文件结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;
+  &amp;lt;!-- 模板部分 --&amp;gt;
+  &amp;lt;div&amp;gt;
+    &amp;lt;h1&amp;gt;&amp;#123;&amp;#123; message &amp;#125;&amp;#125;&amp;lt;/h1&amp;gt;
+    &amp;lt;button @click=&amp;quot;handleClick&amp;quot;&amp;gt;点击我&amp;lt;/button&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default &amp;#123;
+  data() &amp;#123;
+    return &amp;#123;
+      message: &#39;Hello, Vue 3!&#39;,
+    &amp;#125;;
+  &amp;#125;,
+  methods: &amp;#123;
+    handleClick() &amp;#123;
+      this.message = &#39;你点击了按钮！&#39;;
+    &amp;#125;,
+  &amp;#125;,
+&amp;#125;;
+&amp;lt;/script&amp;gt;
+
+&amp;lt;style&amp;gt;
+/* 样式部分 */
+div &amp;#123;
+  text-align: center;
+&amp;#125;
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;template-部分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#template-部分&#34;&gt;#&lt;/a&gt;  &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  部分&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;这是组件的&lt;strong&gt;模板部分&lt;/strong&gt;，定义了组件的 HTML 结构和 Vue 指令。&lt;/li&gt;
+&lt;li&gt;它是一个 HTML 代码块，用于描述组件的界面。&lt;/li&gt;
+&lt;li&gt;在  &lt;code&gt;&amp;lt;template&amp;gt;&lt;/code&gt;  中，Vue 的特性如数据绑定 ( &lt;code&gt;&amp;#123;&amp;#123; &amp;#125;&amp;#125;&lt;/code&gt; ) 和事件绑定 ( &lt;code&gt;@事件&lt;/code&gt; ) 被使用。&lt;/li&gt;
+&lt;li&gt;所有你想要在浏览器中展示的内容都会写在这个部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;script-部分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#script-部分&#34;&gt;#&lt;/a&gt;  &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  部分&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;逻辑部分&lt;/strong&gt;，即 JavaScript 代码所在的地方，控制组件的状态和行为。&lt;/li&gt;
+&lt;li&gt;这里定义了组件的&lt;strong&gt;状态&lt;/strong&gt;（如  &lt;code&gt;data&lt;/code&gt; ）、&lt;strong&gt;生命周期钩子&lt;/strong&gt;、&lt;strong&gt;计算属性&lt;/strong&gt;、&lt;strong&gt;方法&lt;/strong&gt;等。&lt;/li&gt;
+&lt;li&gt;使用 ES6 语法编写，在 Vue 3 中可以选择使用标准的 &lt;code&gt;组合式 API&lt;/code&gt; （Composition API）写法或者 &lt;code&gt;选项式 API&lt;/code&gt; （Options API）写法。上面例子用的是选项式 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;更建议使用的组合式-api&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#更建议使用的组合式-api&#34;&gt;#&lt;/a&gt; 更建议使用的组合式 API&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;script setup&amp;gt;
+import &amp;#123; ref &amp;#125; from &#39;vue&#39;;
+
+const message = ref(&#39;Hello, Vue 3!&#39;);
+
+function handleClick() &amp;#123;
+  message.value = &#39;你点击了按钮！&#39;;
+&amp;#125;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;setup&lt;/code&gt;  函数是 Vue 3 中的一个新特性，允许你更灵活地组合逻辑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;style-部分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#style-部分&#34;&gt;#&lt;/a&gt;  &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;  部分&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;样式部分&lt;/strong&gt;，用于定义组件的 CSS 样式。&lt;/li&gt;
+&lt;li&gt;可以使用常规的 CSS，也可以使用预处理器如 Sass 或 Less。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;scoped-样式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#scoped-样式&#34;&gt;#&lt;/a&gt;  &lt;code&gt;scoped&lt;/code&gt;  样式&lt;/h4&gt;
+&lt;p&gt;可以通过添加  &lt;code&gt;scoped&lt;/code&gt;  属性使样式只作用于当前组件，避免样式冲突，这也是建议的写法。例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;style scoped&amp;gt;
+h1 &amp;#123;
+  color: blue;
+&amp;#125;
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;可选部分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#可选部分&#34;&gt;#&lt;/a&gt; 可选部分&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;script lang=&amp;quot;ts&amp;quot;&amp;gt;&lt;/code&gt; : 使用 TypeScript 代替 JavaScript。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;首页设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页设计&#34;&gt;#&lt;/a&gt; 首页设计&lt;/h2&gt;
+&lt;p&gt;现在我们来模仿 pubchem 的首页样式：&lt;a href=&#34;https://pubchem.ncbi.nlm.nih.gov/%EF%BC%8C%E7%BC%96%E5%86%99%E6%88%91%E4%BB%AC%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E9%A6%96%E9%A1%B5&#34;&gt;https://pubchem.ncbi.nlm.nih.gov/，编写我们数据库的首页&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，这个页面设计如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;最顶部是导航栏，由数据库 logo + 导航菜单组成&lt;/li&gt;
+&lt;li&gt;导航栏下方是背景图，背景图中央是一个大标题 + 小标题 + 搜索框，用来搜索数据库中的 biomarker&lt;/li&gt;
+&lt;li&gt;背景图下方是数据统计，这里可以使用 element-plus 的 Statistic 统计组件&lt;/li&gt;
+&lt;li&gt;数据统计下方是数据库的简介&lt;/li&gt;
+&lt;li&gt;简介下方是 footer&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-02/</guid>
+            <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-02</title>
+            <link>https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-02/</link>
+            <category>Vue 3</category>
+            <category>Element Plus</category>
+            <pubDate>Sun, 22 Sep 2024 13:11:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;项目初始化与开发环境设置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目初始化与开发环境设置&#34;&gt;#&lt;/a&gt; 项目初始化与开发环境设置&lt;/h2&gt;
+&lt;h3 id=&#34;创建前端项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建前端项目&#34;&gt;#&lt;/a&gt; 创建前端项目&lt;/h3&gt;
+&lt;h4 id=&#34;安装-nodejs-和-pnpm&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-nodejs-和-pnpm&#34;&gt;#&lt;/a&gt; 安装 Node.js 和 pnpm&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;确保你已经安装了 &lt;a href=&#34;https://nodejs.org/&#34;&gt;Node.js&lt;/a&gt;，建议安装最新的 LTS 版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装 pnpm，打开终端并运行以下命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-g&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;pnpm 是一个快速且高效的包管理工具，相较于 npm 和 yarn，pnpm 具有更好的依赖管理效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;使用-pnpm-初始化-vue-3-项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-pnpm-初始化-vue-3-项目&#34;&gt;#&lt;/a&gt; 使用 pnpm 初始化 Vue 3 项目&lt;/h4&gt;
+&lt;p&gt;打开终端，使用以下命令创建新的 Vue 3 项目：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; create vue@latest&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在安装过程中，选择 Vue 3 作为框架。pnpm 会自动为您安装所需的依赖项。&lt;/p&gt;
+&lt;p&gt;你会被问到一些问题，可以按如下方式选择：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;√ 请输入项目名称： ... ADDB
+√ 请输入包名称： ... addb
+√ 是否使用 TypeScript 语法？ ... 否
+√ 是否启用 JSX 支持？ ... 否
+√ 是否引入 Vue Router 进行单页面应用开发？ ... 是
+√ 是否引入 Pinia 用于状态管理？ ... 是
+√ 是否引入 Vitest 用于单元测试？ ... 否
+√ 是否要引入一款端到端（End to End）测试工具？ » 不需要
+√ 是否引入 ESLint 用于代码质量检测？ ... 是
+√ 是否引入 Prettier 用于代码格式化？ ... 是
+√ 是否引入 Vue DevTools 7 扩展用于调试? (试验阶段) ... 否
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成之后，终端会显示：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;项目初始化完成，可执行以下命令：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ADDB&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;format&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;同时 Vue CLI 将会自动生成一个项目骨架：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ADDB/
+├── .vscode/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── router/
+│   ├── stores/
+│   ├── views/
+│   ├── App.vue
+│   ├── main.js
+├── .eslintrc.cjs
+├── .gitignore
+├── .prettierrc.json
+├── index.html
+├── jsconfig.json
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── vite.config.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在我们来了解一下目录结构：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ADDB/：根目录&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;.vscode/&lt;/strong&gt;: 存放 VS Code 编辑器的配置文件，如调试配置、扩展设置等。这个目录通常包含  &lt;code&gt;.vscode/settings.json&lt;/code&gt; 、 &lt;code&gt;.vscode/launch.json&lt;/code&gt;  等文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;node_modules/&lt;/strong&gt;: 这个目录存放了通过  &lt;code&gt;pnpm&lt;/code&gt;  安装的所有依赖包。一般情况下，这个目录包含项目运行所需的第三方库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;public/&lt;/strong&gt;: 这个目录用于存放静态资源，如  &lt;code&gt;index.html&lt;/code&gt; 、 &lt;code&gt;favicon.ico&lt;/code&gt;  等。此目录中的文件不会被 Webpack 等工具处理，会直接在打包时复制到输出目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;src/&lt;/strong&gt;: 这是你项目的源代码目录，包含了应用的主要逻辑和视图。里面有几个子目录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;assets/&lt;/strong&gt;: 这个目录通常用于存放静态资源，如图片、字体等，这些资源会通过 Webpack 打包。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;components/&lt;/strong&gt;: 这里存放了 Vue 组件。这些组件通常是页面的一部分，可以在不同的页面中复用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;router/&lt;/strong&gt;: 存放 Vue Router 的配置文件。 &lt;code&gt;index.js&lt;/code&gt;  文件通常包含了应用的路由定义。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stores/&lt;/strong&gt;: 存放用于状态管理的文件。因为你使用了 Pinia，所以这里应该有状态管理相关的配置。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;views/&lt;/strong&gt;: 这里存放的是 Vue 页面组件，通常对应应用的不同页面。比如你之前创建的  &lt;code&gt;Home.vue&lt;/code&gt;  页面组件就应该放在这里。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;App.vue&lt;/strong&gt;: 这是整个 Vue 应用的根组件。所有页面都会通过  &lt;code&gt;App.vue&lt;/code&gt;  组件来渲染。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;main.js&lt;/strong&gt;: 这是 Vue 应用的入口文件，用于创建 Vue 实例并挂载到 DOM 上。它通常会导入  &lt;code&gt;App.vue&lt;/code&gt;  和  &lt;code&gt;router/index.js&lt;/code&gt; ，然后启动整个应用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;.eslintrc.cjs&lt;/strong&gt;: 这个文件是 ESLint 的配置文件，用于配置代码风格检查规则。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;: 这个文件指定了哪些文件或目录不应该被 Git 版本控制系统跟踪，比如  &lt;code&gt;node_modules/&lt;/code&gt; 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;.prettierrc.json&lt;/strong&gt;: 这个文件是 Prettier 的配置文件，用于代码格式化。你可以在这里配置代码格式的规则，比如缩进、换行等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;index.html&lt;/strong&gt;: 这是 Vue 应用的主 HTML 模板文件，应用的所有内容都会被注入到这个文件中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;jsconfig.json&lt;/strong&gt;: 这个文件是 JavaScript 项目的配置文件，通常用于配置 VS Code 的智能提示、模块解析路径等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;package.json&lt;/strong&gt;: 这是项目的配置文件，记录了项目的基本信息、依赖项、脚本命令等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pnpm-lock.yaml&lt;/strong&gt;: 这是  &lt;code&gt;pnpm&lt;/code&gt;  的锁定文件，记录了所有安装的依赖项及其版本，确保团队成员之间安装的依赖版本一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://README.md&#34;&gt;README.md&lt;/a&gt;&lt;/strong&gt;: 这个文件通常用于项目的自述文档，描述项目的用途、安装步骤、使用方法等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;vite.config.js&lt;/strong&gt;: 这是 Vite 的配置文件，用于配置 Vite 构建工具的相关选项，比如插件、代理等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;安装和配置-element-plus&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装和配置-element-plus&#34;&gt;#&lt;/a&gt; 安装和配置 Element Plus&lt;/h4&gt;
+&lt;p&gt;进入项目目录后，使用 pnpm 安装 Element Plus：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; ADDB&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; element-plus&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;接着在  &lt;code&gt;src/main.js&lt;/code&gt;  文件的对应位置中添加以下语句以引入 Element Plus：&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; ElementPlus &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;element-plus&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;element-plus/dist/index.css&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;app&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ElementPlus&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;后端项目设置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#后端项目设置&#34;&gt;#&lt;/a&gt; 后端项目设置&lt;/h3&gt;
+&lt;h4 id=&#34;使用-express-生成后端项目骨架&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-express-生成后端项目骨架&#34;&gt;#&lt;/a&gt; 使用 Express 生成后端项目骨架&lt;/h4&gt;
+&lt;p&gt;后端项目可以根据你的需求放在与 Vue 3 项目根目录  &lt;code&gt;ADDB&lt;/code&gt;  并列的层级，也可以放在  &lt;code&gt;ADDB&lt;/code&gt;  下&lt;/p&gt;
+&lt;p&gt;以放在  &lt;code&gt;ADDB&lt;/code&gt;  下为例：&lt;/p&gt;
+&lt;p&gt;打开新的终端窗口，在项目根目录  &lt;code&gt;ADDB&lt;/code&gt;  下创建一个  &lt;code&gt;server&lt;/code&gt;  目录用于后端项目，并进入该目录：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;mkdir&lt;/span&gt; server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token builtin class-name&#34;&gt;cd&lt;/span&gt; server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果你使用的是 PowerShell， &lt;code&gt;mkdir&lt;/code&gt;  命令有可能会报错，可以尝试以下命令：&lt;/p&gt;
+&lt;figure class=&#34;highlight powershell&#34;&gt;&lt;figcaption data-lang=&#34;PowerShell&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;New-Item&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;ItemType Directory &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;Path server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;初始化 Node.js 项目并安装 Express：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; init &lt;span class=&#34;token parameter variable&#34;&gt;-y&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; express&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建一个  &lt;code&gt;src/index.js&lt;/code&gt;  文件，并设置基本的 Express 服务器&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; express &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;express&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; app &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;express&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;PORT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; process&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;env&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;PORT&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3000&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;app&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;use&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;express&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;json&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 解析 JSON 请求体&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;app&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;listen&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;PORT&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token template-string&#34;&gt;&lt;span class=&#34;token template-punctuation string&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;服务器正运行在 http://localhost:&lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token interpolation-punctuation punctuation&#34;&gt;$&amp;#123;&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;PORT&lt;/span&gt;&lt;span class=&#34;token interpolation-punctuation punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token template-punctuation string&#34;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;设置与-mysql-数据库的连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置与-mysql-数据库的连接&#34;&gt;#&lt;/a&gt; 设置与 MySQL 数据库的连接&lt;/h4&gt;
+&lt;p&gt;安装 MySQL 驱动：&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; mysql2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在  &lt;code&gt;src/index.js&lt;/code&gt;  中添加数据库连接代码：&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; mysql &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;mysql2&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; db &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; mysql&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createConnection&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token literal-property property&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;localhost&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token literal-property property&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;your_username&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token literal-property property&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;your_password&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token literal-property property&#34;&gt;database&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;your_database&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;db&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;connect&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token parameter&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;throw&lt;/span&gt; err&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;数据库连接成功。&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;请确保将  &lt;code&gt;your_username&lt;/code&gt; 、 &lt;code&gt;your_password&lt;/code&gt;  和  &lt;code&gt;your_database&lt;/code&gt;  替换为实际的 MySQL 配置。&lt;/p&gt;
+&lt;h4 id=&#34;启动服务器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#启动服务器&#34;&gt;#&lt;/a&gt; 启动服务器&lt;/h4&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt; index.js&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果一切顺利，你应该会在终端中看到 &amp;quot; 服务器正在运行在 &lt;a href=&#34;http://localhost:3000&#34;&gt;http://localhost:3000&lt;/a&gt;&amp;quot; 的信息。&lt;/p&gt;
+&lt;p&gt;到这里，我们已经完成了项目初始化、前端配置和后端服务的基础设置。接下来我们将设计和实现 API。&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其他&#34;&gt;#&lt;/a&gt; 其他&lt;/h3&gt;
+&lt;h4 id=&#34;项目依赖安装与管理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目依赖安装与管理&#34;&gt;#&lt;/a&gt; 项目依赖安装与管理&lt;/h4&gt;
+&lt;p&gt;使用 pnpm 可以方便地安装、更新和移除项目依赖。以下是常用命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装依赖： &lt;code&gt;pnpm add package-name&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;更新依赖： &lt;code&gt;pnpm update package-name&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;移除依赖： &lt;code&gt;pnpm remove package-name&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;vs-code-插件推荐和配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vs-code-插件推荐和配置&#34;&gt;#&lt;/a&gt; VS Code 插件推荐和配置&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Vue - Official&lt;/strong&gt;：提供 Vue 3 的语法高亮和智能提示。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CodeGeeX&lt;/strong&gt;：智谱 AI 研发的基于大模型的智能编程助手。&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-01/</guid>
+            <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-01</title>
+            <link>https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-01/</link>
+            <category>Vue 3</category>
+            <category>Element Plus</category>
+            <pubDate>Sun, 22 Sep 2024 13:11:55 +0800</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;项目介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目介绍&#34;&gt;#&lt;/a&gt; 项目介绍&lt;/h2&gt;
+&lt;h3 id=&#34;项目背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目背景&#34;&gt;#&lt;/a&gt; 项目背景&lt;/h3&gt;
+&lt;p&gt;阿尔兹海默症（Alzheimer’s disease）是一种影响记忆和认知功能的神经退行性疾病，随着全球老龄化的加剧，其发病率逐年上升。为了支持科学研究与公众教育，开发一个专门的数据库网站显得尤为重要。本项目的目标是创建一个关于阿尔兹海默症相关生物标志物的数据库，具体目标包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据收集&lt;/strong&gt;：汇集有关阿尔兹海默症的各类生物标志物数据，包括其来源、相关文献和研究成果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据存储&lt;/strong&gt;：通过高效的数据库管理系统，将这些数据有序存储，确保数据的完整性和安全性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据展示&lt;/strong&gt;：设计友好的用户界面，便于用户浏览和查询生物标志物数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单分析功能&lt;/strong&gt;：为用户提供基本的数据分析工具，帮助研究人员与公众深入理解阿尔兹海默症的生物标志物特征。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目标用户群体包括医学研究人员、学生、医疗工作者以及对阿尔兹海默症感兴趣的公众。预期的应用场景涵盖学术研究、教育教学、临床应用及公众健康宣传等多个领域，使得该平台能够在不同层面上发挥作用。&lt;/p&gt;
+&lt;h3 id=&#34;技术栈&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#技术栈&#34;&gt;#&lt;/a&gt; 技术栈&lt;/h3&gt;
+&lt;p&gt;在这个项目中，我们将使用以下技术栈：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;前端&lt;/strong&gt;：Vue 3 + Element Plus&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vue (发音为 /vjuː/，类似 &lt;strong&gt;view&lt;/strong&gt;) 是一款用于构建用户界面的 JavaScript 框架，由国人尤雨溪开发。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。更多信息可以查看&lt;a href=&#34;https://cn.vuejs.org/&#34;&gt;官网&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Element Plus&lt;/strong&gt; 是一个基于 Vue 3 的 UI 组件库，由饿了么（就是送外卖那个饿了么）的前端团队开发。其提供了丰富的预设组件和样式，帮助开发者快速搭建美观且用户友好的界面。使用现成的组件可以显著减少开发时间，同时确保应用的一致性和可用性。更多信息可以查看&lt;a href=&#34;https://element-plus.org/zh-CN/&#34;&gt;官网&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;后端&lt;/strong&gt;：Node.js + Express&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt; 是一个基于 Chrome V8 引擎的 JavaScript 运行时环境，允许我们使用 JavaScript 进行后端开发。它的异步特性使得处理大量并发请求变得简单高效，非常适合数据驱动的应用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Express&lt;/strong&gt; 是一个简洁而灵活的 Node.js Web 应用框架，提供了一系列强大的功能，能够快速搭建 API，使得前后端的交互更加顺畅。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据库&lt;/strong&gt;：MySQL&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MySQL&lt;/strong&gt; 是一个开源的关系型数据库管理系统，广泛应用于各种场景。它的结构化数据存储和强大的查询能力非常适合用于管理和查询生物标志物数据。同时，MySQL 的社区支持丰富，文档完善，有助于我们解决开发过程中遇到的问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;包管理工具&lt;/strong&gt;：pnpm&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pnpm&lt;/strong&gt; 是一个高效的 JavaScript 包管理工具，能够通过硬链接的方式来节省磁盘空间，并提高依赖安装的速度。使用 pnpm 可以帮助我们更好地管理项目的依赖关系，避免版本冲突，并保持项目的整洁性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;开发工具&lt;/strong&gt;：VS Code&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Visual Studio Code (VS Code)&lt;/strong&gt; 是一个功能强大的代码编辑器，拥有丰富的插件支持，能够提高开发效率。它的调试功能、智能感知、代码高亮等特性，使得编写和调试代码变得更加便捷。通过配置一些常用插件（如 Prettier、ESLint），我们可以进一步提升代码质量和可维护性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/09/20/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-00/</guid>
+            <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站</title>
+            <link>https://new.limina.top/2024/09/20/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-00/</link>
+            <category>Vue 3</category>
+            <category>Element Plus</category>
+            <pubDate>Fri, 20 Sep 2024 18:38:10 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;使用-vue-3-element-plus-从头开始写一个数据库网站&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-vue-3-element-plus-从头开始写一个数据库网站&#34;&gt;#&lt;/a&gt; 使用 Vue 3 + Element Plus 从头开始写一个数据库网站&lt;/h1&gt;
+&lt;h2 id=&#34;大纲&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#大纲&#34;&gt;#&lt;/a&gt; 大纲&lt;/h2&gt;
+&lt;h3 id=&#34;1-项目介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-项目介绍&#34;&gt;#&lt;/a&gt; 1. &lt;strong&gt;项目介绍&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;1.1 &lt;strong&gt;项目背景&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alzheimer’s disease Biomarker 数据库网站简介&lt;/li&gt;
+&lt;li&gt;项目功能和目标：收集、存储和展示阿尔兹海默症相关生物标志物，并为公众提供查询与简单分析功能。&lt;/li&gt;
+&lt;li&gt;目标用户群体与预期的应用场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1.2 &lt;strong&gt;技术栈介绍&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端：Vue 3 + Element Plus&lt;/li&gt;
+&lt;li&gt;后端：Node.js + Express&lt;/li&gt;
+&lt;li&gt;数据库：MySQL&lt;/li&gt;
+&lt;li&gt;包管理工具：pnpm&lt;/li&gt;
+&lt;li&gt;开发工具：VS Code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-项目初始化与开发环境设置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-项目初始化与开发环境设置&#34;&gt;#&lt;/a&gt; 2. &lt;strong&gt;项目初始化与开发环境设置&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;2.1 &lt;strong&gt;创建前端项目&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 pnpm 初始化 Vue 3 项目&lt;/li&gt;
+&lt;li&gt;安装和配置 Element Plus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2.2 &lt;strong&gt;后端项目设置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Express 生成后端项目骨架&lt;/li&gt;
+&lt;li&gt;设置与 MySQL 数据库的连接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2.3 &lt;strong&gt;项目依赖安装与管理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何使用 pnpm 来管理项目依赖&lt;/li&gt;
+&lt;li&gt;安装 Vue 相关插件和 Element Plus 组件库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2.4 &lt;strong&gt;开发工具配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VS Code 插件推荐和配置&lt;/li&gt;
+&lt;li&gt;Linting 和代码格式化工具的设置（如 ESLint、Prettier）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-数据库设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-数据库设计&#34;&gt;#&lt;/a&gt; 3. &lt;strong&gt;数据库设计&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;3.1 &lt;strong&gt;数据结构与表设计&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;阿尔兹海默症相关生物标志物的数据模型分析&lt;/li&gt;
+&lt;li&gt;MySQL 表设计与数据库字段定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.2 &lt;strong&gt;数据库连接与配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Node.js 项目中配置 MySQL&lt;/li&gt;
+&lt;li&gt;使用 Sequelize（或其他 ORM）进行数据库操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-api-设计与实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-api-设计与实现&#34;&gt;#&lt;/a&gt; 4. &lt;strong&gt;API 设计与实现&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;4.1 &lt;strong&gt;API 概述&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RESTful API 设计原则&lt;/li&gt;
+&lt;li&gt;简要介绍项目中的 API 需求（如：标志物数据的查询、添加、更新、删除）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.2 &lt;strong&gt;实现主要 API 接口&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建和测试 API 接口：CRUD 功能&lt;/li&gt;
+&lt;li&gt;数据的过滤与分页功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.3 &lt;strong&gt;后端数据校验与错误处理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Joi（或其他库）进行 API 请求的数据校验&lt;/li&gt;
+&lt;li&gt;统一的错误处理与响应机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-前端功能实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-前端功能实现&#34;&gt;#&lt;/a&gt; 5. &lt;strong&gt;前端功能实现&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;5.1 &lt;strong&gt;页面布局与 Element Plus 组件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Element Plus 组件库创建友好的 UI&lt;/li&gt;
+&lt;li&gt;布局设计与导航菜单实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;5.2 &lt;strong&gt;数据展示页面&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何使用 Vue 3 的 Composition API 进行数据请求与处理&lt;/li&gt;
+&lt;li&gt;展示数据库中的生物标志物数据（表格、分页等功能）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;5.3 &lt;strong&gt;数据查询与筛选功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实现前端的查询功能，结合 API 获取筛选后的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;5.4 &lt;strong&gt;数据的增删改查（CRUD）功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实现前端表单组件，用于添加和更新标志物数据&lt;/li&gt;
+&lt;li&gt;删除功能的确认与用户交互设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-前后端交互&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-前后端交互&#34;&gt;#&lt;/a&gt; 6. &lt;strong&gt;前后端交互&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;6.1 &lt;strong&gt;Axios 请求与 API 连接&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何使用 Axios 发送 HTTP 请求&lt;/li&gt;
+&lt;li&gt;处理 API 响应与错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;6.2 &lt;strong&gt;数据绑定与状态管理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Vue 的响应式系统进行数据绑定&lt;/li&gt;
+&lt;li&gt;Vuex（或 Pinia）状态管理简介与使用场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7-基本数据分析功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-基本数据分析功能&#34;&gt;#&lt;/a&gt; 7. &lt;strong&gt;基本数据分析功能&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;7.1 &lt;strong&gt;数据统计与分析&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实现基础的数据统计（例如：生物标志物数量、类型分布等）&lt;/li&gt;
+&lt;li&gt;数据的可视化（可以考虑使用 ECharts 等图表库）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;8-项目部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#8-项目部署&#34;&gt;#&lt;/a&gt; 8. &lt;strong&gt;项目部署&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;8.1 &lt;strong&gt;前后端项目的构建与打包&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端项目使用 Vue CLI 或 Vite 构建打包&lt;/li&gt;
+&lt;li&gt;后端项目的打包与部署准备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;8.2 &lt;strong&gt;部署到服务器&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Nginx 或其他工具部署前后端项目&lt;/li&gt;
+&lt;li&gt;数据库的远程连接与配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-总结与展望&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#9-总结与展望&#34;&gt;#&lt;/a&gt; 9. &lt;strong&gt;总结与展望&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;9.1 &lt;strong&gt;项目中的难点与挑战&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在开发过程中遇到的问题以及解决方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;9.2 &lt;strong&gt;未来扩展功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目未来可能的功能扩展方向（如：高级数据分析、用户管理系统等）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个大纲涵盖了从项目背景到前端后端实现，再到项目部署的完整过程，能够帮助读者从零开始构建一个完整的数据库网站项目。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

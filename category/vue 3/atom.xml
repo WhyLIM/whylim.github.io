@@ -3,40 +3,79 @@
     <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle. • Posts by &#34;vue 3&#34; category</title>
     <link href="https://new.limina.top" />
-    <updated>2024-09-22T07:33:06.000Z</updated>
+    <updated>2024-09-26T07:36:45.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
-    <category term="软件安装" />
+    <category term="API" />
+    <category term="GraphQL API" />
+    <category term="Open Targets Platform" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="API" />
     <category term="REST API" />
-    <category term="GraphQL API" />
-    <category term="Ubuntu" />
-    <category term="Open Targets Platform" />
     <category term="建站" />
+    <category term="软件安装" />
     <category term="Java" />
     <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Web" />
+    <category term="Ubuntu" />
     <category term="Windows" />
     <category term="虚拟机" />
+    <category term="Web" />
     <category term="Vue 3" />
     <category term="Element Plus" />
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="MySQL" />
+    <category term="scRNA-seq" />
+    <category term="Seurat" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="Entrez API" />
     <category term="NCBI" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="network" />
-    <category term="interactome" />
-    <category term="scRNA-seq" />
-    <category term="Seurat" />
     <category term="统计学" />
+    <entry>
+        <id>https://new.limina.top/2024/09/26/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-04/</id>
+        <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-04</title>
+        <link rel="alternate" href="https://new.limina.top/2024/09/26/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-04/"/>
+        <content type="html">&lt;h1 id=&#34;使用-vue-3-element-plus-从头开始写一个数据库网站-04&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-vue-3-element-plus-从头开始写一个数据库网站-04&#34;&gt;#&lt;/a&gt; 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 04&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于 PrismJS 尚不支持 Vue 的语法高亮，因此 Vue 代码块均先使用 HTML 的高亮&lt;/p&gt;
+&lt;p&gt;2024-09-23&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接下来我们来编写数据展示和浏览页面。&lt;/p&gt;
+&lt;h2 id=&#34;搭建本地测试数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搭建本地测试数据库&#34;&gt;#&lt;/a&gt; 搭建本地测试数据库&lt;/h2&gt;
+&lt;h3 id=&#34;安装-mysql-并启动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-mysql-并启动&#34;&gt;#&lt;/a&gt; 安装 MySQL 并启动&lt;/h3&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://dev.mysql.com/downloads/mysql/&#34;&gt;MySQL&lt;/a&gt;，以在本地搭建测试数据库。&lt;/p&gt;
+&lt;p&gt;以 8.4.2 LTS 版本为例，使用 MSI Installer 进行安装对新手来说比较便捷。&lt;/p&gt;
+&lt;p&gt;安装完成后，windows + R 输入 services.msc 打开服务，找到 MySQL84，右键启动&lt;/p&gt;
+&lt;p&gt;如果在安装过程中选择了启动 MySQL 服务，那么这个服务应该已经在运行了，但当我们下次再启动 MySQL 时，仍需先启动 MySQL 服务，否则输入密码后会闪退&lt;/p&gt;
+&lt;h3 id=&#34;创建-mysql-数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建-mysql-数据库&#34;&gt;#&lt;/a&gt; 创建 MySQL 数据库&lt;/h3&gt;
+&lt;p&gt;按照以下步骤创建 MySQL 数据库和表：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开 MySQL 命令行客户端（名为  &lt;code&gt;MySQL 8.4 Command Line Client&lt;/code&gt; ）并登录（密码应该已经在安装过程中被设置）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建一个新的数据库：&lt;/p&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption data-lang=&#34;SQL&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;CREATE&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;DATABASE&lt;/span&gt; admarker_db&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换到新创建的数据库：&lt;/p&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption data-lang=&#34;SQL&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;USE&lt;/span&gt; admarker_db&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建一个用于存储生物标志物信息的表：&lt;/p&gt;
+&lt;figure class=&#34;highlight sql&#34;&gt;&lt;figcaption data-lang=&#34;SQL&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;CREATE&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;TABLE&lt;/span&gt; biomarkers &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    id &lt;span class=&#34;token keyword&#34;&gt;INT&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;AUTO_INCREMENT&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;PRIMARY&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;KEY&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    name &lt;span class=&#34;token keyword&#34;&gt;VARCHAR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;255&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;NOT&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    description &lt;span class=&#34;token keyword&#34;&gt;TEXT&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    gene &lt;span class=&#34;token keyword&#34;&gt;VARCHAR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;255&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    protein &lt;span class=&#34;token keyword&#34;&gt;VARCHAR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;255&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    created_at &lt;span class=&#34;token keyword&#34;&gt;TIMESTAMP&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;DEFAULT&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在之前的教程中，我们已经了解了目录结构：&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ADDB/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .vscode/                # 存放 VS Code 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── node_modules/           # 存放项目依赖包&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── public/                 # 存放静态资源，如 HTML、favicon&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── src/                    # 源代码目录&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── assets/             # 存放静态资源，如图片、字体&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── components/         # 存放可复用的 Vue 组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── router/             # 存放 Vue Router 配置&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── stores/             # 存放状态管理配置（Pinia）&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── views/              # 存放不同页面的 Vue 组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── App.vue             # 根组件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;│   ├── main.js             # 应用入口文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .eslintrc.cjs           # ESLint 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .gitignore              # Git 忽略文件列表&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── .prettierrc.json        # Prettier 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── index.html              # 主 HTML 模板文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── jsconfig.json           # JavaScript 项目配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── package.json            # 项目配置文件，记录依赖及脚本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── pnpm-lock.yaml          # pnpm 锁定文件，确保依赖版本一致&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── README.md               # 项目的自述文档&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;├── vite.config.js          # Vite 配置文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Vue 3" />
+        <category term="Element Plus" />
+        <category term="MySQL" />
+        <updated>2024-09-26T07:36:45.000Z</updated>
+    </entry>
     <entry>
         <id>https://new.limina.top/2024/09/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-03/</id>
         <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-03</title>

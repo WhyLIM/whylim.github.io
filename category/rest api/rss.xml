@@ -10,43 +10,43 @@
         <category>R</category>
         <category>生信</category>
         <category>单细胞</category>
-        <category>软件安装</category>
+        <category>API</category>
+        <category>GraphQL API</category>
+        <category>Open Targets Platform</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>API</category>
         <category>REST API</category>
-        <category>GraphQL API</category>
-        <category>Ubuntu</category>
-        <category>Open Targets Platform</category>
         <category>建站</category>
+        <category>软件安装</category>
         <category>Java</category>
         <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Web</category>
+        <category>Ubuntu</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>MySQL</category>
+        <category>scRNA-seq</category>
+        <category>Seurat</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>network</category>
-        <category>interactome</category>
-        <category>scRNA-seq</category>
-        <category>Seurat</category>
         <category>统计学</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/08/29/REST%20API%20%E4%B8%8E%20GraphQL%20API%20%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
             <title>REST API 和 GraphQL API 的联系与区别</title>
             <link>https://new.limina.top/2024/08/29/REST%20API%20%E4%B8%8E%20GraphQL%20API%20%E7%9A%84%E6%AF%94%E8%BE%83/</link>
             <category>API</category>
-            <category>REST API</category>
             <category>GraphQL API</category>
+            <category>REST API</category>
             <pubDate>Thu, 29 Aug 2024 18:36:55 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;rest-api-和-graphql-api-的联系与区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#rest-api-和-graphql-api-的联系与区别&#34;&gt;#&lt;/a&gt; REST API 和 GraphQL API 的联系与区别&lt;/h1&gt;
 &lt;p&gt;API（Application Programming Interface，应用编程接口），通俗点说，就是不同软件之间的交流工具。它让我们可以从服务器获取数据或者把数据发送给服务器。目前常用的两种常见 API 是 REST API 和 GraphQL API。&lt;/p&gt;

@@ -13,16 +13,16 @@
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>REST API</category>
         <category>建站</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>软件安装</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
         <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Ubuntu</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
@@ -31,14 +31,20 @@
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>MySQL</category>
+        <category>Structured Outputs</category>
+        <category>OpenAI API</category>
+        <category>GPT</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>scRNA-seq</category>
         <category>Seurat</category>
         <category>network</category>
         <category>interactome</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>Network Analysis</category>
+        <category>Metabolic Network</category>
+        <category>Weighted Network</category>
         <category>统计学</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8EntrezAPI%E8%BF%9B%E8%A1%8CPubMed%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/</guid>

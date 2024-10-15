@@ -10,16 +10,16 @@
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
-    <category term="WES" />
-    <category term="WGS" />
     <category term="REST API" />
     <category term="建站" />
+    <category term="WES" />
+    <category term="WGS" />
     <category term="软件安装" />
-    <category term="Java" />
+    <category term="Ubuntu" />
     <category term="Python" />
+    <category term="Java" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Ubuntu" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
@@ -28,14 +28,20 @@
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="MySQL" />
+    <category term="Structured Outputs" />
+    <category term="OpenAI API" />
+    <category term="GPT" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
     <category term="scRNA-seq" />
     <category term="Seurat" />
     <category term="network" />
     <category term="interactome" />
-    <category term="Entrez API" />
-    <category term="NCBI" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="Network Analysis" />
+    <category term="Metabolic Network" />
+    <category term="Weighted Network" />
     <category term="统计学" />
     <entry>
         <id>https://new.limina.top/2021/03/03/arraytools%E7%9A%84excel%E6%8F%92%E4%BB%B6%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</id>

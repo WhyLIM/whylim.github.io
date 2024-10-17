@@ -3,26 +3,26 @@
     <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle.</title>
     <link href="https://new.limina.top" />
-    <updated>2024-10-15T10:20:36.000Z</updated>
+    <updated>2024-10-15T14:38:24.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
+    <category term="WES" />
+    <category term="WGS" />
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
-    <category term="REST API" />
-    <category term="建站" />
-    <category term="WES" />
-    <category term="WGS" />
     <category term="软件安装" />
+    <category term="REST API" />
     <category term="Ubuntu" />
-    <category term="Python" />
+    <category term="建站" />
     <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
+    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Web" />
     <category term="Vue 3" />
     <category term="Element Plus" />
     <category term="RNA-Seq" />
@@ -31,18 +31,91 @@
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
-    <category term="Entrez API" />
-    <category term="NCBI" />
-    <category term="scRNA-seq" />
-    <category term="Seurat" />
     <category term="network" />
     <category term="interactome" />
+    <category term="scRNA-seq" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="Seurat" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="统计学" />
     <category term="Network Analysis" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
-    <category term="统计学" />
+    <entry>
+        <id>https://new.limina.top/2024/10/15/%E5%8D%95%E7%BB%86%E8%83%9E%E5%88%86%E6%9E%90%E7%BB%8F%E9%AA%8C/</id>
+        <title>单细胞分析经验</title>
+        <link rel="alternate" href="https://new.limina.top/2024/10/15/%E5%8D%95%E7%BB%86%E8%83%9E%E5%88%86%E6%9E%90%E7%BB%8F%E9%AA%8C/"/>
+        <content type="html">&lt;h1 id=&#34;单细胞分析经验&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单细胞分析经验&#34;&gt;#&lt;/a&gt; 单细胞分析经验&lt;/h1&gt;
+&lt;h2 id=&#34;整体描述聚类亚群注释组织分布&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#整体描述聚类亚群注释组织分布&#34;&gt;#&lt;/a&gt; 整体描述：聚类，亚群注释，组织分布&lt;/h2&gt;
+&lt;p&gt;细胞分群与注释&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;非监督聚类算出 marker&lt;/li&gt;
+&lt;li&gt;已知的 marker&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;筛选细胞亚群基因功能tf互作拟时序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#筛选细胞亚群基因功能tf互作拟时序&#34;&gt;#&lt;/a&gt; 筛选细胞亚群：基因，功能，TF，互作，拟时序&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何筛选细胞亚群？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Fig1. 整体描述：聚类，不同疾病状态的关系，细胞大群的组织分布。&lt;/li&gt;
+&lt;li&gt;Fig2. 筛选细胞亚群：特征基因，功能，转录因子，细胞互作，拟时序&lt;/li&gt;
+&lt;li&gt;Fig3. 稀有且肿瘤富集的细胞亚群&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;巴氏距离bhatt-distance-difference量化两个概率分布之间的差异&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#巴氏距离bhatt-distance-difference量化两个概率分布之间的差异&#34;&gt;#&lt;/a&gt; 巴氏距离（Bhatt distance difference）：量化两个概率分布之间的差异&lt;/h3&gt;
+&lt;p&gt;较大的巴氏距离表明细胞类型或组织之间转录组较大的差异&lt;/p&gt;
+&lt;h3 id=&#34;基尼系数gini-coefficient&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基尼系数gini-coefficient&#34;&gt;#&lt;/a&gt; 基尼系数（Gini coefficient）&lt;/h3&gt;
+&lt;p&gt;Intratumoral CD4+T Cells Mediate Anti-tumor Cytotoxicity in Human Bladder Cancer, 2020, Cell&lt;/p&gt;
+&lt;p&gt;Gini indices for each CD8+T cell cluster calculated for each patient, showing significant clonal expansion within exhausted CD8+T cells.&lt;br /&gt;
+Clonal replacement of tumor-specific T cells following PD-1 blockade, 2019, Nature Medicine&lt;/p&gt;
+&lt;h3 id=&#34;香农指数shannon-equitability-index&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#香农指数shannon-equitability-index&#34;&gt;#&lt;/a&gt; 香农指数（Shannon equitability index）&lt;/h3&gt;
+&lt;p&gt;Pan-cancer single cell landscape of tumor-infiltrating T cells, 2021, Science&lt;/p&gt;
+&lt;h3 id=&#34;肿瘤细胞比例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#肿瘤细胞比例&#34;&gt;#&lt;/a&gt; 肿瘤细胞比例&lt;/h3&gt;
+&lt;p&gt;Immune suppressive landscape in the human esophageal squamous cell carcinoma microenvironment, 2018, Nature Communications&lt;/p&gt;
+&lt;p&gt;Landscape of Infiltrating T Cells in Liver Cancer Revealed by Single-Cell Sequencing, 2017, Cell&lt;/p&gt;
+&lt;h3 id=&#34;火山图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#火山图&#34;&gt;#&lt;/a&gt; 火山图&lt;/h3&gt;
+&lt;p&gt;细胞当成基因&lt;/p&gt;
+&lt;p&gt;Single-cell RNA sequencing reveals compromisedimmune microenvironment in precursor stages of multiple myeloma, 2020, Nature Cancer&lt;/p&gt;
+&lt;h3 id=&#34;风险比hazard-ratio&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#风险比hazard-ratio&#34;&gt;#&lt;/a&gt; 风险比（Hazard ratio）&lt;/h3&gt;
+&lt;p&gt;Pan-cancer single-cell dissection reveals phenotypically distinct B cell subtypes, 2024, Cell&lt;/p&gt;
+&lt;h3 id=&#34;r_oe&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#r_oe&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;R_{O/E}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.0385em;vertical-align:-0.3552em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3448em;&#34;&gt;&lt;span style=&#34;top:-2.5198em;margin-left:-0.0077em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3552em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Global characterization of Tcells in non-small-cell lung cancer by single-cell sequencing, 2018, Nature Medicine&lt;/p&gt;
+&lt;p&gt;Single-Cell Analyses Inform Mechanisms of Myeloid Targeted Therapies in Colon Cancer, 2020, Cell&lt;/p&gt;
+&lt;h3 id=&#34;odds-ratioor&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#odds-ratioor&#34;&gt;#&lt;/a&gt; odds ratio（OR）&lt;/h3&gt;
+&lt;p&gt;Pan-cancer single cell landscape of tumor-infiltrating T cells, 2021, Science&lt;/p&gt;
+&lt;h3 id=&#34;tumor-regression-ratio&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tumor-regression-ratio&#34;&gt;#&lt;/a&gt; Tumor regression ratio&lt;/h3&gt;
+&lt;p&gt;Spatiotemporal single-cell analysis decodes cellular dynamics underlyingdifferent responsesto immunotherapy in colorectal cancer, 2024, Cancer Cell&lt;/p&gt;
+&lt;h3 id=&#34;用-pathway-对亚群打分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用-pathway-对亚群打分&#34;&gt;#&lt;/a&gt; 用 pathway 对亚群打分&lt;/h3&gt;
+&lt;p&gt;Resolving the intertwining of inflammation and fibrosis in human heart failure at single-cell level, 2021, Basic Research in Cardiology&lt;/p&gt;
+&lt;h3 id=&#34;针对单细胞的统计检验&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#针对单细胞的统计检验&#34;&gt;#&lt;/a&gt; 针对单细胞的统计检验&lt;/h3&gt;
+&lt;h3 id=&#34;癌细胞亚群的药物敏感性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#癌细胞亚群的药物敏感性&#34;&gt;#&lt;/a&gt; 癌细胞亚群的药物敏感性&lt;/h3&gt;
+&lt;h3 id=&#34;单个细胞与表型关联&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单个细胞与表型关联&#34;&gt;#&lt;/a&gt; 单个细胞与表型关联&lt;/h3&gt;
+&lt;h3 id=&#34;生态学指数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#生态学指数&#34;&gt;#&lt;/a&gt; 生态学指数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Inverse.Simpson&lt;/li&gt;
+&lt;li&gt;Pielou&lt;/li&gt;
+&lt;li&gt;Shannon.Wiener&lt;/li&gt;
+&lt;li&gt;Simpson&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;细胞亚群与表型的-auc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#细胞亚群与表型的-auc&#34;&gt;#&lt;/a&gt; 细胞亚群与表型的 AUC&lt;/h3&gt;
+&lt;h3 id=&#34;细胞差异丰度分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#细胞差异丰度分析&#34;&gt;#&lt;/a&gt; 细胞差异丰度分析&lt;/h3&gt;
+&lt;h2 id=&#34;细胞亚群的关系共现性模块功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#细胞亚群的关系共现性模块功能&#34;&gt;#&lt;/a&gt; 细胞亚群的关系：共现性，模块：功能&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何识别关联亚群？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;用样本对细胞分模块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用样本对细胞分模块&#34;&gt;#&lt;/a&gt; 用样本对细胞分模块&lt;/h3&gt;
+&lt;h3 id=&#34;pcc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pcc&#34;&gt;#&lt;/a&gt; PCC&lt;/h3&gt;
+&lt;p&gt;Single-cell analyses reveal key immune cell subsets associated with response to PD-L1 blockade in triple-negative breast cancer, 2021, Cancer Cell&lt;/p&gt;
+&lt;h3 id=&#34;细胞互作的数量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#细胞互作的数量&#34;&gt;#&lt;/a&gt; 细胞互作的数量&lt;/h3&gt;
+&lt;p&gt;Single-cell RNA sequencing demonstrates the molecular and cellular reprogramming of metastatic lung adenocarcinoma, 2020, Nature Communications&lt;/p&gt;
+&lt;h2 id=&#34;患者分组差异机制价值&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#患者分组差异机制价值&#34;&gt;#&lt;/a&gt; 患者分组：差异，机制，价值&lt;/h2&gt;
+&lt;h2 id=&#34;关键且新颖基因表达功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关键且新颖基因表达功能&#34;&gt;#&lt;/a&gt; 关键且新颖基因：表达，功能&lt;/h2&gt;
+&lt;h2 id=&#34;关联基因基因模块功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关联基因基因模块功能&#34;&gt;#&lt;/a&gt; 关联基因，基因模块：功能&lt;/h2&gt;
+</content>
+        <category term="scRNA-seq" />
+        <updated>2024-10-15T14:38:24.000Z</updated>
+    </entry>
     <entry>
         <id>https://new.limina.top/2024/10/15/%E4%BD%BF%E7%94%A8%E7%BB%93%E6%9E%84%E5%8C%96%E8%BE%93%E5%87%BA%E8%A7%84%E8%8C%83%20OpenAI%20API%20%E7%9A%84%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C/</id>
         <title>使用结构化输出规范 OpenAI API 的输出结果</title>

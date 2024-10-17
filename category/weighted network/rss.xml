@@ -10,22 +10,22 @@
         <category>R</category>
         <category>生信</category>
         <category>单细胞</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>REST API</category>
-        <category>建站</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>软件安装</category>
+        <category>REST API</category>
         <category>Ubuntu</category>
-        <category>Python</category>
+        <category>建站</category>
         <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>RNA-Seq</category>
@@ -34,18 +34,18 @@
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
-        <category>scRNA-seq</category>
-        <category>Seurat</category>
         <category>network</category>
         <category>interactome</category>
+        <category>scRNA-seq</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>统计学</category>
         <category>Network Analysis</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/09/29/%E7%9B%B8%E5%90%8C%E7%BD%91%E7%BB%9C%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
             <title>相同网络在不同状态下的比较</title>

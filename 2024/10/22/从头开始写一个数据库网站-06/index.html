@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1"><meta name="renderer" content="webkit"><link rel="icon" type="image/ico" sizes="32x32" href="/assets/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="alternate" href="/rss.xml" title="Being on sea, sail; being on land, settle." type="application/rss+xml"><link rel="alternate" href="/atom.xml" title="Being on sea, sail; being on land, settle." type="application/atom+xml"><link rel="alternate" type="application/json" title="Being on sea, sail; being on land, settle." href="https://new.limina.top/feed.json"><link rel="preconnect" href="https://lf9-cdn-tos.bytecdntp.com"><link rel="preconnect" href="https://at.alicdn.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CFredericka%20the%20Great:400,400italic,700,700italic%7CNoto%20Serif%20JP:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CInconsolata:400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext" media="none" onload="this.media='all'"><link rel="stylesheet" href="/css/app.css?v=0.4.2"><link rel="modulepreload" href="/js/chunk-3VMQCGY7.js"><link rel="modulepreload" href="/js/chunk-GCFK3SZY.js"><link rel="modulepreload" href="/js/chunk-T7ALM2OC.js"><link rel="modulepreload" href="/js/index.esm-7BKIFL5P.js"><link rel="modulepreload" href="/js/post-NPGFUIAE.js"><link rel="modulepreload" href="/js/quicklink-QSFRKTHN.js"><link rel="modulepreload" href="/js/siteInit.js"><link rel="preload" href="https://img.limina.top/blog/display/kevin-schmid-ZCm7kd3YZRA-unsplash.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://img.limina.top/blog/display/mohammad-mardani-G20P6eTEEas-unsplash.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://img.limina.top/blog/display/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://img.limina.top/blog/display/city-of-gold-coast-AHOsCAuCnUU-unsplash.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://img.limina.top/blog/display/caleb-smith-rmhpu46xok8-unsplash.jpg" as="image" fetchpriority="high"><link rel="preload" href="https://img.limina.top/blog/display/annie-spratt-rdVLN3UFmpU-unsplash.jpg" as="image" fetchpriority="high"><meta name="keywords" content="Vue 3,MySQL"><link rel="canonical" href="https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/"><title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title><meta name="generator" content="Hexo 7.0.0"></head><body itemscope="" itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope="" itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</h1><div class="meta"><span class="item" title="创建时间：2024-10-22 17:08:29"><span class="icon"><i class="ic i-calendar"></i></span><span class="text">发表于</span><time itemprop="dateCreated datePublished" datetime="2024-10-22T17:08:29+08:00">2024-10-22</time></span><span class="item" title="本文字数"><span class="icon"><i class="ic i-pen"></i></span><span class="text">本文字数</span><span>7k</span><span class="text">字</span></span><span class="item" title="阅读时长"><span class="icon"><i class="ic i-clock"></i></span><span class="text">阅读时长</span><span>6 分钟</span></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="切换导航栏"><span class="line"></span><span class="line"></span><span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">WhyLIM</a></li></ul><ul class="right" id="rightNav"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div class="pjax" id="imgs"><ul><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/kevin-schmid-ZCm7kd3YZRA-unsplash.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/mohammad-mardani-G20P6eTEEas-unsplash.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/gabriel-heinzer-4Mw7nkQDByk-unsplash.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/city-of-gold-coast-AHOsCAuCnUU-unsplash.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/caleb-smith-rmhpu46xok8-unsplash.jpg&quot;);"></li><li class="item" style="background-image: url(&quot;https://img.limina.top/blog/display/annie-spratt-rdVLN3UFmpU-unsplash.jpg&quot;);"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"></use><use xlink:href="#gentle-wave" x="48" y="3"></use><use xlink:href="#gentle-wave" x="48" y="5"></use><use xlink:href="#gentle-wave" x="48" y="7"></use></g></svg></div><main><div class="inner"><div class="pjax" id="main"><div class="article wrap"><div class="breadcrumb" itemlistelement="" itemscope="" itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i><span><a href="/">首页</a></span><i class="ic i-angle-right"></i><span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/Vue-3/" itemprop="item" rel="index" title="分类于Vue 3"><span itemprop="name">Vue 3<meta itemprop="position" content="0"></span></a></span><i class="ic i-angle-right"></i><span itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/Vue-3/Element-Plus/" itemprop="item" rel="index" title="分类于Element Plus"><span itemprop="name">Element Plus<meta itemprop="position" content="1"></span></a></span><i class="ic i-angle-right"></i><span class="current" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/categories/Vue-3/Element-Plus/MySQL/" itemprop="item" rel="index" title="分类于MySQL"><span itemprop="name">MySQL<meta itemprop="position" content="2"></span></a></span></div><article class="post block" itemscope="itemscope" itemtype="http://schema.org/Article" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/"><span hidden="hidden" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><meta itemprop="image" content="/assets/avatar.png"><meta itemprop="name" content="WhyLIM"><meta itemprop="description" content="1 1 1 0 0 1 0 1 1, "></span><span hidden="hidden" itemprop="publisher" itemscope="itemscope" itemtype="http://schema.org/Organization"><meta itemprop="name" content="Being on sea, sail; being on land, settle."></span><div class="body md" itemprop="articleBody"><h1 id="使用-vue-3-element-plus-从头开始写一个数据库网站-06-前端与后端的交互"><a class="anchor" href="#使用-vue-3-element-plus-从头开始写一个数据库网站-06-前端与后端的交互">#</a> 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 06 - 前端与后端的交互</h1>
+<blockquote>
+<p>由于 PrismJS 尚不支持 Vue 的语法高亮，因此 Vue 代码块均先使用 HTML 的高亮</p>
+<p>2024-09-23</p>
+</blockquote>
+<p>在上一步中，我们已经设计并实现了基础的 API 功能。</p>
+<p>现在我们在前端使用 Vue 发送请求并展示数据，分为以下几个步骤：</p>
+<ol>
+<li>安装 Axios 用于发送 HTTP 请求</li>
+<li>发送请求获取数据</li>
+<li>展示 Biomarker 列表</li>
+<li>点击 Biomarker 显示详细信息</li>
+<li>根据条件筛选 Biomarker</li>
+</ol>
+<p>我们仍然通过 Vue 3 的组合式 API 写法来实现这些功能。</p>
+<h2 id="安装-axios"><a class="anchor" href="#安装-axios">#</a> 安装 Axios</h2>
+<p><code>Axios</code>  是一个非常流行的 HTTP 客户端库，可以用来在 Vue 组件中发送 API 请求。</p>
+<ol>
+<li>
+<p><strong>安装 Axios</strong>：</p>
+<p>在项目根目录下运行以下命令：</p>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token function">pnpm</span> <span class="token function">add</span> axios</pre></td></tr></tbody></table></figure></li>
+<li>
+<p><strong>在组件中引入 Axios</strong>：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span></pre></td></tr></tbody></table></figure><p>之后你就可以在 Vue 组件中使用 Axios 发送请求。</p>
+</li>
+</ol>
+<h2 id="封装与后端-api-的交互逻辑"><a class="anchor" href="#封装与后端-api-的交互逻辑">#</a> 封装与后端 API 的交互逻辑</h2>
+<p>在根目的  <code>src</code>  文件夹下创建  <code>services/api.js</code> ，并写入：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">// 创建 Axios 实例，定义 API 的基础 URL</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">const</span> api <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token literal-property property">baseURL</span><span class="token operator">:</span> <span class="token string">'http://localhost:3000/api'</span>  <span class="token comment">// 后端 API 的基础 URL</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">// 获取 Biomarkers 数据</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getBiomarkers</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> api<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/biomarkers'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment">// 获取特定 Biomarker 的详细信息</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getBiomarkerDetails</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> api<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/biomarkers/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token comment">// 获取筛选选项</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getFilters</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> api<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/biomarkers/filters'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><h3 id="详细解释"><a class="anchor" href="#详细解释">#</a> 详细解释</h3>
+<ol>
+<li>
+<p><strong> <code>axios.create()</code> </strong>:</p>
+<ul>
+<li>使用  <code>axios.create()</code>  方法创建了一个自定义的  <code>axios</code>  实例，所有请求都会以  <code>http://localhost:3000/api</code>  作为基础 URL。</li>
+<li>这样做的好处是，如果后端地址或端点路径改变，你只需要在一个地方更新  <code>baseURL</code> ，不必逐个修改每个请求的完整 URL。</li>
+</ul>
+</li>
+<li>
+<p><strong> <code>getBiomarkers()</code> </strong>:</p>
+<ul>
+<li>发送  <code>GET</code>  请求到  <code>/biomarkers</code> ，用于获取所有的 biomarker 数据。</li>
+<li>请求的完整 URL 是  <code>http://localhost:3000/api/biomarkers</code> 。</li>
+</ul>
+</li>
+<li>
+<p><strong> <code>createBiomarker(biomarker)</code> </strong>:</p>
+<ul>
+<li>发送  <code>POST</code>  请求到  <code>/biomarkers</code> ，用于在后端创建一个新的 biomarker。 <code>biomarker</code>  是传递的请求体数据。</li>
+<li>请求的完整 URL 是  <code>http://localhost:3000/api/biomarkers</code> 。</li>
+</ul>
+</li>
+<li>
+<p><strong> <code>getFilters()</code> </strong>:</p>
+<ul>
+<li>发送  <code>GET</code>  请求到  <code>/biomarkers/filters</code> ，用于获取筛选选项。</li>
+<li>请求的完整 URL 是  <code>http://localhost:3000/api/biomarkers/filters</code> 。</li>
+</ul>
+</li>
+<li>
+<p><strong> <code>getBiomarkerDetails(id)</code> </strong>:</p>
+<ul>
+<li>发送  <code>GET</code>  请求到  <code>/biomarkers/:id</code> ，用于获取特定 ID 的 biomarker 详细信息。</li>
+<li>请求的完整 URL 是  <code>http://localhost:3000/api/biomarkers/{id}</code> ，其中  <code>{id}</code>  是动态传递的。</li>
+</ul>
+</li>
+</ol>
+<h3 id="作用"><a class="anchor" href="#作用">#</a> 作用</h3>
+<ul>
+<li>该文件简化了组件中 API 请求的调用。在 Vue 组件中，可以直接通过  <code>getBiomarkers()</code>  或  <code>getFilters()</code>  来获取数据，而不需要在每个组件中重复书写  <code>axios.get()</code>  请求逻辑。</li>
+<li>通过将所有 API 调用放在一个  <code>api.js</code>  文件中，您可以更轻松地管理 API 的端点、逻辑和错误处理。</li>
+</ul>
+<h3 id="组件中的使用"><a class="anchor" href="#组件中的使用">#</a> 组件中的使用</h3>
+<p>在 Vue 组件中引入这些封装好的 API 方法来调用后端：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token punctuation">{</span> getBiomarkers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../services/api'</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">const</span> biomarkers <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">onMounted</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getBiomarkers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  biomarkers<span class="token punctuation">.</span>value <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></tbody></table></figure><h2 id="发送请求获取数据"><a class="anchor" href="#发送请求获取数据">#</a> 发送请求获取数据</h2>
+<p>接下来我们来创建一个 Vue 组件 / 页面，用于展示 Biomarker 列表，在挂载时通过 Axios 发送请求获取数据。</p>
+<h3 id="示例组件biomarkerlistvue"><a class="anchor" href="#示例组件biomarkerlistvue">#</a> 示例组件： <code>BiomarkerList.vue</code></h3>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;BiomarkerList&lt;/h1&gt;
+    &lt;div v-if="isLoading"&gt;加载中...&lt;/div&gt;
+    &lt;div v-if="error"&gt;{{ error }}&lt;/div&gt;
+    &lt;ul v-if="biomarkers.length"&gt;
+      &lt;li v-for="biomarker in biomarkers" :key="biomarker.id"&gt;
+        &lt;router-link :to="{ name: 'BiomarkerDetail', params: { id: biomarker.id } }"&gt;
+          {{ biomarker.name }}
+        &lt;/router-link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+const biomarkers = ref([])   // 存储 biomarker 列表
+const isLoading = ref(false) // 加载状态
+const error = ref(null)      // 错误信息
+
+// 组件挂载时获取 biomarker 列表
+onMounted(async () =&gt; {
+  isLoading.value = true
+  try {
+    const response = await axios.get('http://localhost:3000/biomarkers')
+    biomarkers.value = response.data
+  } catch (err) {
+    error.value = '获取 biomarker 列表失败'
+  } finally {
+    isLoading.value = false
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<h2 id="展示-biomarker-列表"><a class="anchor" href="#展示-biomarker-列表">#</a> 展示 Biomarker 列表</h2>
+<p>在上述示例中：</p>
+<ul>
+<li>当组件挂载（ <code>onMounted</code>  钩子）时，发送一个  <code>GET</code>  请求到后端 API 端点（ <code>/biomarkers</code> ）以获取 biomarker 列表。</li>
+<li>请求成功后，数据会存储在  <code>biomarkers</code>  中，并展示在页面上。</li>
+<li>每个 biomarker 的名称都会生成一个列表项，并使用  <code>router-link</code>  创建可点击的链接，以便用户点击后可以查看详细信息。</li>
+</ul>
+<h2 id="点击-biomarker-显示详细信息"><a class="anchor" href="#点击-biomarker-显示详细信息">#</a> 点击 Biomarker 显示详细信息</h2>
+<p>我们还需要为每个 biomarker 提供详细信息页面。以下是  <code>BiomarkerDetail.vue</code>  组件的代码，它会根据 biomarker 的 ID 获取详细信息并展示：</p>
+<h3 id="示例组件biomarkerdetailvue"><a class="anchor" href="#示例组件biomarkerdetailvue">#</a> 示例组件： <code>BiomarkerDetail.vue</code></h3>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Biomarker 详细信息&lt;/h1&gt;
+    &lt;div v-if="isLoading"&gt;加载中...&lt;/div&gt;
+    &lt;div v-if="error"&gt;{{ error }}&lt;/div&gt;
+    &lt;div v-if="biomarker"&gt;
+      &lt;h2&gt;{{ biomarker.name }}&lt;/h2&gt;
+      &lt;p&gt;{{ biomarker.description }}&lt;/p&gt;
+      &lt;p&gt;类型: {{ biomarker.type }}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import axios from 'axios'
+
+const route = useRoute()
+const biomarker = ref(null)  // 存储 biomarker 详情
+const isLoading = ref(false) // 加载状态
+const error = ref(null)      // 错误信息
+
+// 组件挂载时获取 biomarker 详情
+onMounted(async () =&gt; {
+  const biomarkerId = route.params.id
+  isLoading.value = true
+  try {
+    const response = await axios.get(`http://localhost:3000/biomarkers/${biomarkerId}`)
+    biomarker.value = response.data
+  } catch (err) {
+    error.value = '获取 biomarker 详情失败'
+  } finally {
+    isLoading.value = false
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<h2 id="路由设置"><a class="anchor" href="#路由设置">#</a> 路由设置</h2>
+<p>为了在点击 biomarker 时跳转到详细信息页面，我们需要在 Vue Router 中配置路由。确保在  <code>router/index.js</code>  中定义相应的路由：</p>
+<figure class="highlight javascript"><figcaption data-lang="javascript"></figcaption><table><tbody><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token punctuation">{</span> createRouter<span class="token punctuation">,</span> createWebHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> BiomarkerList <span class="token keyword">from</span> <span class="token string">'../components/BiomarkerList.vue'</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> BiomarkerDetail <span class="token keyword">from</span> <span class="token string">'../components/BiomarkerDetail.vue'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'BiomarkerList'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> BiomarkerList <span class="token punctuation">}</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/biomarkers/:id'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'BiomarkerDetail'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> BiomarkerDetail <span class="token punctuation">}</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token literal-property property">history</span><span class="token operator">:</span> <span class="token function">createWebHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  routes<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token keyword">export</span> <span class="token keyword">default</span> router</pre></td></tr></tbody></table></figure><h2 id="根据条件筛选-biomarker"><a class="anchor" href="#根据条件筛选-biomarker">#</a> 根据条件筛选 Biomarker</h2>
+<p>如果你想在前端根据用户输入筛选 biomarker，可以在  <code>BiomarkerList.vue</code>  组件中添加筛选功能。</p>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Biomarker 列表&lt;/h1&gt;
+    &lt;input v-model="searchQuery" placeholder="按名称筛选" /&gt;
+    &lt;button @click="filterBiomarkers"&gt;筛选&lt;/button&gt;
+    &lt;div v-if="isLoading"&gt;加载中...&lt;/div&gt;
+    &lt;div v-if="error"&gt;{{ error }}&lt;/div&gt;
+    &lt;ul v-if="biomarkers.length"&gt;
+      &lt;li v-for="biomarker in biomarkers" :key="biomarker.id"&gt;
+        &lt;router-link :to="{ name: 'BiomarkerDetail', params: { id: biomarker.id } }"&gt;
+          {{ biomarker.name }}
+        &lt;/router-link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+const biomarkers = ref([])   // 存储 biomarker 列表
+const isLoading = ref(false) // 加载状态
+const error = ref(null)      // 错误信息
+const searchQuery = ref('')  // 筛选关键字
+
+// 获取筛选后的biomarker
+const filterBiomarkers = async () =&gt; {
+  isLoading.value = true
+  try {
+    const response = await axios.get(`http://localhost:3000/biomarkers?name=${searchQuery.value}`)
+    biomarkers.value = response.data
+  } catch (err) {
+    error.value = '筛选 biomarker 失败'
+  } finally {
+    isLoading.value = false
+  }
+}
+
+// 组件挂载时获取 biomarker 列表
+onMounted(async () =&gt; {
+  isLoading.value = true
+  try {
+    const response = await axios.get('http://localhost:3000/biomarkers')
+    biomarkers.value = response.data
+  } catch (err) {
+    error.value = '获取 biomarker 列表失败'
+  } finally {
+    isLoading.value = false
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<p>这样，你就可以根据用户的输入来筛选 biomarker 列表了。</p>
+<h3 id="总结"><a class="anchor" href="#总结">#</a> 总结</h3>
+<ol>
+<li><strong>安装 Axios</strong> 以发送 HTTP 请求。</li>
+<li><strong>在 Vue 组件中发送请求</strong>，通过  <code>onMounted</code>  生命周期钩子在组件加载时获取 biomarker 数据。</li>
+<li><strong>通过 Vue Router 实现路由跳转</strong>，让用户点击 biomarker 后可以跳转到详细信息页面。</li>
+<li><strong>添加筛选功能</strong>，让用户根据条件筛选 biomarker。</li>
+</ol>
+<p>通过这些步骤，前端已经可以与后端 API 交互，展示、筛选和查看 biomarker 的详细信息。</p>
+<div class="tags"><a href="/tags/Vue-3/" rel="tag"><i class="ic i-tag"></i>Vue 3</a><a href="/tags/Element-Plus/" rel="tag"><i class="ic i-tag"></i>Element Plus</a><a href="/tags/MySQL/" rel="tag"><i class="ic i-tag"></i>MySQL</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i></span><span class="text">更新于</span><time title="修改时间：2024-10-22 18:23:40" itemprop="dateModified" datetime="2024-10-22T18:23:40+08:00">2024-10-22</time></span></div><div class="reward"><button><i class="ic i-heartbeat"></i>赞赏</button><p>请我喝[茶]~(￣▽￣)~*</p><div id="qr"><div><img loading="lazy" data-src="/assets/wechatpay.webp" alt="WhyLIM 微信支付"><p>微信支付</p></div><div><img loading="lazy" data-src="/assets/alipay.webp" alt="WhyLIM 支付宝"><p>支付宝</p></div></div></div><div id="copyright"><ul><li class="author"><strong>本文作者：</strong>WhyLIM<i class="ic i-at"><em>@</em></i>Being on sea, sail; being on land, settle.</li><li class="link"><strong>本文链接：</strong><a href="https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/" title="使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互">https://new.limina.top/2024/10/22/从头开始写一个数据库网站-06/</a></li><li class="license"><strong>版权声明：</strong>本站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-05/" rel="prev" itemprop="url" data-background-image="https://img.limina.top/blog/display/seele-an-vPAjZS8ss4o-unsplash.jpg" title="使用 Vue 3 + Element Plus 从头开始写一个数据库网站-05-API 的设计与实现"><span class="type">上一篇</span><span class="category"><i class="ic i-flag"></i>MySQL</span><h3>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-05-API 的设计与实现</h3></a></div><div class="item right"></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="文章目录"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-vue-3-element-plus-%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06-%E5%89%8D%E7%AB%AF%E4%B8%8E%E5%90%8E%E7%AB%AF%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="toc-number">1.</span> <span class="toc-text"> 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 06 - 前端与后端的交互</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-axios"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装 Axios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E4%B8%8E%E5%90%8E%E7%AB%AF-api-%E7%9A%84%E4%BA%A4%E4%BA%92%E9%80%BB%E8%BE%91"><span class="toc-number">1.2.</span> <span class="toc-text"> 封装与后端 API 的交互逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E8%A7%A3%E9%87%8A"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 详细解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 组件中的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.</span> <span class="toc-text"> 发送请求获取数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E7%BB%84%E4%BB%B6biomarkerlistvue"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 示例组件： BiomarkerList.vue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA-biomarker-%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 展示 Biomarker 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%87%BB-biomarker-%E6%98%BE%E7%A4%BA%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="toc-number">1.5.</span> <span class="toc-text"> 点击 Biomarker 显示详细信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E7%BB%84%E4%BB%B6biomarkerdetailvue"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 示例组件： BiomarkerDetail.vue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.6.</span> <span class="toc-text"> 路由设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89-biomarker"><span class="toc-number">1.7.</span> <span class="toc-text"> 根据条件筛选 Biomarker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 总结</span></a></li></ol></li></ol></li></ol></div><div class="related panel pjax" data-title="系列文章"><ul><li><a href="/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-05/" rel="bookmark" title="使用 Vue 3 + Element Plus 从头开始写一个数据库网站-05-API 的设计与实现">使用 Vue 3 + Element Plus 从头开始写一个数据库网站-05-API 的设计与实现</a></li><li class="active"><a href="/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/" rel="bookmark" title="使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互">使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</a></li></ul></div><div class="overview panel" data-title="站点概览"><div class="author" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><img class="image" loading="lazy" decoding="async" itemprop="image" alt="WhyLIM" src="/assets/avatar.webp"><p class="name" itemprop="name">WhyLIM</p><div class="description" itemprop="description"></div></div><nav class="state"><div class="item posts"><a href="/archives/"><span class="count">46</span><span class="name">文章</span></a></div><div class="item categories"><a href="/categories/"><span class="count">50</span><span class="name">分类</span></a></div><div class="item tags"><a href="/tags/"><span class="count">41</span><span class="name">标签</span></a></div></nav><div class="social"><a target="_blank" rel="noopener" href="https://github.com/WhyLIM" class="item github" title="https://github.com/WhyLIM"><i class="ic i-github"></i></a><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?hl=zh-CN&amp;user=BXyoIosAAAAJ" class="item gscholar" title="https://scholar.google.com/citations?hl=zh-CN&amp;user=BXyoIosAAAAJ"><i class="ic i-gscholar"></i></a><a target="_blank" rel="noopener" href="https://www.researchgate.net/profile/Min-Li-331" class="item researchgate" title="https://www.researchgate.net/profile/Min-Li-331"><i class="ic i-researchgate"></i></a><a href="mailto:mli.bio@ouutlook.com" class="item email" title="mailto:mli.bio@ouutlook.com"><i class="ic i-envelope"></i></a><a target="_blank" rel="noopener" href="https://cv.limina.top/" class="item about" title="https://cv.limina.top/"><i class="ic i-icon_CV"></i></a></div><div class="menu"><li class="item"><a href="/" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item dropdown"><a href="#" onclick="return false;"><i class="ic i-feather"></i>文章</a><ul class="submenu"><li class="item"><a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li><li class="item"><a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a></li></ul></li><li class="item"><a href="/about/" rel="section"><i class="ic i-user"></i>关于</a></li><li class="item"><a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a></li></div></div></div></div><ul id="quick"><li class="prev pjax"></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-05/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"></div><div class="status"><div class="copyright">© 2021 -<span itemprop="copyrightYear">2024</span><span class="with-love"><i class="ic i-sakura rotate"></i></span><span class="author" itemprop="copyrightHolder">WhyLIM @ WhyLIM</span></div><div class="count"><span class="post-meta-item-icon"><i class="ic i-chart-area"></i></span><span title="站点总字数">228k 字</span><span class="post-meta-divider"> | </span><span class="post-meta-item-icon"><i class="ic i-coffee"></i></span><span title="站点阅读时长">3:27</span></div><div class="powered-by">基于 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> &amp; Theme.<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX/">ShokaX</a></div><br><span style="display:inline;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:var(--grey-5);"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">苏 ICP 备 2021008103 号</a><br><a target="_blank" href="https://beian.mps.gov.cn/#/query/webSearch?code=32062302000380"><img loading="lazy" decoding="async" data-src="/assets/备案图标.webp" style="max-width: 2em;display:inline;" width="20" height="20" alt="备案">苏公网安备 32062302000380</a></span></div></div></footer></div><script data-config="" type="text/javascript">var LOCAL = {
+    ispost: true,
+        path: `2024/10/22/从头开始写一个数据库网站-06/`,
+        favicon: {
+        show: `骗骗你的:)`,
+        hide: `页面崩溃啦`
+    },
+    search: {
+        placeholder: "文章搜索",
+        empty: "关于 「 ${query} 」，什么也没搜到",
+        stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    copy_tex: true,
+    katex: true,
+    mermaid: false,
+    audio: undefined,
+    fancybox: true,
+    nocopy: false,
+    outime: true,
+    template: `<div class="note warning"><p><span class="label warning">文章时效性提示</span><br>这是一篇发布于 {{publish}} 天前，最后一次更新在 {{updated}} 天前的文章，部分信息可能已经发生改变，请注意甄别。</p></div>`,
+    quiz: {
+        choice: `单选题`,
+        multiple: `多选题`,
+        true_false: `判断题`,
+        essay: `问答题`,
+        gap_fill: `填空题`,
+        mistake: `错题备注`
+    },
+    ignores: [
+        (uri) => uri.includes('#'),
+        (uri) => new RegExp(LOCAL.path + '$').test(uri),
+            []
+    ]
+};
+</script><script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-6-M/pace/1.2.4/pace.min.js" async=""></script><script src="/js/siteInit.js?v=0.4.2" type="module" fetchpriority="high" defer=""></script></body></html>

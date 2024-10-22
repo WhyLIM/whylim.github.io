@@ -1,0 +1,21 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Being on sea, sail; being on land, settle. • All posts by \"text mining\" tag",
+    "description": "",
+    "home_page_url": "https://new.limina.top",
+    "items": [
+        {
+            "id": "https://new.limina.top/2024/10/21/%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E5%92%8C%E8%A7%84%E8%8C%83%E5%8C%96/",
+            "url": "https://new.limina.top/2024/10/21/%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E5%92%8C%E8%A7%84%E8%8C%83%E5%8C%96/",
+            "title": "文献信息抽取和规范化",
+            "date_published": "2024-10-21T06:22:01.000Z",
+            "content_html": "<h1 id=\"文献信息抽取和规范化\"><a class=\"anchor\" href=\"#文献信息抽取和规范化\">#</a> 文献信息抽取和规范化</h1>\n<h2 id=\"过去的做法\"><a class=\"anchor\" href=\"#过去的做法\">#</a> 过去的做法</h2>\n<p>自我的科研生涯以来，已经参与构建和发布了多个生物标志物数据库。例如：</p>\n<ul>\n<li><a href=\"http://www.eyeseeworld.com/cbd/\">Colorectal Cancer Biomarker Database (CBD2)</a></li>\n<li><a href=\"http://www.eyeseeworld.com/aging/\">Aging Biomarker Compendium (ABC)</a></li>\n</ul>\n<p>以及正在做的 Alzheimer's Disease Biomarker Database (ADDB)</p>\n<p>在数据收集的开始，我们的标准流程是，讨论制定一个检索词（被称为 PubMed Search Query），然后使用这个检索词在 PubMed 中检索相关文献</p>\n<p>例如 Aging Biomarker Compendium (ABC) 的检索词为：</p>\n<pre><code>(((((biomarker [Title/Abstract]) OR marker [Title/Abstract]) OR indicator [Title/Abstract]) OR predictor [Title/Abstract])) AND “Aging”[Mesh] NOT (Review[Publication Type])\n</code></pre>\n<p>对于数据的筛选与提取，过去的做法其实非常难登大雅，就是对搜索到的文献全部进行人工阅读，然后提取出我们感兴趣的信息。</p>\n<p>例如，对于以上提到的数据库构建，提取的任务是获得生物标志物及其相关的信息。</p>\n<p>人工阅读的方法固然存在其优势，例如在大多数情况下，如果阅读者为此领域的专家，基本上可以保证信息的准确性。</p>\n<p>但也有极其明显的弊端，例如效率低下，人容易产生疲劳，以及容易产生主观偏差。此外，由人手动提取的信息往往缺乏规范性和一致性，这会导致后续的数据处理和分析变得困难。</p>\n<p>历史的第一篇工作是 <a href=\"https://academic.oup.com/database/article/doi/10.1093/database/bay046/5010523\">CBD: a biomarker database for colorectal cancer</a>，发表于 2018 年。这篇文章从 8753 篇文献开始，经过人工筛选，最终获得 1115 篇文献作为数据源，收集了 870 种不同的结直肠癌生物标志物。</p>\n<p>稍微做一个计算：一篇普通学术论文大约在 5000-8000 字，假设读者对领域熟悉、外语水平较高且带有一定的目的性，那么读者的阅读速度应该至少可以达到每分钟 300-400 字。排除掉付费、无法获得全文以及一眼可以看出无相关信息的文献，我们假设真正正常阅读的文献为一半，即 4400 篇左右。</p>\n<p>那么，4400 篇文献，需要阅读 4400 * 5000 / 400 = 55000 分钟，大约需要 916 小时，如果一天工作 12 小时，则大约需要 76 天。</p>\n<p>这项工作当年的人工阅读几乎由一人完成，耗费了大量时间。</p>\n<h2 id=\"方案的更新\"><a class=\"anchor\" href=\"#方案的更新\">#</a> 方案的更新</h2>\n<p>现在，我们有了新的工具，例如 <a href=\"https://www.ncbi.nlm.nih.gov/home/develop/api/\">NCBI API</a> 和 <a href=\"https://openai.com/api/\">OpenAI API</a>。</p>\n<p>在 <a href=\"https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8EntrezAPI%E8%BF%9B%E8%A1%8CPubMed%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/\">使用 Entrez API 进行 PubMed 文献信息提取</a> 中，我们已经介绍了如何使用 Entrez API 进行文献基础信息的提取，例如文献标题、摘要、关键词、作者、发表时间、DOI 等。</p>\n<p>但是当我们需要提取一些具体的信息，如生物标志物的名称、类型和其他信息时，NCBI 提供的 API 并不能完成这样的任务。</p>\n<p>近两年，OpenAI 训练的 GPT 模型已经取得了巨大的成功，<a href=\"https://chatgpt.com/\">ChatGPT</a> 已经可以完成很多复杂的任务，例如文本生成、文本摘要、文本分类、文本翻译等。</p>\n<p>因此，我们可以使用 GPT 模型来帮助我们完成文献信息的提取和规范化，以在保持信息准确性的同时，减轻人工阅读的负担，并提高数据收集的效率。</p>\n",
+            "tags": [
+                "OpenAI API",
+                "GPT",
+                "Text mining",
+                "Entrze API"
+            ]
+        }
+    ]
+}

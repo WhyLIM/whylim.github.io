@@ -9,45 +9,45 @@
         <lastBuildDate>Thu, 11 Jul 2024 14:25:06 +0800</lastBuildDate>
         <category>R</category>
         <category>生信</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>单细胞</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>REST API</category>
         <category>软件安装</category>
-        <category>WES</category>
-        <category>WGS</category>
-        <category>Java</category>
-        <category>Python</category>
         <category>Ubuntu</category>
+        <category>Python</category>
+        <category>建站</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>建站</category>
-        <category>Windows</category>
-        <category>虚拟机</category>
         <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
+        <category>Windows</category>
+        <category>虚拟机</category>
         <category>MySQL</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
         <category>Entrez API</category>
         <category>NCBI</category>
-        <category>network</category>
-        <category>interactome</category>
         <category>scRNA-seq</category>
         <category>Seurat</category>
-        <category>Text mining</category>
-        <category>Entrze API</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>WordPress</category>
         <category>宝塔</category>
         <category>统计学</category>
         <category>Network Analysis</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>Text mining</category>
+        <category>Entrze API</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/07/11/%E5%9F%BA%E4%BA%8E%20Seurat%20V5%20%E7%9A%84%E5%8D%95%E7%BB%86%E8%83%9E%E6%B5%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</guid>
             <title>基于 Seurat V5 的单细胞测序数据分析的注意点与技巧</title>

@@ -13,19 +13,19 @@
         <category>WES</category>
         <category>WGS</category>
         <category>API</category>
+        <category>REST API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>REST API</category>
-        <category>软件安装</category>
-        <category>Ubuntu</category>
         <category>建站</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
+        <category>软件安装</category>
         <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>RNA-Seq</category>
@@ -36,18 +36,18 @@
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
+        <category>scRNA-seq</category>
         <category>network</category>
         <category>interactome</category>
-        <category>scRNA-seq</category>
+        <category>Seurat</category>
+        <category>Text mining</category>
+        <category>Entrze API</category>
         <category>WordPress</category>
         <category>宝塔</category>
         <category>统计学</category>
-        <category>Text mining</category>
-        <category>Entrze API</category>
         <category>Network Analysis</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>Seurat</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</guid>
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -1553,8 +1553,8 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
             <title>REST API 和 GraphQL API 的联系与区别</title>
             <link>https://new.limina.top/2024/08/29/REST%20API%20%E4%B8%8E%20GraphQL%20API%20%E7%9A%84%E6%AF%94%E8%BE%83/</link>
             <category>API</category>
-            <category>GraphQL API</category>
             <category>REST API</category>
+            <category>GraphQL API</category>
             <pubDate>Thu, 29 Aug 2024 18:36:55 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;rest-api-和-graphql-api-的联系与区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#rest-api-和-graphql-api-的联系与区别&#34;&gt;#&lt;/a&gt; REST API 和 GraphQL API 的联系与区别&lt;/h1&gt;
 &lt;p&gt;API（Application Programming Interface，应用编程接口），通俗点说，就是不同软件之间的交流工具。它让我们可以从服务器获取数据或者把数据发送给服务器。目前常用的两种常见 API 是 REST API 和 GraphQL API。&lt;/p&gt;
@@ -3046,8 +3046,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
             <title>fluff(biofluff) 装不上的问题</title>
             <link>https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
             <category>生信</category>
-            <category>软件安装</category>
             <category>Ubuntu</category>
+            <category>软件安装</category>
             <pubDate>Sun, 01 Nov 2020 09:53:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
@@ -3094,8 +3094,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
             <title>Ubuntu 安装 art_illumina</title>
             <link>https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
             <category>生信</category>
-            <category>软件安装</category>
             <category>Ubuntu</category>
+            <category>软件安装</category>
             <pubDate>Sun, 01 Nov 2020 09:39:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;

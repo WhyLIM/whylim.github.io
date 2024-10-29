@@ -4,38 +4,38 @@
     <title>Being on sea, sail; being on land, settle.</title>
     <link href="https://new.limina.top" />
     <updated>2024-10-22T09:08:29.000Z</updated>
-    <category term="API" />
-    <category term="GraphQL API" />
-    <category term="Open Targets Platform" />
     <category term="R" />
     <category term="生信" />
     <category term="单细胞" />
     <category term="WES" />
     <category term="WGS" />
+    <category term="API" />
+    <category term="GraphQL API" />
+    <category term="Open Targets Platform" />
     <category term="REST API" />
-    <category term="软件安装" />
     <category term="Ubuntu" />
-    <category term="Java" />
+    <category term="软件安装" />
     <category term="建站" />
+    <category term="Java" />
     <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="RNA-Seq" />
-    <category term="可视化" />
+    <category term="Web" />
     <category term="Vue 3" />
     <category term="Element Plus" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
     <category term="MySQL" />
-    <category term="network" />
-    <category term="interactome" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="Entrez API" />
     <category term="NCBI" />
     <category term="scRNA-seq" />
@@ -44,10 +44,10 @@
     <category term="宝塔" />
     <category term="Text mining" />
     <category term="Entrze API" />
-    <category term="统计学" />
     <category term="Network Analysis" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
+    <category term="统计学" />
     <entry>
         <id>https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</id>
         <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -1617,93 +1617,117 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 &lt;h4 id=&#34;332-工作流构建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#332-工作流构建&#34;&gt;#&lt;/a&gt; 3.3.2. 工作流构建&lt;/h4&gt;
 &lt;p&gt;我们构建了名为 getInteraction 的工作流，其原理如前文流程图所示。其中有 7 处引入了大语言模型。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;用户首次输入之后。该 LLM 用于根据用户的输入进行实体推测，提取相应的关键词或 ID，同时判断实体类型。提示词为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;请你从用户输入中提取以下三项信息，并返回 json：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;关键词（keywords）：应是药物、靶点或者是疾病的名称（统一译为英文）&lt;/li&gt;
-&lt;li&gt;ID (keyid)：应是药物、靶点或者是疾病的 ID&lt;/li&gt;
-&lt;li&gt;关键词的类型（keytype）：为 drug | target | disease 这三者之一&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;有两种情况：&lt;/p&gt;
-&lt;h2 id=&#34;用户输入了明确-id&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户输入了明确-id&#34;&gt;#&lt;/a&gt; 用户输入了明确 ID&lt;/h2&gt;
-&lt;p&gt;例如，用户的输入可能包括且不限于：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ENSG00000169083&lt;/li&gt;
-&lt;li&gt;CHEMBL25 的相关信息&lt;/li&gt;
-&lt;li&gt;EFO_0000222 是什么&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;则：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;可以获取 id 为 &amp;quot;ENSG00000169083&amp;quot;，推断 keytype 为 &amp;quot;target&amp;quot;&lt;/li&gt;
-&lt;li&gt;可以获取 id 为 &amp;quot;CHEMBL25&amp;quot;，推断 keytype 为 &amp;quot;drug&amp;quot;&lt;/li&gt;
-&lt;li&gt;可以获取 id 为 &amp;quot;EFO_0000222&amp;quot;，推断 keytype 为 &amp;quot;disease&amp;quot;&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;最终你返回的内容应为以下格式的 json ：&lt;/p&gt;
-&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keywords&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keyid&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;ENSG00000169083&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keytype&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;target&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;用户输入了模糊的信息&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#用户输入了模糊的信息&#34;&gt;#&lt;/a&gt; 用户输入了模糊的信息&lt;/h2&gt;
-&lt;p&gt;例如，用户的输入可能包括且不限于：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;阿兹海默&lt;/li&gt;
-&lt;li&gt;我想知道阿兹海默病的相关药物&lt;/li&gt;
-&lt;li&gt;Alzheimer&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;则可以获取 keywords 为 &amp;quot;(a) Alzheimer (&#39;s disease)&amp;quot;，并且可以推断 keytype 为 &amp;quot;disease&amp;quot;。&lt;/p&gt;
-&lt;p&gt;最终你返回的内容应为以下格式的 json ：&lt;/p&gt;
-&lt;figure class=&#34;highlight json&#34;&gt;&lt;figcaption data-lang=&#34;JSON&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keywords&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;alzheimer&#39;s disease&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keyid&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token property&#34;&gt;&#34;keytype&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;disease&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;当前用户的输入为：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;提取到非明确的 ID 或实体类型时。如果根据用户输入提取到不明确的 ID 或实体类型，会调用 LLM 对用户进行询问。询问内容为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;您想要查询的似乎是 ，这似乎是一种 。信息是否正确？确认将继续查询，如果有误，请尽量提供更明确的关键词和类型（最好为英文）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;获得用户反馈后。根据用户输入，将意图分为肯定和否定，从而进入不同的后续流程。该部分的提示词为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果用户输入例如：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;是的&lt;/li&gt;
-&lt;li&gt;确认&lt;/li&gt;
-&lt;li&gt;对的&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;之类的肯定回复，则认为查询词正确&lt;/p&gt;
-&lt;p&gt;如果用户输入例如：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;不对&lt;/li&gt;
-&lt;li&gt;不，我想搜索...&lt;/li&gt;
-&lt;li&gt;...&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;之类的否定回复，则认为其他意图&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;用户否定并输入新的查询后。与第 1 处的提示词相同。&lt;/li&gt;
-&lt;li&gt;根据关键词（keywords）查询到相关实体信息后。返回内容为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;搜索到  个相关结果，CSV 下载链接为 ，请下载后选择其中一个，提供 ID 和 entity 类型进行查询。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;根据 ID （keyid）获取到实体的基本信息后。使用 LLM 将实体的基本信息规范输出，此处的提示词为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;根据用户提供的信息获得了以下结果：&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;用户首次输入之后。该 LLM 用于根据用户的输入进行实体推测，提取相应的关键词或 ID，同时判断实体类型。提示词为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;请你从用户输入中提取以下三项信息，并返回 json：
 
-&lt;p&gt;请结合结果，概括用户的查询对象的基本信息，使用如下格式的中文输出：&lt;/p&gt;
-&lt;p&gt;&amp;quot; 您查询的对象是...，这是一种....&lt;br /&gt;
-...&amp;quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;未查询到相关信息时。调用 LLM 告知用户：&lt;/li&gt;
+1. 关键词（keywords）：应是药物、靶点或者是疾病的名称（统一译为英文）
+2. ID (keyid)：应是药物、靶点或者是疾病的 ID
+3. 关键词的类型（keytype）：为 drug | target | disease 这三者之一
+
+有两种情况：
+
+## 用户输入了明确 ID
+
+例如，用户的输入可能包括且不限于：
+
+1. ENSG00000169083
+2. CHEMBL25的相关信息
+3. EFO_0000222是什么
+4. ...
+
+则：
+
+1. 可以获取 id 为 &amp;quot;ENSG00000169083&amp;quot;，推断 keytype 为 &amp;quot;target&amp;quot;
+2. 可以获取 id 为 &amp;quot;CHEMBL25&amp;quot;，推断 keytype 为 &amp;quot;drug&amp;quot;
+3. 可以获取 id 为 &amp;quot;EFO_0000222&amp;quot;，推断 keytype 为 &amp;quot;disease&amp;quot;
+4. ...
+
+最终你返回的内容应为以下格式的 json ：
+
+```json
+&amp;#123;
+    &amp;quot;keywords&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;keyid&amp;quot;: &amp;quot;ENSG00000169083&amp;quot;,
+    &amp;quot;keytype&amp;quot;: &amp;quot;target&amp;quot;
+&amp;#125;
+```
+
+## 用户输入了模糊的信息
+
+例如，用户的输入可能包括且不限于：
+
+1. 阿兹海默
+2. 我想知道阿兹海默病的相关药物
+3. Alzheimer
+4. ...
+
+则可以获取 keywords 为 &amp;quot;(a)Alzheimer(&#39;s disease)&amp;quot;，并且可以推断 keytype 为 &amp;quot;disease&amp;quot;。
+
+最终你返回的内容应为以下格式的 json ：
+
+```json
+&amp;#123;
+    &amp;quot;keywords&amp;quot;: &amp;quot;alzheimer&#39;s disease&amp;quot;,
+    &amp;quot;keyid&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;keytype&amp;quot;: &amp;quot;disease&amp;quot;
+&amp;#125;
+```
+
+当前用户的输入为：&amp;#123;&amp;#123;input&amp;#125;&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提取到非明确的 ID 或实体类型时。如果根据用户输入提取到不明确的 ID 或实体类型，会调用 LLM 对用户进行询问。询问内容为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;您想要查询的似乎是 &amp;#123;&amp;#123;keywords&amp;#125;&amp;#125;，这似乎是一种 &amp;#123;&amp;#123;keytype&amp;#125;&amp;#125;。信息是否正确？确认将继续查询，如果有误，请尽量提供更明确的关键词和类型（最好为英文）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获得用户反馈后。根据用户输入，将意图分为肯定和否定，从而进入不同的后续流程。该部分的提示词为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;如果用户输入例如：
+
+1. 是的
+2. 确认
+3. 对的
+4. ...
+
+之类的肯定回复，则认为查询词正确
+
+如果用户输入例如：
+
+1. 不对
+2. 不，我想搜索...
+3. ...
+
+之类的否定回复，则认为其他意图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用户否定并输入新的查询后。与第 1 处的提示词相同。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据关键词（keywords）查询到相关实体信息后。返回内容为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;搜索到 &amp;#123;&amp;#123;number&amp;#125;&amp;#125; 个相关结果，CSV 下载链接为 &amp;#123;&amp;#123;filepath&amp;#125;&amp;#125;，请下载后选择其中一个，提供 ID 和 entity 类型进行查询。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据 ID （keyid）获取到实体的基本信息后。使用 LLM 将实体的基本信息规范输出，此处的提示词为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;根据用户提供的信息获得了以下结果：
+
+&amp;#123;&amp;#123;info&amp;#125;&amp;#125;
+
+请结合结果，概括用户的查询对象的基本信息，使用如下格式的中文输出：
+
+&amp;quot;您查询的对象是...，这是一种....
+...&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;未查询到相关信息时。调用 LLM 告知用户：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;您查询的 &amp;#123;&amp;#123;keytype&amp;#125;&amp;#125;: &amp;#123;&amp;#123;keyid&amp;#125;&amp;#125; 目前没有已知的相关相互作用信息。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;您查询的 :  目前没有已知的相关相互作用信息。&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h4 id=&#34;333-bot-创建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#333-bot-创建&#34;&gt;#&lt;/a&gt; 3.3.3. Bot 创建&lt;/h4&gt;
 &lt;p&gt;我们创建了名为 DrugSeek 的 Bot。&lt;/p&gt;
 &lt;p&gt;由于逻辑相对并不是特别麻烦，且需要精确的数据信息，采用了单 Agent（工作流模式）来创建 Bot。&lt;br /&gt;
@@ -1762,16 +1786,14 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 &lt;li&gt;
 &lt;p&gt;某些节点的使用方法比较晦涩和不便。例如：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;循环节点有时需要内外包含重复节点才能实现循环；&lt;/p&gt;
+&lt;li&gt;循环节点有时需要内外包含重复节点才能实现循环；&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;暂无解决方法。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h3 id=&#34;53-bot-的创建问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#53-bot-的创建问题&#34;&gt;#&lt;/a&gt; 5.3. Bot 的创建问题&lt;/h3&gt;
 &lt;p&gt;在单 Agent（LLM 模式）中，如果调用工作流，Bot 仍然会输出不调用工作流时模型自身的回答，无法用工作流的输出替换模型自身的回答。&lt;/p&gt;
 &lt;p&gt;解决方法为使用单 Agent（工作流模式）来创建 Bot。&lt;/p&gt;
@@ -3398,8 +3420,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; limin@limin-Lenovo-XiaoXin-Air-15IKBR:~$ fluff&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:46: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is not&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;!=&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;/home/limin/anaconda3/lib/python3.8/site-packages/biofluff-3.0.3-py3.8.egg/fluff/track.py:51: SyntaxWarning: &lt;span class=&#34;token string&#34;&gt;&#34;is&#34;&lt;/span&gt; with a literal. Did you mean &lt;span class=&#34;token string&#34;&gt;&#34;==&#34;&lt;/span&gt;?&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;usage: fluff &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;-h&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;options&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    fluff v3.0.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;positional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;heatmap,bandplot,profile&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;optional arguments:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  -h, &lt;span class=&#34;token parameter variable&#34;&gt;--help&lt;/span&gt;            show this &lt;span class=&#34;token builtin class-name&#34;&gt;help&lt;/span&gt; message and &lt;span class=&#34;token builtin class-name&#34;&gt;exit&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    commands:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        heatmap      Produce a heatmap&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        bandplot     Show the profiles as bandplots&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        profile      Genome Browser screenshot&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;fluff &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;command&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token operator&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; -h&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&#34;token assign-left variable&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;token variable&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;more&lt;/span&gt; details&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;有一点报错，但是不影响使用。&lt;/p&gt;
 </content>
         <category term="生信" />
-        <category term="软件安装" />
         <category term="Ubuntu" />
+        <category term="软件安装" />
         <updated>2020-11-01T01:53:00.000Z</updated>
     </entry>
     <entry>
@@ -3420,8 +3442,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101093627733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="生信" />
-        <category term="软件安装" />
         <category term="Ubuntu" />
+        <category term="软件安装" />
         <updated>2020-11-01T01:39:00.000Z</updated>
     </entry>
     <entry>

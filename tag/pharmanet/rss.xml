@@ -10,47 +10,47 @@
         <category>R</category>
         <category>生信</category>
         <category>单细胞</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>REST API</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
         <category>建站</category>
         <category>Java</category>
         <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Ubuntu</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>Vue 3</category>
-        <category>Element Plus</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
+        <category>Vue 3</category>
+        <category>Element Plus</category>
         <category>MySQL</category>
-        <category>BioOS</category>
-        <category>PharmaNet</category>
-        <category>Project</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>network</category>
-        <category>interactome</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>scRNA-seq</category>
         <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>Text mining</category>
-        <category>Entrze API</category>
         <category>Network Analysis</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>BioOS</category>
+        <category>PharmaNet</category>
+        <category>Project</category>
         <category>统计学</category>
+        <category>Text mining</category>
+        <category>Entrze API</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</guid>
             <title>任务挑战-PharmaNet 项目报告</title>
@@ -367,13 +367,11 @@
 &lt;p&gt;某些节点的使用方法比较晦涩和不便。例如：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;循环节点有时需要内外包含重复节点才能实现循环；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;暂无解决方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;53-bot-的创建问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#53-bot-的创建问题&#34;&gt;#&lt;/a&gt; 5.3. Bot 的创建问题&lt;/h3&gt;
 &lt;p&gt;在单 Agent（LLM 模式）中，如果调用工作流，Bot 仍然会输出不调用工作流时模型自身的回答，无法用工作流的输出替换模型自身的回答。&lt;/p&gt;
 &lt;p&gt;解决方法为使用单 Agent（工作流模式）来创建 Bot。&lt;/p&gt;

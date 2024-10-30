@@ -10,47 +10,47 @@
         <category>R</category>
         <category>生信</category>
         <category>单细胞</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>REST API</category>
-        <category>Ubuntu</category>
         <category>软件安装</category>
         <category>建站</category>
         <category>Java</category>
         <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Ubuntu</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>Vue 3</category>
-        <category>Element Plus</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
+        <category>Vue 3</category>
+        <category>Element Plus</category>
         <category>MySQL</category>
-        <category>BioOS</category>
-        <category>PharmaNet</category>
-        <category>Project</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>network</category>
-        <category>interactome</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>scRNA-seq</category>
         <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>Text mining</category>
-        <category>Entrze API</category>
         <category>Network Analysis</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>BioOS</category>
+        <category>PharmaNet</category>
+        <category>Project</category>
         <category>统计学</category>
+        <category>Text mining</category>
+        <category>Entrze API</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</guid>
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -1794,13 +1794,11 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 &lt;p&gt;某些节点的使用方法比较晦涩和不便。例如：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;循环节点有时需要内外包含重复节点才能实现循环；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;选择器节点通常会有多个下游，但结束节点只有一个不太方便。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;暂无解决方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;53-bot-的创建问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#53-bot-的创建问题&#34;&gt;#&lt;/a&gt; 5.3. Bot 的创建问题&lt;/h3&gt;
 &lt;p&gt;在单 Agent（LLM 模式）中，如果调用工作流，Bot 仍然会输出不调用工作流时模型自身的回答，无法用工作流的输出替换模型自身的回答。&lt;/p&gt;
 &lt;p&gt;解决方法为使用单 Agent（工作流模式）来创建 Bot。&lt;/p&gt;
@@ -3384,8 +3382,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
             <title>fluff(biofluff) 装不上的问题</title>
             <link>https://new.limina.top/2020/11/01/fluffbiofluff%E8%A3%85%E4%B8%8D%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98/</link>
             <category>生信</category>
-            <category>Ubuntu</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:53:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;fluff 是一个软件包，它允许对映射到参考基因组的高通量测序实验进行简单的探索、聚类和可视化。这个包包含三个命令行工具，用于生成发布质量数据&lt;br /&gt;
@@ -3432,8 +3430,8 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
             <title>Ubuntu 安装 art_illumina</title>
             <link>https://new.limina.top/2020/11/01/ubuntu%E5%AE%89%E8%A3%85art-illumina/</link>
             <category>生信</category>
-            <category>Ubuntu</category>
             <category>软件安装</category>
+            <category>Ubuntu</category>
             <pubDate>Sun, 01 Nov 2020 09:39:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;官网：&lt;a href=&#34;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&#34;&gt;http://www.niehs.nih.gov/research/resources/software/biostatistics/art/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img-blog.csdnimg.cn/20201101092531986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NTRE5fTElN,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;

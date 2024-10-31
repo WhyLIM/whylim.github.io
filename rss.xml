@@ -9,7 +9,7 @@
         <lastBuildDate>Tue, 22 Oct 2024 17:08:29 +0800</lastBuildDate>
         <category>R</category>
         <category>生信</category>
-        <category>单细胞</category>
+        <category>scRNA-seq</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
@@ -17,40 +17,39 @@
         <category>WGS</category>
         <category>REST API</category>
         <category>软件安装</category>
-        <category>建站</category>
-        <category>Java</category>
+        <category>Ubuntu</category>
         <category>Python</category>
+        <category>Java</category>
+        <category>建站</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Ubuntu</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
-        <category>network</category>
-        <category>interactome</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>scRNA-seq</category>
-        <category>Seurat</category>
-        <category>WordPress</category>
-        <category>宝塔</category>
-        <category>Network Analysis</category>
-        <category>Metabolic Network</category>
-        <category>Weighted Network</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>统计学</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
+        <category>Seurat</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>Text mining</category>
         <category>Entrze API</category>
+        <category>统计学</category>
+        <category>Network Analysis</category>
+        <category>Metabolic Network</category>
+        <category>Weighted Network</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</guid>
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -2106,7 +2105,7 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
             <link>https://new.limina.top/2024/06/27/Aging%20Biomarker%E5%9C%A8%E5%8D%95%E7%BB%86%E8%83%9E%E6%95%B0%E6%8D%AE%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</link>
             <category>R</category>
             <category>生信</category>
-            <category>单细胞</category>
+            <category>scRNA-seq</category>
             <pubDate>Thu, 27 Jun 2024 11:46:08 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;aging-biomarker-在单细胞数据上的应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aging-biomarker-在单细胞数据上的应用&#34;&gt;#&lt;/a&gt; Aging Biomarker 在单细胞数据上的应用&lt;/h1&gt;
 &lt;h2 id=&#34;单细胞数据集&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单细胞数据集&#34;&gt;#&lt;/a&gt; 单细胞数据集&lt;/h2&gt;

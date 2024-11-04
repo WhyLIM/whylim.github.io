@@ -3,12 +3,12 @@
     <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle.</title>
     <link href="https://new.limina.top" />
-    <updated>2024-10-22T09:08:29.000Z</updated>
+    <updated>2024-11-04T01:58:06.097Z</updated>
     <category term="R" />
     <category term="生信" />
+    <category term="scRNA-seq" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="scRNA-seq" />
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
@@ -16,37 +16,45 @@
     <category term="软件安装" />
     <category term="Ubuntu" />
     <category term="Java" />
+    <category term="Python" />
     <category term="建站" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Python" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Vue 3" />
-    <category term="Element Plus" />
     <category term="Web" />
     <category term="RNA-Seq" />
     <category term="可视化" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
     <category term="MySQL" />
-    <category term="Structured Outputs" />
-    <category term="OpenAI API" />
-    <category term="GPT" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
+    <category term="Structured Outputs" />
+    <category term="OpenAI API" />
+    <category term="GPT" />
     <category term="Entrez API" />
     <category term="NCBI" />
-    <category term="Seurat" />
     <category term="network" />
     <category term="interactome" />
+    <category term="Network Analysis" />
+    <category term="Seurat" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="comorbidities" />
     <category term="Text mining" />
     <category term="Entrze API" />
-    <category term="统计学" />
-    <category term="Network Analysis" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
+    <category term="统计学" />
+    <entry>
+        <id>https://new.limina.top/2024/11/04/%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%20R%20%E5%8C%85/</id>
+        <title></title>
+        <link rel="alternate" href="https://new.limina.top/2024/11/04/%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%20R%20%E5%8C%85/"/>
+        <content type="html"></content>
+        <updated>2024-11-04T01:58:06.097Z</updated>
+    </entry>
     <entry>
         <id>https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</id>
         <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -476,10 +484,10 @@ Clonal replacement of tumor-specific T cells following PD-1 blockade, 2019, Natu
         <updated>2024-10-15T10:20:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://new.limina.top/2024/09/30/Untitled/</id>
-        <title></title>
-        <link rel="alternate" href="https://new.limina.top/2024/09/30/Untitled/"/>
-        <content type="html">&lt;h2 id=&#34;加权属性的计算方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#加权属性的计算方法&#34;&gt;#&lt;/a&gt; 加权属性的计算方法&lt;/h2&gt;
+        <id>https://new.limina.top/2024/09/30/%E5%8A%A0%E6%9D%83%E7%BD%91%E7%BB%9C%E5%B1%9E%E6%80%A7%E7%9A%84%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/</id>
+        <title>加权网络属性的计算方法</title>
+        <link rel="alternate" href="https://new.limina.top/2024/09/30/%E5%8A%A0%E6%9D%83%E7%BD%91%E7%BB%9C%E5%B1%9E%E6%80%A7%E7%9A%84%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/"/>
+        <content type="html">&lt;h2 id=&#34;加权网络属性的计算方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#加权网络属性的计算方法&#34;&gt;#&lt;/a&gt; 加权网络属性的计算方法&lt;/h2&gt;
 &lt;p&gt;三个指标（&lt;strong&gt;加权度中心性&lt;/strong&gt;、&lt;strong&gt;加权平均路径长度&lt;/strong&gt;、&lt;strong&gt;加权聚类系数&lt;/strong&gt;）在加权网络中的计算方法与传统未加权网络的指标类似，但在计算时引入了边的权重。以下是每个指标的计算方法及其背后的原理：&lt;/p&gt;
 &lt;h3 id=&#34;1-加权度中心性weighted-degree-centrality&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-加权度中心性weighted-degree-centrality&#34;&gt;#&lt;/a&gt; 1. &lt;strong&gt;加权度中心性（Weighted Degree Centrality）&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;加权度中心性考虑了节点与其邻居相互作用的强度，而不仅仅是连接数量。&lt;/p&gt;
@@ -570,7 +578,8 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 &lt;/ul&gt;
 &lt;h2 id=&#34;在-r-语言中实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-r-语言中实现&#34;&gt;#&lt;/a&gt; 在 R 语言中实现&lt;/h2&gt;
 &lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 加载 igraph 包&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;igraph&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 创建加权的边列表&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;edges &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; data.frame&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  source &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; c&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;A&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;A&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;B&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;B&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;C&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;E&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  target &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; c&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;B&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;C&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;C&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;E&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;E&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;F&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  weight &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; c&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 创建加权无向图&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;g &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; graph_from_data_frame&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;edges&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; directed &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;E&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;weight &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; edges&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;weight&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 1. 计算加权度中心性&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;weighted_degree &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; strength&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; vids &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; V&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; weights &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; E&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;weight&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;加权度中心性：&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;weighted_degree&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 2. 计算加权平均路径长度&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;shortest_paths_matrix &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; distances&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; weights &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; E&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;weight&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;average_weighted_path_length &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; mean&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;shortest_paths_matrix&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;shortest_paths_matrix &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;加权平均路径长度：&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;average_weighted_path_length&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 3. 计算加权聚类系数&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;weighted_clustering_coeff &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; transitivity&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;local&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; weights &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; E&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;weight&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;加权聚类系数：&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;weighted_clustering_coeff&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;average_weighted_clustering_coeff &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; mean&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;weighted_clustering_coeff&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; na.rm &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;平均加权聚类系数：&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;average_weighted_clustering_coeff&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <updated>2024-09-30T09:41:41.412Z</updated>
+        <category term="Network Analysis" />
+        <updated>2024-09-29T21:41:41.000Z</updated>
     </entry>
     <entry>
         <id>https://new.limina.top/2024/09/29/%E7%9B%B8%E5%90%8C%E7%BD%91%E7%BB%9C%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E6%AF%94%E8%BE%83/</id>
@@ -2069,10 +2078,11 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
         <updated>2024-06-30T18:58:06.000Z</updated>
     </entry>
     <entry>
-        <id>https://new.limina.top/2024/06/28/%E7%BD%91%E7%BB%9C-%E5%85%B1%E7%97%85/</id>
-        <title></title>
-        <link rel="alternate" href="https://new.limina.top/2024/06/28/%E7%BD%91%E7%BB%9C-%E5%85%B1%E7%97%85/"/>
-        <content type="html">&lt;h2 id=&#34;基于网络距离的优化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于网络距离的优化&#34;&gt;#&lt;/a&gt; 基于网络距离的优化&lt;/h2&gt;
+        <id>https://new.limina.top/2024/06/28/%E5%9F%BA%E4%BA%8E%E7%BD%91%E8%B7%AF%E7%9A%84%E5%85%B1%E7%97%85%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF/</id>
+        <title>基于网路的共病分析思路</title>
+        <link rel="alternate" href="https://new.limina.top/2024/06/28/%E5%9F%BA%E4%BA%8E%E7%BD%91%E8%B7%AF%E7%9A%84%E5%85%B1%E7%97%85%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF/"/>
+        <content type="html">&lt;h1 id=&#34;基于网路的共病分析思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于网路的共病分析思路&#34;&gt;#&lt;/a&gt; 基于网路的共病分析思路&lt;/h1&gt;
+&lt;h2 id=&#34;基于网络距离的优化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于网络距离的优化&#34;&gt;#&lt;/a&gt; 基于网络距离的优化&lt;/h2&gt;
 &lt;p&gt;带权重的随机游走&lt;/p&gt;
 &lt;p&gt;人工智能：图转化为 embeding&lt;/p&gt;
 &lt;h2 id=&#34;引入新的属性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引入新的属性&#34;&gt;#&lt;/a&gt; 引入新的属性&lt;/h2&gt;
@@ -2094,6 +2104,8 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
+        <category term="Network Analysis" />
+        <category term="comorbidities" />
         <updated>2024-06-28T02:02:26.939Z</updated>
     </entry>
     <entry>
@@ -2824,7 +2836,7 @@ See &#39;git help git&#39; for an overview of the system.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;配置中国大陆的镜像源（如淘宝）：&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; config &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; registry https://registry.npmjs.org/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; config &lt;span class=&#34;token builtin class-name&#34;&gt;set&lt;/span&gt; registry https://registry.npmmirror.com&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;通过以下命令安装  &lt;code&gt;pnpm&lt;/code&gt; ：&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-g&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;其中， &lt;code&gt;-g&lt;/code&gt;  参数表示  &lt;code&gt;global&lt;/code&gt; ，意为全局安装，此时 pnpm 包会被安装在我们的 Node.js 安装目录的  &lt;code&gt;node_modules&lt;/code&gt;  文件夹中。&lt;/p&gt;

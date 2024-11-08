@@ -12,10 +12,10 @@
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
-    <category term="REST API" />
     <category term="软件安装" />
-    <category term="Ubuntu" />
+    <category term="REST API" />
     <category term="建站" />
+    <category term="Ubuntu" />
     <category term="Java" />
     <category term="Python" />
     <category term="Hexo" />
@@ -23,21 +23,21 @@
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="Vue 3" />
-    <category term="Element Plus" />
     <category term="RNA-Seq" />
     <category term="可视化" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
     <category term="MySQL" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
-    <category term="network" />
-    <category term="interactome" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
     <category term="Entrez API" />
     <category term="NCBI" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="develop" />
     <category term="Network Analysis" />
     <category term="Seurat" />
@@ -46,9 +46,9 @@
     <category term="宝塔" />
     <category term="Text mining" />
     <category term="Entrze API" />
+    <category term="统计学" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
-    <category term="统计学" />
     <entry>
         <id>https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</id>
         <title>任务挑战-PharmaNet 项目报告</title>

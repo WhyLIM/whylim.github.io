@@ -10,14 +10,14 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>软件安装</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>REST API</category>
         <category>建站</category>
+        <category>软件安装</category>
         <category>Ubuntu</category>
         <category>Java</category>
         <category>Python</category>
@@ -26,32 +26,32 @@
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>network</category>
         <category>interactome</category>
         <category>develop</category>
         <category>Network Analysis</category>
-        <category>Seurat</category>
         <category>comorbidities</category>
+        <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>统计学</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</guid>
             <title>任务挑战-PharmaNet 项目报告</title>
@@ -200,137 +200,32 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;用户首次输入之后。该 LLM 用于根据用户的输入进行实体推测，提取相应的关键词或 ID，同时判断实体类型。提示词为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;请你从用户输入中提取以下三项信息，并返回 json：
-
-1. 关键词（keywords）：应是药物、靶点或者是疾病的名称（统一译为英文）
-2. ID (keyid)：应是药物、靶点或者是疾病的 ID
-3. 关键词的类型（keytype）：为 drug | target | disease 这三者之一
-
-有两种情况：
-
-## 用户输入了明确 ID
-
-例如，用户的输入可能包括且不限于：
-
-1. ENSG00000169083
-2. CHEMBL25的相关信息
-3. EFO_0000222是什么
-4. ...
-
-则：
-
-1. 可以获取 id 为 &amp;quot;ENSG00000169083&amp;quot;，推断 keytype 为 &amp;quot;target&amp;quot;
-2. 可以获取 id 为 &amp;quot;CHEMBL25&amp;quot;，推断 keytype 为 &amp;quot;drug&amp;quot;
-3. 可以获取 id 为 &amp;quot;EFO_0000222&amp;quot;，推断 keytype 为 &amp;quot;disease&amp;quot;
-4. ...
-
-最终你返回的内容应为以下格式的 json ：
-
-```json
-&amp;#123;
-    &amp;quot;keywords&amp;quot;: &amp;quot;&amp;quot;,
-    &amp;quot;keyid&amp;quot;: &amp;quot;ENSG00000169083&amp;quot;,
-    &amp;quot;keytype&amp;quot;: &amp;quot;target&amp;quot;
-&amp;#125;
-```
-
-## 用户输入了模糊的信息
-
-例如，用户的输入可能包括且不限于：
-
-1. 阿兹海默
-2. 我想知道阿兹海默病的相关药物
-3. Alzheimer
-4. ...
-
-则可以获取 keywords 为 &amp;quot;(a)Alzheimer(&#39;s disease)&amp;quot;，并且可以推断 keytype 为 &amp;quot;disease&amp;quot;。
-
-最终你返回的内容应为以下格式的 json ：
-
-```json
-&amp;#123;
-    &amp;quot;keywords&amp;quot;: &amp;quot;alzheimer&#39;s disease&amp;quot;,
-    &amp;quot;keyid&amp;quot;: &amp;quot;&amp;quot;,
-    &amp;quot;keytype&amp;quot;: &amp;quot;disease&amp;quot;
-&amp;#125;
-```
-
-当前用户的输入为：&amp;#123;&amp;#123;input&amp;#125;&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;请你从用户输入中提取以下三项信息，并返回 json：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 关键词（keywords）：应是药物、靶点或者是疾病的名称（统一译为英文）&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. ID (keyid)：应是药物、靶点或者是疾病的 ID&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. 关键词的类型（keytype）：为 drug | target | disease 这三者之一&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;有两种情况：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;## 用户输入了明确 ID&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;例如，用户的输入可能包括且不限于：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. ENSG00000169083&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. CHEMBL25的相关信息&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. EFO_0000222是什么&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;4. ...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;则：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 可以获取 id 为 &#34;ENSG00000169083&#34;，推断 keytype 为 &#34;target&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. 可以获取 id 为 &#34;CHEMBL25&#34;，推断 keytype 为 &#34;drug&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. 可以获取 id 为 &#34;EFO_0000222&#34;，推断 keytype 为 &#34;disease&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;4. ...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;最终你返回的内容应为以下格式的 json ：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;```json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keywords&#34;: &#34;&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keyid&#34;: &#34;ENSG00000169083&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keytype&#34;: &#34;target&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;```&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;## 用户输入了模糊的信息&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;例如，用户的输入可能包括且不限于：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 阿兹海默&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. 我想知道阿兹海默病的相关药物&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. Alzheimer&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;4. ...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;则可以获取 keywords 为 &#34;(a)Alzheimer(&#39;s disease)&#34;，并且可以推断 keytype 为 &#34;disease&#34;。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;46&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;最终你返回的内容应为以下格式的 json ：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;47&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;48&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;```json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;49&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;50&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keywords&#34;: &#34;alzheimer&#39;s disease&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;51&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keyid&#34;: &#34;&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;52&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;keytype&#34;: &#34;disease&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;53&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;54&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;```&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;55&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;56&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;当前用户的输入为：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;提取到非明确的 ID 或实体类型时。如果根据用户输入提取到不明确的 ID 或实体类型，会调用 LLM 对用户进行询问。询问内容为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;您想要查询的似乎是 &amp;#123;&amp;#123;keywords&amp;#125;&amp;#125;，这似乎是一种 &amp;#123;&amp;#123;keytype&amp;#125;&amp;#125;。信息是否正确？确认将继续查询，如果有误，请尽量提供更明确的关键词和类型（最好为英文）。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;您想要查询的似乎是 ，这似乎是一种 。信息是否正确？确认将继续查询，如果有误，请尽量提供更明确的关键词和类型（最好为英文）。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;获得用户反馈后。根据用户输入，将意图分为肯定和否定，从而进入不同的后续流程。该部分的提示词为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;如果用户输入例如：
-
-1. 是的
-2. 确认
-3. 对的
-4. ...
-
-之类的肯定回复，则认为查询词正确
-
-如果用户输入例如：
-
-1. 不对
-2. 不，我想搜索...
-3. ...
-
-之类的否定回复，则认为其他意图
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;如果用户输入例如：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 是的&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. 确认&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. 对的&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;4. ...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;之类的肯定回复，则认为查询词正确&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;如果用户输入例如：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 不对&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. 不，我想搜索...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. ...&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;之类的否定回复，则认为其他意图&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;用户否定并输入新的查询后。与第 1 处的提示词相同。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;根据关键词（keywords）查询到相关实体信息后。返回内容为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;搜索到 &amp;#123;&amp;#123;number&amp;#125;&amp;#125; 个相关结果，CSV 下载链接为 &amp;#123;&amp;#123;filepath&amp;#125;&amp;#125;，请下载后选择其中一个，提供 ID 和 entity 类型进行查询。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;搜索到  个相关结果，CSV 下载链接为 ，请下载后选择其中一个，提供 ID 和 entity 类型进行查询。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;根据 ID （keyid）获取到实体的基本信息后。使用 LLM 将实体的基本信息规范输出，此处的提示词为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;根据用户提供的信息获得了以下结果：
-
-&amp;#123;&amp;#123;info&amp;#125;&amp;#125;
-
-请结合结果，概括用户的查询对象的基本信息，使用如下格式的中文输出：
-
-&amp;quot;您查询的对象是...，这是一种....
-...&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;根据用户提供的信息获得了以下结果：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;请结合结果，概括用户的查询对象的基本信息，使用如下格式的中文输出：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&#34;您查询的对象是...，这是一种....&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;...&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;未查询到相关信息时。调用 LLM 告知用户：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;您查询的 &amp;#123;&amp;#123;keytype&amp;#125;&amp;#125;: &amp;#123;&amp;#123;keyid&amp;#125;&amp;#125; 目前没有已知的相关相互作用信息。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;您查询的 :  目前没有已知的相关相互作用信息。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;333-bot-创建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#333-bot-创建&#34;&gt;#&lt;/a&gt; 3.3.3. Bot 创建&lt;/h4&gt;
 &lt;p&gt;我们创建了名为 DrugSeek 的 Bot。&lt;/p&gt;
 &lt;p&gt;由于逻辑相对并不是特别麻烦，且需要精确的数据信息，采用了单 Agent（工作流模式）来创建 Bot。&lt;br /&gt;
 在开场白信息中，予以用户一定的引导：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;你好，我是 DrugSeek。您可以直接向我查询任何药物、靶标或疾病，以及它们的相互作用关系。
-精确的相互作用关系需要提供 ID。目前接受：
-1. 药物接受 ChEMBL ID，例如：CHEMBL118
-2. 靶标接受 Ensembl ID，例如：ENSG00000169083
-3. 疾病接受
-    EFO ID，例如：EFO_0000349
-    MONDO ID，例如：MONDO_0004992
-    HP ID，例如：HP_0000964
-    OBI ID，例如：OBI_1110021
-    Orphanet ID，例如：Orphanet_324718
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;同时，预置了 4 个示例：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. 阿尔兹海默症应该用什么药？
-2. Aspirin
-3. 提供一些有关青霉素的信息
-4. disease:EFO_0000266
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;34-代码结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#34-代码结构&#34;&gt;#&lt;/a&gt; 3.4. 代码结构&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;你好，我是 DrugSeek。您可以直接向我查询任何药物、靶标或疾病，以及它们的相互作用关系。&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;精确的相互作用关系需要提供 ID。目前接受：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 药物接受 ChEMBL ID，例如：CHEMBL118&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. 靶标接受 Ensembl ID，例如：ENSG00000169083&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. 疾病接受&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    EFO ID，例如：EFO_0000349&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    MONDO ID，例如：MONDO_0004992&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    HP ID，例如：HP_0000964&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    OBI ID，例如：OBI_1110021&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Orphanet ID，例如：Orphanet_324718&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;同时，预置了 4 个示例：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption data-lang=&#34;plaintext&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1. 阿尔兹海默症应该用什么药？&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2. Aspirin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3. 提供一些有关青霉素的信息&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;4. disease:EFO_0000266&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;34-代码结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#34-代码结构&#34;&gt;#&lt;/a&gt; 3.4. 代码结构&lt;/h3&gt;
 &lt;p&gt;使用低代码开发平台 Coze。&lt;/p&gt;
 &lt;h4 id=&#34;341-使用插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#341-使用插件&#34;&gt;#&lt;/a&gt; 3.4.1. 使用插件&lt;/h4&gt;
 &lt;p&gt;共使用了 2 个插件中的 5 个工具，包括来自于自定义插件 PharmaNet 的 4 个工具和来自插件商店中扣子官方发布的 Doc Maker 插件中的 1 个工具。&lt;/p&gt;

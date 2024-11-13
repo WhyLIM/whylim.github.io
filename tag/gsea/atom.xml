@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://new.limina.top</id>
+    <title>Being on sea, sail; being on land, settle. • Posts by &#34;gsea&#34; tag</title>
+    <link href="https://new.limina.top" />
+    <updated>2024-11-13T02:44:57.000Z</updated>
+    <category term="R" />
+    <category term="生信" />
+    <category term="scRNA-seq" />
+    <category term="WES" />
+    <category term="WGS" />
+    <category term="API" />
+    <category term="GraphQL API" />
+    <category term="Open Targets Platform" />
+    <category term="REST API" />
+    <category term="软件安装" />
+    <category term="建站" />
+    <category term="Ubuntu" />
+    <category term="Java" />
+    <category term="Python" />
+    <category term="Hexo" />
+    <category term="ShokaX" />
+    <category term="Windows" />
+    <category term="虚拟机" />
+    <category term="Web" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
+    <category term="MySQL" />
+    <category term="BioOS" />
+    <category term="PharmaNet" />
+    <category term="Project" />
+    <category term="Structured Outputs" />
+    <category term="OpenAI API" />
+    <category term="GPT" />
+    <category term="network" />
+    <category term="interactome" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="Network Analysis" />
+    <category term="develop" />
+    <category term="comorbidities" />
+    <category term="WordPress" />
+    <category term="宝塔" />
+    <category term="GSEA" />
+    <category term="富集分析" />
+    <category term="Text mining" />
+    <category term="Entrze API" />
+    <category term="统计学" />
+    <category term="Seurat" />
+    <category term="Metabolic Network" />
+    <category term="Weighted Network" />
+    <entry>
+        <id>https://new.limina.top/2024/11/13/%E5%B7%AE%E5%BC%82%E5%9F%BA%E5%9B%A0%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90%E4%B8%8E%20GSEA/</id>
+        <title>差异基因富集分析与 GSEA</title>
+        <link rel="alternate" href="https://new.limina.top/2024/11/13/%E5%B7%AE%E5%BC%82%E5%9F%BA%E5%9B%A0%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90%E4%B8%8E%20GSEA/"/>
+        <content type="html">&lt;h1 id=&#34;差异基因富集分析与-gsea&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#差异基因富集分析与-gsea&#34;&gt;#&lt;/a&gt; 差异基因富集分析与 GSEA&lt;/h1&gt;
+&lt;p&gt;在基因表达研究中，我们常常会遇到这样的问题：找到了一组有趣的基因，它们在某种条件下表现出不同的表达模式，但这些基因到底在干什么？它们有没有共同的作用？富集分析可以回答这些问题。&lt;/p&gt;
+&lt;p&gt;富集分析方法主要有两种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;传统差异基因富集分析（如 GO/KEGG 分析）&lt;/li&gt;
+&lt;li&gt;GSEA（基因集富集分析）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;差异基因富集分析聚焦在显著差异基因上&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#差异基因富集分析聚焦在显著差异基因上&#34;&gt;#&lt;/a&gt; 差异基因富集分析：聚焦在显著差异基因上&lt;/h2&gt;
+&lt;p&gt;在传统的差异基因富集分析中，我们会先筛选出在两种条件下表达差异显著的基因（DEGs），然后分析这些差异基因的功能，看看它们集中在哪些生物过程、功能或通路上。这样我们可以很快找到疾病相关的功能，比如免疫应答、代谢通路等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;简单直观&lt;/strong&gt;：聚焦于 “显著差异” 的基因，直接看哪些生物学功能有变化。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适合显著性差异&lt;/strong&gt;：对于强烈条件下（比如药物刺激）的基因表达变化，传统差异富集分析效果显著，结果也容易解释。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;忽略微小变化&lt;/strong&gt;：如果一个基因变化不明显，但在整体上却有潜在意义，它可能会被忽略。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;依赖阈值&lt;/strong&gt;：分析需要人为设定差异显著性的阈值，有时会导致信息丢失。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;适用场景：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当基因表达变化显著，比如在药物处理或某些疾病状态下，我们可以使用这种方法方法。例如我们正在研究癌症细胞中哪些基因的表达变化特别明显，差异富集分析能够快速锁定显著变化的关键基因集和通路。&lt;/p&gt;
+&lt;h2 id=&#34;gsea全面观察全基因排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gsea全面观察全基因排序&#34;&gt;#&lt;/a&gt; GSEA：全面观察全基因排序&lt;/h2&gt;
+&lt;p&gt;GSEA（基因集富集分析）是个更全面的分析方法。它不需要设置显著性阈值，而是把所有基因根据它们在两个实验条件下的表达差异排序，排在前面的基因是表达量高的，后面的表达量低。然后，GSEA 通过查看特定基因集（如一个通路中的所有基因）在整个排序列表中的位置，来判断基因集的分布是集中在前部（上调）还是后部（下调）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;捕捉整体趋势&lt;/strong&gt;：GSEA 不依赖阈值，考虑了所有基因的排序信息，可以发现微小但有生物学意义的变化。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适合微弱信号&lt;/strong&gt;：对于没有明显表达差异的情况，GSEA 能检测到生物学过程的全局性趋势。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;不适合显著性变化大&lt;/strong&gt;：在表达差异特别显著的情况下，GSEA 可能不如传统方法高效。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算量大&lt;/strong&gt;：由于考虑了所有基因，计算过程复杂。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;适用场景：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;GSEA 尤其适用于那些基因变化不显著但整体上有趋势的情况。比如，我们想要研究两个细胞类型的微小差异，或想看在某种环境下的轻微基因表达变化，GSEA 就能帮我们发掘一些意想不到的 “集体行为”。&lt;/p&gt;
+&lt;h2 id=&#34;两者如何选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#两者如何选择&#34;&gt;#&lt;/a&gt; 两者如何选择？&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;基因变化显著&lt;/strong&gt;：如果实验条件导致基因表达量有明显变化（比如药物处理组对照组），传统的差异基因富集分析可以快速帮你发现关键通路。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;基因变化微弱&lt;/strong&gt;：如果基因变化不大，或者你不想设定具体的阈值限制，GSEA 可以帮助捕捉基因集的整体趋势，揭示潜在的生物学意义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在实际研究中，它们常常是互补的工具。&lt;/p&gt;
+</content>
+        <category term="GSEA" />
+        <category term="富集分析" />
+        <updated>2024-11-13T02:44:57.000Z</updated>
+    </entry>
+</feed>

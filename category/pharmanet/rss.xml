@@ -10,14 +10,14 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>REST API</category>
-        <category>建站</category>
         <category>软件安装</category>
+        <category>建站</category>
         <category>Ubuntu</category>
         <category>Java</category>
         <category>Python</category>
@@ -34,24 +34,26 @@
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
         <category>network</category>
         <category>interactome</category>
-        <category>develop</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Network Analysis</category>
+        <category>develop</category>
         <category>comorbidities</category>
-        <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>GSEA</category>
+        <category>富集分析</category>
         <category>Text mining</category>
         <category>Entrze API</category>
+        <category>统计学</category>
+        <category>Seurat</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>统计学</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/09/14/%E4%BB%BB%E5%8A%A1%E6%8C%91%E6%88%98-PharmaNet%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</guid>
             <title>任务挑战-PharmaNet 项目报告</title>

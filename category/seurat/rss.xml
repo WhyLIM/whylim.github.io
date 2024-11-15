@@ -10,17 +10,17 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>REST API</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>软件安装</category>
-        <category>建站</category>
         <category>Ubuntu</category>
-        <category>Java</category>
+        <category>建站</category>
         <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
@@ -34,24 +34,24 @@
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
         <category>network</category>
         <category>interactome</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
-        <category>Network Analysis</category>
         <category>develop</category>
+        <category>Network Analysis</category>
+        <category>Seurat</category>
         <category>comorbidities</category>
         <category>WordPress</category>
         <category>宝塔</category>
         <category>GSEA</category>
         <category>富集分析</category>
+        <category>统计学</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>统计学</category>
-        <category>Seurat</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
         <item>

@@ -13,21 +13,21 @@
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>软件安装</category>
         <category>WES</category>
         <category>WGS</category>
         <category>REST API</category>
+        <category>软件安装</category>
         <category>Ubuntu</category>
-        <category>Python</category>
         <category>Java</category>
+        <category>Python</category>
         <category>建站</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>Web</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
-        <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>MySQL</category>
@@ -37,13 +37,13 @@
         <category>Project</category>
         <category>Entrez API</category>
         <category>NCBI</category>
+        <category>network</category>
+        <category>interactome</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>network</category>
-        <category>interactome</category>
-        <category>develop</category>
         <category>Network Analysis</category>
+        <category>develop</category>
         <category>comorbidities</category>
         <category>Seurat</category>
         <category>WordPress</category>

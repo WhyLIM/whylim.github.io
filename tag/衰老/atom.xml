@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://new.limina.top</id>
+    <title>Being on sea, sail; being on land, settle. • Posts by &#34;衰老&#34; tag</title>
+    <link href="https://new.limina.top" />
+    <updated>2024-11-29T01:40:30.000Z</updated>
+    <category term="R" />
+    <category term="生信" />
+    <category term="scRNA-seq" />
+    <category term="WES" />
+    <category term="WGS" />
+    <category term="Cytoscape.js" />
+    <category term="API" />
+    <category term="GraphQL API" />
+    <category term="Open Targets Platform" />
+    <category term="REST API" />
+    <category term="软件安装" />
+    <category term="Java" />
+    <category term="建站" />
+    <category term="Ubuntu" />
+    <category term="Hexo" />
+    <category term="ShokaX" />
+    <category term="Python" />
+    <category term="Web" />
+    <category term="Windows" />
+    <category term="虚拟机" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
+    <category term="MySQL" />
+    <category term="Vuepress" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="BioOS" />
+    <category term="PharmaNet" />
+    <category term="Project" />
+    <category term="Structured Outputs" />
+    <category term="OpenAI API" />
+    <category term="GPT" />
+    <category term="develop" />
+    <category term="network" />
+    <category term="interactome" />
+    <category term="Network Analysis" />
+    <category term="comorbidities" />
+    <category term="Seurat" />
+    <category term="WordPress" />
+    <category term="宝塔" />
+    <category term="GSEA" />
+    <category term="富集分析" />
+    <category term="Text mining" />
+    <category term="Entrze API" />
+    <category term="统计学" />
+    <category term="衰老" />
+    <category term="生物学年龄" />
+    <category term="Metabolic Network" />
+    <category term="Weighted Network" />
+    <entry>
+        <id>https://new.limina.top/2024/11/29/%E8%A1%B0%E8%80%81%E6%8C%87%E6%A0%87%E8%AF%84%E4%BC%B0/</id>
+        <title>衰老指标评估</title>
+        <link rel="alternate" href="https://new.limina.top/2024/11/29/%E8%A1%B0%E8%80%81%E6%8C%87%E6%A0%87%E8%AF%84%E4%BC%B0/"/>
+        <content type="html">&lt;h1 id=&#34;衰老指标评估&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#衰老指标评估&#34;&gt;#&lt;/a&gt; 衰老指标评估&lt;/h1&gt;
+&lt;p&gt;目前（2024-12-02）Aging 数据库的数据中，研究最多的 Biomarker 如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Biomarker&lt;/th&gt;
+&lt;th&gt;中文&lt;/th&gt;
+&lt;th&gt;Count&lt;/th&gt;
+&lt;th&gt;试剂盒&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Telomere Length&lt;/td&gt;
+&lt;td&gt;端粒长度&lt;/td&gt;
+&lt;td&gt;68&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Leukocyte Telomere Length&lt;/td&gt;
+&lt;td&gt;白细胞端粒长度&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DNA Methylation (DNAm)&lt;/td&gt;
+&lt;td&gt;DNA 甲基化（DNAm）&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Senescence-associated beta-galactosidase  (SA-beta-gal)&lt;/td&gt;
+&lt;td&gt;衰老相关 β- 半乳糖苷酶（SA-β-gal）&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;p16INK4a&lt;/td&gt;
+&lt;td&gt;p16INK4a&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brain Age&lt;/td&gt;
+&lt;td&gt;大脑年龄&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DNA Methylation Age&lt;/td&gt;
+&lt;td&gt;DNA 甲基化年龄&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Interleukin-6 (IL-6)&lt;/td&gt;
+&lt;td&gt;白细胞介素 - 6 （IL-6）&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Klotho&lt;/td&gt;
+&lt;td&gt;克洛托&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MicroRNA&lt;/td&gt;
+&lt;td&gt;微小 RNA&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Anti-Müllerian Hormone (AMH)&lt;/td&gt;
+&lt;td&gt;抗苗勒氏管激素（AMH）&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Epigenetic Clocks&lt;/td&gt;
+&lt;td&gt;表观遗传时钟&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Handgrip Strength (HGS)&lt;/td&gt;
+&lt;td&gt;握力（HGS）&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Insulin-like Growth  Factor 1 (IGF-1)&lt;/td&gt;
+&lt;td&gt;胰岛素样生长因子 1（IGF-1）&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;已有&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Senescence-Associated Secretory Phenotype  (SASP)&lt;/td&gt;
+&lt;td&gt;衰老相关分泌表型（SASP）&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Telomeres&lt;/td&gt;
+&lt;td&gt;端粒&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+        <category term="衰老" />
+        <category term="生物学年龄" />
+        <updated>2024-11-29T01:40:30.000Z</updated>
+    </entry>
+</feed>

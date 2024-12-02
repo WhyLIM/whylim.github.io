@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Being on sea, sail; being on land, settle. • All posts by \"衰老\" tag",
+    "description": "",
+    "home_page_url": "https://new.limina.top",
+    "items": [
+        {
+            "id": "https://new.limina.top/2024/11/29/%E8%A1%B0%E8%80%81%E6%8C%87%E6%A0%87%E8%AF%84%E4%BC%B0/",
+            "url": "https://new.limina.top/2024/11/29/%E8%A1%B0%E8%80%81%E6%8C%87%E6%A0%87%E8%AF%84%E4%BC%B0/",
+            "title": "衰老指标评估",
+            "date_published": "2024-11-29T01:40:30.000Z",
+            "content_html": "<h1 id=\"衰老指标评估\"><a class=\"anchor\" href=\"#衰老指标评估\">#</a> 衰老指标评估</h1>\n<p>目前（2024-12-02）Aging 数据库的数据中，研究最多的 Biomarker 如下：</p>\n<table>\n<thead>\n<tr>\n<th>Biomarker</th>\n<th>中文</th>\n<th>Count</th>\n<th>试剂盒</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Telomere Length</td>\n<td>端粒长度</td>\n<td>68</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Leukocyte Telomere Length</td>\n<td>白细胞端粒长度</td>\n<td>31</td>\n<td></td>\n</tr>\n<tr>\n<td>DNA Methylation (DNAm)</td>\n<td>DNA 甲基化（DNAm）</td>\n<td>27</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Senescence-associated beta-galactosidase  (SA-beta-gal)</td>\n<td>衰老相关 β- 半乳糖苷酶（SA-β-gal）</td>\n<td>21</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>p16INK4a</td>\n<td>p16INK4a</td>\n<td>18</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Brain Age</td>\n<td>大脑年龄</td>\n<td>8</td>\n<td></td>\n</tr>\n<tr>\n<td>DNA Methylation Age</td>\n<td>DNA 甲基化年龄</td>\n<td>8</td>\n<td></td>\n</tr>\n<tr>\n<td>Interleukin-6 (IL-6)</td>\n<td>白细胞介素 - 6 （IL-6）</td>\n<td>8</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Klotho</td>\n<td>克洛托</td>\n<td>7</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>MicroRNA</td>\n<td>微小 RNA</td>\n<td>7</td>\n<td></td>\n</tr>\n<tr>\n<td>Anti-Müllerian Hormone (AMH)</td>\n<td>抗苗勒氏管激素（AMH）</td>\n<td>6</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Epigenetic Clocks</td>\n<td>表观遗传时钟</td>\n<td>6</td>\n<td></td>\n</tr>\n<tr>\n<td>Handgrip Strength (HGS)</td>\n<td>握力（HGS）</td>\n<td>6</td>\n<td></td>\n</tr>\n<tr>\n<td>Insulin-like Growth  Factor 1 (IGF-1)</td>\n<td>胰岛素样生长因子 1（IGF-1）</td>\n<td>6</td>\n<td>已有</td>\n</tr>\n<tr>\n<td>Senescence-Associated Secretory Phenotype  (SASP)</td>\n<td>衰老相关分泌表型（SASP）</td>\n<td>6</td>\n<td></td>\n</tr>\n<tr>\n<td>Telomeres</td>\n<td>端粒</td>\n<td>6</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n",
+            "tags": [
+                "衰老",
+                "生物学年龄"
+            ]
+        }
+    ]
+}

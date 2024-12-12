@@ -10,34 +10,36 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
+        <category>Cytoscape.js</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Cytoscape.js</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>REST API</category>
         <category>软件安装</category>
-        <category>Java</category>
         <category>建站</category>
         <category>Ubuntu</category>
+        <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Python</category>
-        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>Web</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>MySQL</category>
         <category>Vuepress</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
@@ -46,11 +48,12 @@
         <category>interactome</category>
         <category>Network Analysis</category>
         <category>comorbidities</category>
+        <category>GSEA</category>
+        <category>富集分析</category>
         <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>GSEA</category>
-        <category>富集分析</category>
+        <category>项目</category>
         <category>Text mining</category>
         <category>Entrze API</category>
         <category>统计学</category>
@@ -58,6 +61,7 @@
         <category>生物学年龄</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>科研写作</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/06/27/Aging%20Biomarker%E5%9C%A8%E5%8D%95%E7%BB%86%E8%83%9E%E6%95%B0%E6%8D%AE%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
             <title>Aging Biomarker 在单细胞数据上的应用</title>

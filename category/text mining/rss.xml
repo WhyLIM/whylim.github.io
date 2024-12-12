@@ -10,34 +10,36 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
+        <category>Cytoscape.js</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>Cytoscape.js</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>REST API</category>
         <category>软件安装</category>
-        <category>Java</category>
         <category>建站</category>
         <category>Ubuntu</category>
+        <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Python</category>
-        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>Web</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
         <category>MySQL</category>
         <category>Vuepress</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
@@ -46,11 +48,12 @@
         <category>interactome</category>
         <category>Network Analysis</category>
         <category>comorbidities</category>
+        <category>GSEA</category>
+        <category>富集分析</category>
         <category>Seurat</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>GSEA</category>
-        <category>富集分析</category>
+        <category>项目</category>
         <category>Text mining</category>
         <category>Entrze API</category>
         <category>统计学</category>
@@ -58,6 +61,7 @@
         <category>生物学年龄</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>科研写作</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/10/21/%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E5%92%8C%E8%A7%84%E8%8C%83%E5%8C%96/</guid>
             <title>文献信息抽取和规范化</title>
@@ -89,7 +93,7 @@
 &lt;p&gt;这项工作当年的人工阅读几乎由一人完成，耗费了大量时间。&lt;/p&gt;
 &lt;h2 id=&#34;方案的更新&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方案的更新&#34;&gt;#&lt;/a&gt; 方案的更新&lt;/h2&gt;
 &lt;p&gt;现在，我们有了新的工具，例如 &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/home/develop/api/&#34;&gt;NCBI API&lt;/a&gt; 和 &lt;a href=&#34;https://openai.com/api/&#34;&gt;OpenAI API&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;在 &lt;a href=&#34;https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8EntrezAPI%E8%BF%9B%E8%A1%8CPubMed%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/&#34;&gt;使用 Entrez API 进行 PubMed 文献信息提取&lt;/a&gt; 中，我们已经介绍了如何使用 Entrez API 进行文献基础信息的提取，例如文献标题、摘要、关键词、作者、发表时间、DOI 等。&lt;/p&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8%20Entrez%20API%20%E8%BF%9B%E8%A1%8C%20PubMed%20%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/&#34;&gt;使用 Entrez API 进行 PubMed 文献信息提取&lt;/a&gt; 中，我们已经介绍了如何使用 Entrez API 进行文献基础信息的提取，例如文献标题、摘要、关键词、作者、发表时间、DOI 等。&lt;/p&gt;
 &lt;p&gt;但是当我们需要提取一些具体的信息，如生物标志物的名称、类型和其他信息时，NCBI 提供的 API 并不能完成这样的任务。&lt;/p&gt;
 &lt;p&gt;近两年，OpenAI 训练的 GPT 模型已经取得了巨大的成功，&lt;a href=&#34;https://chatgpt.com/&#34;&gt;ChatGPT&lt;/a&gt; 已经可以完成很多复杂的任务，例如文本生成、文本摘要、文本分类、文本翻译等。&lt;/p&gt;
 &lt;p&gt;因此，我们可以使用 GPT 模型来帮助我们完成文献信息的提取和规范化，以在保持信息准确性的同时，减轻人工阅读的负担，并提高数据收集的效率。&lt;/p&gt;

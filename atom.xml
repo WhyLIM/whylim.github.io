@@ -3,38 +3,40 @@
     <id>https://new.limina.top</id>
     <title>Being on sea, sail; being on land, settle.</title>
     <link href="https://new.limina.top" />
-    <updated>2024-11-29T01:40:30.000Z</updated>
+    <updated>2024-12-12T02:20:34.000Z</updated>
     <category term="R" />
     <category term="生信" />
     <category term="scRNA-seq" />
+    <category term="Cytoscape.js" />
     <category term="WES" />
     <category term="WGS" />
-    <category term="Cytoscape.js" />
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
     <category term="REST API" />
     <category term="软件安装" />
-    <category term="Java" />
     <category term="建站" />
     <category term="Ubuntu" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
-    <category term="Python" />
-    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
+    <category term="Web" />
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="Vue 3" />
     <category term="Element Plus" />
     <category term="MySQL" />
     <category term="Vuepress" />
-    <category term="Entrez API" />
-    <category term="NCBI" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
+    <category term="Ensembl API" />
+    <category term="SNP" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
@@ -43,11 +45,12 @@
     <category term="interactome" />
     <category term="Network Analysis" />
     <category term="comorbidities" />
+    <category term="GSEA" />
+    <category term="富集分析" />
     <category term="Seurat" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="GSEA" />
-    <category term="富集分析" />
+    <category term="项目" />
     <category term="Text mining" />
     <category term="Entrze API" />
     <category term="统计学" />
@@ -55,6 +58,230 @@
     <category term="生物学年龄" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
+    <category term="科研写作" />
+    <entry>
+        <id>https://new.limina.top/2024/12/12/%E4%BD%BF%E7%94%A8%20Ensembl%20API%20%E6%9F%A5%E8%AF%A2%20SNP%20%E5%9C%A8%E4%BA%BA%E7%BE%A4%E4%B8%AD%E7%9A%84%E5%88%86%E5%B8%83/</id>
+        <title>使用 Ensembl API 查询 SNP 在不同人群中的分布情况</title>
+        <link rel="alternate" href="https://new.limina.top/2024/12/12/%E4%BD%BF%E7%94%A8%20Ensembl%20API%20%E6%9F%A5%E8%AF%A2%20SNP%20%E5%9C%A8%E4%BA%BA%E7%BE%A4%E4%B8%AD%E7%9A%84%E5%88%86%E5%B8%83/"/>
+        <content type="html">&lt;h1 id=&#34;使用-ensembl-api-查询-snp-在不同人群中的分布&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-ensembl-api-查询-snp-在不同人群中的分布&#34;&gt;#&lt;/a&gt; 使用 Ensembl API 查询 SNP 在不同人群中的分布&lt;/h1&gt;
+&lt;p&gt;Ensembl REST API 的端点和测试用例可以在&lt;a href=&#34;https://rest.ensembl.org/&#34;&gt;这里&lt;/a&gt;找到。本文以 R 语言为例，介绍如何使用 Ensembl API 查询特定单核苷酸多态性（SNP）的分布情况，包括单个和批量查询的实现过程。&lt;/p&gt;
+&lt;h2 id=&#34;为什么要查询-snp-的分布&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么要查询-snp-的分布&#34;&gt;#&lt;/a&gt; 为什么要查询 SNP 的分布？&lt;/h2&gt;
+&lt;p&gt;SNP（单核苷酸多态性）是基因组中常见的变异形式，对研究基因与表型的关系、疾病关联分析和个性化医疗至关重要。SNP 在不同人群中的分布往往因种群历史、地理分布和自然选择而异，因此理解这些分布特征是遗传学研究的重要任务。&lt;/p&gt;
+&lt;h2 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h2&gt;
+&lt;p&gt;需要加载几个 R 包来完成请求和数据处理：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;httr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;       &lt;span class=&#34;token comment&#34;&gt;# 用于发送 HTTP 请求&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;jsonlite&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;token comment&#34;&gt;# 用于解析和构造 JSON 数据&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dplyr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;      &lt;span class=&#34;token comment&#34;&gt;# 用于数据操作&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;单个-snp-的查询&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单个-snp-的查询&#34;&gt;#&lt;/a&gt; 单个 SNP 的查询&lt;/h2&gt;
+&lt;h3 id=&#34;api-调用和数据处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#api-调用和数据处理&#34;&gt;#&lt;/a&gt; API 调用和数据处理&lt;/h3&gt;
+&lt;p&gt;以下代码实现了查询单个 SNP ( &lt;code&gt;rs3762444&lt;/code&gt; ) 的频率分布：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;server &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://grch37.rest.ensembl.org&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ext &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/variation/human/rs3762444?pops=1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;r &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; GET&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;paste&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;server&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ext&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sep &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; content_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;stop_for_status&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; content&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;parsed&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pg &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; response&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;populations&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token percent-operator operator&#34;&gt;%&gt;%&lt;/span&gt; bind_rows&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;.&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as.data.frame&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;pg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;代码解析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码解析&#34;&gt;#&lt;/a&gt; 代码解析&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;API URL 构建：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;server&lt;/code&gt;  是 Ensembl API 的基础 URL。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ext&lt;/code&gt;  是指定资源的扩展路径，包括要查询的 SNP ID（ &lt;code&gt;rs3762444&lt;/code&gt; ）和额外参数（ &lt;code&gt;pops=1&lt;/code&gt;  表示返回人群频率信息）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发送 GET 请求：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;使用  &lt;code&gt;GET&lt;/code&gt;  方法向服务器发送请求，并确保请求成功（ &lt;code&gt;stop_for_status&lt;/code&gt; ）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据解析：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;response&lt;/code&gt;  包含服务器返回的 JSON 数据。&lt;/li&gt;
+&lt;li&gt;提取  &lt;code&gt;populations&lt;/code&gt;  字段（包含频率数据）并将其转换为数据框格式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;输出结果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出结果&#34;&gt;#&lt;/a&gt; 输出结果&lt;/h3&gt;
+&lt;p&gt;查询结果  &lt;code&gt;pg&lt;/code&gt;  是一个数据框，展示了  &lt;code&gt;rs3762444&lt;/code&gt;  在不同人群中的频率分布。例如：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Population Name&lt;/th&gt;
+&lt;th&gt;Allele&lt;/th&gt;
+&lt;th&gt;Frequency&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1000GENOMES:AFR&lt;/td&gt;
+&lt;td&gt;T&lt;/td&gt;
+&lt;td&gt;0.123&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1000GENOMES:EUR&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;0.789&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;批量查询多个-snp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#批量查询多个-snp&#34;&gt;#&lt;/a&gt; 批量查询多个 SNP&lt;/h2&gt;
+&lt;p&gt;当需要查询多个 SNP 时，可以使用 POST 请求。以下代码实现了批量查询：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;server &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://grch37.rest.ensembl.org&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ext &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/variation/homo_sapiens?pops=1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;body &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ids &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;rs3762444&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rs284262&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rs655598&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;json_body &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; toJSON&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; auto_unbox &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; pretty &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;r &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; POST&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;paste&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;server&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ext&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sep &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          content_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          accept&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          body &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; json_body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;stop_for_status&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; content&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;parsed&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pg &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;response&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  bind_rows&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;populations&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as.data.frame&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;pg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;代码解析-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码解析-2&#34;&gt;#&lt;/a&gt; 代码解析&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;构建请求体：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;使用一个列表  &lt;code&gt;body&lt;/code&gt;  指定要查询的多个 SNP ID。&lt;/li&gt;
+&lt;li&gt;将列表转换为 JSON 格式（ &lt;code&gt;toJSON&lt;/code&gt; ）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发送 POST 请求：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;使用  &lt;code&gt;POST&lt;/code&gt;  方法发送请求，并指定  &lt;code&gt;body&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;设置 HTTP headers，包括  &lt;code&gt;content_type&lt;/code&gt;  和  &lt;code&gt;accept&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解析结果：&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;response&lt;/code&gt;  是一个列表，包含每个 SNP 的查询结果。&lt;/li&gt;
+&lt;li&gt;遍历结果，提取  &lt;code&gt;populations&lt;/code&gt;  字段并转换为数据框。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;输出结果-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输出结果-2&#34;&gt;#&lt;/a&gt; 输出结果&lt;/h3&gt;
+&lt;p&gt;批量查询结果  &lt;code&gt;pg&lt;/code&gt;  是一个列表，其中每个元素对应一个 SNP 的频率数据。例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pg[[1]]&lt;/code&gt;  是  &lt;code&gt;rs3762444&lt;/code&gt;  的频率分布。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pg[[2]]&lt;/code&gt;  是  &lt;code&gt;rs284262&lt;/code&gt;  的频率分布。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个数据框的结构类似于单个查询的结果。&lt;/p&gt;
+&lt;h2 id=&#34;完整代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#完整代码&#34;&gt;#&lt;/a&gt; 完整代码&lt;/h2&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;httr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;jsonlite&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;library&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dplyr&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;################################### 批量 ###################################&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;rm&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;list &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ls&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;setwd&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;D:/Study/Project/GDG/labtd/workfile/other/黄煜/20241206&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;server &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://grch37.rest.ensembl.org&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ext &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/variation/human/rs3762444?pops=1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;r &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; GET&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;paste&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;server&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ext&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sep &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; content_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;stop_for_status&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; content&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;parsed&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pg &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; response&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;populations&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token percent-operator operator&#34;&gt;%&gt;%&lt;/span&gt; bind_rows&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;.&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as.data.frame&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;################################### 批量 ###################################&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;server &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://grch37.rest.ensembl.org&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ext &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;/variation/homo_sapiens?pops=1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;body &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ids &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;rs3762444&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rs284262&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;rs655598&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;json_body &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; toJSON&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;body&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; auto_unbox &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; pretty &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;print&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;json_body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;r &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; POST&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;paste&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;server&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ext&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sep &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          content_type&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          accept&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          body &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; json_body&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;stop_for_status&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; content&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;r&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;parsed&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;application/json&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pg &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pg &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;response&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  bind_rows&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lapply&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;populations&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; as.data.frame&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Ensembl API" />
+        <category term="SNP" />
+        <updated>2024-12-12T02:20:34.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://new.limina.top/2024/12/11/%E6%83%B3%E5%86%99%E7%9A%84%E9%A1%B9%E7%9B%AE/</id>
+        <title>想做的一些项目</title>
+        <link rel="alternate" href="https://new.limina.top/2024/12/11/%E6%83%B3%E5%86%99%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
+        <content type="html">&lt;h1 id=&#34;想做的一些项目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#想做的一些项目&#34;&gt;#&lt;/a&gt; 想做的一些项目&lt;/h1&gt;
+&lt;h2 id=&#34;dtii-的功能扩展&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#dtii-的功能扩展&#34;&gt;#&lt;/a&gt; DTII 的功能扩展&lt;/h2&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 药物相互作用组&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_1&#34;&gt; 距离算法&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gpt-enrich&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gpt-enrich&#34;&gt;#&lt;/a&gt; GPT-Enrich&lt;/h2&gt;
+&lt;p&gt;结合 GeneCards 和文献自动推断富集结果的意义&lt;/p&gt;
+</content>
+        <category term="项目" />
+        <updated>2024-12-11T02:23:54.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://new.limina.top/2024/12/03/%E7%A7%91%E7%A0%94%E5%86%99%E4%BD%9C%E8%AF%8D%E6%B1%87%E8%A1%A8/</id>
+        <title>科研写咋词汇表</title>
+        <link rel="alternate" href="https://new.limina.top/2024/12/03/%E7%A7%91%E7%A0%94%E5%86%99%E4%BD%9C%E8%AF%8D%E6%B1%87%E8%A1%A8/"/>
+        <content type="html">&lt;h1 id=&#34;科研写作词汇表&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#科研写作词汇表&#34;&gt;#&lt;/a&gt; 科研写作词汇表&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;英文&lt;/th&gt;
+&lt;th&gt;中文&lt;/th&gt;
+&lt;th&gt;例句&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;hypothesize&lt;/td&gt;
+&lt;td&gt;假设&lt;/td&gt;
+&lt;td&gt;We hypothesize that...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;leverage&lt;/td&gt;
+&lt;td&gt;利用&lt;/td&gt;
+&lt;td&gt;By leveraging machine learning techniques, we can...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;be apparent with&lt;/td&gt;
+&lt;td&gt;明显的&lt;/td&gt;
+&lt;td&gt;...we can efficiently identify complex patterns that may not be apparent with traditional methods&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;complement&lt;/td&gt;
+&lt;td&gt;补充&lt;/td&gt;
+&lt;td&gt;This could potentially complement existing models and...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;more critically&lt;/td&gt;
+&lt;td&gt;更重要的是&lt;/td&gt;
+&lt;td&gt;However, more critically...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;susceptibility&lt;/td&gt;
+&lt;td&gt;易感性&lt;/td&gt;
+&lt;td&gt;there is a decreased susceptibility to...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;trigger&lt;/td&gt;
+&lt;td&gt;引发&lt;/td&gt;
+&lt;td&gt;triggered by...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;* Is the study design appropriate to answer the research question (including the use of appropriate controls), and are the conclusions supported by the evidence presented?&lt;/li&gt;
+&lt;li&gt;* Please rate the novelty of the research on a scale of 1-5 (1=not at all novel and 5=extremely novel)?&lt;/li&gt;
+&lt;li&gt;* Is the presentation of the work clear, with regards to language and grammar?&lt;/li&gt;
+&lt;li&gt;* Does the title of this paper clearly reflect its content?&lt;/li&gt;
+&lt;li&gt;* Does the abstract sufficiently reflect the content?&lt;/li&gt;
+&lt;li&gt;* Are the keywords representative of the research?&lt;/li&gt;
+&lt;li&gt;* Does the introduction present the purpose of the investigation and is the purpose supported by the pertinent literature?&lt;/li&gt;
+&lt;li&gt;* Are the methods described sufficiently to allow the study to be repeated by other parties?&lt;/li&gt;
+&lt;li&gt;* Are &lt;a href=&#34;https://www.rrids.org/&#34;&gt;Research Resource Identifiers &lt;/a&gt;(RRID) included where applicable?&lt;/li&gt;
+&lt;li&gt;* Is the use of statistics and treatment of uncertainties appropriate?&lt;/li&gt;
+&lt;li&gt;* Are the images in this manuscript (including electrophoretic gels and blots) free from apparent manipulation?&lt;/li&gt;
+&lt;li&gt;* Are the table and figures well designed and necessary?&lt;/li&gt;
+&lt;li&gt;* Are the references provided appropriate and up to date?&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="科研写作" />
+        <updated>2024-12-03T01:52:10.000Z</updated>
+    </entry>
     <entry>
         <id>https://new.limina.top/2024/11/29/Cytoscape.js%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
         <title>Cytoscape.js 的使用</title>
@@ -1045,7 +1272,7 @@
 &lt;p&gt;这项工作当年的人工阅读几乎由一人完成，耗费了大量时间。&lt;/p&gt;
 &lt;h2 id=&#34;方案的更新&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方案的更新&#34;&gt;#&lt;/a&gt; 方案的更新&lt;/h2&gt;
 &lt;p&gt;现在，我们有了新的工具，例如 &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/home/develop/api/&#34;&gt;NCBI API&lt;/a&gt; 和 &lt;a href=&#34;https://openai.com/api/&#34;&gt;OpenAI API&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;在 &lt;a href=&#34;https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8EntrezAPI%E8%BF%9B%E8%A1%8CPubMed%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/&#34;&gt;使用 Entrez API 进行 PubMed 文献信息提取&lt;/a&gt; 中，我们已经介绍了如何使用 Entrez API 进行文献基础信息的提取，例如文献标题、摘要、关键词、作者、发表时间、DOI 等。&lt;/p&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://new.limina.top/2024/07/01/%E4%BD%BF%E7%94%A8%20Entrez%20API%20%E8%BF%9B%E8%A1%8C%20PubMed%20%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/&#34;&gt;使用 Entrez API 进行 PubMed 文献信息提取&lt;/a&gt; 中，我们已经介绍了如何使用 Entrez API 进行文献基础信息的提取，例如文献标题、摘要、关键词、作者、发表时间、DOI 等。&lt;/p&gt;
 &lt;p&gt;但是当我们需要提取一些具体的信息，如生物标志物的名称、类型和其他信息时，NCBI 提供的 API 并不能完成这样的任务。&lt;/p&gt;
 &lt;p&gt;近两年，OpenAI 训练的 GPT 模型已经取得了巨大的成功，&lt;a href=&#34;https://chatgpt.com/&#34;&gt;ChatGPT&lt;/a&gt; 已经可以完成很多复杂的任务，例如文本生成、文本摘要、文本分类、文本翻译等。&lt;/p&gt;
 &lt;p&gt;因此，我们可以使用 GPT 模型来帮助我们完成文献信息的提取和规范化，以在保持信息准确性的同时，减轻人工阅读的负担，并提高数据收集的效率。&lt;/p&gt;

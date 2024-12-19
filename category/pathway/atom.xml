@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://new.limina.top</id>
+    <title>Being on sea, sail; being on land, settle. • Posts by &#34;pathway&#34; category</title>
+    <link href="https://new.limina.top" />
+    <updated>2024-12-17T09:55:56.000Z</updated>
+    <category term="Cytoscape.js" />
+    <category term="R" />
+    <category term="生信" />
+    <category term="scRNA-seq" />
+    <category term="WES" />
+    <category term="WGS" />
+    <category term="API" />
+    <category term="GraphQL API" />
+    <category term="Open Targets Platform" />
+    <category term="REST API" />
+    <category term="软件安装" />
+    <category term="Java" />
+    <category term="Ubuntu" />
+    <category term="Python" />
+    <category term="建站" />
+    <category term="Hexo" />
+    <category term="ShokaX" />
+    <category term="Windows" />
+    <category term="虚拟机" />
+    <category term="Web" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
+    <category term="MySQL" />
+    <category term="Vuepress" />
+    <category term="BioOS" />
+    <category term="PharmaNet" />
+    <category term="Project" />
+    <category term="Ensembl API" />
+    <category term="SNP" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="Structured Outputs" />
+    <category term="OpenAI API" />
+    <category term="GPT" />
+    <category term="develop" />
+    <category term="network" />
+    <category term="interactome" />
+    <category term="Network Analysis" />
+    <category term="Seurat" />
+    <category term="comorbidities" />
+    <category term="GSEA" />
+    <category term="富集分析" />
+    <category term="WordPress" />
+    <category term="宝塔" />
+    <category term="项目" />
+    <category term="Text mining" />
+    <category term="Entrze API" />
+    <category term="科研写作" />
+    <category term="Metabolic Network" />
+    <category term="Weighted Network" />
+    <category term="统计学" />
+    <category term="衰老" />
+    <category term="生物学年龄" />
+    <category term="pathway" />
+    <category term="DEGs" />
+    <category term="NMF" />
+    <entry>
+        <id>https://new.limina.top/2024/12/17/%E8%B7%A8%E5%A4%9A%E4%B8%AA%E9%80%9A%E8%B7%AF%E7%9A%84%20DEGs%20%E5%8F%AF%E8%A7%86%E5%8C%96/</id>
+        <title>跨多个通路的 DEGs 可视化</title>
+        <link rel="alternate" href="https://new.limina.top/2024/12/17/%E8%B7%A8%E5%A4%9A%E4%B8%AA%E9%80%9A%E8%B7%AF%E7%9A%84%20DEGs%20%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+        <content type="html">&lt;h1 id=&#34;跨多个通路的-degs-可视化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#跨多个通路的-degs-可视化&#34;&gt;#&lt;/a&gt; 跨多个通路的 DEGs 可视化&lt;/h1&gt;
+&lt;p&gt;报错的原因是  &lt;code&gt;scale_fill_manual()&lt;/code&gt;  提供的颜色向量  &lt;code&gt;custom_colors&lt;/code&gt;  中的颜色数量不足以覆盖  &lt;code&gt;geom_scatterpie&lt;/code&gt;  内使用的  &lt;code&gt;cols&lt;/code&gt;  所对应的路径数量，导致了 “需要 11 个颜色，但只提供了 9 个” 的错误。&lt;/p&gt;
+&lt;h3 id=&#34;原因分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因分析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;原因分析&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt; &lt;code&gt;scale_fill_manual()&lt;/code&gt; &lt;/strong&gt; 会同时影响所有使用  &lt;code&gt;fill&lt;/code&gt;  映射的几何对象，包括：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;geom_scatterpie&lt;/code&gt; （用于 pathways 和器官分布）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;geom_label_repel&lt;/code&gt; （用于标签背景颜色）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;冲突&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;custom_colors&lt;/code&gt;  颜色向量只为  &lt;code&gt;geom_scatterpie&lt;/code&gt;  的 pathways 提供了 9 种颜色。&lt;/li&gt;
+&lt;li&gt;同时  &lt;code&gt;geom_label_repel&lt;/code&gt;  使用  &lt;code&gt;fill&lt;/code&gt;  映射来设置标签的背景色（红色和白色），这会造成颜色不足的错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方案&#34;&gt;#&lt;/a&gt; &lt;strong&gt;解决方案&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;将  &lt;code&gt;scale_fill_manual()&lt;/code&gt;  和  &lt;code&gt;geom_label_repel()&lt;/code&gt;  的  &lt;code&gt;fill&lt;/code&gt;  设置分开处理，确保路径（ &lt;code&gt;geom_scatterpie&lt;/code&gt; ）和标签背景色互不干扰。&lt;/p&gt;
+&lt;h3 id=&#34;方法一为-geom_scatterpie-使用-scale_fill_manual&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#方法一为-geom_scatterpie-使用-scale_fill_manual&#34;&gt;#&lt;/a&gt; &lt;strong&gt;方法一：为  &lt;code&gt;geom_scatterpie&lt;/code&gt;  使用  &lt;code&gt;scale_fill_manual()&lt;/code&gt; &lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;同时在  &lt;code&gt;geom_label_repel()&lt;/code&gt;  中使用固定的  &lt;code&gt;fill&lt;/code&gt;  值，不依赖  &lt;code&gt;scale_fill_manual()&lt;/code&gt; 。&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;test &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; g3 &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ggforce&lt;span class=&#34;token operator&#34;&gt;::&lt;/span&gt;geom_mark_rect&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; y &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; y&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; group &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; walktrap&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;grey&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  geom_scatterpie&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; y &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; y&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; size &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;transparent&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  legend_name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Pathway&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; graphdata&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  cols &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; pathways&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  geom_scatterpie&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; y &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; y&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; size&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;transparent&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; graphdata&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; legend_name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;enrich&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;                  cols &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; organ_columns&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  scale_fill_manual&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;values &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; custom_colors&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Pathways&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 仅控制 pathways 的填充颜色&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  geom_node_point&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;shape &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; no_organ &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; type &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;map&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;# 修复 geom_label_repel 的 fill，使其不受 scale_fill_manual 影响&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ggrepel&lt;span class=&#34;token operator&#34;&gt;::&lt;/span&gt;geom_label_repel&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; graphdata&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; y &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; y&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; label &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; id&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    fill &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ifelse&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;graphdata&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;is_top_node&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;red&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;white&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 直接设置标签的背景颜色&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ifelse&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;graphdata&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;is_top_node&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;white&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;black&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# 文字颜色&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    fontface &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ifelse&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;graphdata&lt;span class=&#34;token operator&#34;&gt;$&lt;/span&gt;is_top_node&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;bold&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;plain&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    box.padding &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    label.size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    segment.color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;grey50&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    segment.size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    max.overlaps &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;Inf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    min.segment.length &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  scale_colour_identity&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  theme_void&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; coord_fixed&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;关键修正点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关键修正点&#34;&gt;#&lt;/a&gt; &lt;strong&gt;关键修正点&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt; &lt;code&gt;geom_label_repel()&lt;/code&gt; &lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt; &lt;code&gt;fill&lt;/code&gt;  参数&lt;/strong&gt;：直接在  &lt;code&gt;geom_label_repel&lt;/code&gt;  内部指定背景颜色，而不是通过  &lt;code&gt;aes()&lt;/code&gt;  使用全局的  &lt;code&gt;scale_fill_manual()&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;这样标签背景色（红色和白色）不会受到  &lt;code&gt;scale_fill_manual()&lt;/code&gt;  的影响。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt; &lt;code&gt;scale_fill_manual()&lt;/code&gt; &lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;仅用于  &lt;code&gt;geom_scatterpie&lt;/code&gt;  控制饼图的填充颜色，不会干扰其他对象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="pathway" />
+        <category term="DEGs" />
+        <updated>2024-12-17T09:55:56.000Z</updated>
+    </entry>
+</feed>

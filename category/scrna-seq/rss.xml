@@ -5,55 +5,55 @@
         <link>https://new.limina.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 15 Oct 2024 22:38:24 +0800</pubDate>
-        <lastBuildDate>Tue, 15 Oct 2024 22:38:24 +0800</lastBuildDate>
+        <pubDate>Thu, 19 Dec 2024 19:03:00 +0800</pubDate>
+        <lastBuildDate>Thu, 19 Dec 2024 19:03:00 +0800</lastBuildDate>
+        <category>Cytoscape.js</category>
         <category>R</category>
         <category>生信</category>
+        <category>scRNA-seq</category>
         <category>WES</category>
         <category>WGS</category>
-        <category>scRNA-seq</category>
-        <category>Cytoscape.js</category>
         <category>API</category>
-        <category>REST API</category>
         <category>GraphQL API</category>
-        <category>软件安装</category>
         <category>Open Targets Platform</category>
-        <category>Ubuntu</category>
-        <category>建站</category>
-        <category>Python</category>
+        <category>REST API</category>
+        <category>软件安装</category>
         <category>Java</category>
+        <category>Ubuntu</category>
+        <category>Python</category>
+        <category>建站</category>
         <category>Hexo</category>
         <category>ShokaX</category>
-        <category>Web</category>
-        <category>Vue 3</category>
-        <category>Element Plus</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>Web</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
+        <category>Vue 3</category>
+        <category>Element Plus</category>
         <category>MySQL</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
         <category>Vuepress</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
+        <category>develop</category>
         <category>network</category>
         <category>interactome</category>
         <category>Network Analysis</category>
-        <category>develop</category>
         <category>Seurat</category>
-        <category>WordPress</category>
-        <category>宝塔</category>
+        <category>comorbidities</category>
         <category>GSEA</category>
         <category>富集分析</category>
+        <category>WordPress</category>
+        <category>宝塔</category>
         <category>项目</category>
-        <category>comorbidities</category>
         <category>Text mining</category>
         <category>Entrze API</category>
         <category>科研写作</category>
@@ -62,6 +62,125 @@
         <category>统计学</category>
         <category>衰老</category>
         <category>生物学年龄</category>
+        <category>pathway</category>
+        <category>DEGs</category>
+        <category>NMF</category>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2024/12/19/%E9%9D%9E%E8%B4%9F%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/</guid>
+            <title>非负矩阵分解分析连续细胞状态</title>
+            <link>https://new.limina.top/2024/12/19/%E9%9D%9E%E8%B4%9F%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/</link>
+            <category>scRNA-seq</category>
+            <category>NMF</category>
+            <pubDate>Thu, 19 Dec 2024 19:03:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;非负矩阵分解分析连续细胞状态&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#非负矩阵分解分析连续细胞状态&#34;&gt;#&lt;/a&gt; 非负矩阵分解分析连续细胞状态&lt;/h1&gt;
+&lt;p&gt;在现代生物学研究中，理解细胞状态的多样性和连续性是揭示复杂生物过程的重要一步。&lt;/p&gt;
+&lt;p&gt;无论是肿瘤微环境中的细胞演化，还是发育过程中的细胞分化，细胞状态的变化通常不是离散的，而是表现为一种渐变的连续谱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;非负矩阵分解（Non-negative Matrix Factorization, NMF）&lt;/strong&gt; 能够有效提取和解释基因表达数据中的连续细胞状态。本文将探讨 NMF 在分析连续细胞状态中的应用原理及其生物学意义。&lt;/p&gt;
+&lt;h2 id=&#34;非负矩阵分解nmf&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#非负矩阵分解nmf&#34;&gt;#&lt;/a&gt; 非负矩阵分解（NMF）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;NMF&lt;/strong&gt; 是一种矩阵分解技术，用于将一个非负矩阵拆解为两个非负矩阵的乘积。形式上：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mo&gt;≈&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;V \approx WH
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;V&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是原始数据矩阵，通常是基因表达矩阵（行表示基因，列表示样本）。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;W&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是基矩阵，表示一组&lt;strong&gt;表达程序&lt;/strong&gt;，即基因的协同表达模式。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是系数矩阵，表示每个样本中各表达程序的权重。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;NMF 的核心特性在于非负性约束，即 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mo&gt;≥&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;W \geq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8193em;vertical-align:-0.136em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≥&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 和 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mo&gt;≥&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H \geq 0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8193em;vertical-align:-0.136em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≥&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。这一特性非常适合处理基因表达等非负数据，且结果具有自然的生物学可解释性。&lt;/p&gt;
+&lt;h2 id=&#34;连续细胞状态&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#连续细胞状态&#34;&gt;#&lt;/a&gt; 连续细胞状态&lt;/h2&gt;
+&lt;p&gt;在许多生物系统中，细胞状态并不是严格的离散类别，而是一种连续的渐变关系。例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在肿瘤微环境中，肿瘤核心细胞可能呈现强烈的增殖状态，而浸润边界的细胞则逐渐表现为侵袭特性。&lt;/li&gt;
+&lt;li&gt;在发育过程中，干细胞可能逐步分化为不同类型的功能细胞，这些分化状态是连续变化的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种连续性在基因表达数据中表现为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多个基因表达模式的线性组合。&lt;/li&gt;
+&lt;li&gt;不同样本中这些组合的权重连续变化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;nmf-如何捕捉连续细胞状态&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nmf-如何捕捉连续细胞状态&#34;&gt;#&lt;/a&gt; NMF 如何捕捉连续细胞状态？&lt;/h3&gt;
+&lt;h4 id=&#34;数据表示与分解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据表示与分解&#34;&gt;#&lt;/a&gt; 数据表示与分解&lt;/h4&gt;
+&lt;p&gt;通过 NMF 分解，原始的基因表达矩阵 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;V&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 被分解为 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;W&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 和 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;W&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;：表示一组表达程序（基因协同表达的模式）。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;：表示每个样本中各表达程序的权重。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种分解让每个样本的基因表达被表示为若干表达程序的线性组合，其权重（即 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的列向量）反映了样本中不同细胞状态的混合程度。&lt;/p&gt;
+&lt;h4 id=&#34;稀疏性与非负性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#稀疏性与非负性&#34;&gt;#&lt;/a&gt; 稀疏性与非负性&lt;/h4&gt;
+&lt;p&gt;NMF 的结果具有&lt;strong&gt;稀疏性&lt;/strong&gt;，即每个样本中只有少量表达程序对基因表达有显著贡献。这种特性保证了每个样本被清晰地分解为少数核心状态的组合。此外，非负性约束确保了分解结果符合生物学意义（如基因表达水平不能为负）。&lt;/p&gt;
+&lt;h4 id=&#34;连续性的体现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#连续性的体现&#34;&gt;#&lt;/a&gt; 连续性的体现&lt;/h4&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;H&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 矩阵的列向量表示样本中不同表达程序的权重：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果某个样本主要由一个表达程序主导，则可以被看作一种离散状态。&lt;/li&gt;
+&lt;li&gt;如果某个样本的权重分布在多个表达程序上，并且这些权重在不同样本中连续变化，则说明这些样本处于连续细胞状态的渐变区。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;生物学意义从离散到连续的理解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#生物学意义从离散到连续的理解&#34;&gt;#&lt;/a&gt; 生物学意义：从离散到连续的理解&lt;/h2&gt;
+&lt;p&gt;传统的离散聚类方法（如 Leiden 聚类）能够将样本划分为明确的类别，但它无法捕捉细胞状态的渐变性。例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在肿瘤研究中，核心细胞和边界细胞可能被划分为不同的聚类，但两者之间的渐变过渡却被忽略。&lt;/li&gt;
+&lt;li&gt;在免疫研究中，活化的免疫细胞和抑制状态的免疫细胞之间的状态转换可能无法用单一聚类方法解释。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;NMF 弥补了这一不足：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;离散性&lt;/strong&gt;：对于单一状态主导的样本，NMF 可以明确识别其核心特征。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;连续性&lt;/strong&gt;：对于多状态混合的样本，NMF 可以量化不同状态的贡献，并揭示状态之间的渐变关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;应用案例肿瘤微环境中的连续状态分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#应用案例肿瘤微环境中的连续状态分析&#34;&gt;#&lt;/a&gt; 应用案例：肿瘤微环境中的连续状态分析&lt;/h2&gt;
+&lt;p&gt;在肿瘤研究中，NMF 被广泛用于揭示肿瘤组织中细胞状态的复杂性。以下是一个典型应用：&lt;/p&gt;
+&lt;h3 id=&#34;数据背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据背景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;数据背景&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;研究者对肿瘤样本的空间转录组数据进行了 NMF 分解。原始基因表达矩阵包含了肿瘤核心区、浸润边界和周围正常组织的基因表达。&lt;/p&gt;
+&lt;h3 id=&#34;分解结果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分解结果&#34;&gt;#&lt;/a&gt; &lt;strong&gt;分解结果&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;表达程序（W）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;程序 1：增殖相关基因高表达，可能对应于肿瘤核心细胞。&lt;/li&gt;
+&lt;li&gt;程序 2：侵袭相关基因高表达，可能对应于浸润性肿瘤细胞。&lt;/li&gt;
+&lt;li&gt;程序 3：免疫活化相关基因高表达，可能对应于免疫细胞的功能状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权重矩阵（H）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;样本中权重的连续变化显示，从肿瘤核心到边界，增殖程序的权重逐渐减弱，而侵袭程序的权重逐渐增强。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;生物学洞察&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#生物学洞察&#34;&gt;#&lt;/a&gt; &lt;strong&gt;生物学洞察&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;NMF 结果揭示了肿瘤细胞从核心增殖状态到边界侵袭状态的渐变过程，并且量化了免疫细胞在不同区域的活化程度。这为理解肿瘤微环境的动态特性提供了新视角。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;nmf-与离散方法的比较&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nmf-与离散方法的比较&#34;&gt;#&lt;/a&gt; NMF 与离散方法的比较&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;特性&lt;/th&gt;
+&lt;th&gt;NMF&lt;/th&gt;
+&lt;th&gt;离散聚类（如 Leiden）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;数据表示&lt;/td&gt;
+&lt;td&gt;线性组合的连续表示&lt;/td&gt;
+&lt;td&gt;离散类别分配&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;细胞状态的捕捉&lt;/td&gt;
+&lt;td&gt;连续状态的渐变&lt;/td&gt;
+&lt;td&gt;离散状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;生物学意义&lt;/td&gt;
+&lt;td&gt;解释细胞状态之间的过渡关系&lt;/td&gt;
+&lt;td&gt;强调类别的差异性&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;应用场景&lt;/td&gt;
+&lt;td&gt;分析复杂、异质性高的数据&lt;/td&gt;
+&lt;td&gt;分类明确、异质性低的数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/10/15/%E5%8D%95%E7%BB%86%E8%83%9E%E5%88%86%E6%9E%90%E7%BB%8F%E9%AA%8C/</guid>
             <title>单细胞分析经验</title>

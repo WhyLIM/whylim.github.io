@@ -7,59 +7,62 @@
         <language>zh-CN</language>
         <pubDate>Thu, 19 Dec 2024 19:03:00 +0800</pubDate>
         <lastBuildDate>Thu, 19 Dec 2024 19:03:00 +0800</lastBuildDate>
-        <category>Cytoscape.js</category>
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
         <category>WES</category>
         <category>WGS</category>
         <category>API</category>
-        <category>GraphQL API</category>
-        <category>Open Targets Platform</category>
         <category>REST API</category>
-        <category>软件安装</category>
-        <category>Java</category>
+        <category>GraphQL API</category>
+        <category>Cytoscape.js</category>
+        <category>Open Targets Platform</category>
         <category>Ubuntu</category>
-        <category>Python</category>
+        <category>软件安装</category>
         <category>建站</category>
+        <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
         <category>Vuepress</category>
+        <category>AI</category>
+        <category>Machine Learning</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
+        <category>ggsc</category>
+        <category>Seurat</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>develop</category>
+        <category>Network Analysis</category>
         <category>network</category>
         <category>interactome</category>
-        <category>Network Analysis</category>
-        <category>Seurat</category>
         <category>comorbidities</category>
         <category>GSEA</category>
         <category>富集分析</category>
+        <category>项目</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>项目</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>科研写作</category>
+        <category>统计学</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>统计学</category>
+        <category>科研写作</category>
         <category>衰老</category>
         <category>生物学年龄</category>
         <category>pathway</category>
@@ -146,7 +149,6 @@
 &lt;/ol&gt;
 &lt;h3 id=&#34;生物学洞察&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#生物学洞察&#34;&gt;#&lt;/a&gt; &lt;strong&gt;生物学洞察&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;NMF 结果揭示了肿瘤细胞从核心增殖状态到边界侵袭状态的渐变过程，并且量化了免疫细胞在不同区域的活化程度。这为理解肿瘤微环境的动态特性提供了新视角。&lt;/p&gt;
-&lt;hr /&gt;
 &lt;h2 id=&#34;nmf-与离散方法的比较&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nmf-与离散方法的比较&#34;&gt;#&lt;/a&gt; NMF 与离散方法的比较&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;

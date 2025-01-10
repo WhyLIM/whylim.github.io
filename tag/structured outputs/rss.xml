@@ -7,59 +7,62 @@
         <language>zh-CN</language>
         <pubDate>Tue, 15 Oct 2024 18:20:36 +0800</pubDate>
         <lastBuildDate>Tue, 15 Oct 2024 18:20:36 +0800</lastBuildDate>
-        <category>Cytoscape.js</category>
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
         <category>WES</category>
         <category>WGS</category>
         <category>API</category>
-        <category>GraphQL API</category>
-        <category>Open Targets Platform</category>
         <category>REST API</category>
-        <category>软件安装</category>
-        <category>Java</category>
+        <category>GraphQL API</category>
+        <category>Cytoscape.js</category>
+        <category>Open Targets Platform</category>
         <category>Ubuntu</category>
-        <category>Python</category>
+        <category>软件安装</category>
         <category>建站</category>
+        <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
         <category>Vuepress</category>
+        <category>AI</category>
+        <category>Machine Learning</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
+        <category>ggsc</category>
+        <category>Seurat</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>develop</category>
+        <category>Network Analysis</category>
         <category>network</category>
         <category>interactome</category>
-        <category>Network Analysis</category>
-        <category>Seurat</category>
         <category>comorbidities</category>
         <category>GSEA</category>
         <category>富集分析</category>
+        <category>项目</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>项目</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>科研写作</category>
+        <category>统计学</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>统计学</category>
+        <category>科研写作</category>
         <category>衰老</category>
         <category>生物学年龄</category>
         <category>pathway</category>

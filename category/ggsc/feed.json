@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Being on sea, sail; being on land, settle. • All posts by \"ggsc\" category",
+    "description": "",
+    "home_page_url": "https://new.limina.top",
+    "items": [
+        {
+            "id": "https://new.limina.top/2025/01/08/%E4%BD%BF%E7%94%A8%20ggsc%20%E7%BB%98%E5%88%B6%20Seurat%20%E5%AF%B9%E8%B1%A1/",
+            "url": "https://new.limina.top/2025/01/08/%E4%BD%BF%E7%94%A8%20ggsc%20%E7%BB%98%E5%88%B6%20Seurat%20%E5%AF%B9%E8%B1%A1/",
+            "title": "使用 ggsc 绘制 Seurat 对象",
+            "date_published": "2025-01-08T09:46:29.000Z",
+            "content_html": "<h1 id=\"使用-ggsc-绘制-seurat-对象\"><a class=\"anchor\" href=\"#使用-ggsc-绘制-seurat-对象\">#</a> 使用 ggsc 绘制 Seurat 对象</h1>\n<p>虽然 Y 叔已经写了<a href=\"https://yulab-smu.top/ggsc/\">教程</a>，但还是有些常用的应用场景需要自己探索一下：</p>\n",
+            "tags": [
+                "scRNA-seq",
+                "ggsc",
+                "Seurat"
+            ]
+        }
+    ]
+}

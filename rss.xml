@@ -5,69 +5,228 @@
         <link>https://new.limina.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Thu, 09 Jan 2025 11:33:47 +0800</pubDate>
-        <lastBuildDate>Thu, 09 Jan 2025 11:33:47 +0800</lastBuildDate>
+        <pubDate>Fri, 10 Jan 2025 10:36:54 +0800</pubDate>
+        <lastBuildDate>Fri, 10 Jan 2025 10:36:54 +0800</lastBuildDate>
+        <category>Cytoscape.js</category>
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
         <category>WES</category>
         <category>WGS</category>
         <category>API</category>
-        <category>REST API</category>
         <category>GraphQL API</category>
-        <category>Cytoscape.js</category>
         <category>Open Targets Platform</category>
+        <category>REST API</category>
+        <category>Java</category>
+        <category>建站</category>
         <category>Ubuntu</category>
         <category>软件安装</category>
-        <category>建站</category>
-        <category>Python</category>
-        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Python</category>
         <category>Windows</category>
         <category>虚拟机</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>MySQL</category>
         <category>Vuepress</category>
-        <category>AI</category>
-        <category>Machine Learning</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
+        <category>AI</category>
+        <category>Machine Learning</category>
         <category>ggsc</category>
         <category>Seurat</category>
-        <category>Structured Outputs</category>
-        <category>OpenAI API</category>
-        <category>GPT</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>develop</category>
-        <category>Network Analysis</category>
+        <category>Structured Outputs</category>
+        <category>OpenAI API</category>
+        <category>GPT</category>
         <category>network</category>
         <category>interactome</category>
+        <category>Network Analysis</category>
         <category>comorbidities</category>
-        <category>GSEA</category>
-        <category>富集分析</category>
-        <category>项目</category>
         <category>WordPress</category>
         <category>宝塔</category>
+        <category>GSEA</category>
+        <category>富集分析</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>统计学</category>
-        <category>Metabolic Network</category>
-        <category>Weighted Network</category>
-        <category>科研写作</category>
+        <category>项目</category>
         <category>衰老</category>
         <category>生物学年龄</category>
+        <category>统计学</category>
+        <category>科研写作</category>
+        <category>Metabolic Network</category>
+        <category>Weighted Network</category>
         <category>pathway</category>
         <category>DEGs</category>
         <category>NMF</category>
+        <item>
+            <guid isPermalink="true">https://new.limina.top/2025/01/10/%E5%B8%B8%E8%A7%81%E7%9A%84%20marker%20%E5%9F%BA%E5%9B%A0%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0%E7%9A%84%E5%8D%95%E7%BB%86%E8%83%9E%E4%BB%A3%E7%A0%81/</guid>
+            <title>常见的 marker 基因以及一些文章的单细胞代码</title>
+            <link>https://new.limina.top/2025/01/10/%E5%B8%B8%E8%A7%81%E7%9A%84%20marker%20%E5%9F%BA%E5%9B%A0%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%96%87%E7%AB%A0%E7%9A%84%E5%8D%95%E7%BB%86%E8%83%9E%E4%BB%A3%E7%A0%81/</link>
+            <category>scRNA-seq</category>
+            <pubDate>Fri, 10 Jan 2025 10:36:54 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;常见的-marker-基因以及一些文章的单细胞代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常见的-marker-基因以及一些文章的单细胞代码&#34;&gt;#&lt;/a&gt; 常见的 marker 基因以及一些文章的单细胞代码&lt;/h1&gt;
+&lt;h3 id=&#34;人类细胞-marker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#人类细胞-marker&#34;&gt;#&lt;/a&gt; 人类细胞 marker&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Cell type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Cell-type specific markers&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Astrocyte&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;AGXT2L1, GFAP, ALDOC, SLC1A3, AGT, ALDH1L1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;B cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD19, MS4A1, BANK1, BLK, IRF8, ABCB4, ABCB9, AFF4, AIDA, AIM2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Endothelial cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;VWF, PECAM1, CDH5, VEGFA, FLT1, ECSCR, ACYP1, ADGRL2, SELE, ICAM1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Epithelial cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CDH1, MYLK, ANKRD30A, ABCA13, ABCB10, ADGB, SFTPB, SFTPC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Erythrocyte&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ALAS2, CA1, HBB, HBE1, HBA1, HBG1, GYPA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Fibroblast&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;COL1A1, COL3A1, THY1, NECTIN1, FAP, PTPN13, C5AR2, LRP1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;GMP&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD38, KIT, ADK, CD123, ALDH4A1, ANXA1, AP3S1, APLP2, APPL1, AREG, ASPM, CDKN3, CLSPN, DEPDC7, MCM10, MUCB2, SDC4, RMI2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;HSC&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD34, ITGA5, PROM1, CD105, VCAM1, CD164, THY1, KIT, ACE, CMAH, ABCG2, CD41, ALDH1A1, BMI1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Macro/Mono/DC&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD68, CD14, MRC1, BHLHE40, CD93, CREM, CSF1R, CCL18, ICAM4, ACPP, ACSL3, ADGRE2, ADGRE3, CD209, CD83, CD1A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Malignant cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;EPCAM, FOLH1, KLK3, KRT8, KRT18, KRT19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Mast cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SLC18A2, ADIRF, ASIC4, BACE2, ENPP3, CADPS, CAPN3, CDK15, CMA1, GCSAML, MAML1, MAOB, CAVIN2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Myeloid cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;PTPRC, CD14, AIF1, TYROBP, CD163&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Neuron&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;STMN2, RBFOX3, MAP2, TUBB3, CSF3, DLG4, ENO2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Neutrophil&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ADGRG3, CXCL8, FCGR3B, MNDA, USP10, CSF3R, ANXA3, AQP9, BTNL8, LGALS13, G0S2, NFE4, IL5RA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;NK cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;FCGR3A, KLRB1, KLRD1, NKG7, XCL1, XCL2, NCR3, NCR1, CD247, GZMB, KLRC1, KLRK1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Oligodendrocyte&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;MOG, OLIG1, OLIG2, PDGFRA, PLP1, MBP, MAG, SOX10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Plasma cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;MZB1, BRSK1, AC026202.3, JSRP1, LINC00582, PARM1, TAS1R3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Progenitor&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD38, CASR, ALDH, CAR, KDR, MME, FLT3, CD90, CD123&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T cell&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;CD3D, CD3G, CD3E&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;小鼠细胞-marker&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小鼠细胞-marker&#34;&gt;#&lt;/a&gt; 小鼠细胞 marker&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;B 细胞（B cell）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Blnk, Cd79a, Cd79b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;浆细胞（Plasma）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Jchain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T 细胞（T cell）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Cd3d, Cd3e, Cd3g&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;巨噬细胞（Macrophage）&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Itgax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;树突状细胞 (DC)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Fcgr2b, Cd209a, Itgam&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;腔内 AV 细胞 (Luminal AV)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Mfge8, Trf, Csn3, Wfdc18, Elf5, Ltf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;腔内 HS 细胞 (Luminal HS)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Prlr, Cited1, Pgr, Prom1, Esr1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;肌上皮细胞 (Myoepithelial)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Krt17, Krt14, Krt5, Acta2, Myl9, Mylk, Myh11&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成纤维细胞 (Fibroblast)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Col1a1, Col1a2, Col3a1, Fn1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;血管细胞 (Vascular)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Pecam1, Cdh5, Eng, Pdgfra, Pdgfrb, Fap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;周细胞 (Pericyte)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;标记基因: Rgs5, Des, Notch3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;文章及代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文章及代码&#34;&gt;#&lt;/a&gt; 文章及代码&lt;/h3&gt;
+&lt;h4 id=&#34;comprehensive-single-cell-aging-atlas-of-healthy-mammary-tissues-reveals-shared-epigenomic-and-transcriptomic-signatures-of-aging-and-cancer&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#comprehensive-single-cell-aging-atlas-of-healthy-mammary-tissues-reveals-shared-epigenomic-and-transcriptomic-signatures-of-aging-and-cancer&#34;&gt;#&lt;/a&gt; Comprehensive single-cell aging atlas of healthy mammary tissues reveals shared epigenomic and transcriptomic signatures of aging and cancer&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/UcarLab/Mammary_gland_aging&#34;&gt;https://github.com/UcarLab/Mammary_gland_aging&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;molecular-and-genetic-insights-into-human-ovarian-aging-from-single-nuclei-multi-omics-analyses&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#molecular-and-genetic-insights-into-human-ovarian-aging-from-single-nuclei-multi-omics-analyses&#34;&gt;#&lt;/a&gt; Molecular and genetic insights into human ovarian aging from single-nuclei multi-omics analyses&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ChenJin2020/Molecular-and-genetic-insights-into-human-ovarian-aging-from-single-nuclei-multi-omics-analyses&#34;&gt;https://github.com/ChenJin2020/Molecular-and-genetic-insights-into-human-ovarian-aging-from-single-nuclei-multi-omics-analyses&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://new.limina.top/2025/01/09/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%20AI%20%E5%AD%A6%E4%B9%A0-1-%E5%85%A5%E9%97%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
             <title>从零开始的 AI 学习-1-入门机器学习</title>
@@ -3081,8 +3240,8 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
             <title>REST API 和 GraphQL API 的联系与区别</title>
             <link>https://new.limina.top/2024/08/29/REST%20API%20%E4%B8%8E%20GraphQL%20API%20%E7%9A%84%E6%AF%94%E8%BE%83/</link>
             <category>API</category>
-            <category>REST API</category>
             <category>GraphQL API</category>
+            <category>REST API</category>
             <pubDate>Thu, 29 Aug 2024 18:36:55 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;rest-api-和-graphql-api-的联系与区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#rest-api-和-graphql-api-的联系与区别&#34;&gt;#&lt;/a&gt; REST API 和 GraphQL API 的联系与区别&lt;/h1&gt;
 &lt;p&gt;API（Application Programming Interface，应用编程接口），通俗点说，就是不同软件之间的交流工具。它让我们可以从服务器获取数据或者把数据发送给服务器。目前常用的两种常见 API 是 REST API 和 GraphQL API。&lt;/p&gt;

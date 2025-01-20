@@ -12,8 +12,8 @@
             "content_html": "<h1 id=\"使用-ggsc-绘制-seurat-对象\"><a class=\"anchor\" href=\"#使用-ggsc-绘制-seurat-对象\">#</a> 使用 ggsc 绘制 Seurat 对象</h1>\n<p>虽然 Y 叔已经写了<a href=\"https://yulab-smu.top/ggsc/\">教程</a>，但还是有些常用的应用场景需要自己探索一下：</p>\n",
             "tags": [
                 "scRNA-seq",
-                "ggsc",
-                "Seurat"
+                "Seurat",
+                "ggsc"
             ]
         }
     ]

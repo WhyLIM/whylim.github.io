@@ -11,34 +11,30 @@
         <category>生信</category>
         <category>scRNA-seq</category>
         <category>Cytoscape.js</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>WES</category>
-        <category>WGS</category>
-        <category>软件安装</category>
         <category>REST API</category>
-        <category>建站</category>
-        <category>Java</category>
+        <category>软件安装</category>
         <category>Ubuntu</category>
+        <category>建站</category>
         <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
         <category>Vuepress</category>
         <category>AI</category>
         <category>Machine Learning</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
-        <category>ggsc</category>
-        <category>Seurat</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
@@ -47,28 +43,32 @@
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
         <category>develop</category>
         <category>network</category>
         <category>interactome</category>
         <category>Network Analysis</category>
+        <category>Seurat</category>
+        <category>ggsc</category>
         <category>comorbidities</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>GSEA</category>
-        <category>富集分析</category>
         <category>项目</category>
-        <category>Text mining</category>
-        <category>Entrze API</category>
         <category>基础知识</category>
         <category>统计学</category>
+        <category>Text mining</category>
+        <category>Entrze API</category>
+        <category>GSEA</category>
+        <category>富集分析</category>
         <category>科研写作</category>
         <category>衰老</category>
         <category>生物学年龄</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
+        <category>NMF</category>
         <category>pathway</category>
         <category>DEGs</category>
-        <category>NMF</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/08/29/REST%20API%20%E4%B8%8E%20GraphQL%20API%20%E7%9A%84%E6%AF%94%E8%BE%83/</guid>
             <title>REST API 和 GraphQL API 的联系与区别</title>

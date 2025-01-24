@@ -10,18 +10,18 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
-        <category>Cytoscape.js</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
         <category>WES</category>
         <category>WGS</category>
+        <category>Cytoscape.js</category>
         <category>软件安装</category>
         <category>REST API</category>
-        <category>Ubuntu</category>
         <category>建站</category>
-        <category>Python</category>
+        <category>Ubuntu</category>
         <category>Java</category>
+        <category>Python</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
@@ -29,28 +29,28 @@
         <category>Web</category>
         <category>Vue 3</category>
         <category>Element Plus</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>富集分析</category>
         <category>GSEA</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
         <category>MySQL</category>
-        <category>Vuepress</category>
         <category>AI</category>
         <category>Machine Learning</category>
-        <category>BioOS</category>
-        <category>PharmaNet</category>
-        <category>Project</category>
         <category>Ensembl API</category>
         <category>SNP</category>
         <category>ggsc</category>
         <category>Seurat</category>
+        <category>BioOS</category>
+        <category>PharmaNet</category>
+        <category>Project</category>
+        <category>Vuepress</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
         <category>network</category>
         <category>interactome</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>develop</category>
         <category>Network Analysis</category>
         <category>WordPress</category>
@@ -58,17 +58,17 @@
         <category>项目</category>
         <category>comorbidities</category>
         <category>基础知识</category>
-        <category>Metabolic Network</category>
-        <category>Weighted Network</category>
         <category>Text mining</category>
         <category>Entrze API</category>
         <category>统计学</category>
+        <category>Metabolic Network</category>
+        <category>Weighted Network</category>
         <category>科研写作</category>
-        <category>衰老</category>
-        <category>生物学年龄</category>
-        <category>NMF</category>
         <category>pathway</category>
         <category>DEGs</category>
+        <category>NMF</category>
+        <category>衰老</category>
+        <category>生物学年龄</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/11/29/%E8%A1%B0%E8%80%81%E6%8C%87%E6%A0%87%E8%AF%84%E4%BC%B0/</guid>
             <title>衰老指标评估</title>

@@ -7,73 +7,96 @@
     <category term="R" />
     <category term="生信" />
     <category term="scRNA-seq" />
+    <category term="Cytoscape.js" />
     <category term="WES" />
     <category term="WGS" />
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
-    <category term="Cytoscape.js" />
-    <category term="REST API" />
     <category term="软件安装" />
     <category term="Ubuntu" />
-    <category term="Python" />
-    <category term="Java" />
-    <category term="建站" />
     <category term="WPS" />
     <category term="Linux 折腾记录" />
+    <category term="建站" />
+    <category term="Java" />
+    <category term="Python" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="RNA-Seq" />
-    <category term="可视化" />
+    <category term="REST API" />
     <category term="Vue 3" />
     <category term="Element Plus" />
-    <category term="MySQL" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
     <category term="富集分析" />
     <category term="GSEA" />
-    <category term="AI" />
-    <category term="Machine Learning" />
+    <category term="MySQL" />
     <category term="Vuepress" />
     <category term="Ensembl API" />
     <category term="SNP" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="ggsc" />
+    <category term="Seurat" />
+    <category term="AI" />
+    <category term="Machine Learning" />
+    <category term="network" />
+    <category term="interactome" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
-    <category term="ggsc" />
-    <category term="Seurat" />
-    <category term="Entrez API" />
-    <category term="NCBI" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
-    <category term="develop" />
-    <category term="network" />
-    <category term="interactome" />
     <category term="Network Analysis" />
-    <category term="comorbidities" />
+    <category term="develop" />
     <category term="WordPress" />
     <category term="宝塔" />
+    <category term="comorbidities" />
     <category term="Text mining" />
     <category term="Entrze API" />
-    <category term="基础知识" />
     <category term="项目" />
-    <category term="科研写作" />
     <category term="统计学" />
+    <category term="基础知识" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
-    <category term="pathway" />
-    <category term="DEGs" />
+    <category term="科研写作" />
     <category term="衰老" />
     <category term="生物学年龄" />
+    <category term="pathway" />
+    <category term="DEGs" />
     <category term="NMF" />
     <entry>
         <id>https://new.limina.top/2025/01/08/%E4%BD%BF%E7%94%A8%20ggsc%20%E7%BB%98%E5%88%B6%20Seurat%20%E5%AF%B9%E8%B1%A1/</id>
         <title>使用 ggsc 绘制 Seurat 对象</title>
         <link rel="alternate" href="https://new.limina.top/2025/01/08/%E4%BD%BF%E7%94%A8%20ggsc%20%E7%BB%98%E5%88%B6%20Seurat%20%E5%AF%B9%E8%B1%A1/"/>
         <content type="html">&lt;h1 id=&#34;使用-ggsc-绘制-seurat-对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-ggsc-绘制-seurat-对象&#34;&gt;#&lt;/a&gt; 使用 ggsc 绘制 Seurat 对象&lt;/h1&gt;
-&lt;p&gt;虽然 Y 叔已经写了&lt;a href=&#34;https://yulab-smu.top/ggsc/&#34;&gt;教程&lt;/a&gt;，但还是有些常用的应用场景需要自己探索一下：&lt;/p&gt;
+&lt;p&gt;Seurat 包自带了一些绘图函数，虽然也是基于 ggplot2 的，但是扩展性其实没那么强&lt;/p&gt;
+&lt;p&gt;正好 Y 叔写了个包 ggsc，虽然已经有基本的&lt;a href=&#34;https://yulab-smu.top/ggsc/&#34;&gt;使用教程&lt;/a&gt;，但还是有些常用的应用场景需要自己探索一下：&lt;/p&gt;
+&lt;h2 id=&#34;基本绘图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本绘图&#34;&gt;#&lt;/a&gt; 基本绘图&lt;/h2&gt;
+&lt;p&gt;对我个人而言，基本绘图可以这样写&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Idents&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;celltype&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; sc_dim&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; reduction &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;umap&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  sc_dim_geom_label&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;geom &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; shadowtext&lt;span class=&#34;token operator&#34;&gt;::&lt;/span&gt;geom_shadowtext&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;#5D478B&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; bg.color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;white&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; check_overlap &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ggtitle&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; scale_color_viridis_d&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;option &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;H&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; guides&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; guide_legend&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;override.aes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ggsave&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;UMAP_celltype.pdf&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; plot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; height &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; width &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ggsave&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;UMAP_celltype.png&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; plot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; height &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; width &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;以上代码用于绘制细胞注释后的 UMAP 图，思路是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设置 Seurat 对象当前的 Ident，这样默认绘图就会按照设置的当前 Ident 来着色&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sc_dim_geom_label&lt;/code&gt;  添加标签&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggtitle&lt;/code&gt;  添加图像标题&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scale_color_viridis_d(option = &amp;quot;H&amp;quot;)&lt;/code&gt;  使用 Viridis 颜色系统的离散调色板， H 调色板是测试下来最好看的一个颜色系列&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;guides&lt;/code&gt;  参数用于调整图例，此处我修改了点的大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中  &lt;code&gt;shadowtext&lt;/code&gt;  包也是 Y 叔写的，用于给文字添加阴影以使标签更美观，被用于范例&lt;/p&gt;
+&lt;p&gt;但当你的分群太过靠近时，如果不加  &lt;code&gt;check_overlap = TRUE&lt;/code&gt;  参数，标签可能会重叠&lt;/p&gt;
+&lt;p&gt;但实际上，加上  &lt;code&gt;check_overlap = TRUE&lt;/code&gt;  参数也并没有什么用......&lt;/p&gt;
+&lt;p&gt;这是 ggplot2 的一个参数，当加上时他会把重叠标签隐藏......（不是哥们&lt;/p&gt;
+&lt;p&gt;所以我们换用  &lt;code&gt;ggrepel&lt;/code&gt;  这个简单又强势的包：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; sc_dim&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; reduction &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;umap&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  sc_dim_geom_label&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;geom &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ggrepel&lt;span class=&#34;token operator&#34;&gt;::&lt;/span&gt;geom_text_repel&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;#5D478B&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; bg.color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;white&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  ggtitle&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; scale_color_viridis_d&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;option &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;H&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; guides&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; guide_legend&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;override.aes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; list&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;size &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;mapping-参数的使用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mapping-参数的使用方法&#34;&gt;#&lt;/a&gt; mapping 参数的使用方法&lt;/h2&gt;
+&lt;p&gt;教程中对于  &lt;code&gt;mapping&lt;/code&gt;  参数并没有讲的很清楚。它需要的其实是一个  &lt;code&gt;aes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;aes&lt;/code&gt; （aesthetic 的缩写）用于在 ggplot2 中定义美学映射。它将数据变量映射到图形的美学属性上。例如，你可以将数据框中的一个数值变量映射到图形的 x 轴位置、y 轴位置、颜色、大小、形状等美学元素。例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;mapping &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; aes&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;color &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; celltype&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; sc_dim&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; reduction &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;umap&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; mapping &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; mapping&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这段代码同样会按照细胞类型来着色，与以下代码其实效果上是一样的：&lt;/p&gt;
+&lt;figure class=&#34;highlight r&#34;&gt;&lt;figcaption data-lang=&#34;r&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Idents&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;celltype&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p &lt;span class=&#34;token operator&#34;&gt;&amp;lt;-&lt;/span&gt; sc_dim&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seurat_object&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; reduction &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;umap&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如果不设置  &lt;code&gt;mapping&lt;/code&gt;  参数，会使用默认的映射&lt;/p&gt;
+&lt;h2 id=&#34;分面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分面&#34;&gt;#&lt;/a&gt; 分面&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;&lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="scRNA-seq" />
         <category term="ggsc" />

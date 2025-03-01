@@ -13,53 +13,56 @@
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
-    <category term="软件安装" />
+    <category term="REST API" />
     <category term="Ubuntu" />
     <category term="WPS" />
     <category term="Linux 折腾记录" />
+    <category term="软件安装" />
     <category term="建站" />
-    <category term="Java" />
     <category term="Python" />
+    <category term="Java" />
     <category term="Hexo" />
     <category term="ShokaX" />
     <category term="Windows" />
     <category term="虚拟机" />
     <category term="Web" />
-    <category term="REST API" />
-    <category term="Vue 3" />
-    <category term="Element Plus" />
-    <category term="RNA-Seq" />
-    <category term="可视化" />
     <category term="富集分析" />
     <category term="GSEA" />
+    <category term="RNA-Seq" />
+    <category term="可视化" />
+    <category term="Vue 3" />
+    <category term="Element Plus" />
     <category term="MySQL" />
     <category term="Vuepress" />
+    <category term="AI" />
+    <category term="Machine Learning" />
+    <category term="BioOS" />
+    <category term="PharmaNet" />
+    <category term="Project" />
     <category term="Ensembl API" />
     <category term="SNP" />
     <category term="Entrez API" />
     <category term="NCBI" />
     <category term="ggsc" />
     <category term="Seurat" />
-    <category term="AI" />
-    <category term="Machine Learning" />
-    <category term="network" />
-    <category term="interactome" />
-    <category term="BioOS" />
-    <category term="PharmaNet" />
-    <category term="Project" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
-    <category term="Network Analysis" />
     <category term="develop" />
+    <category term="network" />
+    <category term="interactome" />
+    <category term="Network Analysis" />
+    <category term="QQ" />
+    <category term="Bot" />
+    <category term="LLM" />
+    <category term="comorbidities" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="comorbidities" />
+    <category term="项目" />
     <category term="Text mining" />
     <category term="Entrze API" />
-    <category term="项目" />
-    <category term="统计学" />
     <category term="基础知识" />
+    <category term="统计学" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
     <category term="科研写作" />
@@ -111,10 +114,10 @@
 &lt;p&gt;&lt;code&gt;cells&lt;/code&gt;  和  &lt;code&gt;features&lt;/code&gt; ：记录细胞和基因的相关信息。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;meta.data&lt;/code&gt; &lt;/strong&gt;：Assay 层级的元数据，包含变量基因的均值、方差等信息。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;meta.data&lt;/code&gt; ：Assay 层级的元数据，包含变量基因的均值、方差等信息。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;key&lt;/code&gt; &lt;/strong&gt;：标记该 Assay 的前缀键，用于识别它的数据。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;key&lt;/code&gt; ：标记该 Assay 的前缀键，用于识别它的数据。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;metadata&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#metadata&#34;&gt;#&lt;/a&gt; meta.data&lt;/h3&gt;
@@ -180,7 +183,7 @@
         <title>基于 NoneBot2 的 QQ 机器人搭建</title>
         <link rel="alternate" href="https://new.limina.top/2025/01/21/%E5%9F%BA%E4%BA%8E%20NoneBot2%20%E7%9A%84%20QQ%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA/"/>
         <content type="html">&lt;blockquote&gt;
-&lt;p&gt;这篇文章最初写于 2020 年，题为 &lt;code&gt;如何在 Ubuntu 下使用 QQ&lt;/code&gt; ，现在 QQ 官方已经发布了 Linux 版本，原文也由此成为时代的眼泪了...... 这些技术和技巧性的东西就是如此，有很强的时效性。5 年过去，也应当进行一些 ⌈老文翻新⌋ 了&lt;/p&gt;
+&lt;p&gt;这篇文章最初写于 2020 年，题为 &lt;code&gt;如何在 Ubuntu 下使用 QQ&lt;/code&gt; ，现在 QQ 官方已经发布了 Linux 版本，原文也由此成为时代的眼泪了...... 这些技术和技巧性的东西就是如此，时效性极强。5 年过去，也应当进行一些 ⌈老文翻新⌋ 了，本文介绍如何基于 NoneBot2 在 Ubuntu 下的 QQNT 中搭建机器人&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;基于-nonebot2-的-qq-机器人搭建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于-nonebot2-的-qq-机器人搭建&#34;&gt;#&lt;/a&gt; 基于 NoneBot2 的 QQ 机器人搭建&lt;/h2&gt;
 &lt;h3 id=&#34;什么是-go-cqhtt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是-go-cqhtt&#34;&gt;#&lt;/a&gt; 什么是 go-cqhtt&lt;/h3&gt;
@@ -192,6 +195,7 @@
 &lt;h3 id=&#34;下载-python&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载-python&#34;&gt;#&lt;/a&gt; 下载 Python&lt;/h3&gt;
 &lt;p&gt;版本需要在 3.9 以上，官网下载或者是使用 conda 都可以。&lt;/p&gt;
 &lt;h3 id=&#34;安装-nb-cli-脚手架&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-nb-cli-脚手架&#34;&gt;#&lt;/a&gt; 安装 nb-cli 脚手架&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;h2 id=&#34;如何在-ubuntu-下使用-qq2020&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何在-ubuntu-下使用-qq2020&#34;&gt;#&lt;/a&gt; 如何在 Ubuntu 下使用 QQ（2020）&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;目前最简单的方法&lt;br /&gt;
@@ -254,9 +258,9 @@
 &lt;p&gt;我们只能尽可能的模拟&lt;/p&gt;
 &lt;p&gt;“又不是不能用～”&lt;/p&gt;
 </content>
-        <category term="R" />
-        <category term="scRNA-seq" />
-        <category term="Seurat" />
+        <category term="QQ" />
+        <category term="Bot" />
+        <category term="LLM" />
         <updated>2025-01-21T01:41:56.000Z</updated>
     </entry>
     <entry>

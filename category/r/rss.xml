@@ -16,53 +16,56 @@
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
-        <category>软件安装</category>
+        <category>REST API</category>
         <category>Ubuntu</category>
         <category>WPS</category>
         <category>Linux 折腾记录</category>
+        <category>软件安装</category>
         <category>建站</category>
-        <category>Java</category>
         <category>Python</category>
+        <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
         <category>Windows</category>
         <category>虚拟机</category>
         <category>Web</category>
-        <category>REST API</category>
-        <category>Vue 3</category>
-        <category>Element Plus</category>
-        <category>RNA-Seq</category>
-        <category>可视化</category>
         <category>富集分析</category>
         <category>GSEA</category>
+        <category>RNA-Seq</category>
+        <category>可视化</category>
+        <category>Vue 3</category>
+        <category>Element Plus</category>
         <category>MySQL</category>
         <category>Vuepress</category>
+        <category>AI</category>
+        <category>Machine Learning</category>
+        <category>BioOS</category>
+        <category>PharmaNet</category>
+        <category>Project</category>
         <category>Ensembl API</category>
         <category>SNP</category>
         <category>Entrez API</category>
         <category>NCBI</category>
         <category>ggsc</category>
         <category>Seurat</category>
-        <category>AI</category>
-        <category>Machine Learning</category>
-        <category>network</category>
-        <category>interactome</category>
-        <category>BioOS</category>
-        <category>PharmaNet</category>
-        <category>Project</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>Network Analysis</category>
         <category>develop</category>
+        <category>network</category>
+        <category>interactome</category>
+        <category>Network Analysis</category>
+        <category>QQ</category>
+        <category>Bot</category>
+        <category>LLM</category>
+        <category>comorbidities</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>comorbidities</category>
+        <category>项目</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>项目</category>
-        <category>统计学</category>
         <category>基础知识</category>
+        <category>统计学</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
         <category>科研写作</category>
@@ -118,10 +121,10 @@
 &lt;p&gt;&lt;code&gt;cells&lt;/code&gt;  和  &lt;code&gt;features&lt;/code&gt; ：记录细胞和基因的相关信息。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;meta.data&lt;/code&gt; &lt;/strong&gt;：Assay 层级的元数据，包含变量基因的均值、方差等信息。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;meta.data&lt;/code&gt; ：Assay 层级的元数据，包含变量基因的均值、方差等信息。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;key&lt;/code&gt; &lt;/strong&gt;：标记该 Assay 的前缀键，用于识别它的数据。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;key&lt;/code&gt; ：标记该 Assay 的前缀键，用于识别它的数据。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;metadata&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#metadata&#34;&gt;#&lt;/a&gt; meta.data&lt;/h3&gt;
@@ -182,12 +185,12 @@
             <guid isPermalink="true">https://new.limina.top/2025/01/21/%E5%9F%BA%E4%BA%8E%20NoneBot2%20%E7%9A%84%20QQ%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA/</guid>
             <title>基于 NoneBot2 的 QQ 机器人搭建</title>
             <link>https://new.limina.top/2025/01/21/%E5%9F%BA%E4%BA%8E%20NoneBot2%20%E7%9A%84%20QQ%20%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA/</link>
-            <category>R</category>
-            <category>scRNA-seq</category>
-            <category>Seurat</category>
+            <category>QQ</category>
+            <category>Bot</category>
+            <category>LLM</category>
             <pubDate>Tue, 21 Jan 2025 09:41:56 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;这篇文章最初写于 2020 年，题为 &lt;code&gt;如何在 Ubuntu 下使用 QQ&lt;/code&gt; ，现在 QQ 官方已经发布了 Linux 版本，原文也由此成为时代的眼泪了...... 这些技术和技巧性的东西就是如此，有很强的时效性。5 年过去，也应当进行一些 ⌈老文翻新⌋ 了&lt;/p&gt;
+&lt;p&gt;这篇文章最初写于 2020 年，题为 &lt;code&gt;如何在 Ubuntu 下使用 QQ&lt;/code&gt; ，现在 QQ 官方已经发布了 Linux 版本，原文也由此成为时代的眼泪了...... 这些技术和技巧性的东西就是如此，时效性极强。5 年过去，也应当进行一些 ⌈老文翻新⌋ 了，本文介绍如何基于 NoneBot2 在 Ubuntu 下的 QQNT 中搭建机器人&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;基于-nonebot2-的-qq-机器人搭建&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于-nonebot2-的-qq-机器人搭建&#34;&gt;#&lt;/a&gt; 基于 NoneBot2 的 QQ 机器人搭建&lt;/h2&gt;
 &lt;h3 id=&#34;什么是-go-cqhtt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是-go-cqhtt&#34;&gt;#&lt;/a&gt; 什么是 go-cqhtt&lt;/h3&gt;
@@ -199,6 +202,7 @@
 &lt;h3 id=&#34;下载-python&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载-python&#34;&gt;#&lt;/a&gt; 下载 Python&lt;/h3&gt;
 &lt;p&gt;版本需要在 3.9 以上，官网下载或者是使用 conda 都可以。&lt;/p&gt;
 &lt;h3 id=&#34;安装-nb-cli-脚手架&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-nb-cli-脚手架&#34;&gt;#&lt;/a&gt; 安装 nb-cli 脚手架&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;h2 id=&#34;如何在-ubuntu-下使用-qq2020&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如何在-ubuntu-下使用-qq2020&#34;&gt;#&lt;/a&gt; 如何在 Ubuntu 下使用 QQ（2020）&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;目前最简单的方法&lt;br /&gt;

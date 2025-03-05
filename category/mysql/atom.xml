@@ -7,70 +7,71 @@
     <category term="R" />
     <category term="生信" />
     <category term="scRNA-seq" />
-    <category term="Cytoscape.js" />
-    <category term="WES" />
-    <category term="WGS" />
     <category term="API" />
     <category term="GraphQL API" />
     <category term="Open Targets Platform" />
+    <category term="WES" />
+    <category term="WGS" />
     <category term="REST API" />
+    <category term="软件安装" />
     <category term="Ubuntu" />
+    <category term="Cytoscape.js" />
+    <category term="建站" />
     <category term="WPS" />
     <category term="Linux 折腾记录" />
-    <category term="软件安装" />
-    <category term="建站" />
     <category term="Python" />
     <category term="Java" />
     <category term="Hexo" />
     <category term="ShokaX" />
+    <category term="Web" />
     <category term="Windows" />
     <category term="虚拟机" />
-    <category term="Web" />
+    <category term="Entrez API" />
+    <category term="NCBI" />
+    <category term="Uniprot API" />
     <category term="富集分析" />
     <category term="GSEA" />
     <category term="RNA-Seq" />
     <category term="可视化" />
     <category term="Vue 3" />
-    <category term="Element Plus" />
     <category term="MySQL" />
-    <category term="Vuepress" />
+    <category term="Element Plus" />
     <category term="AI" />
     <category term="Machine Learning" />
+    <category term="Ensembl API" />
+    <category term="SNP" />
+    <category term="Vuepress" />
     <category term="BioOS" />
     <category term="PharmaNet" />
     <category term="Project" />
-    <category term="Ensembl API" />
-    <category term="SNP" />
-    <category term="Entrez API" />
-    <category term="NCBI" />
     <category term="ggsc" />
     <category term="Seurat" />
     <category term="Structured Outputs" />
     <category term="OpenAI API" />
     <category term="GPT" />
-    <category term="develop" />
     <category term="network" />
     <category term="interactome" />
+    <category term="develop" />
     <category term="Network Analysis" />
-    <category term="QQ" />
-    <category term="Bot" />
-    <category term="LLM" />
     <category term="comorbidities" />
     <category term="WordPress" />
     <category term="宝塔" />
-    <category term="项目" />
+    <category term="QQ" />
+    <category term="Bot" />
+    <category term="LLM" />
+    <category term="统计学" />
     <category term="Text mining" />
     <category term="Entrze API" />
-    <category term="基础知识" />
-    <category term="统计学" />
+    <category term="项目" />
     <category term="Metabolic Network" />
     <category term="Weighted Network" />
-    <category term="科研写作" />
+    <category term="基础知识" />
     <category term="衰老" />
     <category term="生物学年龄" />
+    <category term="科研写作" />
+    <category term="NMF" />
     <category term="pathway" />
     <category term="DEGs" />
-    <category term="NMF" />
     <entry>
         <id>https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</id>
         <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
@@ -339,8 +340,8 @@
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; run dev&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在  &lt;code&gt;ADDB/backend/&lt;/code&gt;  下启动后端项目&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="Vue 3" />
-        <category term="Element Plus" />
         <category term="MySQL" />
+        <category term="Element Plus" />
         <updated>2024-10-22T09:08:29.000Z</updated>
     </entry>
     <entry>
@@ -419,8 +420,8 @@
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pnpm&lt;/span&gt; start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;默认情况下，服务器会在  &lt;code&gt;http://localhost:3000&lt;/code&gt;  运行。&lt;/p&gt;
 </content>
         <category term="Vue 3" />
-        <category term="Element Plus" />
         <category term="MySQL" />
+        <category term="Element Plus" />
         <updated>2024-10-22T02:02:45.000Z</updated>
     </entry>
     <entry>

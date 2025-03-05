@@ -10,70 +10,71 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
-        <category>Cytoscape.js</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>REST API</category>
+        <category>软件安装</category>
         <category>Ubuntu</category>
+        <category>Cytoscape.js</category>
+        <category>建站</category>
         <category>WPS</category>
         <category>Linux 折腾记录</category>
-        <category>软件安装</category>
-        <category>建站</category>
         <category>Python</category>
         <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>Uniprot API</category>
         <category>富集分析</category>
         <category>GSEA</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>Vue 3</category>
-        <category>Element Plus</category>
         <category>MySQL</category>
-        <category>Vuepress</category>
+        <category>Element Plus</category>
         <category>AI</category>
         <category>Machine Learning</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
+        <category>Vuepress</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>ggsc</category>
         <category>Seurat</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>develop</category>
         <category>network</category>
         <category>interactome</category>
+        <category>develop</category>
         <category>Network Analysis</category>
-        <category>QQ</category>
-        <category>Bot</category>
-        <category>LLM</category>
         <category>comorbidities</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>项目</category>
+        <category>QQ</category>
+        <category>Bot</category>
+        <category>LLM</category>
+        <category>统计学</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>基础知识</category>
-        <category>统计学</category>
+        <category>项目</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>科研写作</category>
+        <category>基础知识</category>
         <category>衰老</category>
         <category>生物学年龄</category>
+        <category>科研写作</category>
+        <category>NMF</category>
         <category>pathway</category>
         <category>DEGs</category>
-        <category>NMF</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2024/11/27/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-08/</guid>
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-08-使用动态配置编写组件：以页脚美化为例</title>
@@ -145,8 +146,8 @@
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-06-前端与后端的交互</title>
             <link>https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-06/</link>
             <category>Vue 3</category>
-            <category>Element Plus</category>
             <category>MySQL</category>
+            <category>Element Plus</category>
             <pubDate>Tue, 22 Oct 2024 17:08:29 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;使用-vue-3-element-plus-从头开始写一个数据库网站-06-前端与后端的交互&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-vue-3-element-plus-从头开始写一个数据库网站-06-前端与后端的交互&#34;&gt;#&lt;/a&gt; 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 06 - 前端与后端的交互&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -417,8 +418,8 @@
             <title>使用 Vue 3 + Element Plus 从头开始写一个数据库网站-05-API 的设计与实现</title>
             <link>https://new.limina.top/2024/10/22/%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BD%91%E7%AB%99-05/</link>
             <category>Vue 3</category>
-            <category>Element Plus</category>
             <category>MySQL</category>
+            <category>Element Plus</category>
             <pubDate>Tue, 22 Oct 2024 10:02:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;使用-vue-3-element-plus-从头开始写一个数据库网站-05-api-的设计与实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-vue-3-element-plus-从头开始写一个数据库网站-05-api-的设计与实现&#34;&gt;#&lt;/a&gt; 使用 Vue 3 + Element Plus 从头开始写一个数据库网站 - 05-API 的设计与实现&lt;/h1&gt;
 &lt;blockquote&gt;

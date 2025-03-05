@@ -10,70 +10,71 @@
         <category>R</category>
         <category>生信</category>
         <category>scRNA-seq</category>
-        <category>Cytoscape.js</category>
-        <category>WES</category>
-        <category>WGS</category>
         <category>API</category>
         <category>GraphQL API</category>
         <category>Open Targets Platform</category>
+        <category>WES</category>
+        <category>WGS</category>
         <category>REST API</category>
+        <category>软件安装</category>
         <category>Ubuntu</category>
+        <category>Cytoscape.js</category>
+        <category>建站</category>
         <category>WPS</category>
         <category>Linux 折腾记录</category>
-        <category>软件安装</category>
-        <category>建站</category>
         <category>Python</category>
         <category>Java</category>
         <category>Hexo</category>
         <category>ShokaX</category>
+        <category>Web</category>
         <category>Windows</category>
         <category>虚拟机</category>
-        <category>Web</category>
+        <category>Entrez API</category>
+        <category>NCBI</category>
+        <category>Uniprot API</category>
         <category>富集分析</category>
         <category>GSEA</category>
         <category>RNA-Seq</category>
         <category>可视化</category>
         <category>Vue 3</category>
-        <category>Element Plus</category>
         <category>MySQL</category>
-        <category>Vuepress</category>
+        <category>Element Plus</category>
         <category>AI</category>
         <category>Machine Learning</category>
+        <category>Ensembl API</category>
+        <category>SNP</category>
+        <category>Vuepress</category>
         <category>BioOS</category>
         <category>PharmaNet</category>
         <category>Project</category>
-        <category>Ensembl API</category>
-        <category>SNP</category>
-        <category>Entrez API</category>
-        <category>NCBI</category>
         <category>ggsc</category>
         <category>Seurat</category>
         <category>Structured Outputs</category>
         <category>OpenAI API</category>
         <category>GPT</category>
-        <category>develop</category>
         <category>network</category>
         <category>interactome</category>
+        <category>develop</category>
         <category>Network Analysis</category>
-        <category>QQ</category>
-        <category>Bot</category>
-        <category>LLM</category>
         <category>comorbidities</category>
         <category>WordPress</category>
         <category>宝塔</category>
-        <category>项目</category>
+        <category>QQ</category>
+        <category>Bot</category>
+        <category>LLM</category>
+        <category>统计学</category>
         <category>Text mining</category>
         <category>Entrze API</category>
-        <category>基础知识</category>
-        <category>统计学</category>
+        <category>项目</category>
         <category>Metabolic Network</category>
         <category>Weighted Network</category>
-        <category>科研写作</category>
+        <category>基础知识</category>
         <category>衰老</category>
         <category>生物学年龄</category>
+        <category>科研写作</category>
+        <category>NMF</category>
         <category>pathway</category>
         <category>DEGs</category>
-        <category>NMF</category>
         <item>
             <guid isPermalink="true">https://new.limina.top/2025/02/12/Ubuntu%20%E4%B8%AD%20WPS%20%E7%9A%84%E5%AD%97%E4%BD%93%E6%B8%B2%E6%9F%93%E9%97%AE%E9%A2%98/</guid>
             <title>Ubuntu 中 WPS 的字体渲染问题</title>

@@ -25,7 +25,7 @@ export const config = {
       link: "https://www.upyun.com/"
     },
     icp: {
-      text: "苏 ICP 备 2021008103 号",
+      text: "苏 ICP 备 2021008103 号 - 2",
       link: "https://beian.miit.gov.cn/"
     },
     police: {

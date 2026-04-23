@@ -90,7 +90,7 @@ export const config = {
         text: "View CV"
       },
       blog: {
-        link: "https://new.limina.top/",
+        link: "https://log.whylim.cn/",
         text: "Read"
       },
       gallery: {

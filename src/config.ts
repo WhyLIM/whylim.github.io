@@ -31,7 +31,7 @@ export const config = {
     police: {
       text: "苏公网安备 32062302000380",
       logo: "https://img.limina.top/temp/备案图标.png",
-      link: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32062302000380"
+      link: "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32062302000380"
     },
     travellings: {
       show: true,

@@ -8,7 +8,8 @@ export default defineConfig(({ mode }) => {
   return {
     // If you are deploying to https://<USERNAME>.github.io/<REPO>/,
     // set base to '/<REPO>/'.
-    base: '/whylim.github.io/',
+    // If using custom domain, set base to '/'
+    base: '/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

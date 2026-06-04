@@ -1,5 +1,0 @@
-{
-  "name": "Portfolio of WhyLIM",
-  "description": "A personal homepage with a dynamic map background, inspired by maptoposter.",
-  "requestFramePermissions": ["geolocation"]
-}

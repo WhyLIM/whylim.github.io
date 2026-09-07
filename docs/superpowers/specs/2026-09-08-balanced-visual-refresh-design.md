@@ -9,7 +9,7 @@
 设计参数：
 
 - 设计变化度：6/10
-- 动效强度：5/10
+- 动效强度：6/10
 - 信息密度：4/10
 
 ## 保留范围
@@ -23,7 +23,7 @@
 - 个人资料、外部链接、路由、备案信息和站点域名。
 - 浅色与深色主题、中英文切换、动画跳过和重播功能。
 
-不引入新的组件库、状态管理方案、页面路由或内容模块。
+允许替换动画库、图标库和字体加载方案，也允许为明确的可访问性交互引入轻量组件。仍不引入新的状态管理方案、页面路由或内容模块。
 
 ## 设计语言
 
@@ -32,13 +32,13 @@
 ### 字体
 
 - 英文展示字体：Newsreader，主要用于 Hero 标题、Bento 大标题和语录。
-- 中文展示字体：Noto Serif SC，作为 Newsreader 的中文回退。
+- 中文展示字体：依次使用 Songti SC、STSong、Noto Serif SC 和系统衬线字体，作为 Newsreader 的中文回退。
 - 正文字体：Manrope，中文回退依次使用 Microsoft YaHei、PingFang SC 和系统无衬线字体。
 - 数据字体：保留 JetBrains Mono，用于距离、时间百分比和语言缩写。
 - Hero 标题使用紧凑字距与 `text-wrap: balance`，最大字号从 `text-9xl` 降至桌面约 `text-8xl`。
 - 正文和语录使用 `text-wrap: pretty`，避免孤行和过宽文本。
 
-字体继续通过当前 Google Fonts 方式加载，并保留 `display=swap`。不新增字体依赖包。
+Newsreader 与 Manrope 通过 Fontsource 可变字体包自托管，移除阻塞渲染的 Google Fonts `@import`。中文字体优先使用系统自带的 Songti SC、STSong、PingFang SC 和 Microsoft YaHei，Noto 字体作为通用回退。字体加载期间保留稳定的系统字体尺寸回退，降低布局偏移。
 
 ### 色彩
 
@@ -86,6 +86,10 @@
 - 桌面网格间距从 16px 调整为 12px，卡片内边距根据内容使用 18px 至 22px。
 - 主层仍保留 MBTI、故乡、当前单位、技术栈、本科院校和 Coding Cat。
 - 第二层仍保留日历进度、CV、博客和摄影。
+- 移除每张卡片重复出现的全大写 CornerLabel，仅在真正需要解释内容的卡片中保留句式化标题。
+- 故乡、当前单位和本科院校使用独立图片区域与卡片内标题区，不再将小标签或链接压在图片上。
+- 当前单位取消竖排标题，改为清晰的横向院校名称与简称。
+- 时间进度由四条带背景轨道的进度条改为 2×2 数字排版。每格显示真实百分比、周期名称与一条无背景轨道的细刻度。
 - 翻页操作触发时，将 Bento 自身滚动容器复位到顶部。
 - 移动端取消 Bento 内层滚动，使用页面的单一纵向滚动。
 
@@ -98,7 +102,47 @@
 - 地图标记、阶段聚焦和两点边界计算保持不变。
 - 瓦片加载失败时，页面仍显示主题背景和已有文本内容，不增加随机占位地图。
 
-## 动效
+## 动画架构
+
+### 依赖选择
+
+- 移除 `framer-motion`，避免两个动画运行时同时控制相同元素。
+- 引入 `gsap` 与 `@gsap/react`，使用 `useGSAP()` 管理 React 生命周期、作用域和自动清理。
+- 使用 GSAP 包内的 SplitText 处理 Hero 文字揭示，使用 Flip 处理 Bento 主层与第二层的布局切换。
+- 引入 `@phosphor-icons/react` 并移除 `lucide-react`，统一使用 regular 或 light 权重。
+- 引入 `@fontsource-variable/newsreader` 与 `@fontsource-variable/manrope` 自托管拉丁字体。
+- 不引入完整的 Radix Themes、shadcn/ui 或 Material 视觉系统。现有页面是定制化作品集，完整 UI 系统会增加体积并削弱独特性。
+
+新增 `src/lib/gsap.ts` 作为唯一注册入口，在模块顶层注册 `useGSAP`、SplitText 和 Flip。组件不重复注册插件。
+
+### React 生命周期
+
+- 每个动画组件使用根节点 ref，并将其作为 `useGSAP` 的 `scope`。
+- 依赖状态变化的动画使用 `dependencies` 与 `revertOnUpdate: true`。
+- 点击、重播和翻页等事件中创建的动画使用 `contextSafe()` 包装。
+- 组件卸载和依赖变化时由 GSAP context 自动回滚，不保留失效 tween、timeline 或内联样式。
+- 动画只操作 ref 或作用域内选择器，不使用全局类名选择器。
+
+### 阶段叙事
+
+应用级 GSAP timeline 替换多个 `setTimeout`：
+
+1. 地图聚焦所有者，Hero 问候逐行揭示。
+2. timeline 标签切换到访问者位置，文字平滑离场并显示访问者状态。
+3. timeline 进入双点总览，显示 WhyLIM、语录、距离和探索按钮。
+
+重播操作通过受控 timeline 重新创建并从头播放；跳过动画直接将 timeline 设为完成状态并进入阶段 3。React state 只记录离散阶段，不用于逐帧动画值。
+
+### 文字与布局转场
+
+- Hero 标题使用 SplitText 的 line mask 和字符级轻微交错，只动画 `yPercent` 与 `autoAlpha`。
+- SplitText 在字体完成加载后运行，并启用 `autoSplit` 处理语言和宽度变化；插件负责还原可访问文本。
+- 从总览进入分屏时，Hero 通过 transform 产生视觉位移，实际宽度由响应式 CSS Grid 决定，不逐帧动画 width。
+- Bento 主层与第二层切换使用 Flip 记录和恢复网格状态，持续时间不超过 650ms。
+- 卡片入场使用单个 timeline 与 stagger，不为每张卡片创建独立延迟链。
+- 卡片指针高光使用 `gsap.quickTo()` 更新局部 CSS 变量，只在精确指针设备上启用；离开时快速淡出。
+
+本页不使用 ScrollTrigger、ScrollSmoother、滚动劫持、磁性按钮、鼠标跟随器、MorphSVG 或持续视差。页面叙事由离散阶段驱动，不需要基于滚动位置同步动画。
 
 ### 时间与节奏
 
@@ -106,16 +150,16 @@
 - 阶段 2 停留约 1.8 秒。
 - 首次访问约 4 秒进入总览。
 - 地图飞行动画缩短到约 1.6 秒。
-- 标题模糊切换缩短到 600 至 700ms。
+- 标题使用遮罩位移与透明度切换，持续 600 至 700ms，不再动画 CSS filter blur。
 - 展开 Bento 的水平位移从 100px 降至约 40px。
-- 卡片入场移除缩放，改为 12px 纵向位移与 60ms 交错。
+- 卡片入场使用约 12px 纵向位移、轻微缩放和 55 至 65ms 交错。
 - 卡片悬停使用向上移动 2px、边框增强和轻微表面亮度变化。
 
-所有动效必须服务于叙事阶段、层级进入、交互反馈或状态切换。
+所有动效必须服务于叙事阶段、层级进入、交互反馈或状态切换。动画只使用 transform、opacity、autoAlpha 和局部 CSS 变量，避免 width、height、top、left 和滤镜动画。
 
 ### 减少动效
 
-检测 `prefers-reduced-motion: reduce` 后：
+使用 `gsap.matchMedia()` 检测 `prefers-reduced-motion: reduce` 后：
 
 - 初始状态直接进入阶段 3。
 - 地图切换不使用飞行动画。
@@ -123,12 +167,14 @@
 - Bento 卡片不交错进入。
 - 技术栈停止跑马灯并允许横向静态浏览。
 - 移除移动端循环箭头提示。
+- SplitText 保留原始可读文本，不创建字符级动画。
 
 ## 中英文与可访问性
 
 - 为 Personality、Visit、Blog、View CV、Read、Gallery 和 Coding the World 等界面文字补齐翻译。
 - 控制按钮继续使用 `aria-label`，并根据当前语言和状态提供准确文案。
 - 社交图标链接增加可访问名称。
+- 图标控制在悬停和键盘聚焦时显示轻量文本提示；优先使用原生可访问名称，不为三个控制按钮引入完整主题组件库。
 - 所有按钮和链接增加 `focus-visible` 焦点样式。
 - 图标按钮的交互热区不小于 40px。
 - 金色按钮文字对比度达到 WCAG AA。
@@ -140,19 +186,20 @@
 - 一言接口失败时继续使用现有本地备用语录。
 - 外部图片失败时保留现有回退行为，但不新增第三方依赖。
 - 主题、语言、阶段和动画跳过的现有数据流不改变。
-- 仅增加减少动效判断和 Bento 滚动容器引用，不引入全局状态。
+- 仅增加减少动效判断、动画 timeline 引用和 Bento 滚动容器引用，不引入全局状态。
 
 ## 组件修改边界
 
-- `App.tsx`：视口布局、阶段计时、主题覆盖层、分屏比例和减少动效入口。
-- `Hero.tsx`：字体层级、间距、操作样式、社交可访问性和动效降级。
-- `BentoGrid.tsx`：网格密度、统一强调色、滚动复位、翻译和动效降级。
+- `App.tsx`：视口布局、应用级 GSAP timeline、主题覆盖层、分屏比例和减少动效入口。
+- `Hero.tsx`：SplitText 标题、字体层级、间距、操作样式、社交可访问性和动效降级。
+- `BentoGrid.tsx`：Flip 翻页、网格密度、统一强调色、滚动复位、翻译和动效降级。
 - `MapBackground.tsx`：瓦片来源、滤镜类、署名和飞行动画时间。
 - `ThemeToggle.tsx`、`LanguageToggle.tsx`、`AnimationControl.tsx`：统一控制样式、焦点状态和入场时间。
 - `index.css`：字体、设计令牌、地图滤镜、表面样式、跑马灯和减少动效规则。
 - `i18n.ts`：新增缺失翻译，不修改既有个人内容。
+- `lib/gsap.ts`：集中注册和导出 GSAP、useGSAP、SplitText 与 Flip。
 
-不进行无关重构，不拆分现有组件，不变更配置结构。
+允许提取一个轻量 Bento 卡片组件来统一指针高光、焦点和表面样式。除此之外不进行无关重构，不变更配置结构。
 
 ## 验证标准
 
@@ -161,8 +208,11 @@
 - `tsc --noEmit` 通过。
 - `vite build` 通过。
 - `git diff --check` 通过。
+- 搜索确认 `framer-motion` 与 `lucide-react` 已从源码和依赖中移除。
+- 搜索确认 GSAP 插件只在 `lib/gsap.ts` 注册一次，所有 `useGSAP` 均提供 scope。
 - 搜索确认界面代码中不存在旧的蓝色、橙色、紫色交互强调色。
 - 搜索确认不存在 `h-screen` 和未降级的无限动画。
+- 搜索确认不存在逐帧修改 React state、无清理事件监听器以及动画 width、height、top、left 的实现。
 
 ### 视觉验证
 
@@ -173,6 +223,14 @@
 - 地图不再出现 API KEY REQUIRED 水印，来源署名可见但不抢占注意力。
 - 动画跳过、重播、主题切换和语言切换保持可用。
 - 减少动效条件下没有地图飞行、循环跑马灯或重复提示动画。
+- 重播和快速连续切换 Bento 页面后不存在残留动画、重复 timeline 或元素内联样式错乱。
+
+### 性能验证
+
+- 使用浏览器 Performance 面板抽查首次开场与 Bento 翻页，目标为桌面端动画期间无明显长任务和持续布局抖动。
+- 仅对实际动画元素短期设置 `will-change`，动画完成后清除。
+- 生产包不包含 Framer Motion、Lucide、ScrollTrigger、ScrollSmoother 或未使用 GSAP 插件。
+- 记录生产构建后的 JavaScript 与字体资源体积，并与修改前构建结果比较；若新增体积明显超过动画收益，优先移除非必要插件或字体字重。
 
 ## 完成定义
 

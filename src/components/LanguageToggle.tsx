@@ -1,29 +1,18 @@
-import { Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Language } from '../lib/i18n';
+import { GlobeHemisphereWest } from '@phosphor-icons/react';
+import type { Language } from '../lib/i18n';
+import GlassButton from './GlassButton';
 
 interface LanguageToggleProps {
   language: Language;
   toggleLanguage: () => void;
-  theme: 'light' | 'dark';
+  label: string;
 }
 
-export default function LanguageToggle({ language, toggleLanguage, theme }: LanguageToggleProps) {
+export default function LanguageToggle({ language, toggleLanguage, label }: LanguageToggleProps) {
   return (
-    <motion.button
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 2.1, duration: 0.8 }}
-      onClick={toggleLanguage}
-      className={`p-3 rounded-full transition-all duration-300 backdrop-blur-md border flex items-center gap-2 hover:bg-gold-400/10 hover:text-gold-400 ${
-        theme === 'dark'
-          ? 'bg-black/30 border-white/10 text-gray-400'
-          : 'bg-white/30 border-black/5 text-gray-500'
-      }`}
-      aria-label="Toggle language"
-    >
-      <Globe size={20} />
-      <span className="text-xs font-mono font-bold">{language.toUpperCase()}</span>
-    </motion.button>
+    <GlassButton onClick={toggleLanguage} aria-label={label} title={label} className="px-3">
+      <GlobeHemisphereWest aria-hidden size={19} weight="duotone" />
+      <span className="font-mono text-[0.68rem] font-semibold tracking-[0.08em]">{language.toUpperCase()}</span>
+    </GlassButton>
   );
 }

@@ -1,375 +1,347 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Home, BookOpen, ExternalLink, Terminal, School, ArrowRight, Clock, Image as ImageIcon, FileText, Aperture } from 'lucide-react';
-import { Language, translations } from '../lib/i18n';
-import { useState, useEffect } from 'react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowSquareOut,
+  BookOpenText,
+  Camera,
+  Code,
+  FileText,
+} from '@phosphor-icons/react';
+import { useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react';
 import { config } from '../config';
+import type { Language } from '../lib/i18n';
+import { translations } from '../lib/i18n';
+import { Flip, gsap, useGSAP } from '../lib/gsap';
 
 interface BentoGridProps {
   theme: 'light' | 'dark';
   language: Language;
 }
 
+type Page = 'main' | 'more';
+type QuickMover = ReturnType<typeof gsap.quickTo>;
+
 export default function BentoGrid({ theme, language }: BentoGridProps) {
-  const isDark = theme === 'dark';
+  const rootRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const pendingFlip = useRef<ReturnType<typeof Flip.getState> | null>(null);
+  const movers = useRef(new WeakMap<HTMLElement, { x: QuickMover; y: QuickMover }>());
+  const [page, setPage] = useState<Page>('main');
   const t = translations[language].bento;
-  const [page, setPage] = useState<'main' | 'more'>('main');
+  const isDark = theme === 'dark';
 
-  // Reset page when language changes
-  useEffect(() => {
-    // setPage('main'); 
-  }, [language]);
+  const { contextSafe } = useGSAP(() => {
+    const cards = gsap.utils.toArray<HTMLElement>('[data-bento-card]', rootRef.current);
+    const media = gsap.matchMedia();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        staggerChildren: 0.05,
-        staggerDirection: -1,
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      if (pendingFlip.current) {
+        Flip.from(pendingFlip.current, {
+          duration: 0.68,
+          ease: 'power3.inOut',
+          simple: true,
+        });
+        pendingFlip.current = null;
       }
+
+      gsap.fromTo(
+        cards,
+        { autoAlpha: 0, scale: 0.975, y: 18 },
+        { autoAlpha: 1, duration: 0.52, ease: 'power3.out', scale: 1, stagger: 0.055, y: 0 },
+      );
+    });
+
+    media.add('(prefers-reduced-motion: reduce)', () => {
+      pendingFlip.current = null;
+      gsap.set(cards, { autoAlpha: 1, clearProps: 'transform' });
+    });
+
+    return () => media.revert();
+  }, { scope: rootRef, dependencies: [page] });
+
+  const changePage = contextSafe((nextPage: Page) => {
+    if (nextPage === page || !gridRef.current) return;
+
+    pendingFlip.current = Flip.getState(gridRef.current);
+    setPage(nextPage);
+
+    requestAnimationFrame(() => {
+      rootRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
+  });
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === 'touch') return;
+
+    const card = (event.target as HTMLElement).closest<HTMLElement>('[data-bento-card]');
+    if (!card || !rootRef.current?.contains(card)) return;
+
+    let move = movers.current.get(card);
+    if (!move) {
+      move = {
+        x: gsap.quickTo(card, '--spot-x', { duration: 0.3, ease: 'power2.out' }),
+        y: gsap.quickTo(card, '--spot-y', { duration: 0.3, ease: 'power2.out' }),
+      };
+      movers.current.set(card, move);
     }
+
+    const bounds = card.getBoundingClientRect();
+    move.x(((event.clientX - bounds.left) / bounds.width) * 100);
+    move.y(((event.clientY - bounds.top) / bounds.height) * 100);
   };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    },
-    exit: { opacity: 0, scale: 0.9, y: 20 }
-  };
-
-  const cardClass = `relative overflow-hidden rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl group ${
-    isDark 
-      ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
-      : 'bg-white/70 border border-white/60 hover:bg-white/80 shadow-xl'
-  } backdrop-blur-md`;
-
-  const textPrimary = isDark ? 'text-white' : 'text-gray-900';
-  const textSecondary = isDark ? 'text-gray-400' : 'text-gray-600';
-
-  // Helper for corner labels
-  const CornerLabel = ({ 
-    icon: Icon, 
-    text, 
-    isImage = false,
-    position = 'left'
-  }: { 
-    icon: any, 
-    text: string, 
-    isImage?: boolean,
-    position?: 'left' | 'right'
-  }) => (
-    <div className={`absolute top-6 flex items-center gap-2 ${
-      position === 'right' ? 'right-6' : 'left-6'
-    } ${
-      isImage 
-        ? 'text-white/90 drop-shadow-md' 
-        : (isDark ? 'text-gray-400' : 'text-gray-500')
-    } z-20`}>
-      <Icon size={14} />
-      <span className="text-xs font-sans font-bold tracking-wider uppercase">{text}</span>
-    </div>
-  );
-
-  // Helper for background image overlay cards
-  const ImageOverlay = ({ src, alt }: { src: string, alt: string }) => (
-    <div className="absolute inset-0 z-0">
-      <img 
-        src={src} 
-        alt={alt} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-        onError={(e) => {
-          (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${alt}/400/400?grayscale`;
-        }}
-      />
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
-    </div>
-  );
-
-  // Helper for consistent card links
-  const CardLink = ({ href, text, isImage = false }: { href: string, text: string, isImage?: boolean }) => (
-    <a 
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={(e) => e.stopPropagation()}
-      className={`absolute bottom-6 right-6 flex items-center gap-1.5 text-xs font-sans font-medium transition-colors z-20 ${
-        isImage 
-          ? 'text-white/80 hover:text-white drop-shadow-md' 
-          : (isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-black')
-      }`}
-    >
-      <span>{text}</span>
-      <ExternalLink size={14} />
-    </a>
-  );
-
-  // Time Calculation Helper
-  const getTimeProgress = () => {
-    const now = new Date();
-    const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const startOfWeek = new Date(now.setDate(now.getDate() - now.getDay()));
-    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-    const startOfYear = new Date(now.getFullYear(), 0, 1);
-
-    const dayProgress = ((Date.now() - startOfDay.getTime()) / (24 * 60 * 60 * 1000)) * 100;
-    const weekProgress = ((Date.now() - startOfWeek.getTime()) / (7 * 24 * 60 * 60 * 1000)) * 100;
-    const monthProgress = (now.getDate() / new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()) * 100;
-    const yearProgress = ((Date.now() - startOfYear.getTime()) / (365 * 24 * 60 * 60 * 1000)) * 100;
-
-    return { dayProgress, weekProgress, monthProgress, yearProgress };
-  };
-
-  const { dayProgress, weekProgress, monthProgress, yearProgress } = getTimeProgress();
-
-  // Tech Stack Icons (using simple-icons CDN)
-  const techStack = config.bento.techStack;
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-5 lg:p-0 relative overflow-y-auto lg:overflow-visible">
-      <AnimatePresence mode="wait">
+    <div ref={rootRef} onPointerMove={handlePointerMove} className="w-full scroll-mt-20">
+      <div
+        ref={gridRef}
+        data-flip-id="bento-grid"
+        className="grid w-full grid-cols-1 gap-3 md:grid-cols-2 lg:h-[calc(100dvh-10rem)] lg:min-h-[34rem] lg:max-h-[46rem] lg:grid-cols-3 lg:grid-rows-[repeat(3,minmax(0,1fr))_2.75rem] xl:gap-4"
+      >
         {page === 'main' ? (
-          <motion.div
-            key="main-grid"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[minmax(11.5rem,1fr)_minmax(11.5rem,1fr)_minmax(11.5rem,1fr)_auto] gap-4 w-full max-w-2xl lg:h-full lg:max-h-full"
-          >
-            {/* 1. MBTI Card (2x1) - Top Left */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 md:col-span-2 lg:col-span-2 row-span-1 flex items-center !overflow-visible min-h-[200px] lg:min-h-0`}>
-              <CornerLabel icon={Terminal} text="Personality" position="right" />
-              <div className="absolute left-[-20px] top-[-20px] w-48 h-48 z-0">
-                 <img 
-                   src={config.bento.mbti.image} 
-                   alt="INFJ" 
-                   className="w-full h-full object-contain drop-shadow-lg transform -rotate-12 group-hover:rotate-0 transition-transform duration-500"
-                   referrerPolicy="no-referrer"
-                 />
-              </div>
-              <div className="relative z-10 ml-auto flex flex-col justify-center h-full text-right items-end w-full">
-                <h3 className="text-4xl font-serif font-bold text-[#5B8A72] mb-1">{config.bento.mbti.type}</h3>
-                <p className={`text-sm font-sans ${textSecondary} mb-1`}>{config.bento.mbti.desc[language]}</p>
-                <div className="flex gap-2 justify-end flex-wrap">
-                  {config.bento.mbti.tags[language].map((tag: string) => (
-                    <span key={tag} className="px-3 py-1 bg-gradient-to-br from-[#8FB39A] to-[#5B8A72] text-white text-[10px] font-sans rounded-full font-medium tracking-wide shadow-sm backdrop-blur-sm">
-                      {tag}
-                    </span>
-                  ))}
+          <>
+            <article data-bento-card className="bento-card group min-h-48 p-5 md:col-span-2 lg:min-h-0">
+              <div className="relative z-10 ml-auto flex h-full w-[62%] flex-col items-end justify-center text-right">
+                <p className="eyebrow mb-3">{t.personality}</p>
+                <h2 className="font-serif text-4xl font-semibold tracking-[-0.03em] text-[var(--accent)]">{config.bento.mbti.type}</h2>
+                <p className="mt-1 text-sm text-[var(--muted)]">{config.bento.mbti.desc[language]}</p>
+                <div className="mt-3 flex flex-wrap justify-end gap-x-3 gap-y-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                  {config.bento.mbti.tags[language].map((tag) => <span key={tag}>{tag}</span>)}
                 </div>
               </div>
-              <CardLink 
-                href={config.bento.mbti.link[language]} 
-                text={t.learnMore} 
+              <img
+                src={config.bento.mbti.image}
+                alt="INFJ advocate illustration"
+                className="absolute -bottom-7 -left-8 h-[125%] w-[48%] rotate-[-7deg] object-contain transition-transform duration-500 group-hover:rotate-0"
+                referrerPolicy="no-referrer"
               />
-            </motion.div>
+              <CardLink href={config.bento.mbti.link[language]} label={t.learnMore} />
+            </article>
 
-            {/* 2. Hometown (1x1) - Top Right */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 row-span-1 flex flex-col justify-center items-center text-center !p-0 min-h-[200px] lg:min-h-0`}>
-              <ImageOverlay src={config.bento.hometown.image} alt="Nantong" />
-              <CornerLabel icon={Home} text={t.hometownDesc} isImage={true} />
-              <div className="relative z-10 flex flex-col items-center gap-2">
-                <h3 className="text-2xl font-serif font-bold text-white drop-shadow-md">{config.bento.hometown.name[language]}</h3>
+            <ImageCard
+              src={config.bento.hometown.image}
+              alt={config.bento.hometown.name[language]}
+              label={t.hometownDesc}
+              title={config.bento.hometown.name[language]}
+            />
+
+            <ImageCard
+              src={config.bento.school.logo}
+              alt={config.bento.school.name[language]}
+              label={t.schoolDesc}
+              title={config.bento.school.name[language]}
+              href={config.bento.school.link}
+              className="lg:row-span-2"
+            />
+
+            <article data-bento-card className="bento-card flex min-h-40 flex-col justify-center p-5 md:col-span-2 lg:min-h-0">
+              <div className="mb-5 flex items-center justify-between">
+                <p className="eyebrow">{t.tech}</p>
+                <Code aria-hidden size={19} weight="duotone" className="text-[var(--accent)]" />
               </div>
-            </motion.div>
-
-            {/* 3. School (1x2) - Left Vertical Column */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 lg:row-span-2 flex flex-col justify-center items-center text-center !p-0 min-h-[200px] lg:min-h-0`}>
-              <ImageOverlay src={config.bento.school.logo} alt="SIAT" />
-              <CornerLabel icon={School} text={t.schoolDesc} isImage={true} />
-              <div className="relative z-10 flex flex-col items-center gap-2">
-                <h3 className="text-3xl font-bold text-white drop-shadow-md lg:writing-vertical-rl tracking-widest font-serif whitespace-pre-wrap">
-                  {config.bento.school.name[language]}
-                </h3>
-              </div>
-              <CardLink href={config.bento.school.link} text="Visit" isImage={true} />
-            </motion.div>
-
-            {/* 4. Tech Stack (2x1) - Middle Row Right */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 md:col-span-2 lg:col-span-2 row-span-1 flex flex-col justify-center overflow-hidden min-h-[160px] lg:min-h-0`}>
-              <CornerLabel icon={Code} text={t.tech} />
-              <div className="relative w-full overflow-hidden mt-4">
-                <div className="flex gap-8 animate-marquee whitespace-nowrap">
-                  {[...techStack, ...techStack].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-2 min-w-[60px]">
-                      <img 
-                        src={`https://cdn.simpleicons.org/${tech.icon}/${isDark ? 'white' : 'black'}`} 
-                        alt={tech.name}
-                        className="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+              <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div className="animate-marquee flex w-max gap-7 pr-7">
+                  {[...config.bento.techStack, ...config.bento.techStack].map((tech, index) => (
+                    <div key={`${tech.name}-${index}`} className="flex min-w-12 flex-col items-center gap-2">
+                      <img
+                        src={`https://cdn.simpleicons.org/${tech.icon}/${isDark ? 'd9d4ca' : '35322d'}`}
+                        alt=""
+                        aria-hidden
+                        className="h-7 w-7 opacity-80"
                       />
-                      <span className={`text-[10px] font-mono ${textSecondary}`}>{tech.name}</span>
+                      <span className="font-mono text-[0.62rem] text-[var(--muted)]">{tech.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </article>
 
-            {/* 5. Undergraduate School (1x1) - Bottom Row Middle */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 row-span-1 flex flex-col justify-center items-center text-center !p-0 min-h-[200px] lg:min-h-0`}>
-              <ImageOverlay src={config.bento.undergrad.image} alt="Soochow University" />
-              <CornerLabel icon={School} text={t.undergradDesc} isImage={true} />
-              <div className="relative z-10 flex flex-col items-center gap-2">
-                <h3 className="text-2xl font-serif font-bold text-white drop-shadow-md">{config.bento.undergrad.name[language]}</h3>
-              </div>
-              <CardLink href={config.bento.undergrad.link} text="Visit" isImage={true} />
-            </motion.div>
+            <ImageCard
+              src={config.bento.undergrad.image}
+              alt={config.bento.undergrad.name[language]}
+              label={t.undergradDesc}
+              title={config.bento.undergrad.name[language]}
+              href={config.bento.undergrad.link}
+            />
 
-            {/* 6. Coding Cat (1x1) - Bottom Row Right */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 row-span-1 !p-0 flex items-center justify-center !overflow-visible z-30 min-h-[200px] lg:min-h-0`}>
-               <div className="absolute -top-4 -left-4 z-20">
-                 <h3 className={`text-4xl font-serif font-bold leading-tight drop-shadow-md transform -rotate-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                   Coding<br/>the World.
-                 </h3>
-               </div>
-              <img 
-                src={config.bento.codingCat.image} 
-                alt="Coding Cat" 
-                className="absolute -bottom-4 -right-4 object-cover opacity-100 transition-opacity"
+            <article data-bento-card className="bento-card min-h-48 p-5 lg:min-h-0">
+              <p className="eyebrow relative z-10 max-w-28 leading-[1.35]">{t.coding}</p>
+              <div className="absolute left-5 top-12 h-px w-10 bg-[var(--accent)]" />
+              <img
+                src={config.bento.codingCat.image}
+                alt="Coding cat"
+                className="motion-image absolute -bottom-3 -right-3 max-h-[88%] max-w-[82%] object-contain"
                 referrerPolicy="no-referrer"
               />
-            </motion.div>
-
-            {/* View More Button (Grid Item) */}
-            <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-end items-center relative h-12">
-              <button 
-                onClick={() => setPage('more')}
-                className={`flex items-center gap-2 text-sm font-medium transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-black'}`}
-              >
-                {t.viewMore}
-                <ArrowRight size={16} />
-              </button>
-            </motion.div>
-          </motion.div>
+            </article>
+          </>
         ) : (
-          <motion.div
-            key="more-grid"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[minmax(11.5rem,1fr)_minmax(11.5rem,1fr)_minmax(11.5rem,1fr)_auto] gap-4 w-full max-w-2xl lg:h-full lg:max-h-full"
-          >
-            {/* 1. Time Section (3x2) - Top Rows */}
-            <motion.div variants={itemVariants} className={`${cardClass} col-span-1 md:col-span-2 lg:col-span-3 lg:row-span-2 flex flex-col lg:flex-row !p-0`}>
-              {/* Left 1/3: Calendar */}
-              <div className={`w-full lg:w-1/3 h-auto lg:h-full border-b lg:border-b-0 lg:border-r ${isDark ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'} flex flex-col items-center justify-center p-6 lg:p-4`}>
-                <span className="text-xs font-serif italic opacity-60">{new Date().getFullYear()}</span>
-                <span className={`text-6xl font-serif font-bold my-2 ${textPrimary}`}>{new Date().getDate()}</span>
-                <span className={`text-sm font-sans uppercase tracking-widest ${textSecondary}`}>
-                  {new Date().toLocaleDateString(language === 'en' ? 'en-US' : 'zh-CN', { weekday: 'long' })}
-                </span>
-                <div className="mt-2 w-8 h-px bg-current opacity-20" />
-                <span className="mt-2 text-xs font-sans opacity-60">{t.calendar}</span>
-              </div>
-
-              {/* Right 2/3: Progress */}
-              <div className="w-full lg:w-2/3 h-full p-6 flex flex-col justify-center gap-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className={`font-serif font-bold ${textPrimary}`}>{t.timeTitle}</h3>
-                  <Clock size={16} className={textSecondary} />
-                </div>
-                <div className="grid grid-cols-1 gap-y-6">
-                  <ProgressBar label={t.day} progress={dayProgress} isDark={isDark} textSecondary={textSecondary} />
-                  <ProgressBar label={t.week} progress={weekProgress} isDark={isDark} textSecondary={textSecondary} />
-                  <ProgressBar label={t.month} progress={monthProgress} isDark={isDark} textSecondary={textSecondary} />
-                  <ProgressBar label={t.year} progress={yearProgress} isDark={isDark} textSecondary={textSecondary} />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 2. Websites Section - Row 3 */}
-            
-            {/* CV (1x1) */}
-            <motion.div 
-              variants={itemVariants} 
-              className={`${cardClass} col-span-1 row-span-1 flex flex-col justify-center items-center text-center cursor-pointer group hover:ring-2 hover:ring-blue-500/20 min-h-[200px] lg:min-h-0`}
-              onClick={() => window.open(config.bento.cards.cv.link, '_blank')}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <CornerLabel icon={FileText} text={t.cvDesc} />
-              <div className={`absolute -right-8 -bottom-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-500 transform rotate-12 ${isDark ? 'text-white' : 'text-blue-900'}`}>
-                <FileText size={160} strokeWidth={1} />
-              </div>
-              <div className="relative z-10">
-                <h3 className={`text-2xl font-serif font-bold ${textPrimary}`}>{t.cv}</h3>
-              </div>
-              <CardLink href={config.bento.cards.cv.link} text={config.bento.cards.cv.text} />
-            </motion.div>
-
-            {/* Blog (1x1) */}
-            <motion.div 
-              variants={itemVariants} 
-              className={`${cardClass} col-span-1 row-span-1 flex flex-col justify-center items-center text-center cursor-pointer group hover:ring-2 hover:ring-orange-500/20 min-h-[200px] lg:min-h-0`}
-              onClick={() => window.open(config.bento.cards.blog.link, '_blank')}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <CornerLabel icon={BookOpen} text="Blog" />
-              <div className={`absolute -right-8 -top-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-500 transform -rotate-12 ${isDark ? 'text-white' : 'text-orange-900'}`}>
-                <BookOpen size={160} strokeWidth={1} />
-              </div>
-              <div className="relative z-10">
-                <h3 className={`text-2xl font-serif font-bold ${textPrimary}`}>{t.blog}</h3>
-              </div>
-              <CardLink href={config.bento.cards.blog.link} text={config.bento.cards.blog.text} />
-            </motion.div>
-
-            {/* Photo (1x1) */}
-            <motion.div 
-              variants={itemVariants} 
-              className={`${cardClass} col-span-1 md:col-span-2 lg:col-span-1 row-span-1 flex flex-col justify-center items-center text-center cursor-pointer group hover:ring-2 hover:ring-purple-500/20 min-h-[200px] lg:min-h-0`}
-              onClick={() => window.open(config.bento.cards.gallery.link, '_blank')}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <CornerLabel icon={ImageIcon} text={t.photoDesc} />
-              <div className={`absolute -right-8 -bottom-8 opacity-[0.05] group-hover:opacity-10 transition-opacity duration-500 transform rotate-12 ${isDark ? 'text-white' : 'text-purple-900'}`}>
-                <Aperture size={160} strokeWidth={1} />
-              </div>
-              <div className="relative z-10">
-                <h3 className={`text-2xl font-serif font-bold ${textPrimary}`}>{t.photo}</h3>
-              </div>
-              <CardLink href={config.bento.cards.gallery.link} text={config.bento.cards.gallery.text} />
-            </motion.div>
-
-            {/* Back Button (Grid Item) */}
-            <motion.div variants={itemVariants} className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-end items-center h-12">
-              <button 
-                onClick={() => setPage('main')}
-                className={`flex items-center gap-2 text-sm font-medium transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-black'}`}
-              >
-                <ArrowRight className="rotate-180" size={16} />
-                {t.back}
-              </button>
-            </motion.div>
-          </motion.div>
+          <>
+            <TimeCard language={language} />
+            <SiteCard
+              href={config.bento.cards.cv.link}
+              label={t.cvDesc}
+              title={t.cv}
+              action={t.open}
+              icon={<FileText aria-hidden size={42} weight="duotone" />}
+            />
+            <SiteCard
+              href={config.bento.cards.blog.link}
+              label={t.blog}
+              title={t.blog}
+              action={t.open}
+              icon={<BookOpenText aria-hidden size={42} weight="duotone" />}
+            />
+            <SiteCard
+              href={config.bento.cards.gallery.link}
+              label={t.photoDesc}
+              title={t.photo}
+              action={t.open}
+              icon={<Camera aria-hidden size={42} weight="duotone" />}
+              className="md:col-span-2 lg:col-span-1"
+            />
+          </>
         )}
-      </AnimatePresence>
+
+        <div className="flex min-h-11 items-center justify-end md:col-span-2 lg:col-span-3">
+          <button
+            type="button"
+            onClick={() => changePage(page === 'main' ? 'more' : 'main')}
+            className="group inline-flex items-center gap-2 rounded-lg px-2 py-2 text-sm font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+          >
+            {page === 'more' && <ArrowLeft aria-hidden size={16} weight="bold" className="transition-transform group-hover:-translate-x-0.5" />}
+            {page === 'main' ? t.viewMore : t.back}
+            {page === 'main' && <ArrowRight aria-hidden size={16} weight="bold" className="transition-transform group-hover:translate-x-0.5" />}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
-const ProgressBar = ({ label, progress, isDark, textSecondary }: { label: string, progress: number, isDark: boolean, textSecondary: string }) => (
-  <div className="flex flex-col gap-1">
-    <div className="flex justify-between text-xs font-sans">
-      <span className={textSecondary}>{label}</span>
-      <span className="font-mono opacity-80">{Math.round(progress)}%</span>
-    </div>
-    <div className={`w-full h-1.5 rounded-full ${isDark ? 'bg-white/10' : 'bg-black/10'}`}>
-      <div 
-        className={`h-full rounded-full ${isDark ? 'bg-gold-400' : 'bg-gold-500'}`} 
-        style={{ width: `${progress}%` }}
+function ImageCard({ src, alt, label, title, href, className = '' }: {
+  src: string;
+  alt: string;
+  label: string;
+  title: string;
+  href?: string;
+  className?: string;
+}) {
+  return (
+    <article data-bento-card className={`bento-card group min-h-48 bg-[#1a1916] ${className} lg:min-h-0`}>
+      <img
+        src={src}
+        alt={alt}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+        referrerPolicy="no-referrer"
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/12 to-black/15" />
+      <div className="absolute inset-x-0 bottom-0 z-10 p-5 text-white">
+        <p className="mb-2 text-[0.65rem] font-semibold tracking-[0.16em] text-white/70 uppercase">{label}</p>
+        <h2 className="whitespace-pre-line font-serif text-2xl font-semibold leading-tight tracking-[-0.025em]">{title}</h2>
+      </div>
+      {href && (
+        <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label}: ${title}`} className="absolute inset-0 z-20">
+          <ArrowSquareOut aria-hidden size={18} weight="bold" className="absolute right-5 top-5 text-white/80" />
+        </a>
+      )}
+    </article>
+  );
+}
+
+function CardLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute bottom-5 right-5 z-20 inline-flex items-center gap-1.5 text-[0.68rem] font-semibold text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+    >
+      {label}
+      <ArrowSquareOut aria-hidden size={14} weight="bold" />
+    </a>
+  );
+}
+
+function TimeCard({ language }: { language: Language }) {
+  const t = translations[language].bento;
+  const now = new Date();
+  const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfWeek = new Date(startOfDay);
+  startOfWeek.setDate(startOfDay.getDate() - startOfDay.getDay());
+  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+  const startOfYear = new Date(now.getFullYear(), 0, 1);
+  const nextYear = new Date(now.getFullYear() + 1, 0, 1);
+  const progress = {
+    day: ((now.getTime() - startOfDay.getTime()) / 86_400_000) * 100,
+    week: ((now.getTime() - startOfWeek.getTime()) / (7 * 86_400_000)) * 100,
+    month: ((now.getTime() - startOfMonth.getTime()) / (new Date(now.getFullYear(), now.getMonth() + 1, 1).getTime() - startOfMonth.getTime())) * 100,
+    year: ((now.getTime() - startOfYear.getTime()) / (nextYear.getTime() - startOfYear.getTime())) * 100,
+  };
+
+  return (
+    <article data-bento-card className="bento-card grid min-h-[26rem] md:col-span-2 lg:col-span-3 lg:row-span-2 lg:min-h-0 lg:grid-cols-[0.8fr_2.2fr]">
+      <div className="flex flex-col items-center justify-center border-b border-[rgb(var(--line)/0.1)] p-6 lg:border-b-0 lg:border-r">
+        <p className="eyebrow">{now.getFullYear()}</p>
+        <strong className="my-2 font-serif text-7xl font-medium tracking-[-0.06em] text-[var(--ink)]">{now.getDate()}</strong>
+        <p className="text-sm font-semibold text-[var(--muted)]">
+          {now.toLocaleDateString(language === 'en' ? 'en-US' : 'zh-CN', { weekday: 'long' })}
+        </p>
+        <p className="mt-2 text-xs text-[var(--muted)]">{t.calendar}</p>
+      </div>
+      <div className="flex flex-col justify-center p-6 lg:p-8">
+        <h2 className="mb-6 font-serif text-2xl font-semibold tracking-[-0.02em]">{t.timeTitle}</h2>
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[rgb(var(--line)/0.1)] bg-[rgb(var(--line)/0.1)]">
+          <TimeMetric label={t.day} value={progress.day} />
+          <TimeMetric label={t.week} value={progress.week} />
+          <TimeMetric label={t.month} value={progress.month} />
+          <TimeMetric label={t.year} value={progress.year} />
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function TimeMetric({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="bg-[rgb(var(--panel-strong)/0.9)] p-4">
+      <p className="text-[0.68rem] font-semibold tracking-[0.1em] text-[var(--muted)] uppercase">{label}</p>
+      <p className="mt-1 font-serif text-3xl font-medium tracking-[-0.04em] text-[var(--ink)]">
+        {Math.max(0, Math.min(100, Math.round(value)))}<span className="ml-0.5 text-sm text-[var(--muted)]">%</span>
+      </p>
     </div>
-  </div>
-);
+  );
+}
+
+function SiteCard({ href, label, title, action, icon, className = '' }: {
+  href: string;
+  label: string;
+  title: string;
+  action: string;
+  icon: ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      data-bento-card
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`bento-card group flex min-h-48 flex-col justify-between p-5 lg:min-h-0 ${className}`}
+    >
+      <div className="flex items-start justify-between">
+        <p className="eyebrow leading-[1.35]">{label}</p>
+        <span className="text-[var(--accent)] opacity-80 transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">{icon}</span>
+      </div>
+      <div className="flex items-end justify-between gap-4">
+        <h2 className="font-serif text-2xl font-semibold leading-tight tracking-[-0.025em] text-[var(--ink)]">{title}</h2>
+        <span className="inline-flex shrink-0 items-center gap-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+          {action}
+          <ArrowSquareOut aria-hidden size={14} weight="bold" />
+        </span>
+      </div>
+    </a>
+  );
+}

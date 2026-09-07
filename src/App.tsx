@@ -73,17 +73,23 @@ export default function App() {
       return;
     }
 
-    const media = gsap.matchMedia();
-    media.add('(prefers-reduced-motion: reduce)', () => setStage(3));
-    media.add('(prefers-reduced-motion: no-preference)', () => {
-      const timeline = gsap.timeline();
-      timeline
-        .call(() => setStage(1), [], 0)
-        .call(() => setStage(2), [], 1.6)
-        .call(() => setStage(3), [], 3.2);
-    });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setStage(3);
+      return;
+    }
 
-    return () => media.revert();
+    const beat = { progress: 0 };
+    const timeline = gsap.timeline({ paused: true })
+      .to(beat, { duration: 1.6, ease: 'none', progress: 1, onComplete: () => setStage(2) })
+      .to(beat, { duration: 1.6, ease: 'none', progress: 2, onComplete: () => setStage(3) });
+
+    setStage(1);
+    const frame = window.requestAnimationFrame(() => timeline.play(0));
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      timeline.kill();
+    };
   }, { scope: rootRef, dependencies: [introRun] });
 
   useGSAP(() => {

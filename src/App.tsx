@@ -3,225 +3,271 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
-import MapBackground from './components/MapBackground';
-import Hero from './components/Hero';
-import BentoGrid from './components/BentoGrid';
-import ThemeToggle from './components/ThemeToggle';
-import LanguageToggle from './components/LanguageToggle';
+import { Train } from '@phosphor-icons/react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { flushSync } from 'react-dom';
 import AnimationControl from './components/AnimationControl';
-import { Language, translations } from './lib/i18n';
-import { calculateDistance } from './lib/geo';
-import { AnimatePresence, motion } from 'framer-motion';
-import { TrainFront } from 'lucide-react';
+import BentoGrid from './components/BentoGrid';
+import Hero from './components/Hero';
+import LanguageToggle from './components/LanguageToggle';
+import MapBackground from './components/MapBackground';
+import ThemeToggle from './components/ThemeToggle';
 import { config } from './config';
+import { calculateDistance } from './lib/geo';
+import type { Language } from './lib/i18n';
+import { translations } from './lib/i18n';
+import { gsap, useGSAP } from './lib/gsap';
+import { revealTheme } from './lib/themeTransition';
+
+type Stage = 1 | 2 | 3 | 4;
 
 export default function App() {
-  // State
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const rootRef = useRef<HTMLElement>(null);
+  const bentoRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
+  const introTimelineRef = useRef<gsap.core.Timeline | null>(null);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() =>
+    window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+  );
   const [language, setLanguage] = useState<Language>('en');
-  
-  // Animation Skip State
-  const [skipAnimation, setSkipAnimation] = useState(() => {
-    return localStorage.getItem('skipAnimation') === 'true';
-  });
-
-  // If skipping, start at stage 3 (Overview), otherwise stage 1
-  const [stage, setStage] = useState<1 | 2 | 3 | 4>(() => skipAnimation ? 3 : 1);
-  
-  // Track if we are in the initial "skipped" state to force duration=0
-  const [isSkippedLoad, setIsSkippedLoad] = useState(skipAnimation);
-
+  const [skipAnimation, setSkipAnimation] = useState(() => localStorage.getItem('skipAnimation') === 'true');
+  const initiallySkipped = useRef(skipAnimation);
+  const [introRun, setIntroRun] = useState(0);
+  const [stage, setStage] = useState<Stage>(() => (skipAnimation ? 3 : 1));
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
-  
-  // Owner location (e.g., Shanghai)
-  const ownerLocation = config.ownerLocation; 
+  const ownerLocation = config.ownerLocation;
+  const t = translations[language];
 
   useEffect(() => {
-    // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+  }, [language]);
 
-    // Get user location immediately but silently
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          if (typeof latitude === 'number' && typeof longitude === 'number' && !isNaN(latitude) && !isNaN(longitude)) {
-            setUserLocation([latitude, longitude]);
-            // Calculate distance
-            const d = calculateDistance(ownerLocation[0], ownerLocation[1], latitude, longitude);
-            setDistance(d);
-          }
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-          // User denied or error - userLocation remains null
-        }
-      );
-    }
-  }, []);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
-  // Effect to persist skipAnimation
   useEffect(() => {
     localStorage.setItem('skipAnimation', String(skipAnimation));
   }, [skipAnimation]);
 
-  // Animation Sequence Timer
   useEffect(() => {
-    if (stage === 1) {
-      const timer = setTimeout(() => setStage(2), 4000);
-      return () => clearTimeout(timer);
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const { latitude, longitude } = coords;
+        if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+
+        setUserLocation([latitude, longitude]);
+        setDistance(calculateDistance(ownerLocation[0], ownerLocation[1], latitude, longitude));
+      },
+      () => {
+        setUserLocation(null);
+        setDistance(null);
+      },
+      { enableHighAccuracy: false, maximumAge: 600_000, timeout: 8_000 },
+    );
+  }, [ownerLocation]);
+
+  useGSAP(() => {
+    if (introRun === 0 && initiallySkipped.current) {
+      setStage(3);
+      return;
     }
-    if (stage === 2) {
-      const timer = setTimeout(() => setStage(3), 4000);
-      return () => clearTimeout(timer);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setStage(3);
+      return;
     }
-  }, [stage]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+    const beat = { progress: 0 };
+    const timeline = gsap.timeline({ paused: true })
+      .to(beat, { duration: 2.8, ease: 'none', progress: 1, onComplete: () => setStage(2) })
+      .to(beat, { duration: 2.8, ease: 'none', progress: 2, onComplete: () => setStage(3) });
 
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
-  };
+    introTimelineRef.current = timeline;
+    setStage(1);
+    const frame = window.requestAnimationFrame(() => timeline.play(0));
 
-  const toggleSkip = () => {
-    setSkipAnimation(prev => !prev);
-  };
+    return () => {
+      window.cancelAnimationFrame(frame);
+      timeline.kill();
+      if (introTimelineRef.current === timeline) {
+        introTimelineRef.current = null;
+      }
+    };
+  }, { scope: rootRef, dependencies: [introRun] });
+
+  useGSAP(() => {
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.from('[data-control]', {
+        autoAlpha: 0,
+        duration: 0.55,
+        ease: 'power3.out',
+        stagger: 0.06,
+        y: -12,
+      });
+    });
+
+    return () => media.revert();
+  }, { scope: rootRef });
+
+  useGSAP(() => {
+    if (stage !== 4 || !bentoRef.current) return;
+
+    const media = gsap.matchMedia();
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.fromTo(
+        bentoRef.current,
+        { autoAlpha: 0, x: 48 },
+        { autoAlpha: 1, duration: 0.8, ease: 'power3.out', x: 0 },
+      );
+    });
+    media.add('(prefers-reduced-motion: reduce)', () => gsap.set(bentoRef.current, { autoAlpha: 1 }));
+
+    return () => media.revert();
+  }, { scope: rootRef, dependencies: [stage] });
+
+  useGSAP(() => {
+    if (stage < 3 || !footerRef.current) return;
+
+    gsap.fromTo(
+      footerRef.current,
+      { autoAlpha: 0, y: 10 },
+      { autoAlpha: 1, duration: 0.5, ease: 'power2.out', y: 0 },
+    );
+  }, { scope: rootRef, dependencies: [stage] });
 
   const handleReplay = () => {
-    setIsSkippedLoad(false); // Enable animation duration
-    setStage(1); // Restart sequence
+    setStage(1);
+    setIntroRun((run) => run + 1);
   };
 
-  const handleExplore = () => {
-    setStage(4);
+  const handleSkip = () => {
+    if (stage < 3) {
+      introTimelineRef.current?.kill();
+      introTimelineRef.current = null;
+      setStage(3);
+      setSkipAnimation(true);
+      return;
+    }
+
+    setSkipAnimation((value) => !value);
   };
 
-  const t = translations[language];
-
-  // Determine if we should animate: true if NOT skipping load
-  const shouldAnimate = !isSkippedLoad;
+  const handleThemeToggle = (origin: { x: number; y: number }) => {
+    revealTheme(origin, () => {
+      flushSync(() => setTheme((value) => value === 'light' ? 'dark' : 'light'));
+    });
+  };
 
   return (
-    <main className={`relative w-full h-screen flex flex-col transition-colors duration-700 overflow-hidden ${
-      theme === 'dark' ? 'bg-[#121212]' : 'bg-[#F9F8F4]'
-    }`}>
+    <main
+      ref={rootRef}
+      data-theme={theme}
+      className="relative h-[100dvh] overflow-hidden bg-[var(--canvas)] text-[var(--ink)] transition-colors duration-500"
+    >
       <div className="fixed inset-0 z-0">
-        <MapBackground 
-          theme={theme} 
-          userLocation={userLocation} 
+        <MapBackground
+          theme={theme}
+          language={language}
+          userLocation={userLocation}
           ownerLocation={ownerLocation}
-          stage={stage === 4 ? 3 : stage} // Keep map at stage 3 view for stage 4
-          shouldAnimate={shouldAnimate}
+          stage={stage === 4 ? 3 : stage}
+          shouldAnimate={!(introRun === 0 && initiallySkipped.current)}
         />
-        {/* Gradient overlay for text readability - Lighter blur in Stage 4 */}
-        <div className={`absolute inset-0 pointer-events-none transition-all duration-1000 ${
-           theme === 'dark' 
-             ? (stage === 4 ? 'bg-black/60 backdrop-blur-[2px]' : 'bg-gradient-to-b from-black/40 via-transparent to-black/80')
-             : (stage === 4 ? 'bg-white/60 backdrop-blur-[2px]' : 'bg-gradient-to-b from-white/60 via-transparent to-white/90')
-         }`} />
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute inset-0 transition-colors duration-700 ${
+            stage === 4
+              ? 'bg-[rgb(var(--canvas-rgb)/0.82)] backdrop-blur-[5px]'
+              : 'bg-[linear-gradient(to_bottom,rgb(var(--canvas-rgb)/0.48),rgb(var(--canvas-rgb)/0.08)_45%,rgb(var(--canvas-rgb)/0.82))]'
+          }`}
+        />
       </div>
 
-      {/* Header - Controls */}
-      <header className="w-full p-3 flex justify-end items-center z-50 pointer-events-auto shrink-0">
-        <div className="flex items-center gap-3">
-          <AnimationControl 
-            onReplay={handleReplay} 
-            skipAnimation={skipAnimation} 
-            toggleSkip={toggleSkip} 
-            theme={theme} 
-          />
-          <LanguageToggle language={language} toggleLanguage={toggleLanguage} theme={theme} />
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+      <header className="fixed inset-x-0 top-0 z-50 flex justify-end p-3 md:p-5">
+        <div className="flex items-center gap-2">
+          <div data-control>
+            <AnimationControl
+              duringIntro={stage < 3}
+              onReplay={handleReplay}
+              skipAnimation={skipAnimation}
+              toggleSkip={handleSkip}
+              labels={t.controls}
+            />
+          </div>
+          <div data-control>
+            <LanguageToggle
+              language={language}
+              toggleLanguage={() => setLanguage((value) => value === 'en' ? 'zh' : 'en')}
+              label={t.controls.language}
+            />
+          </div>
+          <div data-control>
+            <ThemeToggle
+              theme={theme}
+              toggleTheme={handleThemeToggle}
+              label={t.controls.theme}
+            />
+          </div>
         </div>
       </header>
 
-      <motion.div 
-        layout
-        className="relative z-20 w-full flex-1 min-h-0 flex flex-col lg:flex-row pointer-events-auto overflow-y-auto lg:overflow-hidden"
-      >
-        
-        {/* Left Side (Hero) - Always present, adjusts layout */}
-        <Hero 
-          theme={theme} 
+      <section className={`relative z-20 h-full overflow-hidden ${stage === 4 ? 'atlas-shell' : ''}`}>
+        <Hero
           stage={stage}
           userLocation={userLocation}
           distance={distance}
           language={language}
-          onExplore={handleExplore}
+          onExplore={() => setStage(4)}
         />
 
-        {/* Right Side (Bento) - Only in Stage 4 */}
-        <AnimatePresence>
-          {stage === 4 && (
-            <motion.div 
-              key="bento-container"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="w-full lg:w-1/2 flex items-center justify-center p-4 lg:px-8 lg:py-4 lg:h-full lg:overflow-y-auto"
-            >
-              <BentoGrid theme={theme} language={language} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-
-      {/* Footer - Only visible in Stage 3/4 */}
-      <AnimatePresence>
-        {stage >= 3 && (
-          <motion.footer
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className={`w-full py-4 z-30 flex justify-center items-center text-[length:var(--text-sm)] font-sans opacity-80 hover:opacity-100 transition-opacity pointer-events-auto drop-shadow-md shrink-0 ${
-              theme === 'dark' ? 'text-gray-400' : 'text-gray-500'
-            }`}
-          >
-            <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 px-4 text-center max-w-6xl mx-auto leading-tight">
-              <span>Copyright © {config.footer.startYear}-{new Date().getFullYear()} {config.footer.ownerName}</span>
-              <span className="hidden sm:inline">|</span>
-              <span>Made by {config.footer.ownerName}</span>
-              
-              {config.footer.upyun.show && (
-                <>
-                  <span className="hidden sm:inline">|</span>
-                  <a href={config.footer.upyun.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-400 transition-colors">
-                    <img src={theme === 'dark' ? config.footer.upyun.logo.dark : config.footer.upyun.logo.light} alt="Upyun" className="h-3 w-auto opacity-80" referrerPolicy="no-referrer" />
-                    {config.footer.upyun.text}
-                  </a>
-                </>
-              )}
-
-              <span className="hidden sm:inline">|</span>
-              <a href={config.footer.icp.link} target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">{config.footer.icp.text}</a>
-              
-              <span className="hidden sm:inline">|</span>
-              <a href={config.footer.police.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-400 transition-colors">
-                <img src={config.footer.police.logo} alt="Beian" className="h-3 w-auto opacity-80" referrerPolicy="no-referrer" />
-                {config.footer.police.text}
-              </a>
-
-              {config.footer.travellings.show && (
-                <>
-                  <span className="hidden sm:inline">|</span>
-                  <a href={config.footer.travellings.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-gold-400 transition-colors" title="开往-友链接力">
-                    <TrainFront size={12} />
-                    {config.footer.travellings.text}
-                  </a>
-                </>
-              )}
-            </div>
-          </motion.footer>
+        {stage === 4 && (
+          <aside ref={bentoRef} className="atlas-panel">
+            <BentoGrid theme={theme} language={language} />
+          </aside>
         )}
-      </AnimatePresence>
+      </section>
+
+      {stage >= 3 && (
+        <footer ref={footerRef} className="pointer-events-none absolute inset-x-0 bottom-0 z-30 px-4 pb-2 text-center text-[0.58rem] font-medium leading-relaxed text-[var(--muted)] md:pb-3 md:text-[0.64rem]">
+          <div className="mx-auto flex w-fit max-w-5xl flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-[rgb(var(--line)/0.08)] bg-[rgb(var(--panel)/0.58)] px-3 py-1 shadow-[0_8px_24px_rgb(var(--shadow)/0.08)] backdrop-blur-md">
+            <span>Copyright © {config.footer.startYear}-{new Date().getFullYear()} {config.name}</span>
+            <span aria-hidden>·</span>
+            <span>Made by {config.name}</span>
+
+            {config.footer.upyun.show && (
+              <FooterLink href={config.footer.upyun.link}>{config.footer.upyun.text}</FooterLink>
+            )}
+
+            <FooterLink href={config.footer.icp.link}>{config.footer.icp.text}</FooterLink>
+            <FooterLink href={config.footer.police.link}>{config.footer.police.text}</FooterLink>
+
+            {config.footer.travellings.show && (
+              <FooterLink href={config.footer.travellings.link}>
+                <span className="inline-flex items-center gap-1">
+                  <Train aria-hidden size={12} weight="duotone" />
+                  {config.footer.travellings.text}
+                </span>
+              </FooterLink>
+            )}
+          </div>
+        </footer>
+      )}
     </main>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <>
+      <span aria-hidden>·</span>
+      <a href={href} target="_blank" rel="noopener noreferrer" className="pointer-events-auto transition-colors hover:text-[var(--accent)]">
+        {children}
+      </a>
+    </>
   );
 }

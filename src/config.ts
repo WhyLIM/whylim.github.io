@@ -2,7 +2,7 @@
 export const config = {
   // Basic Information
   name: "WhyLIM",
-  ownerLocation: [22.597245, 113.986707] as [number, number], // [Latitude, Longitude]
+  ownerLocation: [22.2675, 114.1280] as [number, number], // HKU Li Ka Shing Faculty of Medicine
 
   // Social Links
   social: {
@@ -14,14 +14,9 @@ export const config = {
   // Footer Information
   footer: {
     startYear: 2021,
-    ownerName: "WhyLIM",
     upyun: {
       show: true,
       text: "又拍云提供 CDN 加速",
-      logo: {
-        light: "https://img.limina.top/temp/又拍云_logo4.png",
-        dark: "https://img.limina.top/temp/又拍云_logo7.png"
-      },
       link: "https://www.upyun.com/"
     },
     icp: {
@@ -30,7 +25,6 @@ export const config = {
     },
     police: {
       text: "苏公网安备 32062302000380",
-      logo: "https://img.limina.top/temp/备案图标.png",
       link: "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32062302000380"
     },
     travellings: {
@@ -66,12 +60,12 @@ export const config = {
       }
     },
     school: {
-      logo: "https://img.limina.top/temp/SIAT-small.jpg",
+      logo: "https://img.limina.top/temp/hku_mb.jpg",
       name: {
-        en: "SIAT",
-        zh: "中国科学院\n深圳先进技术研究院"
+        en: "The University\nof Hong Kong",
+        zh: "香港大学"
       },
-      link: "https://www.siat.ac.cn/"
+      link: "https://www.hku.hk/"
     },
     undergrad: {
       image: "https://img.limina.top/temp/东吴门.jpg",
@@ -86,16 +80,13 @@ export const config = {
     },
     cards: {
       cv: {
-        link: "https://cv.limina.top/",
-        text: "View CV"
+        link: "https://cv.limina.top/"
       },
       blog: {
-        link: "https://log.whylim.cn/",
-        text: "Read"
+        link: "https://log.whylim.cn/"
       },
       gallery: {
-        link: "https://photo.limina.top/",
-        text: "Gallery"
+        link: "https://photo.limina.top/"
       }
     },
     techStack: [

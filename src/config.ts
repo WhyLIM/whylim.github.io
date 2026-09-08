@@ -90,16 +90,16 @@ export const config = {
       }
     },
     techStack: [
-      { name: 'Python', icon: 'python' },
-      { name: 'R', icon: 'r' },
-      { name: 'HTML', icon: 'html5' },
-      { name: 'CSS', icon: 'css' },
-      { name: 'JavaScript', icon: 'javascript' },
-      { name: 'PHP', icon: 'php' },
-      { name: 'Vue.js', icon: 'vuedotjs' },
-      { name: 'SQL', icon: 'postgresql' },
-      { name: 'Git', icon: 'git' },
-      { name: 'Shell', icon: 'gnubash' },
+      { name: 'Python', icon: 'python', color: '#3776AB' },
+      { name: 'R', icon: 'r', color: '#276DC3' },
+      { name: 'HTML', icon: 'html5', color: '#E34F26' },
+      { name: 'CSS', icon: 'css', color: '#663399' },
+      { name: 'JavaScript', icon: 'javascript', color: '#F7DF1E' },
+      { name: 'PHP', icon: 'php', color: '#777BB4' },
+      { name: 'Vue.js', icon: 'vuedotjs', color: '#4FC08D' },
+      { name: 'SQL', icon: 'postgresql', color: '#4169E1' },
+      { name: 'Git', icon: 'git', color: '#F05032' },
+      { name: 'Shell', icon: 'gnubash', color: '#4EAA25' },
     ]
   }
 };

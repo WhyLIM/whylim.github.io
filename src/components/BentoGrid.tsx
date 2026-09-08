@@ -8,13 +8,13 @@ import Chronograph from './atlas/Chronograph';
 import CodingFolio from './atlas/CodingFolio';
 import DestinationCard from './atlas/DestinationCard';
 import PersonalitySpecimen from './atlas/PersonalitySpecimen';
-import TechnologyOrbit from './atlas/TechnologyOrbit';
+import TechnologyAccordion from './atlas/TechnologyAccordion';
 
-interface BentoGridProps { theme: 'light' | 'dark'; language: Language }
+interface BentoGridProps { language: Language }
 type Page = 'main' | 'more';
 type QuickMover = ReturnType<typeof gsap.quickTo>;
 
-export default function BentoGrid({ theme, language }: BentoGridProps) {
+export default function BentoGrid({ language }: BentoGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const pendingFlip = useRef<ReturnType<typeof Flip.getState> | null>(null);
@@ -72,7 +72,7 @@ export default function BentoGrid({ theme, language }: BentoGridProps) {
             <PersonalitySpecimen language={language} label={t.personality} action={t.learnMore} />
             <ImageCard src={config.bento.hometown.image} alt={config.bento.hometown.name[language]} label={t.hometownDesc} title={config.bento.hometown.name[language]} />
             <ImageCard src={config.bento.school.logo} alt={config.bento.school.name[language]} label={t.schoolDesc} title={config.bento.school.name[language]} href={config.bento.school.link} className="school-card" />
-            <TechnologyOrbit theme={theme} label={t.tech} />
+            <TechnologyAccordion label={t.tech} />
             <ImageCard src={config.bento.undergrad.image} alt={config.bento.undergrad.name[language]} label={t.undergradDesc} title={config.bento.undergrad.name[language]} href={config.bento.undergrad.link} />
             <CodingFolio label={t.coding} />
           </>

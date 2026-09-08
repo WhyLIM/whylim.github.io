@@ -28,7 +28,11 @@ export default function CodingFolio({ label }: { label: string }) {
     <article ref={rootRef} data-bento-card className="bento-card coding-folio">
       <span className="folio-index">FIELD NOTE / 07</span>
       <strong>{label}</strong>
-      <div ref={planeRef} className="code-plane" aria-hidden><code>observe()</code><code>map()</code><code>make()</code></div>
+      <div ref={planeRef} className="code-plane" aria-hidden>
+        <code>{'key = sum(1 << i for i in (8, 7, 6, 3, 1, 0))'}</code>
+        <code>{'memory = lambda: f"{key:09b}"'}</code>
+        <code>assert memory()</code>
+      </div>
       <img src={config.bento.codingCat.image} alt="Coding cat" referrerPolicy="no-referrer" />
     </article>
   );

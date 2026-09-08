@@ -46,8 +46,8 @@ function MapController({ stage, userLocation, ownerLocation, shouldAnimate }: {
 
     if ((stage === 3 || stage === 4) && visitor) {
       map.flyToBounds(L.latLngBounds([owner, visitor]), {
-        padding: [72, 72],
-        maxZoom: 8,
+        padding: [96, 96],
+        maxZoom: 12,
         ...flight,
       });
       return;

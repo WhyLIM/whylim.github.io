@@ -227,7 +227,7 @@ export default function App() {
 
         {stage === 4 && (
           <aside ref={bentoRef} className="atlas-panel">
-            <BentoGrid theme={theme} language={language} />
+            <BentoGrid language={language} />
           </aside>
         )}
       </section>

@@ -66,12 +66,12 @@ export const config = {
       }
     },
     school: {
-      logo: "https://img.limina.top/temp/SIAT-small.jpg",
+      logo: "https://img.limina.top/temp/hku_mb.jpg",
       name: {
-        en: "SIAT",
-        zh: "中国科学院\n深圳先进技术研究院"
+        en: "The University\nof Hong Kong",
+        zh: "香港大学"
       },
-      link: "https://www.siat.ac.cn/"
+      link: "https://www.hku.hk/"
     },
     undergrad: {
       image: "https://img.limina.top/temp/东吴门.jpg",

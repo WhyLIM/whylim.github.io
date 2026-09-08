@@ -15,7 +15,7 @@ export default function PersonalitySpecimen({ language, label, action }: {
       <div className="specimen-copy">
         <span>{label}</span>
         <strong>{config.bento.mbti.desc[language]}</strong>
-        <p>{config.bento.mbti.tags[language].join(' · ')}</p>
+        <p>{config.bento.mbti.tags[language].map((tag) => <span key={tag} className="specimen-tag">{tag}</span>)}</p>
       </div>
       <span className="specimen-action">{action}<ArrowUpRight aria-hidden size={14} weight="bold" /></span>
     </a>

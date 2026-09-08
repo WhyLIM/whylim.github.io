@@ -33,6 +33,7 @@ export function PhotoAperture({ href, label, title, action }: DestinationProps) 
   return (
     <a data-bento-card href={href} target="_blank" rel="noopener noreferrer" className="bento-card photo-aperture group">
       <div className="aperture-mark" aria-hidden><Aperture size={30} weight="thin" /></div>
+      <div className="photo-spacer" aria-hidden />
       <div><span>{label}</span><strong>{title}</strong></div>
       <small>{action}<ArrowUpRight aria-hidden size={13} weight="bold" /></small>
     </a>

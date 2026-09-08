@@ -645,16 +645,25 @@
   .photo-aperture {
     grid-column: 1 / -1;
     background:
-      radial-gradient(circle at 78% 50%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+      radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 12%, transparent), transparent 44%),
       rgb(var(--panel) / 0.86);
+  }
+
+  .photo-aperture > :not(.aperture-mark) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .photo-spacer {
+    height: 1.5rem;
   }
 
   .aperture-mark {
     position: absolute;
-    top: 50%;
-    right: 10%;
+    top: -38%;
+    right: -24%;
     display: grid;
-    width: clamp(3.4rem, 7vw, 5.25rem);
+    width: clamp(8rem, 14vw, 11rem);
     aspect-ratio: 1;
     place-items: center;
     border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
@@ -666,8 +675,9 @@
       0 0 0 0.45rem rgb(var(--panel) / 0.72),
       0 0 0 calc(0.45rem + 1px) rgb(var(--line) / 0.12),
       0 14px 32px rgb(var(--shadow) / 0.1);
-    transform: translateY(-50%);
+    transform: rotate(13deg);
     color: var(--accent);
+    opacity: 0.52;
   }
 
   .aperture-mark::before {

@@ -23,6 +23,7 @@ export default function App() {
   const rootRef = useRef<HTMLElement>(null);
   const bentoRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLElement>(null);
+  const introTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>(() =>
     window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
   );
@@ -80,15 +81,19 @@ export default function App() {
 
     const beat = { progress: 0 };
     const timeline = gsap.timeline({ paused: true })
-      .to(beat, { duration: 1.6, ease: 'none', progress: 1, onComplete: () => setStage(2) })
-      .to(beat, { duration: 1.6, ease: 'none', progress: 2, onComplete: () => setStage(3) });
+      .to(beat, { duration: 2.8, ease: 'none', progress: 1, onComplete: () => setStage(2) })
+      .to(beat, { duration: 2.8, ease: 'none', progress: 2, onComplete: () => setStage(3) });
 
+    introTimelineRef.current = timeline;
     setStage(1);
     const frame = window.requestAnimationFrame(() => timeline.play(0));
 
     return () => {
       window.cancelAnimationFrame(frame);
       timeline.kill();
+      if (introTimelineRef.current === timeline) {
+        introTimelineRef.current = null;
+      }
     };
   }, { scope: rootRef, dependencies: [introRun] });
 
@@ -138,6 +143,18 @@ export default function App() {
     setIntroRun((run) => run + 1);
   };
 
+  const handleSkip = () => {
+    if (stage < 3) {
+      introTimelineRef.current?.kill();
+      introTimelineRef.current = null;
+      setStage(3);
+      setSkipAnimation(true);
+      return;
+    }
+
+    setSkipAnimation((value) => !value);
+  };
+
   return (
     <main
       ref={rootRef}
@@ -167,9 +184,10 @@ export default function App() {
         <div className="flex items-center gap-2">
           <div data-control>
             <AnimationControl
+              duringIntro={stage < 3}
               onReplay={handleReplay}
               skipAnimation={skipAnimation}
-              toggleSkip={() => setSkipAnimation((value) => !value)}
+              toggleSkip={handleSkip}
               labels={t.controls}
             />
           </div>

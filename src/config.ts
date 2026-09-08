@@ -2,7 +2,7 @@
 export const config = {
   // Basic Information
   name: "WhyLIM",
-  ownerLocation: [22.597245, 113.986707] as [number, number], // [Latitude, Longitude]
+  ownerLocation: [22.2675, 114.1280] as [number, number], // HKU Li Ka Shing Faculty of Medicine
 
   // Social Links
   social: {

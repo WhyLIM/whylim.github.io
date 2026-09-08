@@ -23,6 +23,7 @@ export const translations = {
     controls: {
       theme: 'Switch color theme',
       language: 'Switch language',
+      skipNow: 'Skip intro now',
       animationOn: 'Skip intro on future visits',
       animationOff: 'Play intro on future visits',
       replay: 'Replay intro',
@@ -76,6 +77,7 @@ export const translations = {
     controls: {
       theme: '切换明暗主题',
       language: '切换语言',
+      skipNow: '立即跳过开场',
       animationOn: '后续访问跳过开场',
       animationOff: '后续访问播放开场',
       replay: '重播开场动画',

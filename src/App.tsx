@@ -234,7 +234,7 @@ export default function App() {
 
       {stage >= 3 && (
         <footer ref={footerRef} className="pointer-events-none absolute inset-x-0 bottom-0 z-30 px-4 pb-2 text-center text-[0.58rem] font-medium leading-relaxed text-[var(--muted)] md:pb-3 md:text-[0.64rem]">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <div className="mx-auto flex w-fit max-w-5xl flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-[rgb(var(--line)/0.08)] bg-[rgb(var(--panel)/0.58)] px-3 py-1 shadow-[0_8px_24px_rgb(var(--shadow)/0.08)] backdrop-blur-md">
             <span>Copyright © {config.footer.startYear}-{new Date().getFullYear()} {config.footer.ownerName}</span>
             <span aria-hidden>·</span>
             <span>Made by {config.footer.ownerName}</span>

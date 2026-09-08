@@ -654,8 +654,8 @@
     z-index: 1;
   }
 
-  .photo-spacer {
-    height: 1.5rem;
+  .photo-icon {
+    color: var(--accent);
   }
 
   .aperture-mark {

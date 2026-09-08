@@ -46,28 +46,35 @@ export default function Hero({ stage, userLocation, distance, language, onExplor
     if (!titleRef.current) return;
 
     const media = gsap.matchMedia();
-    const split = SplitText.create(titleRef.current, { type: 'chars,words', mask: 'chars' });
+    const split = SplitText.create(
+      titleRef.current,
+      language === 'zh' ? { type: 'chars,words' } : { type: 'chars,words', mask: 'chars' },
+    );
+    const details = gsap.utils.toArray<HTMLElement>('[data-hero-detail]', rootRef.current);
 
     media.add('(prefers-reduced-motion: no-preference)', () => {
       const timeline = gsap.timeline();
-      timeline
-        .from(split.chars, {
+      timeline.from(split.chars, {
           autoAlpha: 0,
           duration: 0.78,
           ease: 'power4.out',
           stagger: 0.022,
           yPercent: 112,
-        })
-        .from('[data-hero-detail]', {
+        });
+
+      if (details.length) {
+        timeline.from(details, {
           autoAlpha: 0,
           duration: 0.45,
           ease: 'power2.out',
           y: 12,
         }, '-=0.32');
+      }
     });
 
     media.add('(prefers-reduced-motion: reduce)', () => {
-      gsap.set([split.chars, '[data-hero-detail]'], { autoAlpha: 1, clearProps: 'transform' });
+      gsap.set(split.chars, { autoAlpha: 1, clearProps: 'transform' });
+      if (details.length) gsap.set(details, { autoAlpha: 1, clearProps: 'transform' });
     });
 
     return () => {
@@ -96,21 +103,17 @@ export default function Hero({ stage, userLocation, distance, language, onExplor
   return (
     <div
       ref={rootRef}
-      className={`relative z-10 flex w-full flex-col justify-center px-6 py-24 text-[var(--ink)] md:px-12 ${
+      className={`hero-shell relative z-10 flex w-full flex-col justify-center px-6 py-24 text-[var(--ink)] md:px-12 ${
         isSplit
-          ? 'min-h-[72dvh] items-center text-center lg:min-h-[100dvh] lg:items-start lg:pl-[clamp(3rem,7vw,7rem)] lg:pr-8 lg:text-left'
-          : 'min-h-[100dvh] items-center text-center'
+          ? 'items-center text-center lg:items-start lg:pl-[clamp(3rem,7vw,7rem)] lg:pr-8 lg:text-left'
+          : 'h-full items-center text-center'
       }`}
     >
       <div className={`flex w-full flex-col ${isSplit ? 'max-w-[34rem] items-center lg:items-start' : 'max-w-[68rem] items-center'}`}>
-        <p data-hero-detail className="eyebrow mb-5">
-          {stage < 3 ? t.heroKickerIntro : t.heroKickerProfile}
-        </p>
-
         <h1
           ref={titleRef}
           key={titleKey}
-          className={`text-balance font-serif font-medium leading-[0.92] tracking-[-0.045em] ${
+          className={`text-balance font-serif font-medium tracking-[-0.045em] ${language === 'zh' ? 'pb-1 leading-[1.08]' : 'leading-[0.96]'} ${
             isSplit
               ? 'text-[clamp(4rem,8vw,7.5rem)]'
               : 'text-[clamp(3.6rem,10vw,9.5rem)]'
@@ -126,7 +129,7 @@ export default function Hero({ stage, userLocation, distance, language, onExplor
         )}
 
         {stage >= 3 && hitokoto && (
-          <figure data-hero-reveal className="glass-panel mt-7 w-full max-w-[35rem] rounded-[1.35rem] px-6 py-5">
+          <figure data-hero-reveal className="hero-quote glass-panel mt-7 w-full max-w-[35rem] rounded-[1.35rem] px-6 py-5">
             <blockquote className={`font-serif text-lg italic leading-relaxed text-[var(--ink)] md:text-xl ${isSplit ? 'text-center lg:text-left' : 'text-center'}`}>
               “{hitokoto.text}”
             </blockquote>
@@ -138,8 +141,8 @@ export default function Hero({ stage, userLocation, distance, language, onExplor
         )}
 
         {stage >= 3 && (
-          <div data-hero-reveal className={`mt-5 flex w-full flex-wrap items-center gap-3 ${isSplit ? 'justify-center lg:justify-start' : 'justify-center'}`}>
-            <div className="glass-panel inline-flex h-12 items-center gap-3 rounded-xl px-4 text-[var(--muted)]">
+          <div data-hero-reveal className={`hero-meta mt-5 flex w-full flex-wrap items-center gap-3 ${isSplit ? 'justify-center lg:justify-start' : 'justify-center'}`}>
+            <div className="distance-chip glass-panel inline-flex h-12 items-center gap-3 rounded-xl px-4 text-[var(--muted)]">
               <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_0_4px_color-mix(in_srgb,var(--accent)_18%,transparent)]" />
               <span className="font-mono text-xs font-medium tracking-[0.02em]">
                 {distance !== null
@@ -162,7 +165,7 @@ export default function Hero({ stage, userLocation, distance, language, onExplor
         )}
 
         {stage === 4 && (
-          <nav data-hero-reveal aria-label={t.social.label} className="mt-5 flex items-center gap-2">
+          <nav data-hero-reveal aria-label={t.social.label} className="hero-social mt-5 flex items-center gap-2">
             <SocialLink href={config.social.github} label={t.social.github} icon={<GithubLogo aria-hidden size={19} weight="duotone" />} />
             <SocialLink href={config.social.email} label={t.social.email} icon={<EnvelopeSimple aria-hidden size={19} weight="duotone" />} />
             <SocialLink href={config.social.bilibili} label={t.social.bilibili} icon={<TelevisionSimple aria-hidden size={19} weight="duotone" />} />

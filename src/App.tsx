@@ -5,6 +5,7 @@
 
 import { Train } from '@phosphor-icons/react';
 import { useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import AnimationControl from './components/AnimationControl';
 import BentoGrid from './components/BentoGrid';
 import Hero from './components/Hero';
@@ -16,6 +17,7 @@ import { calculateDistance } from './lib/geo';
 import type { Language } from './lib/i18n';
 import { translations } from './lib/i18n';
 import { gsap, useGSAP } from './lib/gsap';
+import { revealTheme } from './lib/themeTransition';
 
 type Stage = 1 | 2 | 3 | 4;
 
@@ -155,11 +157,17 @@ export default function App() {
     setSkipAnimation((value) => !value);
   };
 
+  const handleThemeToggle = (origin: { x: number; y: number }) => {
+    revealTheme(origin, () => {
+      flushSync(() => setTheme((value) => value === 'light' ? 'dark' : 'light'));
+    });
+  };
+
   return (
     <main
       ref={rootRef}
       data-theme={theme}
-      className="relative min-h-[100dvh] overflow-x-hidden bg-[var(--canvas)] text-[var(--ink)] transition-colors duration-500"
+      className="relative h-[100dvh] overflow-hidden bg-[var(--canvas)] text-[var(--ink)] transition-colors duration-500"
     >
       <div className="fixed inset-0 z-0">
         <MapBackground
@@ -174,7 +182,7 @@ export default function App() {
           aria-hidden
           className={`pointer-events-none absolute inset-0 transition-colors duration-700 ${
             stage === 4
-              ? 'bg-[rgb(var(--canvas-rgb)/0.72)]'
+              ? 'bg-[rgb(var(--canvas-rgb)/0.82)] backdrop-blur-[5px]'
               : 'bg-[linear-gradient(to_bottom,rgb(var(--canvas-rgb)/0.48),rgb(var(--canvas-rgb)/0.08)_45%,rgb(var(--canvas-rgb)/0.82))]'
           }`}
         />
@@ -201,14 +209,14 @@ export default function App() {
           <div data-control>
             <ThemeToggle
               theme={theme}
-              toggleTheme={() => setTheme((value) => value === 'light' ? 'dark' : 'light')}
+              toggleTheme={handleThemeToggle}
               label={t.controls.theme}
             />
           </div>
         </div>
       </header>
 
-      <section className={`relative z-20 min-h-[100dvh] pb-20 ${stage === 4 ? 'lg:grid lg:grid-cols-[42%_58%]' : ''}`}>
+      <section className={`relative z-20 h-full overflow-hidden ${stage === 4 ? 'atlas-shell' : ''}`}>
         <Hero
           stage={stage}
           userLocation={userLocation}
@@ -218,14 +226,14 @@ export default function App() {
         />
 
         {stage === 4 && (
-          <aside ref={bentoRef} className="flex w-full items-center px-4 pb-12 md:px-8 lg:min-h-[100dvh] lg:px-7 lg:py-20 xl:px-10">
+          <aside ref={bentoRef} className="atlas-panel">
             <BentoGrid theme={theme} language={language} />
           </aside>
         )}
       </section>
 
       {stage >= 3 && (
-        <footer ref={footerRef} className="relative z-30 -mt-16 px-5 pb-5 text-center text-[0.66rem] font-medium leading-relaxed text-[var(--muted)]">
+        <footer ref={footerRef} className="pointer-events-none absolute inset-x-0 bottom-0 z-30 px-4 pb-2 text-center text-[0.58rem] font-medium leading-relaxed text-[var(--muted)] md:pb-3 md:text-[0.64rem]">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <span>Copyright © {config.footer.startYear}-{new Date().getFullYear()} {config.footer.ownerName}</span>
             <span aria-hidden>·</span>
@@ -234,25 +242,25 @@ export default function App() {
             {config.footer.upyun.show && (
               <>
                 <span aria-hidden>·</span>
-                <a href={config.footer.upyun.link} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--accent)]">
+                <a href={config.footer.upyun.link} target="_blank" rel="noopener noreferrer" className="pointer-events-auto transition-colors hover:text-[var(--accent)]">
                   {config.footer.upyun.text}
                 </a>
               </>
             )}
 
             <span aria-hidden>·</span>
-            <a href={config.footer.icp.link} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--accent)]">
+            <a href={config.footer.icp.link} target="_blank" rel="noopener noreferrer" className="pointer-events-auto transition-colors hover:text-[var(--accent)]">
               {config.footer.icp.text}
             </a>
             <span aria-hidden>·</span>
-            <a href={config.footer.police.link} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[var(--accent)]">
+            <a href={config.footer.police.link} target="_blank" rel="noopener noreferrer" className="pointer-events-auto transition-colors hover:text-[var(--accent)]">
               {config.footer.police.text}
             </a>
 
             {config.footer.travellings.show && (
               <>
                 <span aria-hidden>·</span>
-                <a href={config.footer.travellings.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 transition-colors hover:text-[var(--accent)]">
+                <a href={config.footer.travellings.link} target="_blank" rel="noopener noreferrer" className="pointer-events-auto inline-flex items-center gap-1 transition-colors hover:text-[var(--accent)]">
                   <Train aria-hidden size={12} weight="duotone" />
                   {config.footer.travellings.text}
                 </a>

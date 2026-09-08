@@ -6,8 +6,6 @@ export const translations = {
   en: {
     greeting: `Hello, I'm ${config.name}.`,
     greetingDetail: "I'm now here.",
-    heroKickerIntro: 'Map study / 01',
-    heroKickerProfile: 'WhyLIM / Profile',
     foundUser: 'And you are here.',
     void: 'You seem to be in the void.',
     distance: 'Distance',
@@ -60,8 +58,6 @@ export const translations = {
   zh: {
     greeting: `你好，我是 ${config.name}。`,
     greetingDetail: '我现在在这里。',
-    heroKickerIntro: '地图叙事 / 01',
-    heroKickerProfile: 'WhyLIM / 个人主页',
     foundUser: '而你在这里。',
     void: '你似乎在虚空之中。',
     distance: '相距',

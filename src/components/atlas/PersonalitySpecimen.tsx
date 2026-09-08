@@ -10,7 +10,7 @@ export default function PersonalitySpecimen({ language, label, action }: {
   return (
     <a data-bento-card href={config.bento.mbti.link[language]} target="_blank" rel="noopener noreferrer" className="bento-card personality-specimen group">
       <span aria-hidden className="specimen-code">N·01</span>
-      <span aria-hidden className="specimen-word">INFJ</span>
+      <span aria-hidden className="specimen-word">{config.bento.mbti.type}</span>
       <img src={config.bento.mbti.image} alt="" className="specimen-figure" referrerPolicy="no-referrer" />
       <div className="specimen-copy">
         <span>{label}</span>

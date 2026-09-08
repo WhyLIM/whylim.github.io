@@ -6,7 +6,7 @@ import { translations } from '../lib/i18n';
 import { Flip, gsap, useGSAP } from '../lib/gsap';
 import Chronograph from './atlas/Chronograph';
 import CodingFolio from './atlas/CodingFolio';
-import { BlogSlice, CvDossier, PhotoAperture } from './atlas/DestinationCards';
+import DestinationCard from './atlas/DestinationCard';
 import PersonalitySpecimen from './atlas/PersonalitySpecimen';
 import TechnologyOrbit from './atlas/TechnologyOrbit';
 
@@ -79,9 +79,9 @@ export default function BentoGrid({ theme, language }: BentoGridProps) {
         ) : (
           <>
             <Chronograph language={language} />
-            <CvDossier href={config.bento.cards.cv.link} label={t.cvDesc} title={t.cv} action={t.open} />
-            <BlogSlice href={config.bento.cards.blog.link} label={t.blog} title={t.blog} action={t.open} />
-            <PhotoAperture href={config.bento.cards.gallery.link} label={t.photoDesc} title={t.photo} action={t.open} />
+            <DestinationCard variant="cv-dossier" href={config.bento.cards.cv.link} label={t.cvDesc} title={t.cv} action={t.open} />
+            <DestinationCard variant="blog-slice" href={config.bento.cards.blog.link} label={t.blog} title={t.blog} action={t.open} />
+            <DestinationCard variant="photo-aperture" href={config.bento.cards.gallery.link} label={t.photoDesc} title={t.photo} action={t.open} />
           </>
         )}
 
